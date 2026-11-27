@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_wire.gd" id="1_ya2o4"]
+
+[sub_resource type="Curve3D" id="Curve3D_ywyoh"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Колючий дріт" type="Path3D" unique_id=725085607]
+curve = SubResource("Curve3D_ywyoh")
+script = ExtResource("1_ya2o4")

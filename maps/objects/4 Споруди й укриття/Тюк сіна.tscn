@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_bale.gd" id="1_v2koc"]
+
+[node name="Тюк сіна" type="Node3D" unique_id=397222578]
+script = ExtResource("1_v2koc")

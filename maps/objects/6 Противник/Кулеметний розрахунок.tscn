@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_enemyteam.gd" id="1_a35p4"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_slot.gd" id="2_lipjx"]
+
+[node name="Кулеметний розрахунок" type="Node3D" unique_id=2087544170]
+script = ExtResource("1_a35p4")
+team_name = "Кулемет"
+roles = PackedStringArray("mg", "rifleman")
+
+[node name="Позиція" type="Node3D" parent="." unique_id=831253788]
+script = ExtResource("2_lipjx")
+
+[node name="Позиція2" type="Node3D" parent="." unique_id=31732030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+script = ExtResource("2_lipjx")
+
+[node name="Відхід" type="Node3D" parent="." unique_id=1409287875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+script = ExtResource("2_lipjx")
+kind = "fallback"

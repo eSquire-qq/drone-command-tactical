@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_marker.gd" id="1_300yl"]
+
+[node name="Камера на старті" type="Node3D" unique_id=866161040]
+script = ExtResource("1_300yl")
+kind = "camera_start"

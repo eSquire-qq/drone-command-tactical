@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_car.gd" id="1_xj65p"]
+
+[node name="Згоріла автівка" type="Node3D" unique_id=663199831]
+script = ExtResource("1_xj65p")

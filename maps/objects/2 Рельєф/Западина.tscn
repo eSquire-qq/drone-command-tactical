@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_hill.gd" id="1_th67w"]
+
+[node name="Западина" type="Node3D" unique_id=1240547880]
+script = ExtResource("1_th67w")
+radius_x = 15.0
+radius_z = 15.0
+height = -2.0

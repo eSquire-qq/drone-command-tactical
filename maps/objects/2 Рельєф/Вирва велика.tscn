@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_crater.gd" id="1_vedfg"]
+
+[node name="Вирва велика" type="Node3D" unique_id=1119379793]
+script = ExtResource("1_vedfg")
+radius = 3.0

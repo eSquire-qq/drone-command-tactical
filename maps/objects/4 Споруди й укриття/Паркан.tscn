@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_fence.gd" id="1_u212i"]
+
+[sub_resource type="Curve3D" id="Curve3D_fcilw"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Паркан" type="Path3D" unique_id=908100143]
+curve = SubResource("Curve3D_fcilw")
+script = ExtResource("1_u212i")

@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_minefield.gd" id="1_vqhq1"]
+
+[sub_resource type="Curve3D" id="Curve3D_vr64l"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Мінне поле ПП" type="Path3D" unique_id=1978870655]
+curve = SubResource("Curve3D_vr64l")
+script = ExtResource("1_vqhq1")

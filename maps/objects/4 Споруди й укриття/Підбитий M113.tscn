@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_wreck.gd" id="1_w4g2n"]
+
+[node name="Підбитий M113" type="Node3D" unique_id=199699809]
+script = ExtResource("1_w4g2n")
+model = "m113"

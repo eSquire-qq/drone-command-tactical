@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_marker.gd" id="1_ill3g"]
+
+[node name="Вʼїзд евакуації" type="Node3D" unique_id=1393207197]
+script = ExtResource("1_ill3g")
+kind = "medevac_entry"

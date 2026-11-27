@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_blocks.gd" id="1_547hj"]
+
+[sub_resource type="Curve3D" id="Curve3D_btscj"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Бетонні блоки" type="Path3D" unique_id=1795546741]
+curve = SubResource("Curve3D_btscj")
+script = ExtResource("1_547hj")

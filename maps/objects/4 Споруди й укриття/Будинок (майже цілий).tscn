@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_house.gd" id="1_ups7g"]
+
+[node name="Будинок (майже цілий)" type="Node3D" unique_id=1988437471]
+script = ExtResource("1_ups7g")
+size = Vector2(9, 7)
+ruin = 0.1

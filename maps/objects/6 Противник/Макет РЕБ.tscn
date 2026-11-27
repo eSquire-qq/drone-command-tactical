@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_ew.gd" id="1_mjfju"]
+
+[node name="Макет РЕБ" type="Node3D" unique_id=73041779]
+script = ExtResource("1_mjfju")
+kind = "decoy"

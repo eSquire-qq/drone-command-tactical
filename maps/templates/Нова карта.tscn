@@ -1,0 +1,169 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/map_scene.gd" id="1_aho14"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="2_7vqo8"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_bush.gd" id="3_ivqp2"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_crater.gd" id="4_po8tj"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_road.gd" id="5_3a77r"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_trench.gd" id="6_068un"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_enemyteam.gd" id="7_mcl0e"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_slot.gd" id="8_dcdwl"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_marker.gd" id="9_ppybl"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_area.gd" id="10_5dae3"]
+
+[sub_resource type="Curve3D" id="Curve3D_1y823"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, -30),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_t3kqq"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, 12, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="НоваКарта" type="Node3D" unique_id=1830605259]
+script = ExtResource("1_aho14")
+map_id = "nova"
+subtitle = "Шаблон"
+terrain_desc = "Поле 160×160 м з посадкою на півночі."
+task_text = "Захопити пост противника біля посадки."
+intel_estimate = "4–6 осіб"
+intel_lines = PackedStringArray("Пост противника біля північної посадки.")
+
+[node name="Рослинність" type="Node3D" parent="." unique_id=391202249]
+
+[node name="Посадка 60 м" type="Node3D" parent="Рослинність" unique_id=967099774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -70)
+script = ExtResource("2_7vqo8")
+size = Vector2(60, 10)
+
+[node name="Посадка 60 м2" type="Node3D" parent="Рослинність" unique_id=1151520319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -70)
+script = ExtResource("2_7vqo8")
+size = Vector2(60, 10)
+
+[node name="Посадка 60 м3" type="Node3D" parent="Рослинність" unique_id=1462015779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 70)
+script = ExtResource("2_7vqo8")
+size = Vector2(60, 10)
+
+[node name="Посадка 60 м4" type="Node3D" parent="Рослинність" unique_id=1183860562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 70)
+script = ExtResource("2_7vqo8")
+size = Vector2(60, 10)
+
+[node name="Кущ" type="Node3D" parent="Рослинність" unique_id=920241691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
+script = ExtResource("3_ivqp2")
+
+[node name="Рельєф" type="Node3D" parent="." unique_id=612354672]
+
+[node name="Вирва велика" type="Node3D" parent="Рельєф" unique_id=419311790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+script = ExtResource("4_po8tj")
+radius = 3.0
+
+[node name="Окопи й дороги" type="Node3D" parent="." unique_id=1089432085]
+
+[node name="Дорога" type="Path3D" parent="Окопи й дороги" unique_id=730321277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+curve = SubResource("Curve3D_1y823")
+script = ExtResource("5_3a77r")
+
+[node name="Окоп (з траверсами)" type="Path3D" parent="Окопи й дороги" unique_id=410654168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+curve = SubResource("Curve3D_t3kqq")
+script = ExtResource("6_068un")
+
+[node name="Споруди" type="Node3D" parent="." unique_id=594890651]
+
+[node name="Противник" type="Node3D" parent="." unique_id=224376167]
+
+[node name="Загін стрільців" type="Node3D" parent="Противник" unique_id=2134015765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+script = ExtResource("7_mcl0e")
+roles = PackedStringArray("leader", "rifleman", "rifleman", "mg")
+
+[node name="Позиція" type="Node3D" parent="Противник/Загін стрільців" unique_id=993560302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+script = ExtResource("8_dcdwl")
+
+[node name="Позиція2" type="Node3D" parent="Противник/Загін стрільців" unique_id=1587139237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+script = ExtResource("8_dcdwl")
+
+[node name="Позиція3" type="Node3D" parent="Противник/Загін стрільців" unique_id=686959440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+script = ExtResource("8_dcdwl")
+
+[node name="Позиція4" type="Node3D" parent="Противник/Загін стрільців" unique_id=1897605448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("8_dcdwl")
+
+[node name="Запасна" type="Node3D" parent="Противник/Загін стрільців" unique_id=1564405896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
+script = ExtResource("8_dcdwl")
+kind = "alt"
+
+[node name="Відхід" type="Node3D" parent="Противник/Загін стрільців" unique_id=1136277437]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+script = ExtResource("8_dcdwl")
+kind = "fallback"
+
+[node name="Місія" type="Node3D" parent="." unique_id=582883570]
+
+[node name="Вʼїзд техніки" type="Node3D" parent="Місія" unique_id=404034896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 76)
+script = ExtResource("9_ppybl")
+
+[node name="Поява піхоти" type="Node3D" parent="Місія" unique_id=764888748]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 74)
+script = ExtResource("9_ppybl")
+kind = "foot_spawn"
+
+[node name="Точка висадки" type="Node3D" parent="Місія" unique_id=809286676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55)
+script = ExtResource("9_ppybl")
+kind = "dismount"
+
+[node name="Вʼїзд евакуації" type="Node3D" parent="Місія" unique_id=282501130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 76)
+script = ExtResource("9_ppybl")
+kind = "medevac_entry"
+
+[node name="Точка збору" type="Node3D" parent="Місія" unique_id=96478172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 66)
+script = ExtResource("9_ppybl")
+kind = "rally_point"
+
+[node name="Відхід противника" type="Node3D" parent="Місія" unique_id=1210186411]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -76)
+script = ExtResource("9_ppybl")
+kind = "enemy_retreat"
+
+[node name="Камера на старті" type="Node3D" parent="Місія" unique_id=1608835079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+script = ExtResource("9_ppybl")
+kind = "camera_start"
+
+[node name="Центр знімка" type="Node3D" parent="Місія" unique_id=1880619719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+script = ExtResource("9_ppybl")
+kind = "photo_center"
+
+[node name="Ціль" type="Node3D" parent="Місія" unique_id=814703364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+script = ExtResource("10_5dae3")
+size = Vector2(40, 16)
+
+[node name="Зона захоплення" type="Node3D" parent="Місія" unique_id=1325882817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+script = ExtResource("10_5dae3")
+kind = "capture"
+size = Vector2(60, 40)

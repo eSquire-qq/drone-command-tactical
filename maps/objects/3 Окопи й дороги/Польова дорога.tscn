@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_road.gd" id="1_qotca"]
+
+[sub_resource type="Curve3D" id="Curve3D_8q0w2"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -25, 0, 0, 0, 0, 0, 0, 0, 0, 25, 0, 3),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Польова дорога" type="Path3D" unique_id=973059970]
+curve = SubResource("Curve3D_8q0w2")
+script = ExtResource("1_qotca")
+width = 2.5

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_pole.gd" id="1_4bh3l"]
+
+[node name="Стовп" type="Node3D" unique_id=393825029]
+script = ExtResource("1_4bh3l")

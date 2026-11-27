@@ -1,0 +1,681 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/map_scene.gd" id="1_6j1cq"]
+[ext_resource type="Resource" path="res://maps/training_heights.res" id="2_3jvos"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="3_7hdh8"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_bush.gd" id="4_i1dm4"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_crater.gd" id="5_cdyxv"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_burnt.gd" id="6_jbaq2"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_road.gd" id="7_iprs1"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_trench.gd" id="8_gw0cu"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_dugout.gd" id="9_54mtm"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_house.gd" id="10_luc5t"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_shed.gd" id="11_ejg6b"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_fence.gd" id="12_mnk2p"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_wreck.gd" id="13_dgvyh"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_sandbags.gd" id="14_jt7hv"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_camo.gd" id="15_jdoa5"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_enemyteam.gd" id="16_bx877"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_slot.gd" id="17_248aq"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_marker.gd" id="18_smrmr"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_area.gd" id="19_8i5kw"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_intelmarker.gd" id="20_gxixn"]
+
+[sub_resource type="Curve3D" id="Curve3D_tclh4"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 112, 0, 0, 0, 0, 0, 0, -1, 0, 70, 0, 0, 0, 0, 0, 0, -6, 0, 10, 0, 0, 0, 0, 0, 0, -10, 0, -60, 0, 0, 0, 0, 0, 0, -12, 0, -112),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_p2enu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4, 0, -34, 0, 0, 0, 0, 0, 0, 7.375, 0, -33.4, 0, 0, 0, 0, 0, 0, 9.625, 0, -33.6, 0, 0, 0, 0, 0, 0, 11.875, 0, -34.4, 0, 0, 0, 0, 0, 0, 14.125, 0, -34.4, 0, 0, 0, 0, 0, 0, 16.375, 0, -33.6, 0, 0, 0, 0, 0, 0, 18.625, 0, -33.4, 0, 0, 0, 0, 0, 0, 22, 0, -34),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_iv8gf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -62, 0, -66, 0, 0, 0, 0, 0, 0, -58.852913, 0, -65.86456, 0, 0, 0, 0, 0, 0, -56.90194, 0, -66.50971, 0, 0, 0, 0, 0, 0, -55.09806, 0, -67.89029, 0, 0, 0, 0, 0, 0, -53.09806, 0, -68.29029, 0, 0, 0, 0, 0, 0, -50.90194, 0, -67.70971, 0, 0, 0, 0, 0, 0, -48.90194, 0, -68.10971, 0, 0, 0, 0, 0, 0, -47.09806, 0, -69.49029, 0, 0, 0, 0, 0, 0, -45.147087, 0, -70.13544, 0, 0, 0, 0, 0, 0, -43.04903, 0, -70.04514, 0, 0, 0, 0, 0, 0, -41.04903, 0, -69.554855, 0, 0, 0, 0, 0, 0, -39.147087, 0, -68.66456, 0, 0, 0, 0, 0, 0, -37.09806, 0, -68.509705, 0, 0, 0, 0, 0, 0, -34.90194, 0, -69.090294, 0, 0, 0, 0, 0, 0, -32.90194, 0, -68.69029, 0, 0, 0, 0, 0, 0, -31.098057, 0, -67.30971, 0, 0, 0, 0, 0, 0, -29.098057, 0, -66.909706, 0, 0, 0, 0, 0, 0, -26.901943, 0, -67.490295, 0, 0, 0, 0, 0, 0, -24.852913, 0, -67.33544, 0, 0, 0, 0, 0, 0, -22, 0, -66),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 20
+
+[sub_resource type="Curve3D" id="Curve3D_ej6xu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -42, 0, -70, 0, 0, 0, 0, 0, 0, -42.608425, 0, -73.305824, 0, 0, 0, 0, 0, 0, -42.993534, 0, -76.63398, 0, 0, 0, 0, 0, 0, -43, 0, -80),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Curve3D" id="Curve3D_w6rml"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -26, 0, 38, 0, 0, 0, 0, 0, 0, -26, 0, 52, 0, 0, 0, 0, 0, 0, -10, 0, 54),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="Training" type="Node3D" unique_id=661783824]
+script = ExtResource("1_6j1cq")
+map_id = "training"
+title = "ПОЛІГОН"
+subtitle = "Навчання командира"
+terrain_type = "Навчальний полігон"
+terrain_desc = "Невеликий полігон 220×220 м: посадка на півдні, поле з вирвами, руїни, пост противника в полі й короткий окоп біля північної посадки."
+task_text = "Навчитися керувати дроном і підрозділом: рух, розвідка, підтримка, штурм, евакуація пораненого, зачистка окопу."
+size = 220.0
+seed = 777
+relief = 0.5
+base_heights = ExtResource("2_3jvos")
+palette = {
+"ambient": 0.55,
+"crown": [Color(0.24, 0.31, 0.14, 1), Color(0.3, 0.35, 0.16, 1), Color(0.4, 0.38, 0.17, 1), Color(0.45, 0.33, 0.14, 1), Color(0.21, 0.27, 0.13, 1)],
+"dead_trunk": Color(0.33, 0.3, 0.26, 1),
+"fog": Color(0.66, 0.68, 0.66, 1),
+"fog_density": 0.0016,
+"grass": [Color(0.42, 0.46, 0.22, 1), Color(0.55, 0.52, 0.3, 1), Color(0.36, 0.4, 0.2, 1)],
+"ground": [Color(0.4, 0.44, 0.24, 1), Color(0.55, 0.5, 0.31, 1), Color(0.29, 0.24, 0.18, 1), Color(0.45, 0.38, 0.28, 1), Color(0.31, 0.29, 0.18, 1), Color(0.33, 0.26, 0.19, 1), Color(0.27, 0.22, 0.17, 1), Color(0.4, 0.32, 0.23, 1), Color(0.42, 0.4, 0.3, 1), Color(0.17, 0.15, 0.13, 1)],
+"sky_horizon": Color(0.7, 0.72, 0.7, 1),
+"sky_top": Color(0.42, 0.53, 0.66, 1),
+"slope": Color(0.36, 0.28, 0.2, 1),
+"spoil": Color(0.52, 0.48, 0.33, 1),
+"strata": [Color(0.24, 0.19, 0.14, 1), Color(0.47, 0.36, 0.25, 1), Color(0.4, 0.31, 0.22, 1), Color(0.33, 0.26, 0.19, 1)],
+"sun": Color(1, 0.93, 0.82, 1),
+"sun_energy": 1.25,
+"sun_rot": Vector3(-42, -35, 0),
+"trunk": Color(0.27, 0.22, 0.17, 1)
+}
+time_limit_min = 60.0
+objective = {
+"type": "training"
+}
+diff_override = {
+"atgm_acc": 1.0,
+"bleed": 4.0,
+"budget": 0,
+"enemy_acc": 0.3,
+"enemy_detect": 0.35,
+"enemy_morale": 0.55,
+"fpv": 0,
+"mortar": 0,
+"thin": false
+}
+fixed_loadout = {
+"medevac": 1,
+"mortar": 2,
+"rifle_squad": 1,
+"smoke": 2
+}
+enemy_no_retreat = true
+photo_height = 120.0
+photo_size = 170.0
+intel_age = "навчальні дані"
+intel_estimate = "4 особи"
+intel_lines = PackedStringArray("Пост противника посеред поля: 2 особи за мішками з піском.", "Короткий окоп біля північної посадки: 2 особи, бліндаж.", "Противник слабо підготовлений, мінометів, FPV і РЕБ немає.")
+
+[node name="Рослинність" type="Node3D" parent="." unique_id=944848702]
+
+[node name="Посадка" type="Node3D" parent="Рослинність" unique_id=801887647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 92.5)
+script = ExtResource("3_7hdh8")
+size = Vector2(100, 9)
+dead = 0.1
+
+[node name="Посадка2" type="Node3D" parent="Рослинність" unique_id=744151341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 0, 92.5)
+script = ExtResource("3_7hdh8")
+size = Vector2(102, 9)
+dead = 0.1
+
+[node name="Посадка3" type="Node3D" parent="Рослинність" unique_id=408722472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -99)
+script = ExtResource("3_7hdh8")
+size = Vector2(220, 10)
+density = 0.9
+
+[node name="Посадка4" type="Node3D" parent="Рослинність" unique_id=748970714]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104, 0, -5)
+script = ExtResource("3_7hdh8")
+size = Vector2(8, 170)
+density = 0.75
+dead = 0.25
+
+[node name="Посадка5" type="Node3D" parent="Рослинність" unique_id=1015576395]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 0, -14)
+script = ExtResource("3_7hdh8")
+size = Vector2(14, 12)
+density = 0.7
+dead = 0.3
+
+[node name="Кущі" type="Node3D" parent="Рослинність" unique_id=75661412]
+
+[node name="Кущ" type="Node3D" parent="Рослинність/Кущі" unique_id=1920322787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.703384, 0, -42.153217)
+script = ExtResource("4_i1dm4")
+radius = 2.522728
+
+[node name="Кущ2" type="Node3D" parent="Рослинність/Кущі" unique_id=680963072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.30966, 0, -36.052223)
+script = ExtResource("4_i1dm4")
+radius = 1.3288746
+
+[node name="Кущ3" type="Node3D" parent="Рослинність/Кущі" unique_id=1249960375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.81691, 0, -74.55549)
+script = ExtResource("4_i1dm4")
+radius = 1.8224508
+
+[node name="Кущ4" type="Node3D" parent="Рослинність/Кущі" unique_id=874162694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.297356, 0, -80.048615)
+script = ExtResource("4_i1dm4")
+radius = 2.2490897
+
+[node name="Кущ5" type="Node3D" parent="Рослинність/Кущі" unique_id=658943199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.207474, 0, 14.286591)
+script = ExtResource("4_i1dm4")
+radius = 2.037479
+
+[node name="Кущ6" type="Node3D" parent="Рослинність/Кущі" unique_id=425538971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.748962, 0, -48.37765)
+script = ExtResource("4_i1dm4")
+radius = 2.1774428
+
+[node name="Кущ7" type="Node3D" parent="Рослинність/Кущі" unique_id=2114200269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.97884, 0, 74.39072)
+script = ExtResource("4_i1dm4")
+radius = 1.3333299
+
+[node name="Кущ8" type="Node3D" parent="Рослинність/Кущі" unique_id=409501832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.94112, 0, -62.252426)
+script = ExtResource("4_i1dm4")
+radius = 1.4307173
+
+[node name="Кущ9" type="Node3D" parent="Рослинність/Кущі" unique_id=815948008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26239, 0, -86.79346)
+script = ExtResource("4_i1dm4")
+radius = 2.191602
+
+[node name="Кущ10" type="Node3D" parent="Рослинність/Кущі" unique_id=619120767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.56008, 0, -8.098061)
+script = ExtResource("4_i1dm4")
+radius = 1.6938568
+
+[node name="Кущ11" type="Node3D" parent="Рослинність/Кущі" unique_id=236402967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.89757, 0, 29.16166)
+script = ExtResource("4_i1dm4")
+radius = 1.4200442
+
+[node name="Кущ12" type="Node3D" parent="Рослинність/Кущі" unique_id=326287686]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.463593, 0, 31.976776)
+script = ExtResource("4_i1dm4")
+radius = 1.7856426
+
+[node name="Кущ13" type="Node3D" parent="Рослинність/Кущі" unique_id=1751190116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.91908, 0, 75.479706)
+script = ExtResource("4_i1dm4")
+radius = 1.57821
+
+[node name="Кущ14" type="Node3D" parent="Рослинність/Кущі" unique_id=146514421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.69754, 0, 70.42587)
+script = ExtResource("4_i1dm4")
+radius = 2.068752
+
+[node name="Кущ15" type="Node3D" parent="Рослинність/Кущі" unique_id=704752628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.16742, 0, -11.239723)
+script = ExtResource("4_i1dm4")
+radius = 1.8483166
+
+[node name="Кущ16" type="Node3D" parent="Рослинність/Кущі" unique_id=745024112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.77492, 0, -12.815514)
+script = ExtResource("4_i1dm4")
+radius = 1.8095956
+
+[node name="Кущ17" type="Node3D" parent="Рослинність/Кущі" unique_id=405079404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.002823, 0, -19.822876)
+script = ExtResource("4_i1dm4")
+radius = 1.6609588
+
+[node name="Кущ18" type="Node3D" parent="Рослинність/Кущі" unique_id=745654864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.16344, 0, -54.31364)
+script = ExtResource("4_i1dm4")
+radius = 2.1383536
+
+[node name="Кущ19" type="Node3D" parent="Рослинність/Кущі" unique_id=436863531]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.18086, 0, -0.061027527)
+script = ExtResource("4_i1dm4")
+radius = 1.2572068
+
+[node name="Кущ20" type="Node3D" parent="Рослинність/Кущі" unique_id=1918851549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.39293, 0, -27.542057)
+script = ExtResource("4_i1dm4")
+radius = 2.4091148
+
+[node name="Кущ21" type="Node3D" parent="Рослинність/Кущі" unique_id=130159438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.69821, 0, 0.13304138)
+script = ExtResource("4_i1dm4")
+radius = 1.9615341
+
+[node name="Кущ22" type="Node3D" parent="Рослинність/Кущі" unique_id=500036143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.385895, 0, 70.13504)
+script = ExtResource("4_i1dm4")
+radius = 2.3089037
+
+[node name="Кущ23" type="Node3D" parent="Рослинність/Кущі" unique_id=1600983213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.772644, 0, 38.939804)
+script = ExtResource("4_i1dm4")
+radius = 1.6335777
+
+[node name="Вирви" type="Node3D" parent="." unique_id=802995698]
+
+[node name="Вирва" type="Node3D" parent="Вирви" unique_id=1502953073]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 20)
+script = ExtResource("5_cdyxv")
+radius = 2.8
+
+[node name="Вирва2" type="Node3D" parent="Вирви" unique_id=1450433913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8)
+script = ExtResource("5_cdyxv")
+radius = 2.4
+
+[node name="Вирва3" type="Node3D" parent="Вирви" unique_id=1304108698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6)
+script = ExtResource("5_cdyxv")
+radius = 3.0
+
+[node name="Вирва4" type="Node3D" parent="Вирви" unique_id=1636307854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -14)
+script = ExtResource("5_cdyxv")
+radius = 2.6
+
+[node name="Вирва5" type="Node3D" parent="Вирви" unique_id=1131015396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
+script = ExtResource("5_cdyxv")
+radius = 2.4
+
+[node name="Вирва6" type="Node3D" parent="Вирви" unique_id=1024526199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.991806, 0, 40.27574)
+script = ExtResource("5_cdyxv")
+radius = 1.3876536
+
+[node name="Вирва7" type="Node3D" parent="Вирви" unique_id=612812101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.77433, 0, -32.02667)
+script = ExtResource("5_cdyxv")
+radius = 1.0641196
+
+[node name="Вирва8" type="Node3D" parent="Вирви" unique_id=1348420764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.458313, 0, -25.72316)
+script = ExtResource("5_cdyxv")
+radius = 1.0500313
+
+[node name="Вирва9" type="Node3D" parent="Вирви" unique_id=575489695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.92206, 0, 46.4812)
+script = ExtResource("5_cdyxv")
+radius = 1.0084907
+
+[node name="Вирва10" type="Node3D" parent="Вирви" unique_id=58122553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.8062, 0, 65.48004)
+script = ExtResource("5_cdyxv")
+radius = 1.3747001
+
+[node name="Вирва11" type="Node3D" parent="Вирви" unique_id=1514329403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.95294, 0, -1.6844482)
+script = ExtResource("5_cdyxv")
+radius = 1.2744035
+
+[node name="Вирва12" type="Node3D" parent="Вирви" unique_id=2081362522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.13364, 0, 50.046707)
+script = ExtResource("5_cdyxv")
+radius = 1.7900696
+
+[node name="Вирва13" type="Node3D" parent="Вирви" unique_id=1781206784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.912186, 0, -86.87648)
+script = ExtResource("5_cdyxv")
+radius = 1.4276985
+
+[node name="Вирва14" type="Node3D" parent="Вирви" unique_id=868602537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.64282, 0, 16.801758)
+script = ExtResource("5_cdyxv")
+radius = 1.4503236
+
+[node name="Вирва15" type="Node3D" parent="Вирви" unique_id=110896020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.340244, 0, -84.77729)
+script = ExtResource("5_cdyxv")
+radius = 1.3294929
+
+[node name="Вирва16" type="Node3D" parent="Вирви" unique_id=400824886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.887764, 0, -91.98608)
+script = ExtResource("5_cdyxv")
+radius = 1.5615522
+
+[node name="Вирва17" type="Node3D" parent="Вирви" unique_id=1201413534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.10284, 0, -18.777275)
+script = ExtResource("5_cdyxv")
+radius = 1.4902778
+
+[node name="Вирва18" type="Node3D" parent="Вирви" unique_id=1629153250]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.802868, 0, 76.02197)
+script = ExtResource("5_cdyxv")
+radius = 1.2321465
+
+[node name="Вирва19" type="Node3D" parent="Вирви" unique_id=362074445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.286583, 0, -15.712158)
+script = ExtResource("5_cdyxv")
+radius = 1.681397
+
+[node name="Вирва20" type="Node3D" parent="Вирви" unique_id=1372638263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.22243, 0, -8.684502)
+script = ExtResource("5_cdyxv")
+radius = 1.8175031
+
+[node name="Вирва21" type="Node3D" parent="Вирви" unique_id=1088386068]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.194508, 0, 24.928032)
+script = ExtResource("5_cdyxv")
+radius = 1.7733614
+
+[node name="Вирва22" type="Node3D" parent="Вирви" unique_id=1472693399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.256844, 0, -80.37859)
+script = ExtResource("5_cdyxv")
+radius = 1.4007113
+
+[node name="Вирва23" type="Node3D" parent="Вирви" unique_id=1389782989]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.25902, 0, -55.02986)
+script = ExtResource("5_cdyxv")
+radius = 1.5555176
+
+[node name="Вирва24" type="Node3D" parent="Вирви" unique_id=2124058794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.25223, 0, -29.171494)
+script = ExtResource("5_cdyxv")
+radius = 1.5486238
+
+[node name="Вирва25" type="Node3D" parent="Вирви" unique_id=1569692267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.878716, 0, -7.4150696)
+script = ExtResource("5_cdyxv")
+radius = 1.7423338
+
+[node name="Вирва26" type="Node3D" parent="Вирви" unique_id=710293213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.216904, 0, 67.08902)
+script = ExtResource("5_cdyxv")
+radius = 0.91886586
+
+[node name="Вирва27" type="Node3D" parent="Вирви" unique_id=119457587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.996063, 0, 61.504425)
+script = ExtResource("5_cdyxv")
+radius = 0.9936849
+
+[node name="Вирва28" type="Node3D" parent="Вирви" unique_id=1828550163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.968452, 0, 65.84863)
+script = ExtResource("5_cdyxv")
+radius = 1.0741965
+
+[node name="Вирва29" type="Node3D" parent="Вирви" unique_id=308048799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.557663, 0, -30.965271)
+script = ExtResource("5_cdyxv")
+radius = 1.9882047
+
+[node name="Вирва30" type="Node3D" parent="Вирви" unique_id=327935164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.871086, 0, -12.463783)
+script = ExtResource("5_cdyxv")
+radius = 1.0419086
+
+[node name="Вирва31" type="Node3D" parent="Вирви" unique_id=1440381726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.663383, 0, 61.18132)
+script = ExtResource("5_cdyxv")
+radius = 1.5869156
+
+[node name="Вирва32" type="Node3D" parent="Вирви" unique_id=1688436698]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.225845, 0, -35.92635)
+script = ExtResource("5_cdyxv")
+radius = 1.6811589
+
+[node name="Вирва33" type="Node3D" parent="Вирви" unique_id=1468134442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.524406, 0, -89.093765)
+script = ExtResource("5_cdyxv")
+radius = 0.9213813
+
+[node name="Вирва34" type="Node3D" parent="Вирви" unique_id=1964499486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.764679, 0, -8.565796)
+script = ExtResource("5_cdyxv")
+radius = 1.1219935
+
+[node name="Вирва35" type="Node3D" parent="Вирви" unique_id=996817615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.31575, 0, 3.1931686)
+script = ExtResource("5_cdyxv")
+radius = 0.9841879
+
+[node name="Вирва36" type="Node3D" parent="Вирви" unique_id=361418733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.868225, 0, -69.98992)
+script = ExtResource("5_cdyxv")
+radius = 0.92626035
+
+[node name="Вирва37" type="Node3D" parent="Вирви" unique_id=62122497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.38767, 0, 12.680618)
+script = ExtResource("5_cdyxv")
+radius = 1.0053589
+
+[node name="Вирва38" type="Node3D" parent="Вирви" unique_id=916283933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.089325, 0, -3.5385208)
+script = ExtResource("5_cdyxv")
+radius = 1.3978131
+
+[node name="Вирва39" type="Node3D" parent="Вирви" unique_id=1223094730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.73358, 0, -37.4653)
+script = ExtResource("5_cdyxv")
+radius = 1.7772422
+
+[node name="Вирва40" type="Node3D" parent="Вирви" unique_id=2050655195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.625656, 0, -57.861824)
+script = ExtResource("5_cdyxv")
+radius = 1.9243113
+
+[node name="Вирва41" type="Node3D" parent="Вирви" unique_id=1349474639]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.91811, 0, -35.381496)
+script = ExtResource("5_cdyxv")
+radius = 1.273962
+
+[node name="Вирва42" type="Node3D" parent="Вирви" unique_id=453929879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.898842, 0, 39.0968)
+script = ExtResource("5_cdyxv")
+radius = 1.9858606
+
+[node name="Вирва43" type="Node3D" parent="Вирви" unique_id=1420378321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.160248, 0, -69.880905)
+script = ExtResource("5_cdyxv")
+radius = 1.4837344
+
+[node name="Вирва44" type="Node3D" parent="Вирви" unique_id=1883170161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.621185, 0, 60.977966)
+script = ExtResource("5_cdyxv")
+radius = 1.095082
+
+[node name="Вирва45" type="Node3D" parent="Вирви" unique_id=1941092899]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.49498, 0, -94.88306)
+script = ExtResource("5_cdyxv")
+radius = 1.3593504
+
+[node name="Вирва46" type="Node3D" parent="Вирви" unique_id=1074567168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.514023, 0, -47.715076)
+script = ExtResource("5_cdyxv")
+radius = 1.6124167
+
+[node name="Вирва47" type="Node3D" parent="Вирви" unique_id=1220230176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.067474, 0, -25.455315)
+script = ExtResource("5_cdyxv")
+radius = 1.9211005
+
+[node name="Вирва48" type="Node3D" parent="Вирви" unique_id=2030808727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.238678, 0, 74.2827)
+script = ExtResource("5_cdyxv")
+radius = 1.396907
+
+[node name="Вирва49" type="Node3D" parent="Вирви" unique_id=460185626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.241432, 0, 66.477005)
+script = ExtResource("5_cdyxv")
+radius = 1.3909261
+
+[node name="Згарище" type="Node3D" parent="Вирви" unique_id=1324695960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -4)
+script = ExtResource("6_jbaq2")
+
+[node name="Дороги" type="Node3D" parent="." unique_id=837008678]
+
+[node name="Дорога" type="Path3D" parent="Дороги" unique_id=355650520]
+curve = SubResource("Curve3D_tclh4")
+script = ExtResource("7_iprs1")
+
+[node name="Окопи" type="Node3D" parent="." unique_id=136255142]
+
+[node name="Окоп" type="Path3D" parent="Окопи" unique_id=1123971528]
+curve = SubResource("Curve3D_p2enu")
+script = ExtResource("8_gw0cu")
+style = "plain"
+
+[node name="Окоп2" type="Path3D" parent="Окопи" unique_id=709885696]
+curve = SubResource("Curve3D_iv8gf")
+script = ExtResource("8_gw0cu")
+style = "plain"
+
+[node name="Окоп3" type="Path3D" parent="Окопи" unique_id=1152545701]
+curve = SubResource("Curve3D_ej6xu")
+script = ExtResource("8_gw0cu")
+style = "plain"
+
+[node name="Бліндаж" type="Node3D" parent="Окопи" unique_id=469319578]
+transform = Transform3D(0.99999815, 0, 0.0019209333, 0, 1, 0, -0.0019209333, 0, 0.99999815, -43.004032, 0, -82.1)
+script = ExtResource("9_54mtm")
+
+[node name="Будівлі" type="Node3D" parent="." unique_id=4944472]
+
+[node name="Будинок" type="Node3D" parent="Будівлі" unique_id=1348834728]
+transform = Transform3D(0.9887711, 0, 0.14943814, 0, 1, 0, -0.14943814, 0, 0.9887711, -18, 0, 44)
+script = ExtResource("10_luc5t")
+ruin = 0.6
+
+[node name="Сарай" type="Node3D" parent="Будівлі" unique_id=344645986]
+transform = Transform3D(0.9950042, 0, -0.09983342, 0, 1, 0, 0.09983342, 0, 0.9950042, 24, 0, 30)
+script = ExtResource("11_ejg6b")
+
+[node name="Паркан" type="Path3D" parent="Будівлі" unique_id=1256721453]
+curve = SubResource("Curve3D_w6rml")
+script = ExtResource("12_mnk2p")
+
+[node name="Укриття" type="Node3D" parent="." unique_id=1688620871]
+
+[node name="Підбита техніка" type="Node3D" parent="Укриття" unique_id=1814046412]
+transform = Transform3D(0.3623577, 0, 0.9320391, 0, 1, 0, -0.9320391, 0, 0.3623577, 30, 0, -4)
+script = ExtResource("13_dgvyh")
+
+[node name="Мішки" type="Node3D" parent="Укриття" unique_id=1676139587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -31.8)
+script = ExtResource("14_jt7hv")
+
+[node name="Противник" type="Node3D" parent="." unique_id=259641162]
+
+[node name="Маскування" type="Node3D" parent="Противник" unique_id=1615216475]
+
+[node name="Маскування" type="Node3D" parent="Противник/Маскування" unique_id=427923066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -34)
+script = ExtResource("15_jdoa5")
+radius = 6.0
+
+[node name="Маскування2" type="Node3D" parent="Противник/Маскування" unique_id=789412443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -68)
+script = ExtResource("15_jdoa5")
+radius = 12.0
+
+[node name="Пост" type="Node3D" parent="Противник" unique_id=1013574474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, -34)
+script = ExtResource("16_bx877")
+team_name = "Пост"
+roles = PackedStringArray("rifleman", "rifleman")
+
+[node name="Позиція" type="Node3D" parent="Противник/Пост" unique_id=1454599497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+script = ExtResource("17_248aq")
+
+[node name="Позиція2" type="Node3D" parent="Противник/Пост" unique_id=1159730728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+script = ExtResource("17_248aq")
+
+[node name="Окоп" type="Node3D" parent="Противник" unique_id=446988654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -68)
+script = ExtResource("16_bx877")
+team_name = "Окоп"
+roles = PackedStringArray("rifleman", "rifleman")
+
+[node name="Позиція" type="Node3D" parent="Противник/Окоп" unique_id=1474636118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+script = ExtResource("17_248aq")
+
+[node name="Позиція2" type="Node3D" parent="Противник/Окоп" unique_id=2100551439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+script = ExtResource("17_248aq")
+
+[node name="Маркери" type="Node3D" parent="." unique_id=1658535578]
+
+[node name="Вʼїзд техніки" type="Node3D" parent="Маркери" unique_id=994082297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 108)
+script = ExtResource("18_smrmr")
+
+[node name="Поява піхоти" type="Node3D" parent="Маркери" unique_id=215730618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 104)
+script = ExtResource("18_smrmr")
+kind = "foot_spawn"
+
+[node name="Вʼїзд евакуації" type="Node3D" parent="Маркери" unique_id=1391842314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 108)
+script = ExtResource("18_smrmr")
+kind = "medevac_entry"
+
+[node name="Збір" type="Node3D" parent="Маркери" unique_id=449364026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+script = ExtResource("18_smrmr")
+kind = "rally_point"
+
+[node name="Відхід противника" type="Node3D" parent="Маркери" unique_id=2100436253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -108)
+script = ExtResource("18_smrmr")
+kind = "enemy_retreat"
+
+[node name="Камера" type="Node3D" parent="Маркери" unique_id=1426691895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 80)
+script = ExtResource("18_smrmr")
+kind = "camera_start"
+
+[node name="Центр знімка" type="Node3D" parent="Маркери" unique_id=1243002609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6)
+script = ExtResource("18_smrmr")
+kind = "photo_center"
+
+[node name="Висадка" type="Node3D" parent="Маркери" unique_id=1410658284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 76)
+script = ExtResource("18_smrmr")
+kind = "dismount"
+
+[node name="Ціль" type="Node3D" parent="Маркери" unique_id=2106810957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -69)
+script = ExtResource("19_8i5kw")
+size = Vector2(48, 14)
+
+[node name="Зона захоплення" type="Node3D" parent="Маркери" unique_id=1979583876]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -54)
+script = ExtResource("19_8i5kw")
+kind = "capture"
+size = Vector2(100, 60)
+
+[node name="Розвіддані" type="Node3D" parent="." unique_id=978764066]
+
+[node name="Позначка ПОСТ" type="Node3D" parent="Розвіддані" unique_id=1358569573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -34)
+script = ExtResource("20_gxixn")
+
+[node name="Позначка ОКОП" type="Node3D" parent="Розвіддані" unique_id=349240405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -68)
+script = ExtResource("20_gxixn")
+label = "ОКОП"
+radius = 12.0
+
+[node name="Позначка РУЇНИ" type="Node3D" parent="Розвіддані" unique_id=574370265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 44)
+script = ExtResource("20_gxixn")
+label = "РУЇНИ"
+radius = 6.0

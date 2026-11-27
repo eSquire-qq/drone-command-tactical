@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_wreck.gd" id="1_11hes"]
+
+[node name="Підбита БМП-1" type="Node3D" unique_id=961065626]
+script = ExtResource("1_11hes")

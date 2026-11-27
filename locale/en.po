@@ -1,0 +1,4729 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+#: scripts/ai/ai_config.gd:14
+msgid "спокійний"
+msgstr "calm"
+
+#: scripts/ai/ai_config.gd:14
+msgid "напружений"
+msgstr "tense"
+
+#: scripts/ai/ai_config.gd:14
+msgid "під вогнем"
+msgstr "under fire"
+
+#: scripts/ai/ai_config.gd:14
+msgid "притиснутий"
+msgstr "pinned"
+
+#: scripts/ai/ai_config.gd:14
+msgid "паніка"
+msgstr "panic"
+
+#: scripts/ai/ai_config.gd:130
+msgid "СПОКІЙ"
+msgstr "CALM"
+
+#: scripts/ai/ai_config.gd:130
+msgid "НАПОГОТОВІ"
+msgstr "ALERT"
+
+#: scripts/ai/ai_config.gd:130
+msgid "СТРЕС"
+msgstr "STRESSED"
+
+#: scripts/ai/ai_config.gd:130
+msgid "ПРИДУШЕНИЙ"
+msgstr "SUPPRESSED"
+
+#: scripts/ai/ai_config.gd:130
+msgid "ПАНІКА"
+msgstr "PANIC"
+
+#: scripts/ai/ai_config.gd:130
+msgid "ВІДНОВЛЕННЯ"
+msgstr "RECOVERING"
+
+#: scripts/ai/ai_config.gd:132
+msgid "спок."
+msgstr "calm"
+
+#: scripts/ai/ai_config.gd:132
+msgid "напог."
+msgstr "alert"
+
+#: scripts/ai/ai_config.gd:132
+msgid "стрес"
+msgstr "stress"
+
+#: scripts/ai/ai_config.gd:132
+msgid "придуш."
+msgstr "suppr."
+
+#: scripts/ai/ai_config.gd:132
+msgid "відновл."
+msgstr "recov."
+
+#: scripts/ai/enemy_ai.gd:48
+msgid "Противник: "
+msgstr "Enemy: "
+
+#: scripts/ai/enemy_ai.gd:94
+msgid "ПТРК"
+msgstr "ATGM"
+
+#: scripts/ai/enemy_ai.gd:284
+msgid "Противник відходить з позиції"
+msgstr "The enemy is pulling back from the position"
+
+#: scripts/ai/enemy_ai.gd:294
+msgid "противник залишає позиції та відходить!"
+msgstr "the enemy is abandoning its positions and retreating!"
+
+#: scripts/ai/enemy_ai.gd:296
+msgid "Противник залишає позиції та відходить!"
+msgstr "The enemy is abandoning its positions and retreating!"
+
+#: scripts/ai/enemy_ai.gd:460
+msgid "Противник перекидає сили на загрозливий напрямок"
+msgstr "The enemy is shifting forces to the threatened direction"
+
+#: scripts/ai/enemy_ai.gd:512
+msgid "Противник контратакує в окопах!"
+msgstr "The enemy is counterattacking in the trenches!"
+
+#: scripts/ai/enemy_ai.gd:514
+msgid "Контратака противника в окопах"
+msgstr "Enemy counterattack in the trenches"
+
+#: scripts/ai/enemy_ai.gd:571
+msgid "Противник підтягує підкріплення!"
+msgstr "The enemy is bringing up reinforcements!"
+
+#: scripts/ai/enemy_ai.gd:573
+msgid "Противник підтягує підкріплення"
+msgstr "The enemy is bringing up reinforcements"
+
+#: scripts/ai/enemy_ai.gd:581
+msgid "Підкріплення %d"
+msgstr "Reinforcements %d"
+
+#: scripts/ai/enemy_ai.gd:582
+msgid "підкріплення"
+msgstr "reinforcements"
+
+#: scripts/ai/enemy_ai.gd:627
+msgid "Ворожа %s"
+msgstr "Enemy %s"
+
+#: scripts/ai/enemy_ai.gd:696
+msgid "піхоту"
+msgstr "the infantry"
+
+#: scripts/ai/enemy_ai.gd:697
+msgid "УВАГА! Ворожий FPV-дрон заходить на %s!"
+msgstr "WARNING! Enemy FPV drone inbound on %s!"
+
+#: scripts/ai/enemy_ai.gd:734
+msgid "РЕР противника запеленгувала канал нашого дрона! Очікуйте вогневе ураження."
+msgstr "Enemy ELINT has located our drone's channel! Expect incoming fire."
+
+#: scripts/ai/enemy_ai.gd:810
+msgid "Увага! Вхідний мінометний вогонь противника!"
+msgstr "Warning! Incoming enemy mortar fire!"
+
+#: scripts/ai/grenade_logic.gd:27
+msgid "немає"
+msgstr "none"
+
+#: scripts/ai/grenade_logic.gd:29
+msgid "перезарядка"
+msgstr "reloading"
+
+#: scripts/ai/grenade_logic.gd:33
+msgid "застаріла розвідка"
+msgstr "stale intel"
+
+#: scripts/ai/grenade_logic.gd:39
+msgid "дистанція"
+msgstr "range"
+
+#: scripts/ai/grenade_logic.gd:41
+msgid "свої поруч"
+msgstr "friendlies near"
+
+#: scripts/ai/grenade_logic.gd:45
+msgid "недоцільно"
+msgstr "not worth it"
+
+#: scripts/ai/grenade_logic.gd:48
+msgid "останню бережуть"
+msgstr "saving the last one"
+
+#: scripts/ai/grenade_logic.gd:53
+msgid "вже кинули сюди"
+msgstr "already thrown here"
+
+#: scripts/ai/grenade_logic.gd:59
+msgid "ліміт відділення"
+msgstr "squad limit"
+
+#: scripts/ai/soldier_ai.gd:38
+msgid "укриття"
+msgstr "cover"
+
+#: scripts/ai/soldier_ai.gd:235
+msgid "%s відходить у паніці"
+msgstr "%s falls back in panic"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "допомога"
+msgstr "first aid"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "граната"
+msgstr "grenade"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "ПТ-постріл"
+msgstr "AT round"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "пуск ПТУР"
+msgstr "ATGM launch"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "дим"
+msgstr "smoke"
+
+#: scripts/ai/soldier_ai.gd:260
+msgid "дія"
+msgstr "action"
+
+#: scripts/ai/soldier_ai.gd:279
+msgid "конвоює полоненого"
+msgstr "escorting a prisoner"
+
+#: scripts/ai/soldier_ai.gd:284
+msgid "зачистка"
+msgstr "clearing"
+
+#: scripts/ai/soldier_ai.gd:284
+msgid "граната за ріг"
+msgstr "grenade round the corner"
+
+#: scripts/ai/soldier_ai.gd:284
+msgid "прострілює кут"
+msgstr "firing round the corner"
+
+#: scripts/ai/soldier_ai.gd:292
+msgid "рух"
+msgstr "moving"
+
+#: scripts/ai/soldier_ai.gd:292
+msgid "відхід"
+msgstr "falling back"
+
+#: scripts/ai/soldier_ai.gd:307
+msgid "штурм"
+msgstr "assault"
+
+#: scripts/ai/soldier_ai.gd:317
+msgid "прикриття"
+msgstr "covering"
+
+#: scripts/ai/soldier_ai.gd:324
+msgid "висування"
+msgstr "advancing"
+
+#: scripts/ai/soldier_ai.gd:335
+msgid "бій біля вікна"
+msgstr "fighting at a window"
+
+#: scripts/ai/soldier_ai.gd:335
+msgid "біля вікна"
+msgstr "at a window"
+
+#: scripts/ai/soldier_ai.gd:339
+msgid "бій"
+msgstr "fighting"
+
+#: scripts/ai/soldier_ai.gd:339
+msgid "спостереження"
+msgstr "observing"
+
+#: scripts/ai/soldier_ai.gd:352
+msgid "до укриття"
+msgstr "to cover"
+
+#: scripts/ai/soldier_ai.gd:359
+msgid "притиснутий в окопі"
+msgstr "pinned in the trench"
+
+#: scripts/ai/soldier_ai.gd:359
+msgid "пригнувся в окопі"
+msgstr "ducking in the trench"
+
+#: scripts/ai/soldier_ai.gd:359
+msgid "в окопі"
+msgstr "in the trench"
+
+#: scripts/ai/soldier_ai.gd:365
+msgid "в укритті"
+msgstr "in cover"
+
+#: scripts/ai/soldier_ai.gd:368
+msgid "лежить"
+msgstr "prone"
+
+#: scripts/ai/soldier_ai.gd:370
+msgid "очікування"
+msgstr "waiting"
+
+#: scripts/ai/soldier_ai.gd:396
+msgid "кидок в укриття"
+msgstr "dash to cover"
+
+#: scripts/ai/soldier_ai.gd:407
+msgid "чергування"
+msgstr "on watch"
+
+#: scripts/ai/soldier_ai.gd:443
+msgid "граната наосліп"
+msgstr "blind grenade"
+
+#: scripts/ai/soldier_ai.gd:480
+msgid "відхід по траншеї"
+msgstr "falling back along the trench"
+
+#: scripts/camera/camera_controller.gd:178
+msgid "Немає вибраного підрозділу для супроводу"
+msgstr "No unit selected to follow"
+
+#: scripts/camera/camera_controller.gd:366
+msgid "дрон"
+msgstr "drone"
+
+#: scripts/camera/camera_controller.gd:415
+msgid "дрон (крізь дим)"
+msgstr "drone (through smoke)"
+
+#: scripts/camera/camera_controller.gd:419
+msgid "дрон (поганий сигнал)"
+msgstr "drone (weak signal)"
+
+#: scripts/camera/camera_controller.gd:434
+msgid "Дрон: виявлено станцію РЕБ противника — уразити можна FPV-дроном"
+msgstr "Drone: enemy jammer spotted — it can be hit with an FPV drone"
+
+#: scripts/camera/camera_controller.gd:448
+msgid "Дрон: виявлено %s"
+msgstr "Drone: spotted %s"
+
+#: scripts/combat/combat_system.gd:387
+msgid "Противник веде мінометний вогонь"
+msgstr "The enemy is firing mortars"
+
+#: scripts/combat/combat_system.gd:434
+msgid "FPV-дрон у повітрі, підліт ~%d с"
+msgstr "FPV drone airborne, ~%d s to target"
+
+#: scripts/combat/combat_system.gd:456
+msgid "УВАГА! Пуск ПТУР по %s!"
+msgstr "WARNING! ATGM launch at %s!"
+
+#: scripts/combat/damage_system.gd:49
+msgid "своїми"
+msgstr "friendly fire"
+
+#: scripts/combat/damage_system.gd:51
+msgid "техніка"
+msgstr "vehicles"
+
+#: scripts/combat/damage_system.gd:53
+msgid "засіб(%s)"
+msgstr "support (%s)"
+
+#: scripts/combat/damage_system.gd:109
+msgid "командира виведено з ладу!"
+msgstr "the squad leader is down!"
+
+#: scripts/combat/damage_system.gd:126
+msgid "Противника знищено (%s)"
+msgstr "Enemy killed (%s)"
+
+#: scripts/combat/damage_system.gd:128
+msgid "Противника уражено"
+msgstr "Enemy hit"
+
+#: scripts/combat/damage_system.gd:132
+msgid "легке поранення — %s"
+msgstr "light wound — %s"
+
+#: scripts/combat/damage_system.gd:134
+msgid "важке поранення — %s. Потрібна евакуація!"
+msgstr "serious wound — %s. Needs evacuation!"
+
+#: scripts/combat/damage_system.gd:137
+msgid "%s помер від ран"
+msgstr "%s died of wounds"
+
+#: scripts/combat/damage_system.gd:139
+msgid "загинув %s"
+msgstr "%s killed"
+
+#: scripts/combat/fpv_drone.gd:126
+msgid "FPV-дрон втратив зв'язок через РЕБ противника"
+msgstr "FPV drone lost its link to enemy jamming"
+
+#: scripts/combat/fpv_drone.gd:137
+msgid "Ворожий FPV-дрон збито!"
+msgstr "Enemy FPV drone shot down!"
+
+#: scripts/combat/fpv_drone.gd:139
+msgid "Наш FPV-дрон збито противником"
+msgstr "Our FPV drone was shot down by the enemy"
+
+#: scripts/combat/fpv_drone.gd:150
+msgid "FPV-дрон промахнувся: погода (%s)"
+msgstr "FPV drone missed: weather (%s)"
+
+#: scripts/combat/mines.gd:117
+msgid "%s підірвалась на протитанковій міні!"
+msgstr "%s hit an anti-tank mine!"
+
+#: scripts/combat/mines.gd:124
+msgid "Підрив на протипіхотній міні! Мінне поле — обережно."
+msgstr "Anti-personnel mine blast! Minefield — careful."
+
+#: scripts/combat/mines.gd:150
+msgid "Виявлено %s. Позначено на карті, маршрути їх оминають."
+msgstr "%s detected. Marked on the map, routes avoid them."
+
+#: scripts/combat/mines.gd:150
+msgid "протитанкові міни"
+msgstr "anti-tank mines"
+
+#: scripts/combat/mines.gd:150
+msgid "мінне поле"
+msgstr "a minefield"
+
+#: scripts/combat/recon_drone.gd:179
+msgid "%s: над нами кружляє ворожий дрон-розвідник — розосередитись, в укриття!"
+msgstr "%s: an enemy recon drone is circling over us — spread out, take cover!"
+
+#: scripts/combat/recon_drone.gd:181
+msgid "над нами кружляє ворожий дрон-розвідник — розосередитись, в укриття!"
+msgstr "an enemy recon drone is circling over us — spread out, take cover!"
+
+#: scripts/combat/recon_drone.gd:185
+msgid "Ворожий дрон-розвідник помітив %s"
+msgstr "The enemy recon drone spotted %s"
+
+#: scripts/combat/recon_drone.gd:218
+msgid "бачимо ворожий дрон-розвідник у небі."
+msgstr "we see an enemy recon drone in the sky."
+
+#: scripts/combat/recon_drone.gd:241
+msgid "Ворожий дрон-розвідник збито!"
+msgstr "Enemy recon drone shot down!"
+
+#: scripts/combat/recon_drone.gd:244
+msgid "Ворожий дрон-розвідник збито"
+msgstr "Enemy recon drone shot down"
+
+#: scripts/control/command_controller.gd:34
+msgid "бійці"
+msgstr "soldiers"
+
+#: scripts/control/command_controller.gd:41
+msgid "Виявлено ворожу техніку: %s!"
+msgstr "Enemy vehicle spotted: %s!"
+
+#: scripts/control/command_controller.gd:43
+msgid "Виявлено ворожу техніку: %s"
+msgstr "Enemy vehicle spotted: %s"
+
+#: scripts/control/command_controller.gd:240
+msgid "Ціль позначено: %s"
+msgstr "Target marked: %s"
+
+#: scripts/control/command_controller.gd:369
+msgid "станція РЕБ"
+msgstr "jammer"
+
+#: scripts/control/command_controller.gd:372
+msgid "ціль"
+msgstr "target"
+
+#: scripts/control/command_controller.gd:534
+msgid "%s знерухомлена — рух неможливий"
+msgstr "%s is immobilised — it cannot move"
+
+#: scripts/control/command_controller.gd:634
+msgid "Виберіть відділення (і, за бажання, машину), за якою йти."
+msgstr "Select a squad (and a vehicle to follow, if you like)."
+
+#: scripts/control/command_controller.gd:702
+msgid "Наказ на відхід до району збору."
+msgstr "Order: fall back to the assembly area."
+
+#: scripts/control/command_controller.gd:722
+msgid "%s: посадка в %s"
+msgstr "%s: mounting %s"
+
+#: scripts/control/command_controller.gd:724
+msgid "%s: немає транспорту"
+msgstr "%s: no transport"
+
+#: scripts/control/command_controller.gd:734
+msgid "поставлено димову завісу!"
+msgstr "smoke screen laid!"
+
+#: scripts/control/command_controller.gd:736
+msgid "%s: димових гранат немає"
+msgstr "%s: out of smoke grenades"
+
+#: scripts/control/command_controller.gd:739
+msgid "%s: ставимо димову завісу"
+msgstr "%s: laying a smoke screen"
+
+#: scripts/control/command_controller.gd:741
+msgid "%s: димові гранати відсутні"
+msgstr "%s: no smoke grenades"
+
+#: scripts/control/command_controller.gd:766
+msgid "Немає поранених для евакуації у вибраних підрозділах"
+msgstr "No wounded to evacuate in the selected units"
+
+#: scripts/control/command_controller.gd:779
+msgid "Засіб недоступний (вичерпано або не залучено)"
+msgstr "Not available (used up or not taken)"
+
+#: scripts/control/command_controller.gd:794
+msgid "Мінометний розрахунок: заявку прийнято, перша міна ~%d с. Розкид великий!"
+msgstr "Mortar crew: request received, first round in ~%d s. Wide spread!"
+
+#: scripts/control/command_controller.gd:796
+msgid "Мінометний наліт"
+msgstr "Mortar strike"
+
+#: scripts/control/command_controller.gd:803
+msgid "Димова завіса: заявку прийнято"
+msgstr "Smoke screen: request received"
+
+#: scripts/control/command_controller.gd:805
+msgid "Димова завіса"
+msgstr "Smoke screen"
+
+#: scripts/control/command_controller.gd:817
+msgid "FPV-удар"
+msgstr "FPV strike"
+
+#: scripts/control/command_controller.gd:827
+msgid "ПАУЗА — можна віддавати накази"
+msgstr "PAUSE — you can give orders"
+
+#: scripts/control/command_controller.gd:827
+msgid "Продовження"
+msgstr "Resume"
+
+#: scripts/control/command_controller.gd:832
+msgid "Швидкість x%d"
+msgstr "Speed x%d"
+
+#: scripts/core/campaign.gd:14
+msgid "Операція «Світанок»"
+msgstr "Operation «Dawn»"
+
+#: scripts/core/campaign.gd:23
+msgid "Новобранець"
+msgstr "Recruit"
+
+#: scripts/core/campaign.gd:23
+msgid "НБ"
+msgstr "RC"
+
+#: scripts/core/campaign.gd:25
+msgid "Солдат"
+msgstr "Soldier"
+
+#: scripts/core/campaign.gd:25
+msgid "СЛ"
+msgstr "SD"
+
+#: scripts/core/campaign.gd:27
+msgid "Досвідчений"
+msgstr "Seasoned"
+
+#: scripts/core/campaign.gd:27
+msgid "ДС"
+msgstr "SN"
+
+#: scripts/core/campaign.gd:29
+msgid "Ветеран"
+msgstr "Veteran"
+
+#: scripts/core/campaign.gd:29
+msgid "ВТ"
+msgstr "VT"
+
+#: scripts/core/campaign.gd:64
+msgid "1-ше відділення"
+msgstr "Squad 1"
+
+#: scripts/core/campaign.gd:64
+msgid "В-1"
+msgstr "S-1"
+
+#: scripts/core/campaign.gd:65
+msgid "2-ге відділення"
+msgstr "Squad 2"
+
+#: scripts/core/campaign.gd:65
+msgid "В-2"
+msgstr "S-2"
+
+#: scripts/core/campaign.gd:66
+msgid "Штурмова група"
+msgstr "Assault Group"
+
+#: scripts/core/campaign.gd:66
+msgid "Ш-1"
+msgstr "A-1"
+
+#: scripts/core/campaign.gd:286
+msgid "командир %s"
+msgstr "squad leader %s"
+
+#: scripts/core/campaign.gd:292
+msgid "%s втратило: %s — згуртованість %d%%"
+msgstr "%s lost: %s — cohesion %d%%"
+
+#: scripts/core/campaign.gd:306
+msgid "розвідано %d%% сил противника"
+msgstr "%d%% of the enemy force reconnoitred"
+
+#: scripts/core/campaign.gd:309
+msgid "полонені дали свідчення (%d)"
+msgstr "prisoners talked (%d)"
+
+#: scripts/core/campaign.gd:312
+msgid "швидкий наступ — противник не встиг перегрупуватись"
+msgstr "fast advance — the enemy had no time to regroup"
+
+#: scripts/core/campaign.gd:316
+msgid "втрачено дрон — менше знімків"
+msgstr "drone lost — fewer images"
+
+#: scripts/core/campaign.gd:319
+msgid "противник бачив наступ і змінив позиції"
+msgstr "the enemy saw the attack and changed positions"
+
+#: scripts/core/campaign.gd:325
+msgid "%d бійців противника відійшли живими й підсилили наступну позицію"
+msgstr "%d enemy soldiers got away and reinforced the next position"
+
+#: scripts/core/campaign.gd:328
+msgid "полонені — мінус люди й дух противника"
+msgstr "prisoners — the enemy is short of men and morale"
+
+#: scripts/core/campaign.gd:332
+msgid "гарнізон розгромлено (%d%%) — противнику бракує людей"
+msgstr "garrison routed (%d%%) — the enemy is short of men"
+
+#: scripts/core/campaign.gd:335
+msgid "після невдалого штурму противник підтягнув резерви"
+msgstr "after the failed assault the enemy brought up reserves"
+
+#: scripts/core/campaign.gd:338
+msgid "бій затягнувся — противник встиг підготуватися"
+msgstr "the battle dragged on — the enemy had time to prepare"
+
+#: scripts/core/campaign.gd:345
+msgid "свіжі й точні"
+msgstr "fresh and accurate"
+
+#: scripts/core/campaign.gd:347
+msgid "достатні"
+msgstr "adequate"
+
+#: scripts/core/campaign.gd:349
+msgid "застарілі"
+msgstr "stale"
+
+#: scripts/core/campaign.gd:350
+msgid "уривчасті"
+msgstr "fragmentary"
+
+#: scripts/core/campaign.gd:355
+msgid "посилений"
+msgstr "reinforced"
+
+#: scripts/core/campaign.gd:357
+msgid "трохи посилений"
+msgstr "slightly reinforced"
+
+#: scripts/core/campaign.gd:359
+msgid "ослаблений"
+msgstr "weakened"
+
+#: scripts/core/campaign.gd:361
+msgid "трохи ослаблений"
+msgstr "slightly weakened"
+
+#: scripts/core/campaign.gd:362
+msgid "як очікувалось"
+msgstr "as expected"
+
+#: scripts/core/campaign.gd:379
+msgid "знімок зроблено %d год тому"
+msgstr "image taken %d h ago"
+
+#: scripts/core/campaign.gd:386
+msgid "%d–%d осіб"
+msgstr "%d–%d men"
+
+#: scripts/core/campaign.gd:400
+msgid "Після попереднього бою противник %s: очікуйте більше людей, мін і FPV."
+msgstr "After the previous battle the enemy is %s: expect more men, mines and FPV drones."
+
+#: scripts/core/campaign.gd:402
+msgid "Після попереднього бою противник %s: людей і засобів у нього менше."
+msgstr "After the previous battle the enemy is %s: he has fewer men and assets."
+
+#: scripts/core/campaign.gd:404
+msgid "Відомі з попереднього бою укріплення позначено на карті."
+msgstr "Fortifications known from the previous battle are marked on the map."
+
+#: scripts/core/campaign.gd:406
+msgid "Свіжої розвідки немає — позиції противника можуть бути інакшими."
+msgstr "No fresh intel — enemy positions may have changed."
+
+#: scripts/core/campaign.gd:418
+msgid "поранення"
+msgstr "wounds"
+
+#: scripts/core/campaign.gd:421
+msgid "тривалий обстріл"
+msgstr "long shelling"
+
+#: scripts/core/campaign.gd:426
+msgid "загартований"
+msgstr "hardened"
+
+#: scripts/core/campaign.gd:430
+msgid "втрата товариша"
+msgstr "loss of a comrade"
+
+#: scripts/core/campaign.gd:430
+msgid "втрата товаришів"
+msgstr "loss of comrades"
+
+#: scripts/core/campaign.gd:436
+msgid "успіх"
+msgstr "success"
+
+#: scripts/core/campaign.gd:446
+msgid "%s: %s (напруга %d)"
+msgstr "%s: %s (strain %d)"
+
+#: scripts/core/campaign.gd:460
+msgid "виснажений"
+msgstr "exhausted"
+
+#: scripts/core/campaign.gd:464
+msgid "втомлений"
+msgstr "tired"
+
+#: scripts/core/campaign.gd:465
+msgid "у формі"
+msgstr "fit"
+
+#: scripts/core/campaign.gd:519
+msgid "не JSON-об'єкт"
+msgstr "not a JSON object"
+
+#: scripts/core/campaign.gd:521
+msgid "збереження з новішої версії гри"
+msgstr "a save from a newer version of the game"
+
+#: scripts/core/campaign.gd:524
+msgid "поле %s має неправильний тип"
+msgstr "field %s has the wrong type"
+
+#: scripts/core/campaign.gd:528
+msgid "пошкоджений підрозділ"
+msgstr "damaged unit"
+
+#: scripts/core/campaign.gd:531
+msgid "немає бійця %s"
+msgstr "no soldier %s"
+
+#: scripts/core/db.gd:6
+msgid "Автомат"
+msgstr "Rifle"
+
+#: scripts/core/db.gd:8
+msgid "Автомат (штурм.)"
+msgstr "Rifle (assault)"
+
+#: scripts/core/db.gd:10
+msgid "Кулемет"
+msgstr "Machine gun"
+
+#: scripts/core/db.gd:12
+msgid "Спарений кулемет"
+msgstr "Coaxial MG"
+
+#: scripts/core/db.gd:14
+msgid "Великокаліберний кулемет"
+msgstr "Heavy machine gun"
+
+#: scripts/core/db.gd:16
+msgid "30-мм гармата"
+msgstr "30 mm cannon"
+
+#: scripts/core/db.gd:19
+msgid "73-мм гармата"
+msgstr "73 mm gun"
+
+#: scripts/core/db.gd:26
+msgid "БМП-1"
+msgstr "BMP-1"
+
+#: scripts/core/db.gd:27
+msgid "БМП-2"
+msgstr "BMP-2"
+
+#: scripts/core/db.gd:29
+msgid "Евак. M113"
+msgstr "Evac M113"
+
+#: scripts/core/db.gd:45
+msgid "Командир"
+msgstr "Squad leader"
+
+#: scripts/core/db.gd:45
+msgid "КВ"
+msgstr "SL"
+
+#: scripts/core/db.gd:46
+msgid "Стрілець"
+msgstr "Rifleman"
+
+#: scripts/core/db.gd:46
+msgid "СТ"
+msgstr "RF"
+
+#: scripts/core/db.gd:47
+msgid "Штурмовик"
+msgstr "Assaulter"
+
+#: scripts/core/db.gd:47
+msgid "ШТ"
+msgstr "AS"
+
+#: scripts/core/db.gd:48
+msgid "Кулеметник"
+msgstr "Machine gunner"
+
+#: scripts/core/db.gd:48
+msgid "КЛ"
+msgstr "MG"
+
+#: scripts/core/db.gd:49
+msgid "Гранатометник"
+msgstr "Grenadier"
+
+#: scripts/core/db.gd:49
+msgid "ГР"
+msgstr "GL"
+
+#: scripts/core/db.gd:50
+msgid "Протитанкіст"
+msgstr "AT gunner"
+
+#: scripts/core/db.gd:50
+msgid "ПТ"
+msgstr "AT"
+
+#: scripts/core/db.gd:51
+msgid "Оператор ПТРК"
+msgstr "ATGM operator"
+
+#: scripts/core/db.gd:51
+msgid "ПК"
+msgstr "AG"
+
+#: scripts/core/db.gd:52
+msgid "Медик"
+msgstr "Medic"
+
+#: scripts/core/db.gd:52
+msgid "МД"
+msgstr "MD"
+
+#: scripts/core/db.gd:53
+msgid "Санітар"
+msgstr "Stretcher-bearer"
+
+#: scripts/core/db.gd:53
+msgid "СН"
+msgstr "SB"
+
+#: scripts/core/db.gd:63
+msgid "Коваль"
+msgstr "Koval"
+
+#: scripts/core/db.gd:63
+msgid "Мельник"
+msgstr "Melnyk"
+
+#: scripts/core/db.gd:63
+msgid "Бондар"
+msgstr "Bondar"
+
+#: scripts/core/db.gd:63
+msgid "Шевчук"
+msgstr "Shevchuk"
+
+#: scripts/core/db.gd:63
+msgid "Ткач"
+msgstr "Tkach"
+
+#: scripts/core/db.gd:63
+msgid "Кравець"
+msgstr "Kravets"
+
+#: scripts/core/db.gd:63
+msgid "Лисенко"
+msgstr "Lysenko"
+
+#: scripts/core/db.gd:63
+msgid "Гончар"
+msgstr "Honchar"
+
+#: scripts/core/db.gd:64
+msgid "Савчук"
+msgstr "Savchuk"
+
+#: scripts/core/db.gd:64
+msgid "Олійник"
+msgstr "Oliinyk"
+
+#: scripts/core/db.gd:64
+msgid "Руденко"
+msgstr "Rudenko"
+
+#: scripts/core/db.gd:64
+msgid "Марченко"
+msgstr "Marchenko"
+
+#: scripts/core/db.gd:64
+msgid "Козак"
+msgstr "Kozak"
+
+#: scripts/core/db.gd:64
+msgid "Поліщук"
+msgstr "Polishchuk"
+
+#: scripts/core/db.gd:64
+msgid "Литвин"
+msgstr "Lytvyn"
+
+#: scripts/core/db.gd:64
+msgid "Мороз"
+msgstr "Moroz"
+
+#: scripts/core/db.gd:64
+msgid "Довбуш"
+msgstr "Dovbush"
+
+#: scripts/core/db.gd:65
+msgid "Ярема"
+msgstr "Yarema"
+
+#: scripts/core/db.gd:65
+msgid "Сокіл"
+msgstr "Sokil"
+
+#: scripts/core/db.gd:65
+msgid "Дорош"
+msgstr "Dorosh"
+
+#: scripts/core/db.gd:65
+msgid "Гуменюк"
+msgstr "Humeniuk"
+
+#: scripts/core/db.gd:65
+msgid "Чорновол"
+msgstr "Chornovol"
+
+#: scripts/core/db.gd:65
+msgid "Білик"
+msgstr "Bilyk"
+
+#: scripts/core/db.gd:65
+msgid "Зайченко"
+msgstr "Zaichenko"
+
+#: scripts/core/db.gd:65
+msgid "Панчук"
+msgstr "Panchuk"
+
+#: scripts/core/db.gd:65
+msgid "Вовк"
+msgstr "Vovk"
+
+#: scripts/core/db.gd:65
+msgid "Сич"
+msgstr "Sych"
+
+#: scripts/core/game.gd:8
+msgid "Стрілецьке відділення"
+msgstr "Rifle squad"
+
+#: scripts/core/game.gd:9
+msgid "8 бійців: командир, 3 стрільці, кулеметник, гранатометник, протитанкіст, медик."
+msgstr "8 soldiers: squad leader, 3 riflemen, machine gunner, grenadier, AT gunner, medic."
+
+#: scripts/core/game.gd:12
+msgid "6 бійців. Більше гранат, вища стійкість. Сильні на близькій дистанції."
+msgstr "6 soldiers. More grenades, steadier under fire. Strong at close range."
+
+#: scripts/core/game.gd:15
+msgid "73-мм гармата + кулемет. Перевозить 8 бійців."
+msgstr "73 mm gun + machine gun. Carries 8 soldiers."
+
+#: scripts/core/game.gd:17
+msgid "30-мм автоматична гармата + кулемет. Перевозить 7 бійців."
+msgstr "30 mm autocannon + machine gun. Carries 7 soldiers."
+
+#: scripts/core/game.gd:19
+msgid "Великокаліберний кулемет. Перевозить 10 бійців. Легка броня."
+msgstr "Heavy machine gun. Carries 10 soldiers. Light armour."
+
+#: scripts/core/game.gd:20
+msgid "Евакуаційна M113"
+msgstr "Evacuation M113"
+
+#: scripts/core/game.gd:21
+msgid "2 санітари, до 4 поранених за рейс. Повертається для нових рейсів."
+msgstr "2 stretcher-bearers, up to 4 wounded per trip. Comes back for more."
+
+#: scripts/core/game.gd:23
+msgid "4 міни з інтервалом 6–10 с. Підліт ~12 с, великий розкид, можливі перельоти."
+msgstr "4 rounds at 6–10 s intervals. ~12 s to impact, wide spread, may overshoot."
+
+#: scripts/core/game.gd:24
+msgid "FPV-дрон"
+msgstr "FPV drone"
+
+#: scripts/core/game.gd:25
+msgid "Точкове ураження цілі: техніка, ДЗОТ, вогнева точка."
+msgstr "Precision strike: vehicle, bunker, firing point."
+
+#: scripts/core/game.gd:27
+msgid "Димові снаряди. Закривають огляд противнику ~45 с."
+msgstr "Smoke rounds. Block the enemy's view for ~45 s."
+
+#: scripts/core/game.gd:28
+msgid "Запасний розвід. дрон"
+msgstr "Spare recon drone"
+
+#: scripts/core/game.gd:29
+msgid "Якщо основний дрон впаде (РЕБ), запасний прилетить у район за ~90 с."
+msgstr "If the main drone goes down (jamming), the spare one arrives in ~90 s."
+
+#: scripts/core/game.gd:35
+msgid "ЛЕГКА"
+msgstr "EASY"
+
+#: scripts/core/game.gd:35
+msgid "Противник слабше стріляє й повільніше помічає, менше мін і FPV; у кожній групі противника на бійця менше; поранені довше тримаються; бюджет +250."
+msgstr "The enemy shoots worse and spots slower, fewer mines and FPV drones; one man fewer in every enemy group; the wounded last longer; budget +250."
+
+#: scripts/core/game.gd:38
+msgid "НОРМАЛЬНА"
+msgstr "NORMAL"
+
+#: scripts/core/game.gd:38
+msgid "Збалансований бій: грамотний план із розвідкою, обходом і підтримкою дає перемогу, атака «в лоб» дорого коштує."
+msgstr "A balanced fight: a sound plan with recon, flanking and support wins, a frontal attack costs dearly."
+
+#: scripts/core/game.gd:41
+msgid "ВАЖКА"
+msgstr "HARD"
+
+#: scripts/core/game.gd:41
+msgid "Досвідчений противник: влучніший, пильніший, стійкіший; більше мінометних мін і FPV; поранені швидше гинуть; бюджет −150."
+msgstr "Experienced enemy: more accurate, more alert, steadier; more mortar rounds and FPV drones; the wounded die sooner; budget −150."
+
+#: scripts/core/game.gd:51
+msgid "НИЗЬКА"
+msgstr "LOW"
+
+#: scripts/core/game.gd:51
+msgid "Для слабких ПК та вбудованої графіки: рендер 75% з FSR, без SSAO і світіння, прості тіні, трава лише поблизу."
+msgstr "For weak PCs and integrated graphics: 75% render scale with FSR, no SSAO or glow, simple shadows, grass only nearby."
+
+#: scripts/core/game.gd:54
+msgid "СЕРЕДНЯ"
+msgstr "MEDIUM"
+
+#: scripts/core/game.gd:54
+msgid "Баланс: без SSAO, 2 каскади тіней, згладжування FXAA."
+msgstr "Balanced: no SSAO, 2 shadow cascades, FXAA."
+
+#: scripts/core/game.gd:57
+msgid "ВИСОКА"
+msgstr "HIGH"
+
+#: scripts/core/game.gd:57
+msgid "Повна якість: SSAO, 4 каскади м'яких тіней, MSAA 2x."
+msgstr "Full quality: SSAO, 4 cascades of soft shadows, MSAA 2x."
+
+#: scripts/core/game.gd:72
+msgid "ЯСНО"
+msgstr "CLEAR"
+
+#: scripts/core/game.gd:73
+msgid "Далека видимість, точний вогонь. Противник теж бачить усе поле."
+msgstr "Long sight lines, accurate fire. The enemy sees the whole field too."
+
+#: scripts/core/game.gd:76
+msgid "ХМАРНО"
+msgstr "OVERCAST"
+
+#: scripts/core/game.gd:77
+msgid "Тьмяне світло, видимість трохи гірша, дим тримається довше."
+msgstr "Dim light, slightly worse visibility, smoke lingers longer."
+
+#: scripts/core/game.gd:80
+msgid "ДОЩ"
+msgstr "RAIN"
+
+#: scripts/core/game.gd:81
+msgid "Видимість і виявлення нижчі, бруд сповільнює піхоту й техніку поза дорогами, дим швидко прибиває, FPV частіше промахуються."
+msgstr "Lower visibility and spotting, mud slows infantry and vehicles off the roads, rain knocks smoke down fast, FPV drones miss more often."
+
+#: scripts/core/game.gd:84
+msgid "ТУМАН"
+msgstr "FOG"
+
+#: scripts/core/game.gd:85
+msgid "Видно лише на кілька десятків метрів: можна непомітно підійти впритул, але й противник з'являється раптово. Далекий вогонь і FPV майже марні, дрон бачить погано."
+msgstr "You see only a few dozen metres: you can close in unseen, but the enemy appears suddenly too. Long-range fire and FPV drones are nearly useless, the drone sees poorly."
+
+#: scripts/core/game.gd:88
+msgid "СИЛЬНИЙ ВІТЕР"
+msgstr "STRONG WIND"
+
+#: scripts/core/game.gd:89
+msgid "Дрон сильно гойдає, мінометні міни розкидає ширше, дим зносить за лічені секунди, FPV ненадійні."
+msgstr "The drone sways hard, mortar rounds scatter wider, smoke is blown away in seconds, FPV drones are unreliable."
+
+#: scripts/core/game.gd:97
+msgid "ПІХОТА"
+msgstr "INFANTRY"
+
+#: scripts/core/game.gd:97
+msgid "БОЙОВА ТЕХНІКА"
+msgstr "COMBAT VEHICLES"
+
+#: scripts/core/game.gd:97
+msgid "МЕДИЧНА ЕВАКУАЦІЯ"
+msgstr "MEDICAL EVACUATION"
+
+#: scripts/core/game.gd:97
+msgid "ЗАСОБИ ПІДТРИМКИ"
+msgstr "SUPPORT ASSETS"
+
+#: scripts/core/game.gd:124
+msgid "ПОЛІГОН"
+msgstr "TRAINING GROUND"
+
+#: scripts/core/game.gd:124
+msgid "Навчання"
+msgstr "Training"
+
+#: scripts/core/game.gd:125
+msgid "Покрокове навчання: дрон, накази, підтримка, штурм, евакуація, зачистка окопу."
+msgstr "Step-by-step training: the drone, orders, support, assault, evacuation, trench clearing."
+
+#: scripts/core/game.gd:126
+msgid "ПОСАДКА"
+msgstr "TREELINE"
+
+#: scripts/core/game.gd:126
+msgid "Лісосмуга / поле"
+msgstr "Tree line / field"
+
+#: scripts/core/game.gd:127
+msgid "Опорний пункт противника в лісосмузі: дві лінії окопів, ДЗОТи, мінні загородження, РЕБ."
+msgstr "An enemy strongpoint in a tree line: two lines of trenches, bunkers, minefields, a jammer."
+
+#: scripts/core/game.gd:128
+msgid "ВИСОТА"
+msgstr "THE HEIGHT"
+
+#: scripts/core/game.gd:128
+msgid "Відкрите поле"
+msgstr "Open field"
+
+#: scripts/core/game.gd:129
+msgid "Опорний пункт на голому пагорбі над відкритим полем: передова застава, прихована балка, ПТРК, пристріляне поле."
+msgstr "A strongpoint on a bare hill above an open field: a forward outpost, a hidden gully, ATGMs, a pre-registered field."
+
+#: scripts/core/game.gd:130
+msgid "ХУТІР"
+msgstr "THE FARMSTEAD"
+
+#: scripts/core/game.gd:130
+msgid "Сільська забудова"
+msgstr "Rural buildings"
+
+#: scripts/core/game.gd:131
+msgid "Штурм хутора: подвір'я, паркани, підвали, вузькі вулиці та присадибні ділянки."
+msgstr "Storming a farmstead village: yards, fences, cellars, narrow streets and garden plots."
+
+#: scripts/core/game.gd:132
+msgid "ЛІСОВИЙ МАСИВ"
+msgstr "THE FOREST"
+
+#: scripts/core/game.gd:132
+msgid "Ліс"
+msgstr "Forest"
+
+#: scripts/core/game.gd:133
+msgid "Бій у сосновому лісі: огляд 20–35 м, засідки, траншеї й бліндажі під деревами, просіки для техніки, лісництво на поляні."
+msgstr "Battle in a pine forest: 20–35 m sight lines, ambushes, trenches and dugouts under the trees, firebreaks for the vehicles, a forester's house in a clearing."
+
+#: scripts/core/game.gd:134
+msgid "КВАРТАЛ"
+msgstr "THE DISTRICT"
+
+#: scripts/core/game.gd:134
+msgid "Міська забудова"
+msgstr "Urban"
+
+#: scripts/core/game.gd:135
+msgid "Зачистка міського кварталу: зруйновані багатоповерхівки, під'їзди, двори."
+msgstr "Clearing a city district: ruined apartment blocks, entrances, courtyards."
+
+#: scripts/core/game.gd:142
+msgid "Прорив першої лінії"
+msgstr "Breaking the first line"
+
+#: scripts/core/game.gd:143
+msgid "Захопити опорний пункт у лісосмузі — плацдарм для подальшого наступу. Бережіть людей: усі втрати переходять у наступні бої."
+msgstr "Take the strongpoint in the tree line — a foothold for the advance. Look after your men: every loss carries over to the next battles."
+
+#: scripts/core/game.gd:144
+msgid "Висота за полем"
+msgstr "The height beyond the field"
+
+#: scripts/core/game.gd:145
+msgid "Противник закріпився на висоті, що проглядає весь наступ. Взяти її, не втративши техніку у відкритому полі."
+msgstr "The enemy has dug in on a height that overlooks the whole advance. Take it without losing vehicles in the open field."
+
+#: scripts/core/game.gd:146
+msgid "Вихід до хутора"
+msgstr "To the farmstead"
+
+#: scripts/core/game.gd:147
+msgid "Розвинути успіх і вибити противника з хутора за лісосмугою."
+msgstr "Exploit the success and drive the enemy out of the farmstead beyond the tree line."
+
+#: scripts/core/game.gd:148
+msgid "Лісовий масив"
+msgstr "The forest"
+
+#: scripts/core/game.gd:149
+msgid "Очистити лісовий масив на фланзі наступу."
+msgstr "Clear the forest on the flank of the advance."
+
+#: scripts/core/game.gd:150
+msgid "Околиця міста"
+msgstr "The edge of the city"
+
+#: scripts/core/game.gd:151
+msgid "Закріпитися в крайньому кварталі міста."
+msgstr "Gain a foothold in the outermost district of the city."
+
+#: scripts/core/game.gd:172
+msgid "Наказ: рух"
+msgstr "Order: move"
+
+#: scripts/core/game.gd:172
+msgid "Наказ: штурм"
+msgstr "Order: assault"
+
+#: scripts/core/game.gd:172
+msgid "Наказ: утримувати"
+msgstr "Order: hold"
+
+#: scripts/core/game.gd:173
+msgid "Наказ: зачистка"
+msgstr "Order: clear"
+
+#: scripts/core/game.gd:173
+msgid "Відхід"
+msgstr "Fall back"
+
+#: scripts/core/game.gd:173
+msgid "Посадка / висадка"
+msgstr "Mount / dismount"
+
+#: scripts/core/game.gd:174
+msgid "Димова граната"
+msgstr "Smoke grenade"
+
+#: scripts/core/game.gd:174
+msgid "Евакуація"
+msgstr "Evacuation"
+
+#: scripts/core/game.gd:175
+msgid "Техніка: подавлення"
+msgstr "Vehicles: suppress"
+
+#: scripts/core/game.gd:175
+msgid "Техніка: розворот"
+msgstr "Vehicles: turn"
+
+#: scripts/core/game.gd:176
+msgid "Піхота: за технікою"
+msgstr "Infantry: follow vehicle"
+
+#: scripts/core/game.gd:176
+msgid "Піхота: перебіжками"
+msgstr "Infantry: bounding"
+
+#: scripts/core/game.gd:177
+msgid "Міномет"
+msgstr "Mortar"
+
+#: scripts/core/game.gd:178
+msgid "Наступний підрозділ"
+msgstr "Next unit"
+
+#: scripts/core/game.gd:178
+msgid "Тактична пауза"
+msgstr "Tactical pause"
+
+#: scripts/core/game.gd:179
+msgid "Камера: супровід"
+msgstr "Camera: follow"
+
+#: scripts/core/game.gd:179
+msgid "Камера: загальний огляд"
+msgstr "Camera: overview"
+
+#: scripts/core/game.gd:180
+msgid "Радіожурнал"
+msgstr "Radio log"
+
+#: scripts/core/game.gd:180
+msgid "Довідка"
+msgstr "Help"
+
+#: scripts/core/game.gd:180
+msgid "Налаштування"
+msgstr "Settings"
+
+#: scripts/core/game.gd:433
+msgid "За планом"
+msgstr "As planned"
+
+#: scripts/evac/evacuation_system.gd:23
+msgid "Евакуаційна група"
+msgstr "Evacuation team"
+
+#: scripts/evac/evacuation_system.gd:24
+msgid "ЕВАК"
+msgstr "EVAC"
+
+#: scripts/evac/evacuation_system.gd:50
+msgid "Позначено для евакуації: %s"
+msgstr "Marked for evacuation: %s"
+
+#: scripts/evac/evacuation_system.gd:74
+msgid "Евакуаційний транспорт не залучено в цій місії."
+msgstr "No evacuation vehicle was taken for this mission."
+
+#: scripts/evac/evacuation_system.gd:76
+msgid "Немає вільної евакуаційної машини — очікуйте повернення."
+msgstr "No evacuation vehicle free — wait for it to return."
+
+#: scripts/evac/evacuation_system.gd:85
+msgid "Евак. M113 «%d»"
+msgstr "Evac M113 «%d»"
+
+#: scripts/evac/evacuation_system.gd:130
+msgid "евакуація"
+msgstr "evacuation"
+
+#: scripts/evac/evacuation_system.gd:131
+msgid "вирушила до пораненого (%s)"
+msgstr "on the way to the wounded (%s)"
+
+#: scripts/evac/evacuation_system.gd:188
+msgid "завантаження"
+msgstr "loading"
+
+#: scripts/evac/evacuation_system.gd:291
+msgid "на борту %d поранених, відходимо."
+msgstr "%d wounded on board, pulling out."
+
+#: scripts/evac/evacuation_system.gd:316
+msgid "Евакуйовано %d поранених. Машина повернеться за ~%d с."
+msgstr "%d wounded evacuated. The vehicle will be back in ~%d s."
+
+#: scripts/evac/evacuation_system.gd:346
+msgid "Евакуаційну машину втрачено разом з пораненими на борту!"
+msgstr "The evacuation vehicle was lost with the wounded on board!"
+
+#: scripts/evac/evacuation_system.gd:348
+msgid "Евакуаційну машину втрачено з пораненими"
+msgstr "Evacuation vehicle lost with the wounded"
+
+#: scripts/ew/ew_station.gd:13
+msgid "РЕБ"
+msgstr "JAMMING"
+
+#: scripts/ew/ew_system.gd:143
+msgid "КРИТИЧНИЙ РІВЕНЬ ЗВ'ЯЗКУ — дрон може впасти! Наберіть висоту або відведіть його."
+msgstr "CRITICAL LINK LEVEL — the drone may go down! Climb or pull it back."
+
+#: scripts/ew/ew_system.gd:173
+msgid "ЗВ'ЯЗОК З БПЛА ВТРАЧЕНО — дрон впав. Підрозділи діють за останніми наказами."
+msgstr "DRONE LINK LOST — the drone is down. Units keep to their last orders."
+
+#: scripts/ew/ew_system.gd:187
+msgid "Запасний дрон злітає. Прибуття в район ~%d с."
+msgstr "The spare drone is taking off. ~%d s to the area."
+
+#: scripts/ew/ew_system.gd:197
+msgid "Запасний дрон у районі. Зв'язок відновлено."
+msgstr "The spare drone is over the area. Link restored."
+
+#: scripts/ew/ew_system.gd:199
+msgid "Запасний дрон у районі"
+msgstr "Spare drone over the area"
+
+#: scripts/ew/ew_system.gd:210
+msgid "Уражено макет станції РЕБ — хибна ціль! Перешкоди не зменшились."
+msgstr "A decoy jammer was hit — a false target! The interference has not dropped."
+
+#: scripts/ew/ew_system.gd:212
+msgid "Станцію РЕБ знищено — зв'язок з дронами покращився."
+msgstr "Jammer destroyed — the drone link has improved."
+
+#: scripts/ew/ew_system.gd:214
+msgid "Станцію РЕБ знищено"
+msgstr "Jammer destroyed"
+
+#: scripts/ew/ew_system.gd:231
+msgid "Фіксуємо нове джерело перешкод — противник розгорнув резервний РЕБ."
+msgstr "A new source of interference — the enemy has deployed a backup jammer."
+
+#: scripts/map/bunker.gd:17
+msgid "ДЗОТ"
+msgstr "BUNKER"
+
+#: scripts/map/bunker.gd:23
+msgid "БЛІНДАЖ"
+msgstr "DUGOUT"
+
+#: scripts/map/bunker.gd:79
+msgid "%s пошкоджено"
+msgstr "%s damaged"
+
+#: scripts/map/bunker.gd:110
+msgid "%s знищено!"
+msgstr "%s destroyed!"
+
+#: scripts/map/map_manager.gd:786
+msgid "стіна"
+msgstr "wall"
+
+#: scripts/map/map_manager.gd:1174
+msgid "тюк сіна"
+msgstr "hay bale"
+
+#: scripts/map/map_manager.gd:1185
+msgid "мішки з піском"
+msgstr "sandbags"
+
+#: scripts/map/map_manager.gd:1224
+msgid "перекриття бліндажа"
+msgstr "dugout roof"
+
+#: scripts/map/maps/map_field.gd:18
+msgid "Опорний пункт на голому пагорбі"
+msgstr "A strongpoint on a bare hill"
+
+#: scripts/map/maps/map_field.gd:20
+msgid "Перетнути відкрите поле, подавити й знищити противника на висоті та захопити її вершину."
+msgstr "Cross the open field, suppress and destroy the enemy on the height and take its top."
+
+#: scripts/map/maps/map_field.gd:21
+msgid "Район 300×300 м. Голий пагорб висотою ~9 м з окопами по передньому схилу; перед ним ~120 м відкритого поля з вирвами. "
+msgstr "Area 300×300 m. A bare hill ~9 m high with trenches on the forward slope; in front of it ~120 m of open field with craters. "
+
+#: scripts/map/maps/map_field.gd:22
+msgid "Схід: балка — неглибока прихована від висоти лощина до насосної станції. Захід: покинутий окоп, рядок тюків і далека посадка. "
+msgstr "East: a gully — a shallow hollow hidden from the height that runs to the pumping station. West: an abandoned trench, a row of bales and a distant tree line. "
+
+#: scripts/map/maps/map_field.gd:23
+msgid "Посеред поля — передова застава противника. Дорога веде просто на висоту."
+msgstr "In the middle of the field — the enemy's forward outpost. The road leads straight to the height."
+
+#: scripts/map/maps/map_field.gd:191
+msgid "Захід"
+msgstr "West"
+
+#: scripts/map/maps/map_field.gd:195
+msgid "Центр"
+msgstr "Centre"
+
+#: scripts/map/maps/map_field.gd:199
+msgid "Схід"
+msgstr "East"
+
+#: scripts/map/maps/map_field.gd:203
+msgid "ДЗОТ-Захід"
+msgstr "Bunker West"
+
+#: scripts/map/maps/map_field.gd:206
+msgid "ДЗОТ-Схід"
+msgstr "Bunker East"
+
+#: scripts/map/maps/map_field.gd:209
+msgid "Резерв"
+msgstr "Reserve"
+
+#: scripts/map/maps/map_field.gd:215
+msgid "ПТРК-Захід"
+msgstr "ATGM West"
+
+#: scripts/map/maps/map_field.gd:218
+msgid "Гребінь"
+msgstr "Crest"
+
+#: scripts/map/maps/map_field.gd:222
+msgid "Застава"
+msgstr "Outpost"
+
+#: scripts/map/maps/map_field.gd:225
+msgid "Насосна"
+msgstr "Pumping station"
+
+#: scripts/map/maps/map_field.gd:230
+msgid "знімок зроблено 4 год тому"
+msgstr "image taken 4 h ago"
+
+#: scripts/map/maps/map_field.gd:231
+msgid "25–30 осіб"
+msgstr "25–30 men"
+
+#: scripts/map/maps/map_field.gd:233
+msgid "Опорний пункт на висоті: окоп по передньому схилу, другий — по гребеню, ходи сполучення."
+msgstr "A strongpoint on the height: a trench along the forward slope, a second one along the crest, communication trenches."
+
+#: scripts/map/maps/map_field.gd:234
+msgid "Висота проглядає все поле — рух відкритим полем удень помітний здалеку."
+msgstr "The height overlooks the whole field — movement across the open field in daylight is seen from afar."
+
+#: scripts/map/maps/map_field.gd:235
+msgid "Посеред поля — передова застава (3–4 особи) у вирвах, прикрита дротом."
+msgstr "In the middle of the field — a forward outpost (3–4 men) in craters, covered by wire."
+
+#: scripts/map/maps/map_field.gd:236
+msgid "Східна балка неглибока, але з висоти її майже не видно; на виході — насосна станція, ймовірний пост."
+msgstr "The eastern gully is shallow, but it can hardly be seen from the height; at its end — the pumping station, a likely post."
+
+#: scripts/map/maps/map_field.gd:237
+msgid "Мінна смуга перед окопами; прохід у центрі, біля дороги, ймовірно заміновано протитанковими мінами."
+msgstr "A mine belt in front of the trenches; the gap in the centre, by the road, is probably mined with AT mines."
+
+#: scripts/map/maps/map_field.gd:238
+msgid "Кулеметні ДЗОТи на обох флангах висоти, бліндаж за гребенем (ймовірний резерв)."
+msgstr "Machine-gun bunkers on both flanks of the height, a dugout behind the crest (likely reserve)."
+
+#: scripts/map/maps/map_field.gd:239
+msgid "Розрахунки ПТРК на обох плечах висоти контролюють дорогу й поле — техніку в полі буде уражено."
+msgstr "ATGM crews on both shoulders of the height cover the road and the field — vehicles in the open will be hit."
+
+#: scripts/map/maps/map_field.gd:240
+msgid "Позиції замасковані: доки противник не стріляє, з поля його майже не видно — потрібна розвідка дроном."
+msgstr "The positions are camouflaged: until the enemy opens fire he is barely visible from the field — recon with the drone is needed."
+
+#: scripts/map/maps/map_field.gd:241
+msgid "Працює РЕБ за гребенем; противник застосовує FPV-дрони і має заздалегідь пристріляне поле для міномета."
+msgstr "A jammer is working behind the crest; the enemy uses FPV drones and has a pre-registered field for its mortar."
+
+#: scripts/map/maps/map_field.gd:244
+msgid "ЗАСТАВА"
+msgstr "OUTPOST"
+
+#: scripts/map/maps/map_field.gd:245
+msgid "ДЗОТ?"
+msgstr "BUNKER?"
+
+#: scripts/map/maps/map_field.gd:247
+msgid "ОКОП 4–6 ОС."
+msgstr "TRENCH 4–6 MEN"
+
+#: scripts/map/maps/map_field.gd:248
+msgid "ПТРК?"
+msgstr "ATGM?"
+
+#: scripts/map/maps/map_field.gd:249
+msgid "НАСОСНА — ПОСТ?"
+msgstr "PUMPING STATION — POST?"
+
+#: scripts/map/maps/map_field.gd:250
+msgid "БЛІНДАЖ?"
+msgstr "DUGOUT?"
+
+#: scripts/map/maps/map_field.gd:251
+msgid "РЕБ?"
+msgstr "JAMMER?"
+
+#: scripts/map/maps/map_forest.gd:21
+msgid "Бій у сосновому лісі"
+msgstr "Battle in a pine forest"
+
+#: scripts/map/maps/map_forest.gd:22
+msgid "Сосновий ліс, просіки, поляна"
+msgstr "Pine forest, firebreaks, clearing"
+
+#: scripts/map/maps/map_forest.gd:23
+msgid "Пройти лісовий масив, збити передові позиції противника під деревами й захопити поляну з лісництвом."
+msgstr "Push through the forest, knock out the enemy's forward positions under the trees and take the clearing with the forester's house."
+
+#: scripts/map/maps/map_forest.gd:24
+msgid "Район 420×420 м, суцільний сосновий ліс: огляд під деревами 20–35 м, дрон бачить крізь крони погано. "
+msgstr "Area 420×420 m, solid pine forest: 20–35 m sight lines under the trees, the drone sees poorly through the crowns. "
+
+#: scripts/map/maps/map_forest.gd:25
+msgid "Техніка — лише лісовими дорогами й двома просіками (захід і схід). На заході — вирубка: відкрите місце, ймовірно пристріляне. "
+msgstr "Vehicles — only along the forest roads and the two firebreaks (west and east). In the west — a felling: open ground, probably pre-registered. "
+
+#: scripts/map/maps/map_forest.gd:26
+msgid "На півночі — поляна з лісництвом, сараями й бліндажами."
+msgstr "In the north — a clearing with the forester's house, sheds and dugouts."
+
+#: scripts/map/maps/map_forest.gd:112
+msgid "стежкою на північ — прямо на секрет і траншею під деревами"
+msgstr "up the path to the north — straight onto the listening post and the trench under the trees"
+
+#: scripts/map/maps/map_forest.gd:113
+msgid "Західна просіка"
+msgstr "West firebreak"
+
+#: scripts/map/maps/map_forest.gd:113
+msgid "просікою до вирубки й ДЗОТа на перехресті; на просіці ПТ-міни"
+msgstr "along the firebreak to the felling and the bunker at the crossroads; AT mines on the firebreak"
+
+#: scripts/map/maps/map_forest.gd:114
+msgid "Східна просіка"
+msgstr "East firebreak"
+
+#: scripts/map/maps/map_forest.gd:114
+msgid "просікою повз згорілу БМП; далі засіка й кулемет у траншеї"
+msgstr "along the firebreak past the burnt-out BMP; then an abatis and a machine gun in a trench"
+
+#: scripts/map/maps/map_forest.gd:131
+msgid "Секрет"
+msgstr "Listening post"
+
+#: scripts/map/maps/map_forest.gd:134
+msgid "Траншея-Захід"
+msgstr "Trench West"
+
+#: scripts/map/maps/map_forest.gd:137
+msgid "Траншея-Схід"
+msgstr "Trench East"
+
+#: scripts/map/maps/map_forest.gd:140
+msgid "Кулемет на просіці"
+msgstr "MG on the firebreak"
+
+#: scripts/map/maps/map_forest.gd:143
+msgid "ДЗОТ на перехресті"
+msgstr "Bunker at the crossroads"
+
+#: scripts/map/maps/map_forest.gd:146
+msgid "Лісництво"
+msgstr "Forester's house"
+
+#: scripts/map/maps/map_forest.gd:149
+msgid "Окоп на поляні"
+msgstr "Trench in the clearing"
+
+#: scripts/map/maps/map_forest.gd:152
+msgid "Сараї"
+msgstr "Sheds"
+
+#: scripts/map/maps/map_forest.gd:155
+msgid "Бліндаж на поляні"
+msgstr "Dugout in the clearing"
+
+#: scripts/map/maps/map_forest.gd:163
+msgid "знімок зроблено 5 год тому"
+msgstr "image taken 5 h ago"
+
+#: scripts/map/maps/map_forest.gd:164
+msgid "24–28 осіб"
+msgstr "24–28 men"
+
+#: scripts/map/maps/map_forest.gd:166
+msgid "Суцільний сосновий ліс: під деревами огляд 20–35 м, з дрона позиції під кронами видно погано. Техніка — лише дорогами й просіками."
+msgstr "Solid pine forest: 20–35 m sight lines under the trees, positions under the crowns are hard to see from the drone. Vehicles — only on roads and firebreaks."
+
+#: scripts/map/maps/map_forest.gd:167
+msgid "Перед траншеєю, ймовірно, секрет (2 особи) біля стежки."
+msgstr "In front of the trench there is probably a listening post (2 men) by the path."
+
+#: scripts/map/maps/map_forest.gd:168
+msgid "Траншея під деревами поперек масиву, перед нею дріт і протипіхотні міни, на кінці бліндаж."
+msgstr "A trench under the trees across the forest, wire and anti-personnel mines in front of it, a dugout at its end."
+
+#: scripts/map/maps/map_forest.gd:169
+msgid "Західна просіка: ПТ-міни, на перехресті з лісовою дорогою — ДЗОТ із кулеметом. Поруч вирубка — відкрита й, імовірно, пристріляна."
+msgstr "West firebreak: AT mines, a machine-gun bunker where it crosses the forest road. Next to it — the felling, open and probably pre-registered."
+
+#: scripts/map/maps/map_forest.gd:170
+msgid "Східна просіка закрита засікою; за нею кулеметна траншея поперек просіки."
+msgstr "The east firebreak is closed by an abatis; behind it — a machine-gun trench across the firebreak."
+
+#: scripts/map/maps/map_forest.gd:171
+msgid "Ціль — поляна з лісництвом: будинок (вогонь із вікон, можливо ПТРК), сараї з кулеметом, окоп на краю поляни, бліндаж. Резерв у бліндажах на півночі."
+msgstr "Objective — the clearing with the forester's house: the house (fire from the windows, possibly an ATGM), sheds with a machine gun, a trench at the edge of the clearing, a dugout. The reserve is in dugouts to the north."
+
+#: scripts/map/maps/map_forest.gd:172
+msgid "Район висадки обирається на знімку: центр або одна з просік."
+msgstr "Pick the deployment area on the image: the centre or one of the firebreaks."
+
+#: scripts/map/maps/map_forest.gd:175
+msgid "СЕКРЕТ?"
+msgstr "LISTENING POST?"
+
+#: scripts/map/maps/map_forest.gd:176
+msgid "ТРАНШЕЯ"
+msgstr "TRENCH"
+
+#: scripts/map/maps/map_forest.gd:177
+msgid "КУЛЕМЕТ"
+msgstr "MACHINE GUN"
+
+#: scripts/map/maps/map_forest.gd:179
+msgid "ЛІСНИЦТВО"
+msgstr "FORESTER'S HOUSE"
+
+#: scripts/map/maps/map_forest.gd:180
+msgid "РЕЗЕРВ?"
+msgstr "RESERVE?"
+
+#: scripts/map/maps/map_training.gd:11
+msgid "Навчання командира"
+msgstr "Commander's training"
+
+#: scripts/map/maps/map_training.gd:12
+msgid "Навчальний полігон"
+msgstr "Training ground"
+
+#: scripts/map/maps/map_training.gd:13
+msgid "Навчитися керувати дроном і підрозділом: рух, розвідка, підтримка, штурм, евакуація пораненого, зачистка окопу."
+msgstr "Learn to handle the drone and a unit: movement, recon, support, assault, evacuating a casualty, clearing a trench."
+
+#: scripts/map/maps/map_training.gd:14
+msgid "Невеликий полігон 220×220 м: посадка на півдні, поле з вирвами, руїни, пост противника в полі й короткий окоп біля північної посадки."
+msgstr "A small 220×220 m training ground: a tree line in the south, a cratered field, ruins, an enemy post in the field and a short trench by the northern tree line."
+
+#: scripts/map/maps/map_training.gd:78
+msgid "Пост"
+msgstr "Post"
+
+#: scripts/map/maps/map_training.gd:80
+msgid "Окоп"
+msgstr "Trench"
+
+#: scripts/map/maps/map_training.gd:84
+msgid "навчальні дані"
+msgstr "training data"
+
+#: scripts/map/maps/map_training.gd:85
+msgid "4 особи"
+msgstr "4 men"
+
+#: scripts/map/maps/map_training.gd:87
+msgid "Пост противника посеред поля: 2 особи за мішками з піском."
+msgstr "An enemy post in the middle of the field: 2 men behind sandbags."
+
+#: scripts/map/maps/map_training.gd:88
+msgid "Короткий окоп біля північної посадки: 2 особи, бліндаж."
+msgstr "A short trench by the northern tree line: 2 men, a dugout."
+
+#: scripts/map/maps/map_training.gd:89
+msgid "Противник слабо підготовлений, мінометів, FPV і РЕБ немає."
+msgstr "The enemy is poorly prepared: no mortars, FPV drones or jammers."
+
+#: scripts/map/maps/map_training.gd:92
+msgid "ПОСТ"
+msgstr "POST"
+
+#: scripts/map/maps/map_training.gd:93
+msgid "ОКОП"
+msgstr "TRENCH"
+
+#: scripts/map/maps/map_training.gd:94
+msgid "РУЇНИ"
+msgstr "RUINS"
+
+#: scripts/map/maps/map_treeline.gd:9
+msgid "Опорний пункт противника в лісосмузі"
+msgstr "An enemy strongpoint in a tree line"
+
+#: scripts/map/maps/map_treeline.gd:11
+msgid "Висунутися до лісосмуги, знищити або витіснити противника та захопити його позиції."
+msgstr "Advance to the tree line, destroy or drive out the enemy and take his positions."
+
+#: scripts/map/maps/map_treeline.gd:12
+msgid "Район 300×300 м. Відкрите поле ~70 м перед ворожою лісосмугою, посіченою обстрілами. "
+msgstr "Area 300×300 m. ~70 m of open field in front of the enemy tree line, shredded by shelling. "
+
+#: scripts/map/maps/map_treeline.gd:13
+msgid "Захід: балка з чагарником і поперечна лісосмуга — прихований підхід до флангу. "
+msgstr "West: a gully with brush and a cross tree line — a hidden approach to the flank. "
+
+#: scripts/map/maps/map_treeline.gd:14
+msgid "Схід: дорога, хутір і ще одна поперечна посадка. Перед окопами — мінні загородження з проходами."
+msgstr "East: a road, a farmstead and another cross tree line. Minefields with gaps in front of the trenches."
+
+#: scripts/map/maps/map_treeline.gd:195
+msgid "Друга лінія"
+msgstr "Second line"
+
+#: scripts/map/maps/map_treeline.gd:202
+msgid "ПТРК-Схід"
+msgstr "ATGM East"
+
+#: scripts/map/maps/map_treeline.gd:208
+msgid "Фланг-Захід"
+msgstr "Flank West"
+
+#: scripts/map/maps/map_treeline.gd:211
+msgid "Схід-Застава"
+msgstr "East outpost"
+
+#: scripts/map/maps/map_treeline.gd:216
+msgid "знімок зроблено 6 год тому"
+msgstr "image taken 6 h ago"
+
+#: scripts/map/maps/map_treeline.gd:217
+msgid "15–20 осіб"
+msgstr "15–20 men"
+
+#: scripts/map/maps/map_treeline.gd:219
+msgid "Окопи повного профілю вздовж південного краю лісосмуги."
+msgstr "Full-depth trenches along the southern edge of the tree line."
+
+#: scripts/map/maps/map_treeline.gd:220
+msgid "Ймовірна кулеметна точка (ДЗОТ) на західному фланзі."
+msgstr "A likely machine-gun position (bunker) on the western flank."
+
+#: scripts/map/maps/map_treeline.gd:221
+msgid "У центрі лісосмуги — ймовірний бліндаж (можливий резерв)."
+msgstr "A likely dugout in the middle of the tree line (possible reserve)."
+
+#: scripts/map/maps/map_treeline.gd:222
+msgid "Перед окопами — колючий дріт і мінні загородження. Ймовірний прохід у центрі (противник ходить ним сам)."
+msgstr "Barbed wire and minefields in front of the trenches. A likely gap in the centre (the enemy uses it himself)."
+
+#: scripts/map/maps/map_treeline.gd:223
+msgid "Фланги прикриті окремими окопами; західна балка та поперечні посадки дають прихований підхід."
+msgstr "The flanks are covered by separate trenches; the western gully and the cross tree lines give a hidden approach."
+
+#: scripts/map/maps/map_treeline.gd:224
+msgid "Друга лінія окопів у глибині лісосмуги, тилова траншея за нею."
+msgstr "A second line of trenches deep in the tree line, a rear trench behind it."
+
+#: scripts/map/maps/map_treeline.gd:225
+msgid "Ймовірні розрахунки ПТРК — небезпечно для техніки на відкритій місцевості."
+msgstr "Likely ATGM crews — dangerous for vehicles in the open."
+
+#: scripts/map/maps/map_treeline.gd:226
+msgid "Противник застосовує FPV-дрони по техніці та скупченнях піхоти."
+msgstr "The enemy uses FPV drones against vehicles and bunched-up infantry."
+
+#: scripts/map/maps/map_treeline.gd:227
+msgid "Працює РЕБ: низько підлетіти дроном до лісосмуги неможливо. РЕР пеленгує дрони, що довго висять у зоні РЕБ."
+msgstr "A jammer is working: the drone cannot fly low over the tree line. Enemy ELINT locates drones that hover in the jamming zone for long."
+
+#: scripts/map/maps/map_treeline.gd:230
+msgid "ДЗОТ / КУЛЕМЕТ?"
+msgstr "BUNKER / MG?"
+
+#: scripts/map/maps/map_treeline.gd:232
+msgid "ОКОП 3–5 ОС."
+msgstr "TRENCH 3–5 MEN"
+
+#: scripts/map/maps/map_treeline.gd:234
+msgid "ВОГН. ТОЧКА?"
+msgstr "FIRING POINT?"
+
+#: scripts/map/maps/map_treeline.gd:236
+msgid "2-А ЛІНІЯ"
+msgstr "2ND LINE"
+
+#: scripts/map/maps/map_urban.gd:25
+msgid "Зимовий бій за міський квартал"
+msgstr "Winter battle for a city district"
+
+#: scripts/map/maps/map_urban.gd:26
+msgid "Ліс, поля, посадка, міська забудова, зима"
+msgstr "Forest, fields, tree line, urban, winter"
+
+#: scripts/map/maps/map_urban.gd:27
+msgid "Вийти до міста, зайняти будинки переднього ряду й, ведучи бій з їхніх вікон, захопити центр кварталу — три вежі та блокпост між ними."
+msgstr "Reach the city, take the front row of buildings and, fighting from their windows, capture the centre of the district — three towers and the checkpoint between them."
+
+#: scripts/map/maps/map_urban.gd:28
+msgid "Район 560×560 м під снігом. На півдні — наш ліс, далі поля зліва й справа і посадка по центру, що веде до міста; "
+msgstr "Area 560×560 m under snow. In the south — our forest, then fields to the left and right and a tree line in the centre leading to the city; "
+
+#: scripts/map/maps/map_urban.gd:29
+msgid "поля біля міста заміновані й пристріляні. Уздовж флангів і за містом — ліс із лісовими дорогами. "
+msgstr "the fields near the city are mined and pre-registered. Forest with forest roads along the flanks and behind the city. "
+
+#: scripts/map/maps/map_urban.gd:30
+msgid "Місто: приватний сектор на околиці, передній ряд обгорілих дев'ятиповерхівок (противника в них немає — їх можна зайняти), "
+msgstr "The city: the private houses on the outskirts, a front row of burnt-out nine-storey blocks (no enemy there — you can take them), "
+
+#: scripts/map/maps/map_urban.gd:31
+msgid "за 80–90 м — рубіж противника: три вежі з блокпостом, великий темний будинок праворуч, довгий будинок ліворуч; угорі — школа."
+msgstr "80–90 m beyond — the enemy line: three towers with a checkpoint, a big dark block on the right, a long block on the left; at the top — the school."
+
+#: scripts/map/maps/map_urban.gd:181
+msgid "Посадка"
+msgstr "Tree line"
+
+#: scripts/map/maps/map_urban.gd:181
+msgid "по центру, вздовж посадки — найкоротший шлях, але через секрет і траншею"
+msgstr "in the centre, along the tree line — the shortest way, but past a listening post and a trench"
+
+#: scripts/map/maps/map_urban.gd:182
+msgid "Лівий фланг"
+msgstr "Left flank"
+
+#: scripts/map/maps/map_urban.gd:182
+msgid "лісом уздовж лівого флангу — до крайньої дев'ятиповерхівки зліва"
+msgstr "through the forest along the left flank — to the outermost nine-storey block on the left"
+
+#: scripts/map/maps/map_urban.gd:183
+msgid "Правий фланг"
+msgstr "Right flank"
+
+#: scripts/map/maps/map_urban.gd:183
+msgid "лісом уздовж правого флангу — до прибудови, під вогнем великого будинку"
+msgstr "through the forest along the right flank — to the annex, under fire from the big block"
+
+#: scripts/map/maps/map_urban.gd:201
+msgid "Секрет у посадці"
+msgstr "Post in the tree line"
+
+#: scripts/map/maps/map_urban.gd:204
+msgid "Траншея в посадці"
+msgstr "Trench in the tree line"
+
+#: scripts/map/maps/map_urban.gd:207
+msgid "Вежа-Захід"
+msgstr "Tower West"
+
+#: scripts/map/maps/map_urban.gd:210
+msgid "Вежа-Центр"
+msgstr "Tower Centre"
+
+#: scripts/map/maps/map_urban.gd:213
+msgid "Вежа-Схід"
+msgstr "Tower East"
+
+#: scripts/map/maps/map_urban.gd:216
+msgid "Блокпост"
+msgstr "Checkpoint"
+
+#: scripts/map/maps/map_urban.gd:219
+msgid "Великий будинок"
+msgstr "Big block"
+
+#: scripts/map/maps/map_urban.gd:222
+msgid "Лівий довгий будинок"
+msgstr "Long block, left"
+
+#: scripts/map/maps/map_urban.gd:230
+msgid "знімок зроблено 3 год тому"
+msgstr "image taken 3 h ago"
+
+#: scripts/map/maps/map_urban.gd:231
+msgid "23–28 осіб"
+msgstr "23–28 men"
+
+#: scripts/map/maps/map_urban.gd:233
+msgid "Від нашого лісу до міста — поля; по центру посадка. Поля біля міста під дротом і замінованими смугами, пристріляні мінометами."
+msgstr "Fields from our forest to the city; a tree line in the centre. The fields near the city are wired, mined and pre-registered by mortars."
+
+#: scripts/map/maps/map_urban.gd:234
+msgid "У посадці — секрет противника (2 особи) і траншея з кулеметом біля самого міста, поруч бліндаж."
+msgstr "In the tree line — an enemy listening post (2 men) and a trench with a machine gun right by the city, a dugout next to it."
+
+#: scripts/map/maps/map_urban.gd:235
+msgid "Передній ряд дев'ятиповерхівок і приватний сектор на околиці — противника не виявлено. Їх можна зайняти й вести бій з вікон."
+msgstr "The front row of nine-storey blocks and the private houses on the outskirts — no enemy seen. You can take them and fight from the windows."
+
+#: scripts/map/maps/map_urban.gd:236
+msgid "Рубіж противника — за 80–90 м: три вежі з блокпостом між ними (ЦІЛЬ), великий темний будинок праворуч (ймовірно ПТРК), довгий будинок ліворуч."
+msgstr "The enemy line is 80–90 m beyond: three towers with a checkpoint between them (OBJECTIVE), a big dark block on the right (probably an ATGM), a long block on the left."
+
+#: scripts/map/maps/map_urban.gd:237
+msgid "Школа з двома крилами на півночі — ймовірний резерв. Дев'ятиповерхівки за вежами, ймовірно, порожні."
+msgstr "The school with two wings in the north — a likely reserve. The nine-storey blocks behind the towers are probably empty."
+
+#: scripts/map/maps/map_urban.gd:238
+msgid "Уздовж флангів і за містом — ліс із лісовими дорогами: довший, але прихований шлях. Район висадки обирається на знімку."
+msgstr "Forest with forest roads along the flanks and behind the city: a longer but hidden way. Pick the deployment area on the image."
+
+#: scripts/map/maps/map_urban.gd:239
+msgid "Під'їзди — з південного боку будинків. «Тримати» з ПКМ по будинку — зайняти вікна, «Штурм» — зачистити."
+msgstr "Entrances are on the south side of the buildings. «Hold» with RMB on a building — take its windows, «Assault» — clear it."
+
+#: scripts/map/maps/map_urban.gd:243
+msgid "ТРАНШЕЯ, КУЛЕМЕТ"
+msgstr "TRENCH, MG"
+
+#: scripts/map/maps/map_urban.gd:244
+msgid "ВЕЖА"
+msgstr "TOWER"
+
+#: scripts/map/maps/map_urban.gd:247
+msgid "БЛОКПОСТ"
+msgstr "CHECKPOINT"
+
+#: scripts/map/maps/map_urban.gd:248
+msgid "ВЕЛИКИЙ БУДИНОК"
+msgstr "BIG BLOCK"
+
+#: scripts/map/maps/map_urban.gd:249
+msgid "ДОВГИЙ БУДИНОК"
+msgstr "LONG BLOCK"
+
+#: scripts/map/maps/map_urban.gd:250
+msgid "ШКОЛА — РЕЗЕРВ?"
+msgstr "SCHOOL — RESERVE?"
+
+#: scripts/map/maps/map_village.gd:18
+msgid "Опорний пункт у сільській забудові"
+msgstr "A strongpoint in a village"
+
+#: scripts/map/maps/map_village.gd:20
+msgid "Вибити противника з хутора: зачистити садиби південного ряду, захопити центр хутора й перехрестя."
+msgstr "Drive the enemy out of the farmstead: clear the houses of the southern row, take the centre of the farmstead and the crossroads."
+
+#: scripts/map/maps/map_village.gd:21
+msgid "Район 260×260 м. Хутір на пологому підвищенні: два ряди хат уздовж головної вулиці, подвір'я з парканами й сараями, городи. "
+msgstr "Area 260×260 m. A farmstead on a gentle rise: two rows of houses along the main street, yards with fences and sheds, gardens. "
+
+#: scripts/map/maps/map_village.gd:22
+msgid "Перед хутором ~80 м відкритого поля з вирвами. Захід: старий сад і городи — прихований підхід. Схід: неглибока балка до крайніх садиб. "
+msgstr "~80 m of open field with craters in front of the farmstead. West: an old orchard and gardens — a hidden approach. East: a shallow gully to the outermost houses. "
+
+#: scripts/map/maps/map_village.gd:23
+msgid "Дорога з півдня веде просто на перехрестя."
+msgstr "The road from the south leads straight to the crossroads."
+
+#: scripts/map/maps/map_village.gd:154
+msgid "Садиба-Захід"
+msgstr "House West"
+
+#: scripts/map/maps/map_village.gd:157
+msgid "Садиба-Центр"
+msgstr "House Centre"
+
+#: scripts/map/maps/map_village.gd:160
+msgid "Садиба-Схід"
+msgstr "House East"
+
+#: scripts/map/maps/map_village.gd:163
+msgid "Цегляна хата"
+msgstr "Brick house"
+
+#: scripts/map/maps/map_village.gd:175
+msgid "20–26 осіб"
+msgstr "20–26 men"
+
+#: scripts/map/maps/map_village.gd:177
+msgid "Противник обладнав крайні садиби південного ряду: стрільба з вікон, проломи в стінах можливі."
+msgstr "The enemy has fortified the outer houses of the southern row: fire from the windows, breaches in the walls are possible."
+
+#: scripts/map/maps/map_village.gd:178
+msgid "На південному краї — короткий окоп через дорогу й кулеметний ДЗОТ на західному фланзі; перед ними дріт."
+msgstr "On the southern edge — a short trench across the road and a machine-gun bunker on the western flank; wire in front of them."
+
+#: scripts/map/maps/map_village.gd:179
+msgid "Дорога в хутір ймовірно замінована протитанковими мінами; поле перед хутором пристріляне мінометом."
+msgstr "The road into the farmstead is probably mined with AT mines; the field in front of it is pre-registered for the mortar."
+
+#: scripts/map/maps/map_village.gd:180
+msgid "Цегляна хата на північному ряду проглядає всю вулицю й перехрестя."
+msgstr "The brick house on the northern row overlooks the whole street and the crossroads."
+
+#: scripts/map/maps/map_village.gd:181
+msgid "Розрахунок ПТРК у дворі східної садиби — техніку в полі буде уражено."
+msgstr "An ATGM crew in the yard of the eastern house — vehicles in the field will be hit."
+
+#: scripts/map/maps/map_village.gd:182
+msgid "Підходи: старий сад і городи на заході, неглибока балка на сході."
+msgstr "Approaches: the old orchard and gardens in the west, a shallow gully in the east."
+
+#: scripts/map/maps/map_village.gd:183
+msgid "Будинок займати й зачищати: «Тримати» / «Штурм» з ПКМ по будинку. Граната — у вікно чи двері, вхід через двері або пролом."
+msgstr "Take and clear buildings: «Hold» / «Assault» with RMB on a building. A grenade goes through a window or a door, entry through a door or a breach."
+
+#: scripts/map/maps/map_village.gd:188
+msgid "САДИБА"
+msgstr "HOUSE"
+
+#: scripts/map/maps/map_village.gd:191
+msgid "ЦЕГЛЯНА ХАТА"
+msgstr "BRICK HOUSE"
+
+#: scripts/mission/battlefield.gd:64
+msgid "штиль"
+msgstr "calm"
+
+#: scripts/mission/battlefield.gd:66
+msgid "%s, %.1f м/с"
+msgstr "%s, %.1f m/s"
+
+#: scripts/mission/battlefield.gd:105
+msgid "Зруйновано укриття: %s"
+msgstr "Cover destroyed: %s"
+
+#: scripts/mission/battlefield.gd:115
+msgid "укриття зруйновано, змінюємо позицію."
+msgstr "cover destroyed, changing position."
+
+#: scripts/mission/battlefield.gd:115
+msgid "укриття пошкоджено."
+msgstr "cover damaged."
+
+#: scripts/mission/battle_log.gd:35
+msgid "Висадку завершено, підрозділи на вихідних рубежах"
+msgstr "Deployment complete, units at their start lines"
+
+#: scripts/mission/battle_log.gd:53
+msgid "Перший контакт: %s (%s)"
+msgstr "First contact: %s (%s)"
+
+#: scripts/mission/battle_log.gd:75
+msgid "зачистку"
+msgstr "a clearing"
+
+#: scripts/mission/battle_log.gd:76
+msgid "%s: наказ на %s (розвідданих у районі: %d)"
+msgstr "%s: ordered to %s (known enemies in the area: %d)"
+
+#: scripts/mission/battle_log.gd:86
+msgid "Евакуйовано %d поранених"
+msgstr "%d wounded evacuated"
+
+#: scripts/mission/battle_log.gd:91
+msgid "Дрон втрачено (РЕБ)"
+msgstr "Drone lost (jamming)"
+
+#: scripts/mission/battle_log.gd:91
+msgid "Дрон втрачено (РЕБ), у критичній зоні %d с"
+msgstr "Drone lost (jamming), %d s in the critical zone"
+
+#: scripts/mission/battle_log.gd:103
+msgid "загинув"
+msgstr "killed"
+
+#: scripts/mission/battle_log.gd:103
+msgid "важко поранений"
+msgstr "seriously wounded"
+
+#: scripts/mission/battle_log.gd:120
+msgid "Противника уражено: %d"
+msgstr "Enemy hit: %d"
+
+#: scripts/mission/battle_log.gd:170
+msgid "%s о %s: штурм розпочато без розвідданих у районі цілі — за 90 с вибуло %d бійців. Спершу варто було оглянути позицію дроном."
+msgstr "%s at %s: the assault began with no known enemies around the objective — %d men down within 90 s. The position should have been scouted with the drone first."
+
+#: scripts/mission/battle_log.gd:179
+msgid "%s о %s: штурм за розвідданими, втрати %d."
+msgstr "%s at %s: assault on known positions, losses %d."
+
+#: scripts/mission/battle_log.gd:181
+msgid "%s: %d штурмових дій за розвідданими (перша о %s), втрати %d."
+msgstr "%s: %d assaults on known positions (the first at %s), losses %d."
+
+#: scripts/mission/battle_log.gd:185
+msgid "Дрон втрачено о %s після %d с у критичній зоні РЕБ — спостереження варто вести здалеку, з оптичним зумом."
+msgstr "Drone lost at %s after %d s in the critical jamming zone — observe from a distance, with the optical zoom."
+
+#: scripts/mission/battle_log.gd:187
+msgid "Дрон втрачено о %s майже одразу після входу в зону сильних перешкод — тримайте запас дистанції від відомих станцій РЕБ, стежте за індикатором зв'язку."
+msgstr "Drone lost at %s almost immediately after entering heavy interference — keep your distance from known jammers and watch the link indicator."
+
+#: scripts/mission/battle_log.gd:189
+msgid "Дрон тримався поза зоною сильних перешкод РЕБ (%d с у зоні погіршеного зв'язку)."
+msgstr "The drone stayed out of heavy jamming (%d s in the zone of degraded link)."
+
+#: scripts/mission/battle_log.gd:194
+msgid "%s ~%d с лишалось притиснутим на одному місці — допомогли б дим, мінометний вогонь або зміна позиції."
+msgstr "%s stayed pinned in one place for ~%d s — smoke, mortar fire or a change of position would have helped."
+
+#: scripts/mission/battle_log.gd:211
+msgid "Евакуацію викликали в середньому через %d с після поранення — це скорочує шанси вижити."
+msgstr "Evacuation was called on average %d s after the wound — that lowers the chance to survive."
+
+#: scripts/mission/battle_log.gd:213
+msgid "Евакуацію викликали швидко (у середньому через %d с)."
+msgstr "Evacuation was called quickly (on average after %d s)."
+
+#: scripts/mission/battle_log.gd:215
+msgid "%d поранених померли від ран, не дочекавшись евакуації."
+msgstr "%d wounded died of their wounds before evacuation."
+
+#: scripts/mission/battle_log.gd:222
+msgid "%d бійців уражено власним вогнем — перевіряйте положення своїх перед мінометним налітом."
+msgstr "%d soldiers were hit by friendly fire — check where your men are before a mortar strike."
+
+#: scripts/mission/battle_log.gd:231
+msgid "Відділення були притиснуті, а міномет / дим лишилися невикористаними (%d)."
+msgstr "Squads were pinned while the mortar / smoke stayed unused (%d)."
+
+#: scripts/mission/battle_log.gd:233
+msgid "Суттєвих помилок не виявлено."
+msgstr "No serious mistakes found."
+
+#: scripts/mission/intel_system.gd:20
+msgid "ПІДТВЕРДЖЕНО"
+msgstr "CONFIRMED"
+
+#: scripts/mission/intel_system.gd:20
+msgid "ІМОВІРНО"
+msgstr "PROBABLE"
+
+#: scripts/mission/intel_system.gd:20
+msgid "ОСТАННЯ ВІДОМА"
+msgstr "LAST KNOWN"
+
+#: scripts/mission/intel_system.gd:20
+msgid "НЕПЕРЕВІРЕНО"
+msgstr "UNVERIFIED"
+
+#: scripts/mission/intel_system.gd:20
+msgid "КОНТАКТ ВТРАЧЕНО"
+msgstr "CONTACT LOST"
+
+#: scripts/mission/intel_system.gd:20
+msgid "УРАЖЕНО"
+msgstr "HIT"
+
+#: scripts/mission/intel_system.gd:48
+msgid "невідомо"
+msgstr "unknown"
+
+#: scripts/mission/intel_system.gd:68
+msgid "постріли"
+msgstr "shots"
+
+#: scripts/mission/intel_system.gd:88
+msgid "кулемет"
+msgstr "machine gun"
+
+#: scripts/mission/intel_system.gd:92
+msgid "гранатомет"
+msgstr "grenade launcher"
+
+#: scripts/mission/intel_system.gd:93
+msgid "піхота"
+msgstr "infantry"
+
+#: scripts/mission/mission_manager.gd:62
+msgid "Початок операції. Підрозділи висуваються на вихідні рубежі."
+msgstr "The operation begins. Units are moving up to their start lines."
+
+#: scripts/mission/mission_manager.gd:115
+msgid "Колона висувається в район «%s»."
+msgstr "The column is moving to the «%s» area."
+
+#: scripts/mission/mission_manager.gd:122
+msgid "Штурмова група %d"
+msgstr "Assault Group %d"
+
+#: scripts/mission/mission_manager.gd:123
+msgid "Ш-%d"
+msgstr "A-%d"
+
+#: scripts/mission/mission_manager.gd:126
+msgid "%d-ше відділення"
+msgstr "Squad %d"
+
+#: scripts/mission/mission_manager.gd:127
+msgid "В-%d"
+msgstr "S-%d"
+
+#: scripts/mission/mission_manager.gd:212
+msgid "%s з десантом (%s) входить у район."
+msgstr "%s with troops (%s) is entering the area."
+
+#: scripts/mission/mission_manager.gd:214
+msgid "%s входить у район."
+msgstr "%s is entering the area."
+
+#: scripts/mission/mission_manager.gd:224
+msgid "%s висувається пішки."
+msgstr "%s is moving up on foot."
+
+#: scripts/mission/mission_manager.gd:255
+msgid "Висадку завершено. Підрозділи готові до виконання завдання."
+msgstr "Deployment complete. Units are ready for the task."
+
+#: scripts/mission/mission_manager.gd:302
+msgid "ЗАКРІПЛЕННЯ НА ПОЗИЦІЇ %d%%"
+msgstr "CONSOLIDATING THE POSITION %d%%"
+
+#: scripts/mission/mission_manager.gd:309
+msgid "БІЙ ЗА ПОЗИЦІЮ: противника в зоні — %d"
+msgstr "FIGHTING FOR THE POSITION: enemies in the zone — %d"
+
+#: scripts/mission/mission_manager.gd:309
+msgid "ЗАЧИЩЕННЯ"
+msgstr "CLEARING"
+
+#: scripts/mission/mission_manager.gd:444
+msgid "НЕЗАДОВІЛЬНО"
+msgstr "FAILED"
+
+#: scripts/mission/mission_manager.gd:446
+msgid "ВІДМІННО"
+msgstr "EXCELLENT"
+
+#: scripts/mission/mission_manager.gd:448
+msgid "ДОБРЕ"
+msgstr "GOOD"
+
+#: scripts/mission/mission_manager.gd:450
+msgid "ЗАДОВІЛЬНО"
+msgstr "SATISFACTORY"
+
+#: scripts/mission/mission_manager.gd:488
+msgid "Позицію захоплено"
+msgstr "Position captured"
+
+#: scripts/mission/mission_manager.gd:488
+msgid "Завдання виконано"
+msgstr "Mission accomplished"
+
+#: scripts/mission/mission_manager.gd:488
+msgid "Підрозділи втратили боєздатність"
+msgstr "Units no longer combat-capable"
+
+#: scripts/mission/mission_manager.gd:489
+msgid "Час вичерпано"
+msgstr "Time is up"
+
+#: scripts/mission/mission_manager.gd:489
+msgid "Операцію припинено"
+msgstr "Operation called off"
+
+#: scripts/mission/objectives.gd:20
+msgid "Захопити та утримати опорний пункт"
+msgstr "Capture and hold the strongpoint"
+
+#: scripts/mission/objectives.gd:21
+msgid "Знищити визначені цілі"
+msgstr "Destroy the designated targets"
+
+#: scripts/mission/objectives.gd:22
+msgid "Розвідати всі вогневі точки та станції РЕБ"
+msgstr "Find all firing points and jammers"
+
+#: scripts/mission/objectives.gd:23
+msgid "Пройти навчання командира"
+msgstr "Complete the commander's training"
+
+#: scripts/mission/objectives.gd:24
+msgid "Знищити станції РЕБ противника"
+msgstr "Destroy the enemy jammers"
+
+#: scripts/mission/objectives.gd:25
+msgid "Знищити всі ДЗОТи та бліндажі"
+msgstr "Destroy all bunkers and dugouts"
+
+#: scripts/mission/objectives.gd:26
+msgid "Не втратити бойову техніку"
+msgstr "Lose no combat vehicles"
+
+#: scripts/mission/objectives.gd:27
+msgid "Евакуювати всіх важкопоранених"
+msgstr "Evacuate all seriously wounded"
+
+#: scripts/mission/objectives.gd:28
+msgid "Взяти полонених"
+msgstr "Take prisoners"
+
+#: scripts/mission/objectives.gd:29
+msgid "Обмежити безповоротні втрати"
+msgstr "Limit irrecoverable losses"
+
+#: scripts/mission/objectives.gd:50
+msgid " (не менше %d)"
+msgstr " (at least %d)"
+
+#: scripts/mission/objectives.gd:52
+msgid " (не більше %d загиблих)"
+msgstr " (no more than %d killed)"
+
+#: scripts/mission/objectives.gd:64
+msgid "знищити цілі (%d/%d)"
+msgstr "destroy targets (%d/%d)"
+
+#: scripts/mission/objectives.gd:67
+msgid "розвідка (%d/%d)"
+msgstr "recon (%d/%d)"
+
+#: scripts/mission/objectives.gd:69
+msgid "навчання"
+msgstr "training"
+
+#: scripts/mission/objectives.gd:70
+msgid "захопити опорний пункт"
+msgstr "capture the strongpoint"
+
+#: scripts/mission/prisoners.gd:52
+msgid "Противник здається в полон!"
+msgstr "The enemy is surrendering!"
+
+#: scripts/mission/prisoners.gd:72
+msgid "%s конвоює полоненого в тил."
+msgstr "%s escorts a prisoner to the rear."
+
+#: scripts/mission/prisoners.gd:108
+msgid "Полоненого доставлено в тил."
+msgstr "Prisoner delivered to the rear."
+
+#: scripts/mission/prisoners.gd:110
+msgid "Полоненого доставлено в тил"
+msgstr "Prisoner delivered to the rear"
+
+#: scripts/mission/radio_system.gd:14
+msgid "КОНТАКТ"
+msgstr "CONTACT"
+
+#: scripts/mission/radio_system.gd:14
+msgid "ПІД ВОГНЕМ"
+msgstr "UNDER FIRE"
+
+#: scripts/mission/radio_system.gd:14
+msgid "ПРИДУШЕНІ"
+msgstr "SUPPRESSED"
+
+#: scripts/mission/radio_system.gd:14
+msgid "ВТРАТИ"
+msgstr "LOSSES"
+
+#: scripts/mission/radio_system.gd:15
+msgid "ТЕХНІКА"
+msgstr "VEHICLES"
+
+#: scripts/mission/radio_system.gd:15
+msgid "ЕВАКУАЦІЯ"
+msgstr "EVACUATION"
+
+#: scripts/mission/radio_system.gd:15
+msgid "БОЄПРИПАСИ"
+msgstr "AMMUNITION"
+
+#: scripts/mission/radio_system.gd:15
+msgid "ВІДХІД ПРОТИВНИКА"
+msgstr "ENEMY WITHDRAWAL"
+
+#: scripts/mission/radio_system.gd:16
+msgid "ЦІЛЬ УРАЖЕНО"
+msgstr "TARGET HIT"
+
+#: scripts/mission/radio_system.gd:16
+msgid "ПЕРЕГРУПУВАННЯ"
+msgstr "REGROUPING"
+
+#: scripts/mission/radio_system.gd:16
+msgid "ДРОН"
+msgstr "DRONE"
+
+#: scripts/mission/radio_system.gd:16
+msgid "ВИКОНАННЯ"
+msgstr "TASKING"
+
+#: scripts/mission/radio_system.gd:16
+msgid "ПІДТРИМКА"
+msgstr "SUPPORT"
+
+#: scripts/mission/radio_system.gd:21
+msgid "УСІ"
+msgstr "ALL"
+
+#: scripts/mission/radio_system.gd:22
+msgid "ТРИВОГИ"
+msgstr "ALERTS"
+
+#: scripts/mission/radio_system.gd:23
+msgid "КОНТАКТИ"
+msgstr "CONTACTS"
+
+#: scripts/mission/radio_system.gd:58
+msgid "%s: підозрілий рух у посадці, %s, ~%d м. Не підтверджено."
+msgstr "%s: suspicious movement in the tree line, %s, ~%d m. Unconfirmed."
+
+#: scripts/mission/radio_system.gd:59
+msgid "непевно"
+msgstr "uncertain"
+
+#: scripts/mission/radio_system.gd:84
+msgid "точно"
+msgstr "accurate"
+
+#: scripts/mission/radio_system.gd:98
+msgid "приблизно"
+msgstr "approximate"
+
+#: scripts/mission/radio_system.gd:108
+msgid "перешкоди"
+msgstr "interference"
+
+#: scripts/mission/radio_system.gd:151
+msgid "північ"
+msgstr "north"
+
+#: scripts/mission/radio_system.gd:151
+msgid "північний схід"
+msgstr "north-east"
+
+#: scripts/mission/radio_system.gd:151
+msgid "схід"
+msgstr "east"
+
+#: scripts/mission/radio_system.gd:151
+msgid "південний схід"
+msgstr "south-east"
+
+#: scripts/mission/radio_system.gd:151
+msgid "південь"
+msgstr "south"
+
+#: scripts/mission/radio_system.gd:151
+msgid "південний захід"
+msgstr "south-west"
+
+#: scripts/mission/radio_system.gd:151
+msgid "захід"
+msgstr "west"
+
+#: scripts/mission/radio_system.gd:151
+msgid "північний захід"
+msgstr "north-west"
+
+#: scripts/mission/radio_system.gd:182
+msgid " (непевно)"
+msgstr " (uncertain)"
+
+#: scripts/ui/hud.gd:68
+msgid "‖  ТАКТИЧНА ПАУЗА  ·  SPACE — ПРОДОВЖИТИ"
+msgstr "‖  TACTICAL PAUSE  ·  SPACE — RESUME"
+
+#: scripts/ui/hud.gd:123
+msgid "Тактична пауза (Space)"
+msgstr "Tactical pause (Space)"
+
+#: scripts/ui/hud.gd:124
+msgid "Швидкість гри ( [ / ] )"
+msgstr "Game speed ( [ / ] )"
+
+#: scripts/ui/hud.gd:125
+msgid "ВИЙТИ"
+msgstr "EXIT"
+
+#: scripts/ui/hud.gd:125
+msgid "Завершити місію"
+msgstr "End the mission"
+
+#: scripts/ui/hud.gd:126
+msgid "РАДІО"
+msgstr "RADIO"
+
+#: scripts/ui/hud.gd:126
+msgid "Радіожурнал: усі доповіді підрозділів (R)"
+msgstr "Radio log: every report from the units (R)"
+
+#: scripts/ui/hud.gd:127
+msgid "Налаштування: керування, клавіші, графіка, звук (F10)"
+msgstr "Settings: controls, keys, graphics, sound (F10)"
+
+#: scripts/ui/hud.gd:150
+msgid "ПІДРОЗДІЛИ  ·  Tab"
+msgstr "UNITS  ·  Tab"
+
+#: scripts/ui/hud.gd:212
+msgid "[color=#%s][b]КЕРУВАННЯ[/b][/color]   (F1 — закрити)\n\n"
+msgstr "[color=#%s][b]CONTROLS[/b][/color]   (F1 — close)\n\n"
+
+#: scripts/ui/hud.gd:213
+msgid "[color=#%s]Дрон[/color]       WASD — політ, Q/E — поворот, PgUp/PgDn — висота, колесо — зум\n"
+msgstr "[color=#%s]Drone[/color]      WASD — fly, Q/E — turn, PgUp/PgDn — altitude, wheel — zoom\n"
+
+#: scripts/ui/hud.gd:214
+msgid "           F — супровід вибраних, H — загальний огляд\n"
+msgstr "           F — follow the selection, H — overview\n"
+
+#: scripts/ui/hud.gd:215
+msgid "[color=#%s]Вибір[/color]      ЛКМ — підрозділ / техніка, рамка ЛКМ — кілька (Alt — бійці), Tab — наступний\n"
+msgstr "[color=#%s]Select[/color]     LMB — unit / vehicle, LMB box — several (Alt — soldiers), Tab — next\n"
+
+#: scripts/ui/hud.gd:216
+msgid "           Ctrl+ЛКМ або 2×клік — один боєць; ЛКМ по порожньому — зняти вибір\n"
+msgstr "           Ctrl+LMB or double-click — one soldier; LMB on empty ground — deselect\n"
+
+#: scripts/ui/hud.gd:217
+msgid "[color=#%s]Накази[/color]     ПКМ по місцевості — наказ; ПКМ із протягуванням — рубіж; ПКМ по ворогу — вогонь по цілі\n"
+msgstr "[color=#%s]Orders[/color]     RMB on the ground — order; RMB drag — a line; RMB on an enemy — fire at the target\n"
+
+#: scripts/ui/hud.gd:218
+msgid "           Піхота: 1 рух · 2 штурм · 3 тримати · 8 зачистка · N перебіжки · G подавлення · B за технікою\n"
+msgstr "           Infantry: 1 move · 2 assault · 3 hold · 8 clear · N bounding · G suppress · B follow vehicle\n"
+
+#: scripts/ui/hud.gd:219
+msgid "           Техніка: 1 рух · 2 штурм · G подавлення · V лобом / бортом / кормою; 4 відхід · 5 десант · 6 дим · 7 евакуація\n"
+msgstr "           Vehicles: 1 move · 2 assault · G suppress · V front / side / rear; 4 fall back · 5 troops · 6 smoke · 7 evacuation\n"
+
+#: scripts/ui/hud.gd:220
+msgid "           Режим наказу діє на один наказ (Shift — залишити); клавіші й камера — ⚙ / F10\n"
+msgstr "           An order mode lasts for one order (Shift — keep it); keys and camera — ⚙ / F10\n"
+
+#: scripts/ui/hud.gd:221
+msgid "[color=#%s]Підтримка[/color]  Z міномет · X FPV · C димова завіса, далі ЛКМ по цілі (ПКМ — скасувати)\n"
+msgstr "[color=#%s]Support[/color]    Z mortar · X FPV · C smoke screen, then LMB on the target (RMB — cancel)\n"
+
+#: scripts/ui/hud.gd:222
+msgid "[color=#%s]Зв'язок[/color]    R — радіожурнал (доповіді надходять із затримкою; під РЕБ — уривками)\n"
+msgstr "[color=#%s]Radio[/color]      R — radio log (reports arrive with a delay; under jamming — in fragments)\n"
+
+#: scripts/ui/hud.gd:223
+msgid "[color=#%s]Час[/color]        Space — тактична пауза, [ / ] — швидкість"
+msgstr "[color=#%s]Time[/color]       Space — tactical pause, [ / ] — speed"
+
+#: scripts/ui/hud.gd:249
+msgid "ПІХОТА  —  наказ: ПКМ по місцевості"
+msgstr "INFANTRY  —  order: RMB on the ground"
+
+#: scripts/ui/hud.gd:251
+msgid "РУХ"
+msgstr "MOVE"
+
+#: scripts/ui/hud.gd:251
+msgid "Переміщення в точку. ПКМ із протягуванням — рубіж із напрямком."
+msgstr "Move to a point. RMB drag — a line facing a direction."
+
+#: scripts/ui/hud.gd:252
+msgid "ШТУРМ"
+msgstr "ASSAULT"
+
+#: scripts/ui/hud.gd:252
+msgid "Висування перебіжками з вогневим прикриттям; по будинку — зачистка будівлі"
+msgstr "Advance in bounds under covering fire; on a building — clear it"
+
+#: scripts/ui/hud.gd:253
+msgid "ТРИМАТИ"
+msgstr "HOLD"
+
+#: scripts/ui/hud.gd:253
+msgid "Зайняти укриття в точці та вести вогонь; по будинку — зайняти будівлю"
+msgstr "Take cover at the point and fire; on a building — occupy it"
+
+#: scripts/ui/hud.gd:254
+msgid "ЗАЧИСТКА"
+msgstr "CLEAR"
+
+#: scripts/ui/hud.gd:254
+msgid "Зачистити окоп до точки або будівлю"
+msgstr "Clear a trench up to the point, or a building"
+
+#: scripts/ui/hud.gd:255
+msgid "ПЕРЕБІЖКИ"
+msgstr "BOUNDING"
+
+#: scripts/ui/hud.gd:255
+msgid "Рух перебіжками: одна підгрупа біжить ~12 м, друга прикриває вогнем, далі навпаки"
+msgstr "Move in bounds: one half runs ~12 m, the other covers it with fire, then they swap"
+
+#: scripts/ui/hud.gd:256
+msgid "ПОДАВЛ."
+msgstr "SUPPRESS"
+
+#: scripts/ui/hud.gd:256
+msgid "Вогонь на подавлення по точці ~30 с (де противник або може бути)"
+msgstr "Suppressive fire on a point for ~30 s (where the enemy is or may be)"
+
+#: scripts/ui/hud.gd:262
+msgid "ЗА ТЕХН."
+msgstr "FOLLOW"
+
+#: scripts/ui/hud.gd:262
+msgid "Рух двома колонами за машиною: техніка прикриває піхоту й тримає її крок. Виберіть відділення (і машину)"
+msgstr "Move in two files behind the vehicle: it covers the infantry and keeps their pace. Select a squad (and a vehicle)"
+
+#: scripts/ui/hud.gd:263
+msgid "ВІДХІД"
+msgstr "FALL BACK"
+
+#: scripts/ui/hud.gd:263
+msgid "Відійти до району збору"
+msgstr "Fall back to the assembly area"
+
+#: scripts/ui/hud.gd:264
+msgid "ВИСАДКА@кнопка"
+msgstr "DISMOUNT"
+
+#: scripts/ui/hud.gd:264
+msgid "Висадка / посадка десанту"
+msgstr "Dismount / mount troops"
+
+#: scripts/ui/hud.gd:265
+msgid "ДИМ"
+msgstr "SMOKE"
+
+#: scripts/ui/hud.gd:265
+msgid "Відділення ставить димову завісу ручними гранатами"
+msgstr "The squad lays a smoke screen with hand grenades"
+
+#: scripts/ui/hud.gd:266
+msgid "ЕВАКУАЦІЯ@кнопка"
+msgstr "EVAC"
+
+#: scripts/ui/hud.gd:266
+msgid "Викликати евакуацію поранених вибраного підрозділу"
+msgstr "Call evacuation for the wounded of the selected unit"
+
+#: scripts/ui/hud.gd:273
+msgid "ТЕХНІКА  —  наказ: ПКМ по місцевості"
+msgstr "VEHICLES  —  order: RMB on the ground"
+
+#: scripts/ui/hud.gd:275
+msgid "Переміщення в точку"
+msgstr "Move to a point"
+
+#: scripts/ui/hud.gd:276
+msgid "Повільне висування з вогнем на ходу, без відходу після влучання"
+msgstr "Slow advance firing on the move, no pulling back after a hit"
+
+#: scripts/ui/hud.gd:277
+msgid "Вогонь на подавлення по точці ~30 с"
+msgstr "Suppressive fire on a point for ~30 s"
+
+#: scripts/ui/hud.gd:283
+msgid "ЛОБОМ"
+msgstr "FRONT"
+
+#: scripts/ui/hud.gd:283
+msgid "Тримати лобову броню до противника (найміцніша)"
+msgstr "Keep the front armour to the enemy (the strongest)"
+
+#: scripts/ui/hud.gd:284
+msgid "БОРТОМ"
+msgstr "SIDE"
+
+#: scripts/ui/hud.gd:284
+msgid "Стати бортом до противника (напр., щоб прикрити піхоту за машиною) — борт уразливіший"
+msgstr "Turn the side to the enemy (e.g. to shield infantry behind the vehicle) — the side is weaker"
+
+#: scripts/ui/hud.gd:285
+msgid "КОРМОЮ"
+msgstr "REAR"
+
+#: scripts/ui/hud.gd:285
+msgid "Стати кормою до противника (десант виходить з кормових дверей у бік від вогню) — корма найслабша"
+msgstr "Turn the rear to the enemy (troops leave by the rear doors, away from the fire) — the rear is the weakest"
+
+#: scripts/ui/hud.gd:286
+msgid ". Ще раз — вільно."
+msgstr ". Again — free."
+
+#: scripts/ui/hud.gd:293
+msgid "ДЕСАНТ"
+msgstr "TROOPS"
+
+#: scripts/ui/hud.gd:293
+msgid "Висадити / прийняти десант"
+msgstr "Dismount / take on troops"
+
+#: scripts/ui/hud.gd:294
+msgid "Поставити димову завісу перед машиною"
+msgstr "Lay a smoke screen in front of the vehicle"
+
+#: scripts/ui/hud.gd:300
+msgid "ПІДТРИМКА  —  ЛКМ по цілі"
+msgstr "SUPPORT  —  LMB on the target"
+
+#: scripts/ui/hud.gd:302
+msgid "МІНОМЕТ"
+msgstr "MORTAR"
+
+#: scripts/ui/hud.gd:302
+msgid "Мінометний наліт по області (~12 с, розкид)"
+msgstr "Mortar strike on an area (~12 s, spread)"
+
+#: scripts/ui/hud.gd:303
+msgid "FPV-дрон по позначеній цілі"
+msgstr "FPV drone at a marked target"
+
+#: scripts/ui/hud.gd:304
+msgid "ДИМ.ЗАВ."
+msgstr "SMOKE SCR."
+
+#: scripts/ui/hud.gd:304
+msgid "Димові снаряди: закривають огляд ~45 с"
+msgstr "Smoke rounds: block the view for ~45 s"
+
+#: scripts/ui/hud.gd:346
+msgid "НАЛАШТУВАННЯ  (гра на паузі)"
+msgstr "SETTINGS  (game paused)"
+
+#: scripts/ui/hud.gd:349
+msgid "ЗАКРИТИ  ✕"
+msgstr "CLOSE  ✕"
+
+#: scripts/ui/hud.gd:407
+msgid "НЕМАЄ СИГНАЛУ"
+msgstr "NO SIGNAL"
+
+#: scripts/ui/hud.gd:410
+msgid "Зв'язок з БПЛА втрачено (РЕБ противника). Підрозділи діють за останніми наказами —\nви бачите лише радіоповідомлення."
+msgstr "Lost the link with the UAV (enemy jamming). Units keep to their last orders —\nyou only see the radio reports."
+
+#: scripts/ui/hud.gd:419
+msgid "ЗАПУСТИТИ ЗАПАСНИЙ ДРОН"
+msgstr "LAUNCH THE SPARE DRONE"
+
+#: scripts/ui/hud.gd:422
+msgid "ПРИСКОРИТИ ЧАС x4"
+msgstr "SPEED UP TIME x4"
+
+#: scripts/ui/hud.gd:425
+msgid "ЗАВЕРШИТИ МІСІЮ"
+msgstr "END THE MISSION"
+
+#: scripts/ui/hud.gd:438
+msgid "Запасний дрон у дорозі: %d с"
+msgstr "Spare drone on the way: %d s"
+
+#: scripts/ui/hud.gd:440
+msgid "Запасних дронів: %d"
+msgstr "Spare drones: %d"
+
+#: scripts/ui/hud.gd:442
+msgid "Запасних дронів немає — бій завершиться без спостереження."
+msgstr "No spare drones — the battle will end without observation."
+
+#: scripts/ui/hud.gd:444
+msgid "ЗВИЧАЙНА ШВИДКІСТЬ"
+msgstr "NORMAL SPEED"
+
+#: scripts/ui/hud.gd:505
+msgid "   вітер "
+msgstr "   wind "
+
+#: scripts/ui/hud.gd:511
+msgid "ВИС %d м · %d м/с · КУРС %03d° · x%.1f · %d м · ЗВ'ЯЗОК %s %d%%"
+msgstr "ALT %d m · %d m/s · HDG %03d° · x%.1f · %d m · LINK %s %d%%"
+
+#: scripts/ui/hud.gd:518
+msgid "⚠ РЕБ: ПОДАВЛЕННЯ СИГНАЛУ • РЕР ПЕЛЕНГУЄ ДРОН %d%%"
+msgstr "⚠ JAMMING: SIGNAL SUPPRESSED • ELINT LOCATING THE DRONE %d%%"
+
+#: scripts/ui/hud.gd:520
+msgid "⚠ РЕБ: ПОДАВЛЕННЯ СИГНАЛУ — наберіть висоту або відійдіть"
+msgstr "⚠ JAMMING: SIGNAL SUPPRESSED — climb or pull back"
+
+#: scripts/ui/hud.gd:522
+msgid "⚠ КРИТИЧНИЙ ЗВ'ЯЗОК — РИЗИК ПАДІННЯ ДРОНА! ВІДВЕДІТЬ ДРОН"
+msgstr "⚠ CRITICAL LINK — THE DRONE MAY GO DOWN! PULL THE DRONE BACK"
+
+#: scripts/ui/hud.gd:547
+msgid "ВИСАДКА"
+msgstr "DISMOUNT"
+
+#: scripts/ui/hud.gd:547
+msgid "БІЙ"
+msgstr "BATTLE"
+
+#: scripts/ui/hud.gd:551
+msgid "[center][color=#%s]%s[/color]  │  ЗАВДАННЯ: %s  │  [color=#%s]%s[/color]  │  КОНТАКТИ: [color=#%s]◆%d ◇%d ?%d[/color]"
+msgstr "[center][color=#%s]%s[/color]  │  TASK: %s  │  [color=#%s]%s[/color]  │  CONTACTS: [color=#%s]◆%d ◇%d ?%d[/color]"
+
+#: scripts/ui/hud.gd:595
+msgid "У КОЛОНІ"
+msgstr "IN COLUMN"
+
+#: scripts/ui/hud.gd:597
+msgid "+%d ПОРАН."
+msgstr "+%d WOUNDED"
+
+#: scripts/ui/hud.gd:606
+msgid "ЗНИЩЕНО"
+msgstr "DESTROYED"
+
+#: scripts/ui/hud.gd:646
+msgid "[color=#%s]Гранати[/color] %s"
+msgstr "[color=#%s]Grenades[/color] %s"
+
+#: scripts/ui/hud.gd:648
+msgid "[color=#%s]ВОГ[/color] %s"
+msgstr "[color=#%s]40mm[/color] %s"
+
+#: scripts/ui/hud.gd:649
+msgid "[color=#%s]РПГ[/color] %d"
+msgstr "[color=#%s]RPG[/color] %d"
+
+#: scripts/ui/hud.gd:650
+msgid "[color=#%s]Дим[/color] %d"
+msgstr "[color=#%s]Smoke[/color] %d"
+
+#: scripts/ui/hud.gd:682
+msgid "▲ під вогнем"
+msgstr "▲ under fire"
+
+#: scripts/ui/hud.gd:682
+msgid "▲▲ притиснутий"
+msgstr "▲▲ pinned"
+
+#: scripts/ui/hud.gd:689
+msgid "[color=#%s]ЗДОР.[/color]"
+msgstr "[color=#%s]FIT[/color]"
+
+#: scripts/ui/hud.gd:691
+msgid "[color=#%s]ПОРАН.[/color]"
+msgstr "[color=#%s]WOUNDED[/color]"
+
+#: scripts/ui/hud.gd:693
+msgid "[color=#%s]НЕДІЄЗД. %s[/color]"
+msgstr "[color=#%s]DOWN %s[/color]"
+
+#: scripts/ui/hud.gd:694
+msgid "[color=#888888]ЗАГИН.[/color]"
+msgstr "[color=#888888]KIA[/color]"
+
+#: scripts/ui/hud.gd:703
+msgid "[b]ПОРАНЕНИЙ[/b]\n%s (%s)\nСтан: %s\n"
+msgstr "[b]WOUNDED[/b]\n%s (%s)\nCondition: %s\n"
+
+#: scripts/ui/hud.gd:704
+msgid "Евакуація: %s\n"
+msgstr "Evacuation: %s\n"
+
+#: scripts/ui/hud.gd:704
+msgid "позначено"
+msgstr "marked"
+
+#: scripts/ui/hud.gd:704
+msgid "не викликано"
+msgstr "not called"
+
+#: scripts/ui/hud.gd:705
+msgid "Медична допомога: %s\n\n"
+msgstr "First aid: %s\n\n"
+
+#: scripts/ui/hud.gd:705
+msgid "надано"
+msgstr "given"
+
+#: scripts/ui/hud.gd:706
+msgid "[color=#%s]Натисніть 7 / ЕВАКУАЦІЯ, щоб викликати машину.[/color]\nДоступно машин: %d"
+msgstr "[color=#%s]Press 7 / EVACUATION to call a vehicle.[/color]\nVehicles available: %d"
+
+#: scripts/ui/hud.gd:710
+msgid "[color=#%s]Нічого не вибрано.[/color]\n\nЛКМ: підрозділ / техніка\nCtrl+ЛКМ, 2×клік: один боєць\nРамка ЛКМ (Alt: бійці)\nПКМ по місцевості: наказ\nПКМ із протягуванням: рубіж\nПКМ по ворогу: позначити ціль\nЛКМ по пораненому, 7: евакуація\nF супровід, H огляд, Space пауза"
+msgstr "[color=#%s]Nothing selected.[/color]\n\nLMB: unit / vehicle\nCtrl+LMB, double-click: one soldier\nLMB box (Alt: soldiers)\nRMB on the ground: order\nRMB drag: a line\nRMB on an enemy: mark the target\nLMB on a wounded man, 7: evacuation\nF follow, H overview, Space pause"
+
+#: scripts/ui/hud.gd:714
+msgid "утримання"
+msgstr "holding"
+
+#: scripts/ui/hud.gd:714
+msgid "посадка"
+msgstr "mounting"
+
+#: scripts/ui/hud.gd:714
+msgid "у машині"
+msgstr "in the vehicle"
+
+#: scripts/ui/hud.gd:714
+msgid "оборона"
+msgstr "defence"
+
+#: scripts/ui/hud.gd:714
+msgid "зачистка окопу"
+msgstr "clearing a trench"
+
+#: scripts/ui/hud.gd:714
+msgid "конвой"
+msgstr "escort"
+
+#: scripts/ui/hud.gd:714
+msgid "у будівлі"
+msgstr "in a building"
+
+#: scripts/ui/hud.gd:714
+msgid "зачистка будівлі"
+msgstr "clearing a building"
+
+#: scripts/ui/hud.gd:716
+msgid "[b]%s[/b]   [color=#%s]наказ: %s[/color]\n"
+msgstr "[b]%s[/b]   [color=#%s]order: %s[/color]\n"
+
+#: scripts/ui/hud.gd:719
+msgid "[color=#%s]Мораль[/color] %s   [color=#%s]Подавлення[/color] %s\n"
+msgstr "[color=#%s]Morale[/color] %s   [color=#%s]Suppression[/color] %s\n"
+
+#: scripts/ui/hud.gd:722
+msgid "У машині: %s\n"
+msgstr "In the vehicle: %s\n"
+
+#: scripts/ui/hud.gd:725
+msgid "[color=#888888]%s %-9s евакуйовано[/color]\n"
+msgstr "[color=#888888]%s %-9s evacuated[/color]\n"
+
+#: scripts/ui/hud.gd:738
+msgid "[color=#%s]⏳ Командир вибув — відділення без командування ще ~%d с[/color]\n"
+msgstr "[color=#%s]⏳ Leader down — the squad has no command for ~%d s more[/color]\n"
+
+#: scripts/ui/hud.gd:740
+msgid "[color=#%s]Командує %s[/color]\n"
+msgstr "[color=#%s]%s in command[/color]\n"
+
+#: scripts/ui/hud.gd:742
+msgid "[color=#%s]Командир вибув — керує старший[/color]\n"
+msgstr "[color=#%s]Leader down — the senior soldier is in command[/color]\n"
+
+#: scripts/ui/hud.gd:744
+msgid "\n+ ще %d підрозділ(и) у вибраному"
+msgstr "\n+ %d more unit(s) selected"
+
+#: scripts/ui/hud.gd:745
+msgid "[color=#%s]Клік по бійцю — лише він\nShift+клік — додати до вибраних[/color]"
+msgstr "[color=#%s]Click a soldier — only him\nShift+click — add to the selection[/color]"
+
+#: scripts/ui/hud.gd:748
+msgid "[b]ВИБРАНО БІЙЦІВ: %d[/b]  [color=#%s](окремо від відділення)[/color]\n"
+msgstr "[b]SOLDIERS SELECTED: %d[/b]  [color=#%s](apart from the squad)[/color]\n"
+
+#: scripts/ui/hud.gd:753
+msgid "з відділенням"
+msgstr "with the squad"
+
+#: scripts/ui/hud.gd:755
+msgid "   стан:%s%s\n"
+msgstr "   state:%s%s\n"
+
+#: scripts/ui/hud.gd:755
+msgid "  [color=#%s]пам'ять: %s[/color]"
+msgstr "  [color=#%s]memory: %s[/color]"
+
+#: scripts/ui/hud.gd:756
+msgid "\n[color=#%s]Наказ усьому відділенню поверне бійців до строю.[/color]"
+msgstr "\n[color=#%s]An order to the whole squad brings the soldiers back into the ranks.[/color]"
+
+#: scripts/ui/hud.gd:758
+msgid "справна"
+msgstr "operational"
+
+#: scripts/ui/hud.gd:758
+msgid "пошкоджена"
+msgstr "damaged"
+
+#: scripts/ui/hud.gd:758
+msgid "знерухомлена"
+msgstr "immobilised"
+
+#: scripts/ui/hud.gd:758
+msgid "знищена"
+msgstr "destroyed"
+
+#: scripts/ui/hud.gd:760
+msgid "Стан: %s   Міцність %s %d%%\n"
+msgstr "Condition: %s   Integrity %s %d%%\n"
+
+#: scripts/ui/hud.gd:761
+msgid "Десант: %d / %d\n"
+msgstr "Troops: %d / %d\n"
+
+#: scripts/ui/hud.gd:763
+msgid "Озброєння: %s (%d)\n"
+msgstr "Armament: %s (%d)\n"
+
+#: scripts/ui/hud.gd:765
+msgid "[color=#%s]Веде вогонь по цілі[/color]\n"
+msgstr "[color=#%s]Engaging a target[/color]\n"
+
+#: scripts/ui/hud.gd:767
+msgid "Приписаний підрозділ: %s"
+msgstr "Attached unit: %s"
+
+#: scripts/ui/hud.gd:814
+msgid "ПОСАДКА@десант"
+msgstr "MOUNT"
+
+#: scripts/ui/hud.gd:822
+msgid "ПКМ"
+msgstr "RMB"
+
+#: scripts/ui/hud.gd:824
+msgid "ВИБІР ЦІЛІ: ЛКМ — застосувати, ПКМ / Esc — скасувати"
+msgstr "TARGETING: LMB — apply, RMB / Esc — cancel"
+
+#: scripts/ui/hud.gd:826
+msgid "УТРИМУВАТИ"
+msgstr "HOLD"
+
+#: scripts/ui/hud.gd:826
+msgid "ЗАЧИСТКА ОКОПУ (по точці в окопі) або БУДІВЛІ (по будинку)"
+msgstr "CLEAR A TRENCH (point in a trench) or a BUILDING (on a building)"
+
+#: scripts/ui/hud.gd:827
+msgid "ПОДАВЛЕННЯ (по точці, ~30 с)"
+msgstr "SUPPRESS (on a point, ~30 s)"
+
+#: scripts/ui/hud.gd:828
+msgid "Режим наказу: %s — %s по місцевості%s"
+msgstr "Order mode: %s — %s on the ground%s"
+
+#: scripts/ui/hud.gd:829
+msgid "  (один наказ; Shift — залишити)"
+msgstr "  (one order; Shift — keep it)"
+
+#: scripts/ui/hud.gd:831
+msgid "Виберіть підрозділ: ЛКМ по бійцях або Tab   ·   F1 — керування   ·   ⚙ — налаштування"
+msgstr "Select a unit: LMB on soldiers or Tab   ·   F1 — controls   ·   ⚙ — settings"
+
+#: scripts/ui/hud.gd:914
+msgid "ОПТИЧНИЙ ЗУМ x%.1f — дрон на місці"
+msgstr "OPTICAL ZOOM x%.1f — drone holds position"
+
+#: scripts/ui/hud.gd:925
+msgid "%d м/с"
+msgstr "%d m/s"
+
+#: scripts/ui/hud.gd:928
+msgid "СУПРОВІД"
+msgstr "FOLLOW"
+
+#: scripts/ui/hud.gd:930
+msgid "АВТОПІЛОТ → ТОЧКА"
+msgstr "AUTOPILOT → POINT"
+
+#: scripts/ui/main_menu.gd:48
+msgid "■ REC  ДРОН-1 «ОКО»"
+msgstr "■ REC  DRONE-1 «EYE»"
+
+#: scripts/ui/main_menu.gd:50
+msgid "ТАКТИЧНЕ УПРАВЛІННЯ ПІДРОЗДІЛОМ"
+msgstr "TACTICAL UNIT COMMAND"
+
+#: scripts/ui/main_menu.gd:58
+msgid "НАВЧАННЯ"
+msgstr "TRAINING"
+
+#: scripts/ui/main_menu.gd:59
+msgid "КАМПАНІЯ"
+msgstr "CAMPAIGN"
+
+#: scripts/ui/main_menu.gd:60
+msgid "ВИБІР МІСІЇ"
+msgstr "SELECT A MISSION"
+
+#: scripts/ui/main_menu.gd:61
+msgid "КЕРУВАННЯ"
+msgstr "CONTROLS"
+
+#: scripts/ui/main_menu.gd:62
+msgid "НАЛАШТУВАННЯ"
+msgstr "SETTINGS"
+
+#: scripts/ui/main_menu.gd:63
+msgid "ВИХІД"
+msgstr "QUIT"
+
+#: scripts/ui/main_menu.gd:67
+msgid "Прототип • Godot 4.7 • місія: «%s»"
+msgstr "Prototype • Godot 4.7 • mission: «%s»"
+
+#: scripts/ui/main_menu.gd:110
+msgid "ВИБІР МІСІЇ — ОКРЕМИЙ БІЙ"
+msgstr "SELECT A MISSION — SINGLE BATTLE"
+
+#: scripts/ui/main_menu.gd:116
+msgid "своя карта"
+msgstr "custom map"
+
+#: scripts/ui/main_menu.gd:129
+msgid "   [У РОЗРОБЦІ]"
+msgstr "   [IN DEVELOPMENT]"
+
+#: scripts/ui/main_menu.gd:137
+msgid "\nЧас: %d хв • Бюджет: %d од. (залежить від складності)"
+msgstr "\nTime: %d min • Budget: %d pts (depends on difficulty)"
+
+#: scripts/ui/main_menu.gd:143
+msgid "РОЗПОЧАТИ МІСІЮ  ▸"
+msgstr "START THE MISSION  ▸"
+
+#: scripts/ui/main_menu.gd:160
+msgid "ПОГОДА"
+msgstr "WEATHER"
+
+#: scripts/ui/main_menu.gd:167
+msgid "ВИПАДКОВА"
+msgstr "RANDOM"
+
+#: scripts/ui/main_menu.gd:195
+msgid "Погода визначається випадково. Зараз на карті: %s %s."
+msgstr "The weather is random. On the map now: %s %s."
+
+#: scripts/ui/main_menu.gd:201
+msgid "СКЛАДНІСТЬ"
+msgstr "DIFFICULTY"
+
+#: scripts/ui/main_menu.gd:240
+msgid "КАМПАНІЯ: "
+msgstr "CAMPAIGN: "
+
+#: scripts/ui/main_menu.gd:246
+msgid "Послідовні бойові завдання одного підрозділу.\n\n• Особовий склад переходить з бою в бій: імена, досвід, звання.\n• Загиблі вибувають назавжди; евакуйовані поранені пропускають наступний бій; полишені на полі бою — зниклі безвісти.\n• Знищена техніка зникає з автопарку.\n• Результат бою дає очки постачання: засоби підтримки та поповнення новобранцями.\n• Досвід: ветерани влучніші, витриваліші й рідше гинуть від поранень, менше піддаються придушенню, швидше перезаряджаються й рухаються, краще зачищають окопи (швидше працюють на поворотах, частіше кидають гранату за ріг)."
+msgstr "A series of combat tasks for one unit.\n\n• Your men carry over from battle to battle: names, experience, ranks.\n• The killed are gone for good; evacuated wounded miss the next battle; those left on the battlefield are missing in action.\n• Destroyed vehicles leave the motor pool.\n• The battle result gives supply points: support assets and replacements.\n• Experience: veterans shoot straighter, endure more and die of wounds less often, are harder to suppress, reload and move faster, clear trenches better (quicker at corners, more often throw a grenade round the corner)."
+
+#: scripts/ui/main_menu.gd:249
+msgid "ПОЧАТИ НОВУ КАМПАНІЮ  ▸"
+msgstr "START A NEW CAMPAIGN  ▸"
+
+#: scripts/ui/main_menu.gd:261
+msgid "  [у розробці]"
+msgstr "  [in development]"
+
+#: scripts/ui/main_menu.gd:262
+msgid "[color=#%s]%s Крок %d. %s — «%s»%s[/color]\n"
+msgstr "[color=#%s]%s Step %d. %s — «%s»%s[/color]\n"
+
+#: scripts/ui/main_menu.gd:263
+msgid "\nСкладність: [color=#%s]%s[/color] (незмінна до кінця кампанії)"
+msgstr "\nDifficulty: [color=#%s]%s[/color] (fixed for the whole campaign)"
+
+#: scripts/ui/main_menu.gd:266
+msgid "\nПісля останнього бою: розвіддані [color=#%s]%s[/color], противник [color=#%s]%s[/color]"
+msgstr "\nAfter the last battle: intel [color=#%s]%s[/color], the enemy [color=#%s]%s[/color]"
+
+#: scripts/ui/main_menu.gd:273
+msgid "\n[color=#%s]У ремонті (пропустять бій): %s[/color]"
+msgstr "\n[color=#%s]Under repair (will miss the battle): %s[/color]"
+
+#: scripts/ui/main_menu.gd:274
+msgid "\nПостачання: [color=#%s]%d од.[/color]   Автопарк: БМП-2 ×%d, БМП-1 ×%d, M113 ×%d, евак. ×%d\n"
+msgstr "\nSupply: [color=#%s]%d pts[/color]   Motor pool: BMP-2 ×%d, BMP-1 ×%d, M113 ×%d, evac ×%d\n"
+
+#: scripts/ui/main_menu.gd:277
+msgid "[color=#%s]Вакантних місць: %d — перед боєм поповнимо новобранцями по %d од.[/color]\n"
+msgstr "[color=#%s]Vacancies: %d — replacements will join before the battle at %d pts each.[/color]\n"
+
+#: scripts/ui/main_menu.gd:282
+msgid "  [color=#%s]згуртованість %d%%[/color]"
+msgstr "  [color=#%s]cohesion %d%%[/color]"
+
+#: scripts/ui/main_menu.gd:283
+msgid "\n[b]%s[/b]  [color=#%s]боєздатні %d/%d[/color]%s\n"
+msgstr "\n[b]%s[/b]  [color=#%s]fit for duty %d/%d[/color]%s\n"
+
+#: scripts/ui/main_menu.gd:293
+msgid " (лікування)"
+msgstr " (in hospital)"
+
+#: scripts/ui/main_menu.gd:296
+msgid " (загинув)"
+msgstr " (killed)"
+
+#: scripts/ui/main_menu.gd:299
+msgid " (зник безвісти)"
+msgstr " (missing)"
+
+#: scripts/ui/main_menu.gd:306
+msgid "\n[color=#%s]Журнал боїв:[/color]\n"
+msgstr "\n[color=#%s]Battle log:[/color]\n"
+
+#: scripts/ui/main_menu.gd:308
+msgid "• %s — %s, оцінка %d, загиблі %d, полонені %d\n"
+msgstr "• %s — %s, score %d, killed %d, prisoners %d\n"
+
+#: scripts/ui/main_menu.gd:308
+msgid "невдача"
+msgstr "failure"
+
+#: scripts/ui/main_menu.gd:314
+msgid "НАСТУПНА МІСІЯ  ▸"
+msgstr "NEXT MISSION  ▸"
+
+#: scripts/ui/main_menu.gd:314
+msgid "КАМПАНІЮ ПРОВАЛЕНО"
+msgstr "CAMPAIGN FAILED"
+
+#: scripts/ui/main_menu.gd:314
+msgid "НАСТУПНА МІСІЯ У РОЗРОБЦІ"
+msgstr "NEXT MISSION IN DEVELOPMENT"
+
+#: scripts/ui/main_menu.gd:319
+msgid "СКИНУТИ КАМПАНІЮ"
+msgstr "RESET THE CAMPAIGN"
+
+#: scripts/ui/main_menu.gd:327
+msgid "ПІДТВЕРДИТИ СКИДАННЯ"
+msgstr "CONFIRM THE RESET"
+
+#: scripts/ui/main_menu.gd:345
+msgid "НАВЧАННЯ КОМАНДИРА"
+msgstr "COMMANDER'S TRAINING"
+
+#: scripts/ui/main_menu.gd:350
+msgid "Полігон: одне відділення, слабкий противник, без мінометів, FPV і РЕБ противника, без ліміту часу.\n\n"
+msgstr "Training ground: one squad, a weak enemy, no enemy mortars, FPV drones or jammers, no time limit.\n\n"
+
+#: scripts/ui/main_menu.gd:351
+msgid "[color=#%s]Ви навчитеся:[/color]\n"
+msgstr "[color=#%s]You will learn to:[/color]\n"
+
+#: scripts/ui/main_menu.gd:352
+msgid "  • керувати дроном: політ, поворот, оптичний зум\n"
+msgstr "  • fly the drone: flight, turning, optical zoom\n"
+
+#: scripts/ui/main_menu.gd:353
+msgid "  • вибирати підрозділ і віддавати накази на рух\n"
+msgstr "  • select a unit and give move orders\n"
+
+#: scripts/ui/main_menu.gd:354
+msgid "  • ставити гру на тактичну паузу\n"
+msgstr "  • use the tactical pause\n"
+
+#: scripts/ui/main_menu.gd:355
+msgid "  • шукати противника дроном і позначати цілі\n"
+msgstr "  • find the enemy with the drone and mark targets\n"
+
+#: scripts/ui/main_menu.gd:356
+msgid "  • викликати міномет і штурмувати позицію\n"
+msgstr "  • call the mortar and assault a position\n"
+
+#: scripts/ui/main_menu.gd:357
+msgid "  • евакуювати пораненого\n"
+msgstr "  • evacuate a casualty\n"
+
+#: scripts/ui/main_menu.gd:358
+msgid "  • зачищати окоп\n\n"
+msgstr "  • clear a trench\n\n"
+
+#: scripts/ui/main_menu.gd:359
+msgid "Кожен крок пояснює підказка вгорі екрана, кнопки, які треба натиснути, підсвічуються. "
+msgstr "Every step is explained by a hint at the top of the screen, the buttons to press are highlighted. "
+
+#: scripts/ui/main_menu.gd:360
+msgid "Займає 10–15 хвилин."
+msgstr "Takes 10–15 minutes."
+
+#: scripts/ui/main_menu.gd:363
+msgid "✓ Навчання вже пройдено — можна повторити будь-коли."
+msgstr "✓ Training completed — you can repeat it any time."
+
+#: scripts/ui/main_menu.gd:364
+msgid "ПОЧАТИ НАВЧАННЯ"
+msgstr "START TRAINING"
+
+#: scripts/ui/main_menu.gd:379
+msgid "ЛКМ по підрозділу"
+msgstr "LMB on a unit"
+
+#: scripts/ui/main_menu.gd:379
+msgid "вибрати відділення / техніку (ЛКМ по порожньому — зняти вибір)"
+msgstr "select a squad / vehicle (LMB on empty ground — deselect)"
+
+#: scripts/ui/main_menu.gd:380
+msgid "Ctrl+ЛКМ, подвійний клік"
+msgstr "Ctrl+LMB, double-click"
+
+#: scripts/ui/main_menu.gd:380
+msgid "вибрати одного бійця"
+msgstr "select one soldier"
+
+#: scripts/ui/main_menu.gd:381
+msgid "Shift+ЛКМ"
+msgstr "Shift+LMB"
+
+#: scripts/ui/main_menu.gd:381
+msgid "додати до вибору"
+msgstr "add to the selection"
+
+#: scripts/ui/main_menu.gd:382
+msgid "Рамка ЛКМ (Alt — бійці)"
+msgstr "LMB box (Alt — soldiers)"
+
+#: scripts/ui/main_menu.gd:382
+msgid "вибір кількох підрозділів / бійців"
+msgstr "select several units / soldiers"
+
+#: scripts/ui/main_menu.gd:383
+msgid "ПКМ по місцевості"
+msgstr "RMB on the ground"
+
+#: scripts/ui/main_menu.gd:383
+msgid "наказ у поточному режимі (один наказ; Shift — залишити режим)"
+msgstr "an order in the current mode (one order; Shift — keep the mode)"
+
+#: scripts/ui/main_menu.gd:384
+msgid "ПКМ із протягуванням"
+msgstr "RMB drag"
+
+#: scripts/ui/main_menu.gd:384
+msgid "розгортання на рубежі з напрямком"
+msgstr "deploy along a line facing a direction"
+
+#: scripts/ui/main_menu.gd:385
+msgid "ПКМ по противнику"
+msgstr "RMB on an enemy"
+
+#: scripts/ui/main_menu.gd:385
+msgid "позначити ціль, техніка б'є по ній"
+msgstr "mark the target, vehicles fire at it"
+
+#: scripts/ui/main_menu.gd:386
+msgid "рух / штурм / утримувати / зачистка (окопу або будівлі)"
+msgstr "move / assault / hold / clear (a trench or a building)"
+
+#: scripts/ui/main_menu.gd:387
+msgid "піхота: перебіжками / подавлення / за технікою"
+msgstr "infantry: bounding / suppress / follow vehicle"
+
+#: scripts/ui/main_menu.gd:388
+msgid "техніка: лобом → бортом → кормою до противника → вільно"
+msgstr "vehicles: front → side → rear to the enemy → free"
+
+#: scripts/ui/main_menu.gd:389
+msgid "відхід, висадка/посадка, дим, евакуація"
+msgstr "fall back, mount/dismount, smoke, evacuation"
+
+#: scripts/ui/main_menu.gd:390
+msgid "Z / X / C, далі ЛКМ"
+msgstr "Z / X / C, then LMB"
+
+#: scripts/ui/main_menu.gd:390
+msgid "міномет / FPV-дрон / димова завіса"
+msgstr "mortar / FPV drone / smoke screen"
+
+#: scripts/ui/main_menu.gd:391
+msgid "налаштування в бою (клавіші, камера)"
+msgstr "settings in battle (keys, camera)"
+
+#: scripts/ui/main_menu.gd:392
+msgid "політ дрона (з інерцією), поворот, висота"
+msgstr "fly the drone (with inertia), turn, altitude"
+
+#: scripts/ui/main_menu.gd:393
+msgid "Колесо миші"
+msgstr "Mouse wheel"
+
+#: scripts/ui/main_menu.gd:393
+msgid "оптичний зум x1–x10 — дрон НЕ рухається"
+msgstr "optical zoom x1–x10 — the drone does NOT move"
+
+#: scripts/ui/main_menu.gd:394
+msgid "Shift+колесо, СКМ"
+msgstr "Shift+wheel, MMB"
+
+#: scripts/ui/main_menu.gd:394
+msgid "висота дрона; поворот і нахил камери"
+msgstr "drone altitude; camera turn and tilt"
+
+#: scripts/ui/main_menu.gd:395
+msgid "супровід / загальний огляд / наступний підрозділ"
+msgstr "follow / overview / next unit"
+
+#: scripts/ui/main_menu.gd:396
+msgid "тактична пауза, швидкість гри"
+msgstr "tactical pause, game speed"
+
+#: scripts/ui/markers.gd:54
+msgid "ОБ'ЄКТ: ОПОРНИЙ ПУНКТ"
+msgstr "OBJECTIVE: STRONGPOINT"
+
+#: scripts/ui/markers.gd:73
+msgid " [ДЕСАНТ]"
+msgstr " [TROOPS]"
+
+#: scripts/ui/markers.gd:77
+msgid "ДОПОМОГА!"
+msgstr "HELP!"
+
+#: scripts/ui/markers.gd:101
+msgid "ВИНОСЯТЬ"
+msgstr "CARRIED OUT"
+
+#: scripts/ui/markers.gd:140
+msgid "ЦІЛЬ"
+msgstr "TARGET"
+
+#: scripts/ui/markers.gd:213
+msgid "ТМ"
+msgstr "AT"
+
+#: scripts/ui/markers.gd:222
+msgid "ПОЛОНЕНИЙ"
+msgstr "PRISONER"
+
+#: scripts/ui/markers.gd:233
+msgid "РОЗВІДДРОН"
+msgstr "RECON UAV"
+
+#: scripts/ui/markers.gd:243
+msgid "FPV %dс"
+msgstr "FPV %ds"
+
+#: scripts/ui/markers.gd:276
+msgid "FPV — ЛКМ ПО ЦІЛІ"
+msgstr "FPV — LMB ON THE TARGET"
+
+#: scripts/ui/markers.gd:308
+msgid "%d с"
+msgstr "%d s"
+
+#: scripts/ui/markers.gd:308
+msgid "%d хв"
+msgstr "%d min"
+
+#: scripts/ui/markers.gd:319
+msgid "%s тому"
+msgstr "%s ago"
+
+#: scripts/ui/markers.gd:328
+msgid "уражено"
+msgstr "hit"
+
+#: scripts/ui/markers.gd:415
+msgid "ПОДАВЛЕННЯ"
+msgstr "SUPPRESS"
+
+#: scripts/ui/markers.gd:418
+msgid " — рубіж"
+msgstr " — line"
+
+#: scripts/ui/markers.gd:420
+msgid " — зайняти будівлю"
+msgstr " — occupy the building"
+
+#: scripts/ui/markers.gd:422
+msgid "ЗАЧИСТКА БУДІВЛІ"
+msgstr "CLEAR THE BUILDING"
+
+#: scripts/ui/markers.gd:423
+msgid "  (ПКМ)"
+msgstr "  (RMB)"
+
+#: scripts/ui/minimap.gd:119
+msgid "БПЛА %dм"
+msgstr "UAV %dm"
+
+#: scripts/ui/minimap.gd:170
+msgid "Пн ▲"
+msgstr "N ▲"
+
+#: scripts/ui/radio_panel.gd:26
+msgid "РАДІОЖУРНАЛ  ·  R"
+msgstr "RADIO LOG  ·  R"
+
+#: scripts/ui/radio_panel.gd:95
+msgid "  [color=#%s]⌛ +%d с[/color]"
+msgstr "  [color=#%s]⌛ +%d s[/color]"
+
+#: scripts/ui/radio_panel.gd:98
+msgid "  [color=#%s]≈ приблизно[/color]"
+msgstr "  [color=#%s]≈ approximate[/color]"
+
+#: scripts/ui/radio_panel.gd:100
+msgid "  [color=#%s]? непевно[/color]"
+msgstr "  [color=#%s]? uncertain[/color]"
+
+#: scripts/ui/radio_panel.gd:102
+msgid "  [color=#%s]~ перешкоди[/color]"
+msgstr "  [color=#%s]~ interference[/color]"
+
+#: scripts/ui/radio_panel.gd:106
+msgid "[color=#%s]Повідомлень немає.[/color]"
+msgstr "[color=#%s]No messages.[/color]"
+
+#: scripts/ui/screens.gd:26
+msgid "■ ДРОН-1 «ОКО»  ▸  "
+msgstr "■ DRONE-1 «EYE»  ▸  "
+
+#: scripts/ui/screens.gd:76
+msgid "ДАЛІ  ▸  ПЛАНУВАННЯ СИЛ"
+msgstr "NEXT  ▸  FORCE PLANNING"
+
+#: scripts/ui/screens.gd:80
+msgid "БОЙОВЕ РОЗПОРЯДЖЕННЯ — «%s»"
+msgstr "OPERATION ORDER — «%s»"
+
+#: scripts/ui/screens.gd:82
+msgid "%s — КРОК %d: %s"
+msgstr "%s — STEP %d: %s"
+
+#: scripts/ui/screens.gd:83
+msgid "СКЛАДНІСТЬ: %s  •  РОЗВІДДАНІ: %s"
+msgstr "DIFFICULTY: %s  •  INTEL: %s"
+
+#: scripts/ui/screens.gd:92
+msgid "АЕРОФОТОЗНІМОК ПОЗИЦІЇ ПРОТИВНИКА"
+msgstr "AERIAL IMAGE OF THE ENEMY POSITION"
+
+#: scripts/ui/screens.gd:107
+msgid "[color=#%s][b]ЗАВДАННЯ[/b][/color]\n%s\n"
+msgstr "[color=#%s][b]TASK[/b][/color]\n%s\n"
+
+#: scripts/ui/screens.gd:109
+msgid "[color=#%s]Додаткові завдання (+%d до оцінки кожне):[/color]\n"
+msgstr "[color=#%s]Secondary tasks (+%d to the score each):[/color]\n"
+
+#: scripts/ui/screens.gd:114
+msgid "НАСЛІДКИ ПОПЕРЕДНЬОГО БОЮ"
+msgstr "CONSEQUENCES OF THE LAST BATTLE"
+
+#: scripts/ui/screens.gd:115
+msgid "[color=#%s][b]ПРОТИВНИК[/b][/color]\nОрієнтовна чисельність: [color=#%s]%s[/color]\n"
+msgstr "[color=#%s][b]ENEMY[/b][/color]\nEstimated strength: [color=#%s]%s[/color]\n"
+
+#: scripts/ui/screens.gd:118
+msgid "[color=#%s]Увага: дані можуть бути неповними або застарілими.[/color]\n\n"
+msgstr "[color=#%s]Note: the data may be incomplete or out of date.[/color]\n\n"
+
+#: scripts/ui/screens.gd:119
+msgid "[color=#%s][b]МІСЦЕВІСТЬ[/b][/color]\nТип: %s\n%s\n\n"
+msgstr "[color=#%s][b]TERRAIN[/b][/color]\nType: %s\n%s\n\n"
+
+#: scripts/ui/screens.gd:121
+msgid "[color=#%s][b]ПОГОДА[/b][/color]\n%s %s — %s\n\n"
+msgstr "[color=#%s][b]WEATHER[/b][/color]\n%s %s — %s\n\n"
+
+#: scripts/ui/screens.gd:123
+msgid "[color=#%s][b]УМОВИ[/b][/color]\nБез обмеження часу. Кожен крок пояснює підказка вгорі екрана; будь-який крок можна пропустити.\n\n"
+msgstr "[color=#%s][b]CONDITIONS[/b][/color]\nNo time limit. Every step is explained by a hint at the top of the screen; any step can be skipped.\n\n"
+
+#: scripts/ui/screens.gd:128
+msgid "[color=#%s][b]ВАШІ СИЛИ[/b][/color]\n%s"
+msgstr "[color=#%s][b]YOUR FORCES[/b][/color]\n%s"
+
+#: scripts/ui/screens.gd:130
+msgid "[color=#%s][b]УМОВИ[/b][/color]\nЧас на виконання: %d хв. %s: %d од.\n"
+msgstr "[color=#%s][b]CONDITIONS[/b][/color]\nTime limit: %d min. %s: %d pts.\n"
+
+#: scripts/ui/screens.gd:130
+msgid "Постачання кампанії"
+msgstr "Campaign supply"
+
+#: scripts/ui/screens.gd:130
+msgid "Бюджет ресурсів"
+msgstr "Resource budget"
+
+#: scripts/ui/screens.gd:132
+msgid "[color=#%s]Складна операція: +%d од. %s[/color]\n"
+msgstr "[color=#%s]Hard operation: +%d pts %s[/color]\n"
+
+#: scripts/ui/screens.gd:133
+msgid "на сили й підтримку"
+msgstr "for forces and support"
+
+#: scripts/ui/screens.gd:133
+msgid "постачання на цю операцію"
+msgstr "supply for this operation"
+
+#: scripts/ui/screens.gd:134
+msgid "Захоплення: очистити зону цілі від противника та закріпитися (≥2 бійці в зоні об'єкта).\n\n"
+msgstr "Capture: clear the objective zone of the enemy and dig in (≥2 soldiers in the objective zone).\n\n"
+
+#: scripts/ui/screens.gd:135
+msgid "[color=#%s][b]ДОСТУПНІ СИЛИ[/b][/color]\nПіхота, БМП-1/БМП-2/M113, евакуаційна M113, міномет, FPV-дрони, димові снаряди."
+msgstr "[color=#%s][b]AVAILABLE FORCES[/b][/color]\nInfantry, BMP-1/BMP-2/M113, evacuation M113, mortar, FPV drones, smoke rounds."
+
+#: scripts/ui/screens.gd:141
+msgid "◂ ГОЛОВНЕ МЕНЮ"
+msgstr "◂ MAIN MENU"
+
+#: scripts/ui/screens.gd:163
+msgid "▣ Район висадки: %s%s   (клацніть синю точку%s на знімку, щоб змінити)"
+msgstr "▣ Deployment area: %s%s   (click a blue point%s on the image to change it)"
+
+#: scripts/ui/screens.gd:164
+msgid " або будь-яке місце в синій рамці"
+msgstr " or any place inside the blue frame"
+
+#: scripts/ui/screens.gd:247
+msgid "Обрана точка"
+msgstr "Chosen point"
+
+#: scripts/ui/screens.gd:307
+msgid "%d м"
+msgstr "%d m"
+
+#: scripts/ui/screens.gd:308
+msgid "Пн"
+msgstr "N"
+
+#: scripts/ui/screens.gd:310
+msgid "IMG-0417  ЗНІМОК ДРОНА  "
+msgstr "IMG-0417  DRONE IMAGE  "
+
+#: scripts/ui/screens.gd:331
+msgid "ПЛАНУВАННЯ — СКЛАД ЗВЕДЕНОГО ЗАГОНУ"
+msgstr "PLANNING — TASK FORCE COMPOSITION"
+
+#: scripts/ui/screens.gd:331
+msgid "МІСІЯ «%s»"
+msgstr "MISSION «%s»"
+
+#: scripts/ui/screens.gd:341
+msgid "РОЗВІДКА"
+msgstr "INTEL"
+
+#: scripts/ui/screens.gd:348
+msgid "Противник: [color=#%s]%s[/color]\n"
+msgstr "Enemy: [color=#%s]%s[/color]\n"
+
+#: scripts/ui/screens.gd:374
+msgid "ПІДСУМОК"
+msgstr "SUMMARY"
+
+#: scripts/ui/screens.gd:379
+msgid "◂ БРИФІНГ"
+msgstr "◂ BRIEFING"
+
+#: scripts/ui/screens.gd:380
+msgid "ПОЧАТИ ВИСАДКУ  ▸"
+msgstr "START DEPLOYMENT  ▸"
+
+#: scripts/ui/screens.gd:392
+msgid "%d од."
+msgstr "%d pts"
+
+#: scripts/ui/screens.gd:394
+msgid "у підрозділі: %d"
+msgstr "in the unit: %d"
+
+#: scripts/ui/screens.gd:430
+msgid "%s      %d од.\nЗалучено:    [color=#%s]%d од.[/color]\nЗалишок:     [color=#%s]%d од.[/color]\n%s\n\n"
+msgstr "%s      %d pts\nCommitted:   [color=#%s]%d pts[/color]\nRemaining:   [color=#%s]%d pts[/color]\n%s\n\n"
+
+#: scripts/ui/screens.gd:431
+msgid "Постачання:"
+msgstr "Supply:"
+
+#: scripts/ui/screens.gd:431
+msgid "Бюджет:"
+msgstr "Budget:"
+
+#: scripts/ui/screens.gd:433
+msgid "[color=#%s]Складна операція: %s +%d од.%s[/color]\n\n"
+msgstr "[color=#%s]Hard operation: %s +%d pts%s[/color]\n\n"
+
+#: scripts/ui/screens.gd:433
+msgid "постачання"
+msgstr "supply"
+
+#: scripts/ui/screens.gd:433
+msgid "бюджет"
+msgstr "budget"
+
+#: scripts/ui/screens.gd:435
+msgid ", більше підрозділів і засобів"
+msgstr ", more units and assets"
+
+#: scripts/ui/screens.gd:437
+msgid "[color=#%s]Кампанія: свої підрозділи й техніка не коштують очок, але обмежені тим, що вціліло. Постачання витрачається на засоби підтримки.[/color]\n\n"
+msgstr "[color=#%s]Campaign: your own units and vehicles cost no points but are limited to what survived. Supply is spent on support assets.[/color]\n\n"
+
+#: scripts/ui/screens.gd:438
+msgid "Особовий склад: %d (%d підрозділ.)\n"
+msgstr "Personnel: %d (%d units)\n"
+
+#: scripts/ui/screens.gd:439
+msgid "Бойова техніка: %d, місць для десанту: %d\n"
+msgstr "Combat vehicles: %d, troop seats: %d\n"
+
+#: scripts/ui/screens.gd:440
+msgid "Евакуаційних машин: %d\n"
+msgstr "Evacuation vehicles: %d\n"
+
+#: scripts/ui/screens.gd:441
+msgid "Підтримка: міномет ×%d, FPV ×%d, дим ×%d\n\n"
+msgstr "Support: mortar ×%d, FPV ×%d, smoke ×%d\n\n"
+
+#: scripts/ui/screens.gd:445
+msgid "[color=#%s]✖ Потрібен хоча б один піхотний підрозділ.[/color]"
+msgstr "[color=#%s]✖ At least one infantry unit is needed.[/color]"
+
+#: scripts/ui/screens.gd:448
+msgid "[color=#%s]✖ Перевищено бюджет.[/color]"
+msgstr "[color=#%s]✖ Over budget.[/color]"
+
+#: scripts/ui/screens.gd:451
+msgid "[color=#%s]▲ Частина піхоти висуватиметься пішки.[/color]"
+msgstr "[color=#%s]▲ Some of the infantry will move up on foot.[/color]"
+
+#: scripts/ui/screens.gd:453
+msgid "[color=#%s]▲ Без евакуаційної машини поранених не вивезти.[/color]"
+msgstr "[color=#%s]▲ Without an evacuation vehicle the wounded cannot be taken out.[/color]"
+
+#: scripts/ui/screens.gd:455
+msgid "[color=#%s]▲ Мало засобів проти укріплень (ДЗОТ).[/color]"
+msgstr "[color=#%s]▲ Few assets against fortifications (bunkers).[/color]"
+
+#: scripts/ui/screens.gd:478
+msgid "Розвіддані: [color=#%s]%s (%d%%)[/color] — %s\n"
+msgstr "Intel: [color=#%s]%s (%d%%)[/color] — %s\n"
+
+#: scripts/ui/screens.gd:479
+msgid "Противник: [color=#%s]%s (×%.2f)[/color]"
+msgstr "Enemy: [color=#%s]%s (×%.2f)[/color]"
+
+#: scripts/ui/screens.gd:488
+msgid "[color=#%s]Подій не зафіксовано.[/color]"
+msgstr "[color=#%s]No events recorded.[/color]"
+
+#: scripts/ui/screens.gd:497
+msgid "[color=#%s][b]АНАЛІЗ РІШЕНЬ[/b] — з урахуванням того, що командир знав на момент рішення[/color]\n\n"
+msgstr "[color=#%s][b]DECISION ANALYSIS[/b] — based on what the commander knew at the time of each decision[/color]\n\n"
+
+#: scripts/ui/screens.gd:510
+msgid "ПІДСУМКИ ОПЕРАЦІЇ — «%s»"
+msgstr "OPERATION RESULTS — «%s»"
+
+#: scripts/ui/screens.gd:510
+msgid "СКЛАДНІСТЬ: %s  •  %s  •  ЧАС ОПЕРАЦІЇ %s"
+msgstr "DIFFICULTY: %s  •  %s  •  OPERATION TIME %s"
+
+#: scripts/ui/screens.gd:521
+msgid "ЗАВДАННЯ ВИКОНАНО"
+msgstr "MISSION ACCOMPLISHED"
+
+#: scripts/ui/screens.gd:521
+msgid "ЗАВДАННЯ НЕ ВИКОНАНО"
+msgstr "MISSION FAILED"
+
+#: scripts/ui/screens.gd:524
+msgid "Позицію противника захоплено та утримано."
+msgstr "The enemy position has been captured and held."
+
+#: scripts/ui/screens.gd:524
+msgid "Основне завдання виконано."
+msgstr "The main task has been accomplished."
+
+#: scripts/ui/screens.gd:524
+msgid "Підрозділи втратили боєздатність."
+msgstr "The units are no longer combat-capable."
+
+#: scripts/ui/screens.gd:525
+msgid "Час на виконання завдання вичерпано."
+msgstr "The time for the task has run out."
+
+#: scripts/ui/screens.gd:525
+msgid "Операцію припинено за рішенням командира."
+msgstr "The operation was called off by the commander."
+
+#: scripts/ui/screens.gd:534
+msgid "[color=#%s]ВИКОНАНО[/color]"
+msgstr "[color=#%s]DONE[/color]"
+
+#: scripts/ui/screens.gd:534
+msgid "[color=#%s]НЕ ВИКОНАНО[/color]"
+msgstr "[color=#%s]NOT DONE[/color]"
+
+#: scripts/ui/screens.gd:536
+msgid "Додатково: "
+msgstr "Secondary: "
+
+#: scripts/ui/screens.gd:536
+msgid "[color=#%s]ТАК (+%d)[/color]"
+msgstr "[color=#%s]YES (+%d)[/color]"
+
+#: scripts/ui/screens.gd:536
+msgid "[color=#%s]ні[/color]"
+msgstr "[color=#%s]no[/color]"
+
+#: scripts/ui/screens.gd:537
+msgid "Особовий склад (залучено)"
+msgstr "Personnel (committed)"
+
+#: scripts/ui/screens.gd:538
+msgid "Загиблі"
+msgstr "Killed"
+
+#: scripts/ui/screens.gd:539
+msgid "Поранені (усього)"
+msgstr "Wounded (total)"
+
+#: scripts/ui/screens.gd:540
+msgid "Евакуйовано"
+msgstr "Evacuated"
+
+#: scripts/ui/screens.gd:541
+msgid "Поранені, не евакуйовані"
+msgstr "Wounded, not evacuated"
+
+#: scripts/ui/screens.gd:542
+msgid "Втрати техніки"
+msgstr "Vehicle losses"
+
+#: scripts/ui/screens.gd:542
+msgid "%d з %d %s"
+msgstr "%d of %d %s"
+
+#: scripts/ui/screens.gd:543
+msgid "Противник: знищено / уражено / відійшло"
+msgstr "Enemy: killed / hit / withdrew"
+
+#: scripts/ui/screens.gd:543
+msgid "%d / %d / %d  (з %d)"
+msgstr "%d / %d / %d  (of %d)"
+
+#: scripts/ui/screens.gd:544
+msgid "Взято в полон"
+msgstr "Taken prisoner"
+
+#: scripts/ui/screens.gd:545
+msgid "Підриви на мінах"
+msgstr "Mine blasts"
+
+#: scripts/ui/screens.gd:546
+msgid "Втрачено розвід. дронів (РЕБ)"
+msgstr "Recon drones lost (jamming)"
+
+#: scripts/ui/screens.gd:548
+msgid "Використано засобів"
+msgstr "Assets used"
+
+#: scripts/ui/screens.gd:548
+msgid "міномет ×%d, FPV ×%d, дим ×%d"
+msgstr "mortar ×%d, FPV ×%d, smoke ×%d"
+
+#: scripts/ui/screens.gd:549
+msgid "Бійців впадали в паніку"
+msgstr "Soldiers who panicked"
+
+#: scripts/ui/screens.gd:550
+msgid "Витрачено набоїв / гранат"
+msgstr "Rounds / grenades spent"
+
+#: scripts/ui/screens.gd:551
+msgid "Ресурси: залучено / використано"
+msgstr "Resources: committed / used"
+
+#: scripts/ui/screens.gd:551
+msgid "%d / %d од."
+msgstr "%d / %d pts"
+
+#: scripts/ui/screens.gd:577
+msgid "━ маршрути відділень   ◇ відомі позиції противника   ? непідтверджені   ✕ загиблі   + поранені   ○ евакуація   □ втрата дрона"
+msgstr "━ squad routes   ◇ known enemy positions   ? unconfirmed   ✕ killed   + wounded   ○ evacuation   □ drone lost"
+
+#: scripts/ui/screens.gd:604
+msgid "ХРОНОЛОГІЯ"
+msgstr "TIMELINE"
+
+#: scripts/ui/screens.gd:604
+msgid "КАРТА"
+msgstr "MAP"
+
+#: scripts/ui/screens.gd:604
+msgid "АНАЛІЗ"
+msgstr "ANALYSIS"
+
+#: scripts/ui/screens.gd:621
+msgid "ЗАГАЛЬНА ОЦІНКА: %d / 100 — %s"
+msgstr "OVERALL SCORE: %d / 100 — %s"
+
+#: scripts/ui/screens.gd:627
+msgid "[color=#%s][b]НАСЛІДКИ ДЛЯ КАМПАНІЇ[/b][/color]\n"
+msgstr "[color=#%s][b]CAMPAIGN CONSEQUENCES[/b][/color]\n"
+
+#: scripts/ui/screens.gd:628
+msgid "Постачання: +%d од. (усього %d)\n"
+msgstr "Supply: +%d pts (total %d)\n"
+
+#: scripts/ui/screens.gd:630
+msgid "[color=#%s]Загинули (вибувають назавжди): %s[/color]\n"
+msgstr "[color=#%s]Killed (gone for good): %s[/color]\n"
+
+#: scripts/ui/screens.gd:632
+msgid "[color=#%s]Зникли безвісти (залишились на полі бою): %s[/color]\n"
+msgstr "[color=#%s]Missing in action (left on the battlefield): %s[/color]\n"
+
+#: scripts/ui/screens.gd:634
+msgid "[color=#%s]На лікуванні, пропустять наступний бій: %s[/color]\n"
+msgstr "[color=#%s]In hospital, will miss the next battle: %s[/color]\n"
+
+#: scripts/ui/screens.gd:636
+msgid "[color=#%s]Підвищення: %s[/color]\n"
+msgstr "[color=#%s]Promoted: %s[/color]\n"
+
+#: scripts/ui/screens.gd:638
+msgid "[color=#%s]Втрачено техніку з автопарку: %d од.[/color]\n"
+msgstr "[color=#%s]Vehicles lost from the motor pool: %d[/color]\n"
+
+#: scripts/ui/screens.gd:640
+msgid "[color=#%s]У ремонті, пропустить наступний бій: %s[/color]\n"
+msgstr "[color=#%s]Under repair, will miss the next battle: %s[/color]\n"
+
+#: scripts/ui/screens.gd:642
+msgid "[color=#%s]Повернулась з ремонту: %s[/color]\n"
+msgstr "[color=#%s]Back from repair: %s[/color]\n"
+
+#: scripts/ui/screens.gd:646
+msgid "[color=#%s]Що бій залишив у бійцях:[/color] %s\n"
+msgstr "[color=#%s]What the battle left in the soldiers:[/color] %s\n"
+
+#: scripts/ui/screens.gd:648
+msgid "ЩО ЦЕЙ БІЙ ЗАЛИШИВ НА НАСТУПНИЙ"
+msgstr "WHAT THIS BATTLE LEAVES FOR THE NEXT ONE"
+
+#: scripts/ui/screens.gd:649
+msgid "Наступний крок кампанії відкрито."
+msgstr "The next campaign step is open."
+
+#: scripts/ui/screens.gd:649
+msgid "Позицію не взято — крок кампанії доведеться повторити."
+msgstr "The position was not taken — the campaign step has to be repeated."
+
+#: scripts/ui/screens.gd:656
+msgid "ДО КАМПАНІЇ"
+msgstr "TO THE CAMPAIGN"
+
+#: scripts/ui/screens.gd:658
+msgid "ПОВТОРИТИ МІСІЮ"
+msgstr "RETRY THE MISSION"
+
+#: scripts/ui/screens.gd:659
+msgid "ЗМІНИТИ СКЛАД СИЛ"
+msgstr "CHANGE THE FORCE"
+
+#: scripts/ui/screens.gd:660
+msgid "ГОЛОВНЕ МЕНЮ"
+msgstr "MAIN MENU"
+
+#: scripts/ui/settings_panel.gd:16
+msgid "МОВА / LANGUAGE"
+msgstr "LANGUAGE"
+
+#: scripts/ui/settings_panel.gd:19
+msgid "Частина тексту зміниться після виходу в меню."
+msgstr "Some text will change after you return to the menu."
+
+#: scripts/ui/settings_panel.gd:21
+msgid "Миша: ЛКМ — вибір / рамка, ПКМ — наказ, ПКМ із протягуванням — рубіж, ПКМ по ворогу — ціль"
+msgstr "Mouse: LMB — select / box, RMB — order, RMB drag — a line, RMB on an enemy — target"
+
+#: scripts/ui/settings_panel.gd:22
+msgid "Режим наказу (штурм, зачистка…) лишається після наказу"
+msgstr "The order mode (assault, clearing…) stays after an order"
+
+#: scripts/ui/settings_panel.gd:24
+msgid "Показувати, куди піде підрозділ і де стане кожен боєць"
+msgstr "Show where a unit will go and where each soldier will stand"
+
+#: scripts/ui/settings_panel.gd:26
+msgid "Швидкість камери"
+msgstr "Camera speed"
+
+#: scripts/ui/settings_panel.gd:27
+msgid "Швидкість повороту (Q / E)"
+msgstr "Turn speed (Q / E)"
+
+#: scripts/ui/settings_panel.gd:28
+msgid "Прокрутка камери біля країв екрана"
+msgstr "Scroll the camera at the screen edges"
+
+#: scripts/ui/settings_panel.gd:31
+msgid "КЛАВІШІ (клацніть і натисніть нову; Esc — скасувати)"
+msgstr "KEYS (click, then press a new key; Esc — cancel)"
+
+#: scripts/ui/settings_panel.gd:44
+msgid "Типові клавіші"
+msgstr "Default keys"
+
+#: scripts/ui/settings_panel.gd:48
+msgid "Камера: WASD / стрілки — політ, Q / E — поворот, PgUp / PgDn — висота, колесо — зум, СКМ — нахил."
+msgstr "Camera: WASD / arrows — fly, Q / E — turn, PgUp / PgDn — altitude, wheel — zoom, MMB — tilt."
+
+#: scripts/ui/settings_panel.gd:49
+msgid "ГРАФІКА"
+msgstr "GRAPHICS"
+
+#: scripts/ui/settings_panel.gd:70
+msgid "Повноекранний режим"
+msgstr "Fullscreen"
+
+#: scripts/ui/settings_panel.gd:73
+msgid "Ефект відео з дрона (шум, віньєтка)"
+msgstr "Drone video effect (noise, vignette)"
+
+#: scripts/ui/settings_panel.gd:76
+msgid "Масштаб інтерфейсу"
+msgstr "Interface scale"
+
+#: scripts/ui/settings_panel.gd:79
+msgid "ЗВУК"
+msgstr "SOUND"
+
+#: scripts/ui/settings_panel.gd:80
+msgid "Загальна гучність"
+msgstr "Master volume"
+
+#: scripts/ui/settings_panel.gd:81
+msgid "Бойові звуки"
+msgstr "Combat sounds"
+
+#: scripts/ui/settings_panel.gd:82
+msgid "Оточення і техніка"
+msgstr "Ambience and vehicles"
+
+#: scripts/ui/settings_panel.gd:83
+msgid "Інтерфейс і радіо"
+msgstr "Interface and radio"
+
+#: scripts/ui/settings_panel.gd:84
+msgid "ПІДКАЗКИ"
+msgstr "HINTS"
+
+#: scripts/ui/settings_panel.gd:85
+msgid "Підказки навчання"
+msgstr "Training hints"
+
+#: scripts/ui/settings_panel.gd:86
+msgid "Показати всі підказки знову"
+msgstr "Show all hints again"
+
+#: scripts/ui/settings_panel.gd:119
+msgid "натисніть…"
+msgstr "press a key…"
+
+#: scripts/ui/settings_panel.gd:134
+msgid "зайнято камерою"
+msgstr "used by the camera"
+
+#: scripts/ui/training.gd:48
+msgid "Пропустити крок"
+msgstr "Skip the step"
+
+#: scripts/ui/training.gd:48
+msgid "Перейти до наступного кроку"
+msgstr "Go to the next step"
+
+#: scripts/ui/training.gd:64
+msgid "ДАЛІ  ▸"
+msgstr "NEXT  ▸"
+
+#: scripts/ui/training.gd:118
+msgid "КОМАНДИР ЧЕРЕЗ ДРОН"
+msgstr "A COMMANDER BEHIND A DRONE"
+
+#: scripts/ui/training.gd:119
+msgid "Ви бачите бій очима розвідувального дрона «ОКО» і віддаєте накази. Бійці самі шукають укриття, обирають цілі й стріляють — ваша справа вирішувати, КУДИ і ЯК діяти.\nВідділення В-1 зараз висувається на вихідний рубіж."
+msgstr "You see the battle through the eyes of the recon drone «EYE» and give orders. Your soldiers find cover, pick targets and shoot on their own — your job is to decide WHERE and HOW to act.\nSquad S-1 is now moving up to its start line."
+
+#: scripts/ui/training.gd:121
+msgid "ПОЛІТ ДРОНА"
+msgstr "FLYING THE DRONE"
+
+#: scripts/ui/training.gd:122
+msgid "Клавіші W A S D — політ дрона. Дрон має інерцію і реагує не миттєво, як справжній.\nПролетіть трохи вперед, у бік поля."
+msgstr "W A S D — fly the drone. The drone has inertia and does not react instantly, like a real one.\nFly a little forward, towards the field."
+
+#: scripts/ui/training.gd:124
+msgid "Очікую: пролетіть ~20 м"
+msgstr "Waiting: fly ~20 m"
+
+#: scripts/ui/training.gd:125
+msgid "ПОВОРОТ"
+msgstr "TURNING"
+
+#: scripts/ui/training.gd:126
+msgid "Q та E — поворот дрона, PgUp / PgDn — висота. Поверніть дрон, щоб оглянути місцевість."
+msgstr "Q and E — turn the drone, PgUp / PgDn — altitude. Turn the drone to look around."
+
+#: scripts/ui/training.gd:129
+msgid "Очікую: поверніть дрон на ~30°"
+msgstr "Waiting: turn the drone ~30°"
+
+#: scripts/ui/training.gd:130
+msgid "ОПТИЧНИЙ ЗУМ"
+msgstr "OPTICAL ZOOM"
+
+#: scripts/ui/training.gd:131
+msgid "Колесо миші — оптичний зум до x10. Сам дрон при цьому лишається на місці: так можна роздивитися противника здалеку, не підлітаючи під його РЕБ і вогонь.\nНаблизьте зображення хоча б до x3."
+msgstr "Mouse wheel — optical zoom up to x10. The drone itself stays in place: this way you can study the enemy from afar without flying into his jamming and fire.\nZoom in to at least x3."
+
+#: scripts/ui/training.gd:133
+msgid "Очікую: зум x3"
+msgstr "Waiting: zoom x3"
+
+#: scripts/ui/training.gd:134
+msgid "ВИБІР ПІДРОЗДІЛУ"
+msgstr "SELECTING A UNIT"
+
+#: scripts/ui/training.gd:135
+msgid "Клацніть лівою кнопкою по «В-1» у списку підрозділів зліва вгорі або по будь-якому бійцю на місцевості. Tab — перемикання між підрозділами."
+msgstr "Left-click «S-1» in the unit list at the top left or any soldier on the ground. Tab switches between units."
+
+#: scripts/ui/training.gd:138
+msgid "Очікую: вибране відділення В-1"
+msgstr "Waiting: squad S-1 selected"
+
+#: scripts/ui/training.gd:139
+msgid "НАКАЗ НА РУХ"
+msgstr "MOVE ORDER"
+
+#: scripts/ui/training.gd:140
+msgid "Режим «1 РУХ» уже ввімкнено. Клацніть ПРАВОЮ кнопкою по руїнах, позначених жовтим маркером «А», — відділення піде туди й займе укриття."
+msgstr "The «1 MOVE» mode is already on. RIGHT-click the ruins marked with the yellow «A» marker — the squad will go there and take cover."
+
+#: scripts/ui/training.gd:141
+msgid "А — РУЇНИ"
+msgstr "A — RUINS"
+
+#: scripts/ui/training.gd:144
+msgid "Очікую: наказ на рух до точки А"
+msgstr "Waiting: move order to point A"
+
+#: scripts/ui/training.gd:145
+msgid "ТАКТИЧНА ПАУЗА"
+msgstr "TACTICAL PAUSE"
+
+#: scripts/ui/training.gd:146
+msgid "Пробіл — тактична пауза. На паузі можна спокійно оглянути поле бою й віддати накази, час стоїть.\nПоставте гру на паузу, а потім зніміть її."
+msgstr "Space — tactical pause. While paused you can calmly look over the battlefield and give orders, time stands still.\nPause the game, then resume it."
+
+#: scripts/ui/training.gd:150
+msgid "Очікую: пауза → продовжити"
+msgstr "Waiting: pause → resume"
+
+#: scripts/ui/training.gd:151
+msgid "ВИХІД НА РУБІЖ"
+msgstr "MOVING UP"
+
+#: scripts/ui/training.gd:152
+msgid "Поки відділення рухається, час можна прискорити кнопкою «x1 / x2». Дочекайтеся, поки бійці зайдуть у руїни."
+msgstr "While the squad is moving you can speed up time with the «x1 / x2» button. Wait until the soldiers get into the ruins."
+
+#: scripts/ui/training.gd:156
+msgid "Очікую: відділення в точці А"
+msgstr "Waiting: squad at point A"
+
+#: scripts/ui/training.gd:158
+msgid "Попереду, приблизно за 80 м на північ, має бути пост противника. Пролетіть дроном уперед і роздивіться поле в зум. Противник замаскований — поки він не стріляє, його важко помітити.\nВиявлений противник позначається червоним ромбом."
+msgstr "About 80 m ahead to the north there should be an enemy post. Fly the drone forward and study the field with the zoom. The enemy is camouflaged — until he fires he is hard to spot.\nA spotted enemy is marked with a red diamond."
+
+#: scripts/ui/training.gd:160
+msgid "Очікую: противника виявлено"
+msgstr "Waiting: enemy spotted"
+
+#: scripts/ui/training.gd:161
+msgid "ПОЗНАЧИТИ ЦІЛЬ"
+msgstr "MARK THE TARGET"
+
+#: scripts/ui/training.gd:162
+msgid "Клацніть ПРАВОЮ кнопкою по червоному ромбу — ціль буде позначено. Бійці й техніка обстрілюють позначені цілі в першу чергу, а FPV-дрон б'є саме по них."
+msgstr "RIGHT-click the red diamond — the target will be marked. Soldiers and vehicles fire at marked targets first, and the FPV drone strikes exactly them."
+
+#: scripts/ui/training.gd:164
+msgid "Очікую: ціль позначено (ПКМ)"
+msgstr "Waiting: target marked (RMB)"
+
+#: scripts/ui/training.gd:166
+msgid "Натисніть Z (або кнопку «МІНОМЕТ» внизу), потім клацніть лівою кнопкою по посту. Міни летять ~12 с і лягають з розкидом — не викликайте вогонь ближче 40 м до своїх."
+msgstr "Press Z (or the «MORTAR» button below), then left-click the post. The rounds take ~12 s and land with a spread — do not call fire closer than 40 m to your own men."
+
+#: scripts/ui/training.gd:169
+msgid "Очікую: виклик міномета"
+msgstr "Waiting: mortar called"
+
+#: scripts/ui/training.gd:171
+msgid "Виберіть В-1, увімкніть «2 ШТУРМ» і клацніть ПРАВОЮ кнопкою по посту. Відділення піде перебіжками: одна група прикриває вогнем, друга біжить. Перед відкритим полем можна поставити дим — «6 ДИМ» або C."
+msgstr "Select S-1, switch on «2 ASSAULT» and RIGHT-click the post. The squad will advance in bounds: one group covers with fire, the other runs. You can lay smoke before the open field — «6 SMOKE» or C."
+
+#: scripts/ui/training.gd:175
+msgid "Очікую: пост знищено або взято"
+msgstr "Waiting: the post destroyed or taken"
+
+#: scripts/ui/training.gd:176
+msgid "ПОРАНЕНИЙ"
+msgstr "WOUNDED"
+
+#: scripts/ui/training.gd:177
+msgid "Снайпер! Один із бійців важко поранений (помаранчевий хрест і таймер). Медик відділення надасть першу допомогу, але врятує лише евакуація.\nКлацніть по пораненому, потім натисніть 7 або «ЕВАКУАЦІЯ»."
+msgstr "Sniper! One of the soldiers is seriously wounded (an orange cross and a timer). The squad medic will give first aid, but only evacuation will save him.\nClick the wounded man, then press 7 or «EVACUATION»."
+
+#: scripts/ui/training.gd:181
+msgid "Очікую: евакуацію викликано"
+msgstr "Waiting: evacuation called"
+
+#: scripts/ui/training.gd:182
+msgid "ЗАЧИСТКА ОКОПУ"
+msgstr "CLEARING A TRENCH"
+
+#: scripts/ui/training.gd:183
+msgid "Біля північної посадки — короткий окоп з двома бійцями противника. Виберіть В-1, увімкніть «8 ЗАЧИСТКА» і клацніть ПРАВОЮ кнопкою по окопу. Бійці зайдуть у траншею колоною і за кожен ріг спершу кинуть гранату."
+msgstr "By the northern tree line — a short trench with two enemy soldiers. Select S-1, switch on «8 CLEAR» and RIGHT-click the trench. The soldiers will enter the trench in a file and throw a grenade round every corner first."
+
+#: scripts/ui/training.gd:187
+msgid "Очікую: окоп зачищено"
+msgstr "Waiting: trench cleared"
+
+#: scripts/ui/training.gd:188
+msgid "НАВЧАННЯ ЗАВЕРШЕНО"
+msgstr "TRAINING COMPLETE"
+
+#: scripts/ui/training.gd:189
+msgid "Ви вмієте все головне. Ще кілька порад:\n• Ctrl+клік або подвійний клік — окремий боєць; рамка мишею — кілька.\n• F — дрон супроводжує вибраних, H — загальний огляд.\n• У бою бережіть людей: у кампанії загиблі вибувають назавжди, а поранені пропускають наступний бій."
+msgstr "You know all the essentials. A few more tips:\n• Ctrl+click or double-click — a single soldier; a mouse box — several.\n• F — the drone follows the selection, H — overview.\n• Look after your men: in the campaign the killed are gone for good and the wounded miss the next battle."
+
+#: scripts/ui/training.gd:208
+msgid "снайпер"
+msgstr "sniper"
+
+#: scripts/ui/training.gd:209
+msgid "Снайпер! %s важко поранений."
+msgstr "Sniper! %s is seriously wounded."
+
+#: scripts/ui/training.gd:224
+msgid "НАВЧАННЯ • КРОК %d / %d"
+msgstr "TRAINING • STEP %d / %d"
+
+#: scripts/ui/training.gd:232
+msgid "ЗАВЕРШИТИ НАВЧАННЯ"
+msgstr "END THE TRAINING"
+
+#: scripts/ui/training.gd:279
+msgid "✓ Виконано"
+msgstr "✓ Done"
+
+#: scripts/ui/tutorial.gd:8
+msgid "КАМЕРА ДРОНА"
+msgstr "DRONE CAMERA"
+
+#: scripts/ui/tutorial.gd:8
+msgid "WASD — політ дрона (з інерцією), Q/E — поворот, PgUp/PgDn — висота.\nКолесо миші — оптичний зум: дрон лишається на місці. F — супровід вибраного, H — огляд."
+msgstr "WASD — fly the drone (with inertia), Q/E — turn, PgUp/PgDn — altitude.\nMouse wheel — optical zoom: the drone stays in place. F — follow the selection, H — overview."
+
+#: scripts/ui/tutorial.gd:9
+msgid "НАКАЗИ"
+msgstr "ORDERS"
+
+#: scripts/ui/tutorial.gd:9
+msgid "ПКМ по місцевості — наказ вибраному. Режими: 1 рух, 2 штурм, 3 утримувати, 8 зачистка окопу.\nCtrl+ЛКМ або подвійний клік — окремий боєць. Бійці самі обирають укриття й ціль."
+msgstr "RMB on the ground — an order to the selection. Modes: 1 move, 2 assault, 3 hold, 8 clear a trench.\nCtrl+LMB or double-click — a single soldier. Soldiers pick cover and targets on their own."
+
+#: scripts/ui/tutorial.gd:10
+msgid "ПРОТИВНИКА ВИЯВЛЕНО"
+msgstr "ENEMY SPOTTED"
+
+#: scripts/ui/tutorial.gd:10
+msgid "Червоні ромби — противник, якого бачить дрон або бійці. ПКМ по ньому — позначити ціль:\nпозначені цілі обстрілюються в першу чергу і доступні для FPV-дрона."
+msgstr "Red diamonds — the enemy seen by the drone or your soldiers. RMB on one — mark it as a target:\nmarked targets are engaged first and can be struck by an FPV drone."
+
+#: scripts/ui/tutorial.gd:11
+msgid "ШТУРМ ПЕРЕБІЖКАМИ"
+msgstr "ASSAULT IN BOUNDS"
+
+#: scripts/ui/tutorial.gd:11
+msgid "Під час наказу «Штурм» відділення ділиться навпіл: одна група прикриває вогнем, друга перебігає.\nПід щільним вогнем краще спершу подавити противника."
+msgstr "On an «Assault» order the squad splits in two: one group covers with fire, the other runs forward.\nUnder heavy fire it is better to suppress the enemy first."
+
+#: scripts/ui/tutorial.gd:12
+msgid "ПІД ВОГНЕМ (⚠)"
+msgstr "UNDER FIRE (⚠)"
+
+#: scripts/ui/tutorial.gd:12
+msgid "Придушені бійці лягають і майже не стріляють, мораль падає. Допоможе дим (6 / C),\nміномет (Z) або обхід через укриття — лісосмуги, балку, вирви."
+msgstr "Suppressed soldiers go prone and hardly shoot, morale drops. Smoke (6 / C) helps,\nso does the mortar (Z) or a detour through cover — tree lines, a gully, craters."
+
+#: scripts/ui/tutorial.gd:13
+msgid "Z — міномет: заявка ~12 с, великий розкид. X — FPV-дрон: точний, але його можуть збити або заглушити.\nC — димова завіса. Засоби купуються в плануванні."
+msgstr "Z — mortar: ~12 s request, wide spread. X — FPV drone: accurate, but it can be shot down or jammed.\nC — smoke screen. Assets are bought during planning."
+
+#: scripts/ui/tutorial.gd:14
+msgid "РЕБ ПРОТИВНИКА"
+msgstr "ENEMY JAMMING"
+
+#: scripts/ui/tutorial.gd:14
+msgid "Що ближче і нижче дрон до позиції, то гірший зв'язок: шум у відео, а при критичному рівні дрон може впасти.\nЗум не впливає на зв'язок — спостерігайте здалеку з наближенням."
+msgstr "The closer and lower the drone is to a position, the worse the link: noise in the video, and at a critical level the drone may go down.\nZoom does not affect the link — observe from afar, zoomed in."
+
+#: scripts/ui/tutorial.gd:15
+msgid "ДРОН ВТРАЧЕНО"
+msgstr "DRONE LOST"
+
+#: scripts/ui/tutorial.gd:15
+msgid "Бій триває за останніми наказами — ви чуєте лише радіо. Якщо у плануванні було взято запасний дрон,\nзапустіть його кнопкою на екрані: він прилетить приблизно за 90 с."
+msgstr "The battle goes on with the last orders — you only hear the radio. If you took a spare drone in planning,\nlaunch it with the on-screen button: it arrives in about 90 s."
+
+#: scripts/ui/tutorial.gd:16
+msgid "ВАЖКЕ ПОРАНЕННЯ"
+msgstr "SERIOUS WOUND"
+
+#: scripts/ui/tutorial.gd:16
+msgid "Помаранчевий хрест — боєць не може рухатися, біля нього таймер до смерті від ран.\nЛКМ по пораненому і 7 — виклик евакуації. Медик відділення надасть першу допомогу, якщо безпечно."
+msgstr "An orange cross — the soldier cannot move, a timer next to him counts down to death from wounds.\nLMB on the wounded and 7 — call evacuation. The squad medic gives first aid if it is safe."
+
+#: scripts/ui/tutorial.gd:17
+msgid "БІЙ В ОКОПІ"
+msgstr "TRENCH FIGHTING"
+
+#: scripts/ui/tutorial.gd:17
+msgid "Режим 8 «Зачистка»: ПКМ по точці в окопі — бійці йдуть траншеєю колоною,\nза поворот спершу кидають гранату або прострілюють кут."
+msgstr "Mode 8 «Clear»: RMB on a point in a trench — the soldiers move along the trench in a file,\nthrowing a grenade or firing round each corner first."
+
+#: scripts/ui/tutorial.gd:18
+msgid "МІННЕ ПОЛЕ"
+msgstr "MINEFIELD"
+
+#: scripts/ui/tutorial.gd:18
+msgid "Виявлені міни позначено червоними хрестиками; маршрути їх оминають.\nПротивник залишає проходи для себе — шукайте їх дроном."
+msgstr "Detected mines are marked with red crosses; routes avoid them.\nThe enemy leaves gaps for himself — look for them with the drone."
+
+#: scripts/ui/tutorial.gd:19
+msgid "Оточений противник зі зламаною мораллю здається. Боєць конвоює його в тил —\nце підвищує оцінку операції."
+msgstr "A surrounded enemy with broken morale surrenders. A soldier escorts him to the rear —\nthis raises the operation score."
+
+#: scripts/ui/tutorial.gd:48
+msgid "Вимкнути підказки"
+msgstr "Turn off hints"
+
+#: scripts/ui/tutorial.gd:49
+msgid "Зрозуміло"
+msgstr "Got it"
+
+#: scripts/ui/tutorial.gd:141
+msgid "ПІДКАЗКА • "
+msgstr "HINT • "
+
+#: scripts/ui/ui_manager.gd:214
+msgid "ПОЧАТИ НАВЧАННЯ  ▸"
+msgstr "START TRAINING  ▸"
+
+#: scripts/ui/ui_manager.gd:279
+msgid "ЗАВАНТАЖЕННЯ МІСЦЕВОСТІ…"
+msgstr "LOADING THE TERRAIN…"
+
+#: scripts/units/soldier.gd:808
+msgid "%s: немає набоїв!"
+msgstr "%s: out of ammunition!"
+
+#: scripts/units/soldier.gd:838
+msgid "немає набоїв"
+msgstr "out of ammo"
+
+#: scripts/units/soldier.gd:840
+msgid "перезаряджає"
+msgstr "reloading"
+
+#: scripts/units/soldier.gd:847
+msgid "береже набої"
+msgstr "saving ammo"
+
+#: scripts/units/soldier.gd:849
+msgid "немає видимості"
+msgstr "no line of sight"
+
+#: scripts/units/soldier.gd:850
+msgid "ціль не виявлена"
+msgstr "no target spotted"
+
+#: scripts/units/soldier.gd:852
+msgid "далеко"
+msgstr "out of range"
+
+#: scripts/units/soldier.gd:854
+msgid "рухається"
+msgstr "moving"
+
+#: scripts/units/soldier.gd:914
+msgid "надано першу допомогу (%s)"
+msgstr "first aid given (%s)"
+
+#: scripts/units/squad.gd:82
+msgid "%s прийняв командування."
+msgstr "%s has taken command."
+
+#: scripts/units/squad.gd:125
+msgid "противник далі по траншеї — продовжуємо зачистку."
+msgstr "enemy further along the trench — continuing to clear."
+
+#: scripts/units/squad.gd:133
+msgid "ділянку окопу зачищено, закріплюємось."
+msgstr "trench section cleared, digging in."
+
+#: scripts/units/squad.gd:135
+msgid "%s: ділянку окопу зачищено"
+msgstr "%s: trench section cleared"
+
+#: scripts/units/squad.gd:201
+msgid "контакт! Переходимо до перебіжок."
+msgstr "contact! Switching to bounds."
+
+#: scripts/units/squad.gd:208
+msgid "піхота з кулеметом"
+msgstr "infantry with a machine gun"
+
+#: scripts/units/squad.gd:213
+msgid "контакт! %s, %s, %s, %d м. Переходимо до перебіжок."
+msgstr "contact! %s, %s, %s, %d m. Switching to bounds."
+
+#: scripts/units/squad.gd:394
+msgid "командира немає — наказ виконаємо, щойно хтось прийме командування."
+msgstr "no leader — we will carry out the order as soon as someone takes command."
+
+#: scripts/units/squad.gd:403
+msgid "рухаємось перебіжками: одна група біжить, друга прикриває."
+msgstr "moving in bounds: one group runs, the other covers."
+
+#: scripts/units/squad.gd:491
+msgid "рухаємось двома колонами за %s."
+msgstr "moving in two files behind %s."
+
+#: scripts/units/squad.gd:525
+msgid "ведемо вогонь на подавлення."
+msgstr "laying down suppressive fire."
+
+#: scripts/units/squad.gd:553
+msgid "займаємо будівлю, %d бійців біля вікон."
+msgstr "occupying the building, %d men at the windows."
+
+#: scripts/units/squad.gd:586
+msgid "зачищаємо будівлю, збираємось біля %s."
+msgstr "clearing the building, gathering at the %s."
+
+#: scripts/units/squad.gd:586
+msgid "пролому"
+msgstr "breach"
+
+#: scripts/units/squad.gd:586
+msgid "входу"
+msgstr "entrance"
+
+#: scripts/units/squad.gd:618
+msgid "граната в будівлю!"
+msgstr "grenade into the building!"
+
+#: scripts/units/squad.gd:638
+msgid "будівлю зачищено."
+msgstr "building cleared."
+
+#: scripts/units/squad.gd:640
+msgid "%s: будівлю зачищено"
+msgstr "%s: building cleared"
+
+#: scripts/units/squad.gd:755
+msgid "притиснуті вогнем, перебіжку зупинено"
+msgstr "pinned by fire, bounding stopped"
+
+#: scripts/units/squad.gd:790
+msgid "втрати понад половину складу — штурм припинено, закріплюємось. Потрібне рішення командира."
+msgstr "losses over half the unit — assault stopped, digging in. Need the commander's decision."
+
+#: scripts/units/squad.gd:792
+msgid "%s: штурм припинено через втрати"
+msgstr "%s: assault stopped due to losses"
+
+#: scripts/units/squad.gd:799
+msgid "продовжуємо штурм."
+msgstr "continuing the assault."
+
+#: scripts/units/squad.gd:812
+msgid "втрати (%d) — зупиняємось, займаємо укриття."
+msgstr "losses (%d) — stopping, taking cover."
+
+#: scripts/units/squad.gd:840
+msgid "%s: контакт, перебіжки"
+msgstr "%s: contact, bounding"
+
+#: scripts/units/squad.gd:881
+msgid "противник ще на позиції — продовжуємо."
+msgstr "the enemy is still in the position — carrying on."
+
+#: scripts/units/squad.gd:892
+msgid "рубіж зайнято."
+msgstr "line taken."
+
+#: scripts/units/squad.gd:937
+msgid "посадку завершено."
+msgstr "mounted up."
+
+#: scripts/units/squad.gd:981
+msgid "втрати понад 50%! Боєздатність знижена."
+msgstr "losses over 50%! Combat effectiveness reduced."
+
+#: scripts/units/squad.gd:989
+msgid "маємо втрати (%d), запитуємо підтримку!"
+msgstr "taking casualties (%d), requesting support!"
+
+#: scripts/units/squad.gd:991
+msgid "під щільним вогнем, запитуємо підтримку!"
+msgstr "under heavy fire, requesting support!"
+
+#: scripts/vehicles/vehicle.gd:49
+msgid "вільно"
+msgstr "free"
+
+#: scripts/vehicles/vehicle.gd:49
+msgid "лобом"
+msgstr "front"
+
+#: scripts/vehicles/vehicle.gd:49
+msgid "бортом"
+msgstr "side"
+
+#: scripts/vehicles/vehicle.gd:49
+msgid "кормою"
+msgstr "rear"
+
+#: scripts/vehicles/vehicle.gd:124
+msgid "знерухомлена — рух неможливий"
+msgstr "immobilised — cannot move"
+
+#: scripts/vehicles/vehicle.gd:136
+msgid "немає маршруту"
+msgstr "no route"
+
+#: scripts/vehicles/vehicle.gd:137
+msgid "маршрут недоступний — наказ не виконано"
+msgstr "route unavailable — order not carried out"
+
+#: scripts/vehicles/vehicle.gd:139
+msgid "обхід / найближча точка"
+msgstr "detour / nearest point"
+
+#: scripts/vehicles/vehicle.gd:140
+msgid "прямого маршруту немає (окопи / вирви / перешкоди) — під'їжджаю якнайближче"
+msgstr "no direct route (trenches / craters / obstacles) — getting as close as I can"
+
+#: scripts/vehicles/vehicle.gd:151
+msgid "висуваюсь у штурм, веду вогонь з ходу."
+msgstr "moving up to assault, firing on the move."
+
+#: scripts/vehicles/vehicle.gd:158
+msgid "подавлення"
+msgstr "suppression"
+
+#: scripts/vehicles/vehicle.gd:160
+msgid "веду вогонь на подавлення."
+msgstr "laying down suppressive fire."
+
+#: scripts/vehicles/vehicle.gd:166
+msgid "тримаю %s до противника."
+msgstr "keeping my %s to the enemy."
+
+#: scripts/vehicles/vehicle.gd:246
+msgid "висадка"
+msgstr "dismount"
+
+#: scripts/vehicles/vehicle.gd:318
+msgid "застрягла — шукаю інший маршрут"
+msgstr "stuck — looking for another route"
+
+#: scripts/vehicles/vehicle.gd:321
+msgid "застрягла"
+msgstr "stuck"
+
+#: scripts/vehicles/vehicle.gd:322
+msgid "не можу проїхати — зупинилась, потрібен новий наказ"
+msgstr "cannot get through — stopped, need a new order"
+
+#: scripts/vehicles/vehicle.gd:478
+msgid "десант висаджено."
+msgstr "troops dismounted."
+
+#: scripts/vehicles/vehicle.gd:671
+msgid "знерухомлено!"
+msgstr "immobilised!"
+
+#: scripts/vehicles/vehicle.gd:677
+msgid "пошкоджено (%d%%)"
+msgstr "damaged (%d%%)"
+
+#: scripts/vehicles/vehicle.gd:679
+msgid "влучання ПТ-засобу в лоб — броня витримала!"
+msgstr "AT hit on the front — the armour held!"
+
+#: scripts/vehicles/vehicle.gd:679
+msgid "влучання ПТ-засобу в борт!"
+msgstr "AT hit on the side!"
+
+#: scripts/vehicles/vehicle.gd:680
+msgid "влучання ПТ-засобу в корму!"
+msgstr "AT hit on the rear!"
+
+#: scripts/vehicles/vehicle.gd:680
+msgid "влучання ПТ-засобу!"
+msgstr "AT hit!"
+
+#: scripts/vehicles/vehicle.gd:687
+msgid "відхід з-під вогню"
+msgstr "pulling back out of fire"
+
+#: scripts/vehicles/vehicle.gd:689
+msgid "під вогнем ПТ-засобів, відходжу в укриття"
+msgstr "under AT fire, pulling back to cover"
+
+#: scripts/vehicles/vehicle.gd:699
+msgid "%s знищено"
+msgstr "%s destroyed"
+
+#: scripts/vehicles/vehicle.gd:736
+msgid "%s ЗНИЩЕНО!"
+msgstr "%s DESTROYED!"
+
+#: maps/field.tscn
+msgid "Район 300×300 м. Голий пагорб висотою ~9 м з окопами по передньому схилу; перед ним ~120 м відкритого поля з вирвами. Схід: балка — неглибока прихована від висоти лощина до насосної станції. Захід: покинутий окоп, рядок тюків і далека посадка. Посеред поля — передова застава противника. Дорога веде просто на висоту."
+msgstr "Area 300×300 m. A bare hill ~9 m high with trenches on the forward slope; in front of it ~120 m of open field with craters. East: a gully — a shallow hollow hidden from the height that runs to the pumping station. West: an abandoned trench, a row of bales and a distant tree line. In the middle of the field — the enemy's forward outpost. The road leads straight to the height."
+
+#: maps/forest.tscn
+msgid "Район 420×420 м, суцільний сосновий ліс: огляд під деревами 20–35 м, дрон бачить крізь крони погано. Техніка — лише лісовими дорогами й двома просіками (захід і схід). На заході — вирубка: відкрите місце, ймовірно пристріляне. На півночі — поляна з лісництвом, сараями й бліндажами."
+msgstr "Area 420×420 m, solid pine forest: 20–35 m sight lines under the trees, the drone sees poorly through the crowns. Vehicles — only along the forest roads and the two firebreaks (west and east). In the west — a felling: open ground, probably pre-registered. In the north — a clearing with the forester's house, sheds and dugouts."
+
+#: maps/treeline.tscn
+msgid "Район 300×300 м. Відкрите поле ~70 м перед ворожою лісосмугою, посіченою обстрілами. Захід: балка з чагарником і поперечна лісосмуга — прихований підхід до флангу. Схід: дорога, хутір і ще одна поперечна посадка. Перед окопами — мінні загородження з проходами."
+msgstr "Area 300×300 m. ~70 m of open field in front of the enemy tree line, shredded by shelling. West: a gully with brush and a cross tree line — a hidden approach to the flank. East: a road, a farmstead and another cross tree line. Minefields with gaps in front of the trenches."
+
+#: maps/urban.tscn
+msgid "Район 560×560 м під снігом. На півдні — наш ліс, далі поля зліва й справа і посадка по центру, що веде до міста; поля біля міста заміновані й пристріляні. Уздовж флангів і за містом — ліс із лісовими дорогами. Місто: приватний сектор на околиці, передній ряд обгорілих дев'ятиповерхівок (противника в них немає — їх можна зайняти), за 80–90 м — рубіж противника: три вежі з блокпостом, великий темний будинок праворуч, довгий будинок ліворуч; угорі — школа."
+msgstr "Area 560×560 m under snow. In the south — our forest, then fields to the left and right and a tree line in the centre leading to the city; the fields near the city are mined and pre-registered. Forest with forest roads along the flanks and behind the city. The city: the private houses on the outskirts, a front row of burnt-out nine-storey blocks (no enemy there — you can take them), 80–90 m beyond — the enemy line: three towers with a checkpoint, a big dark block on the right, a long block on the left; at the top — the school."
+
+#: maps/village.tscn
+msgid "Район 260×260 м. Хутір на пологому підвищенні: два ряди хат уздовж головної вулиці, подвір'я з парканами й сараями, городи. Перед хутором ~80 м відкритого поля з вирвами. Захід: старий сад і городи — прихований підхід. Схід: неглибока балка до крайніх садиб. Дорога з півдня веде просто на перехрестя."
+msgstr "Area 260×260 m. A farmstead on a gentle rise: two rows of houses along the main street, yards with fences and sheds, gardens. ~80 m of open field with craters in front of the farmstead. West: an old orchard and gardens — a hidden approach. East: a shallow gully to the outermost houses. The road from the south leads straight to the crossroads."
+

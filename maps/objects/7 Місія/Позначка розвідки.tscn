@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_intelmarker.gd" id="1_67go3"]
+
+[node name="Позначка розвідки" type="Node3D" unique_id=3767199]
+script = ExtResource("1_67go3")

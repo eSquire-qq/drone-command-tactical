@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_bush.gd" id="1_txg7c"]
+
+[node name="Великий кущ" type="Node3D" unique_id=1401712994]
+script = ExtResource("1_txg7c")
+radius = 3.5

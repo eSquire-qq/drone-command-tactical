@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_apartment.gd" id="1_q6dkh"]
+
+[node name="Багатоповерхівка 9 пов_" type="Node3D" unique_id=1365412457]
+script = ExtResource("1_q6dkh")
+size = Vector2(30, 12)
+floors = 9
+ruin = 0.2

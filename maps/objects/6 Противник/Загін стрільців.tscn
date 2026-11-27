@@ -1,0 +1,34 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_enemyteam.gd" id="1_p1ncn"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_slot.gd" id="2_50j00"]
+
+[node name="Загін стрільців" type="Node3D" unique_id=351300540]
+script = ExtResource("1_p1ncn")
+roles = PackedStringArray("leader", "rifleman", "rifleman", "mg")
+
+[node name="Позиція" type="Node3D" parent="." unique_id=1146074964]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+script = ExtResource("2_50j00")
+
+[node name="Позиція2" type="Node3D" parent="." unique_id=1895759005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+script = ExtResource("2_50j00")
+
+[node name="Позиція3" type="Node3D" parent="." unique_id=671086509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+script = ExtResource("2_50j00")
+
+[node name="Позиція4" type="Node3D" parent="." unique_id=670429241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+script = ExtResource("2_50j00")
+
+[node name="Запасна" type="Node3D" parent="." unique_id=1728866864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1)
+script = ExtResource("2_50j00")
+kind = "alt"
+
+[node name="Відхід" type="Node3D" parent="." unique_id=198230116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+script = ExtResource("2_50j00")
+kind = "fallback"

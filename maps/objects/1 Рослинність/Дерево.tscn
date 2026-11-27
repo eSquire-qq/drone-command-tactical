@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="1_6bx66"]
+
+[node name="Дерево" type="Node3D" unique_id=916766653]
+script = ExtResource("1_6bx66")
+size = Vector2(4, 4)
+density = 1.0
+dead = 0.0

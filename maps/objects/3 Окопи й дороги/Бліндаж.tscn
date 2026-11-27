@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_dugout.gd" id="1_gcgsi"]
+
+[node name="Бліндаж" type="Node3D" unique_id=1434937122]
+script = ExtResource("1_gcgsi")

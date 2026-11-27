@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_ew.gd" id="1_xn0n6"]
+
+[node name="Станція РЕБ" type="Node3D" unique_id=2099663590]
+script = ExtResource("1_xn0n6")

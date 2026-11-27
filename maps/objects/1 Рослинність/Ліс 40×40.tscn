@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="1_go27e"]
+
+[node name="Ліс 40×40" type="Node3D" unique_id=681082751]
+script = ExtResource("1_go27e")
+size = Vector2(40, 40)
+density = 0.9
+dead = 0.15

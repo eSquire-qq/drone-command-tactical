@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_bunker.gd" id="1_1wpk3"]
+
+[node name="ДЗОТ" type="Node3D" unique_id=1176450452]
+script = ExtResource("1_1wpk3")

@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_shed.gd" id="1_xxo0x"]
+
+[node name="Сарай" type="Node3D" unique_id=30432884]
+script = ExtResource("1_xxo0x")

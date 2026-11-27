@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="1_7yyp8"]
+
+[node name="Сухе дерево" type="Node3D" unique_id=1999938556]
+script = ExtResource("1_7yyp8")
+size = Vector2(4, 4)
+density = 1.0
+dead = 1.0

@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="1_h1chf"]
+
+[node name="Посадка 60 м" type="Node3D" unique_id=137874729]
+script = ExtResource("1_h1chf")
+size = Vector2(60, 10)

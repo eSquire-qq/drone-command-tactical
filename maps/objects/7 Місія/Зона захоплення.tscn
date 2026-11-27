@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_area.gd" id="1_g6wvy"]
+
+[node name="Зона захоплення" type="Node3D" unique_id=2100322695]
+script = ExtResource("1_g6wvy")
+kind = "capture"
+size = Vector2(60, 40)

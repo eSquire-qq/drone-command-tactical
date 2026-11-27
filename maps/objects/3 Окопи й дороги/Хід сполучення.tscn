@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_trench.gd" id="1_23p8i"]
+
+[sub_resource type="Curve3D" id="Curve3D_27pcw"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -15),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Хід сполучення" type="Path3D" unique_id=1743045964]
+curve = SubResource("Curve3D_27pcw")
+script = ExtResource("1_23p8i")
+style = "meander"
+bay = 3.0
+amp = 0.5

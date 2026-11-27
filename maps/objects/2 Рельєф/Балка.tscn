@@ -1,0 +1,17 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_ridge.gd" id="1_uj6km"]
+
+[sub_resource type="Curve3D" id="Curve3D_phpg4"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -30, 0, 0, 0, 0, 0, 0, 6, 0, -60),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="Балка" type="Path3D" unique_id=1198854129]
+curve = SubResource("Curve3D_phpg4")
+script = ExtResource("1_uj6km")
+width = 7.0
+height = -2.5

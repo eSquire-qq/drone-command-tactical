@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_apartment.gd" id="1_jbm3m"]
+
+[node name="Багатоповерхівка 4 пов_" type="Node3D" unique_id=940701984]
+script = ExtResource("1_jbm3m")

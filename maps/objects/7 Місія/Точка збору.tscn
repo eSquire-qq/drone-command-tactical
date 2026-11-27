@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_marker.gd" id="1_qf73x"]
+
+[node name="Точка збору" type="Node3D" unique_id=434099599]
+script = ExtResource("1_qf73x")
+kind = "rally_point"

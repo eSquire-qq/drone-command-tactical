@@ -1,0 +1,7 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_area.gd" id="1_yo40c"]
+
+[node name="Ціль" type="Node3D" unique_id=169329995]
+script = ExtResource("1_yo40c")
+size = Vector2(40, 16)

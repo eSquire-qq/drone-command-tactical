@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_area.gd" id="1_k6kfu"]
+
+[node name="Пристріляна зона" type="Node3D" unique_id=1259494388]
+script = ExtResource("1_k6kfu")
+kind = "mortar_zone"
+size = Vector2(80, 50)

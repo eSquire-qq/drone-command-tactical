@@ -1,0 +1,9 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_treeline.gd" id="1_ue2k4"]
+
+[node name="Гай" type="Node3D" unique_id=1673567130]
+script = ExtResource("1_ue2k4")
+size = Vector2(14, 12)
+density = 0.7
+dead = 0.3

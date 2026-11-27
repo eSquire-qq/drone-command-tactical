@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_blocks.gd" id="1_msbgq"]
+
+[sub_resource type="Curve3D" id="Curve3D_0jnbp"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -5, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Барикада" type="Path3D" unique_id=405415252]
+curve = SubResource("Curve3D_0jnbp")
+script = ExtResource("1_msbgq")
+kind = "barricade"

@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_enemyteam.gd" id="1_1oe66"]
+[ext_resource type="Script" path="res://scripts/map/editor/nodes/map_slot.gd" id="2_v6gun"]
+
+[node name="Розрахунок ПТРК" type="Node3D" unique_id=248025399]
+script = ExtResource("1_1oe66")
+team_name = "ПТРК"
+roles = PackedStringArray("atgm", "rifleman")
+
+[node name="Позиція" type="Node3D" parent="." unique_id=1267252162]
+script = ExtResource("2_v6gun")
+
+[node name="Позиція2" type="Node3D" parent="." unique_id=836952880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0.5)
+script = ExtResource("2_v6gun")
+
+[node name="Запасна" type="Node3D" parent="." unique_id=1434856414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 2)
+script = ExtResource("2_v6gun")
+kind = "alt"
+
+[node name="Відхід" type="Node3D" parent="." unique_id=123637380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+script = ExtResource("2_v6gun")
+kind = "fallback"
