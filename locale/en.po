@@ -99,39 +99,39 @@ msgstr "The enemy is counterattacking in the trenches!"
 msgid "Контратака противника в окопах"
 msgstr "Enemy counterattack in the trenches"
 
-#: scripts/ai/enemy_ai.gd:571
+#: scripts/ai/enemy_ai.gd:574
 msgid "Противник підтягує підкріплення!"
 msgstr "The enemy is bringing up reinforcements!"
 
-#: scripts/ai/enemy_ai.gd:573
+#: scripts/ai/enemy_ai.gd:576
 msgid "Противник підтягує підкріплення"
 msgstr "The enemy is bringing up reinforcements"
 
-#: scripts/ai/enemy_ai.gd:581
+#: scripts/ai/enemy_ai.gd:584
 msgid "Підкріплення %d"
 msgstr "Reinforcements %d"
 
-#: scripts/ai/enemy_ai.gd:582
+#: scripts/ai/enemy_ai.gd:585
 msgid "підкріплення"
 msgstr "reinforcements"
 
-#: scripts/ai/enemy_ai.gd:627
+#: scripts/ai/enemy_ai.gd:630
 msgid "Ворожа %s"
 msgstr "Enemy %s"
 
-#: scripts/ai/enemy_ai.gd:696
+#: scripts/ai/enemy_ai.gd:701
 msgid "піхоту"
 msgstr "the infantry"
 
-#: scripts/ai/enemy_ai.gd:697
+#: scripts/ai/enemy_ai.gd:702
 msgid "УВАГА! Ворожий FPV-дрон заходить на %s!"
 msgstr "WARNING! Enemy FPV drone inbound on %s!"
 
-#: scripts/ai/enemy_ai.gd:734
+#: scripts/ai/enemy_ai.gd:739
 msgid "РЕР противника запеленгувала канал нашого дрона! Очікуйте вогневе ураження."
 msgstr "Enemy ELINT has located our drone's channel! Expect incoming fire."
 
-#: scripts/ai/enemy_ai.gd:810
+#: scripts/ai/enemy_ai.gd:815
 msgid "Увага! Вхідний мінометний вогонь противника!"
 msgstr "Warning! Incoming enemy mortar fire!"
 
@@ -1047,295 +1047,295 @@ msgstr "EASY"
 msgid "Противник слабше стріляє й повільніше помічає, менше мін і FPV; у кожній групі противника на бійця менше; поранені довше тримаються; бюджет +250."
 msgstr "The enemy shoots worse and spots slower, fewer mines and FPV drones; one man fewer in every enemy group; the wounded last longer; budget +250."
 
-#: scripts/core/game.gd:38
+#: scripts/core/game.gd:39
 msgid "НОРМАЛЬНА"
 msgstr "NORMAL"
 
-#: scripts/core/game.gd:38
+#: scripts/core/game.gd:39
 msgid "Збалансований бій: грамотний план із розвідкою, обходом і підтримкою дає перемогу, атака «в лоб» дорого коштує."
 msgstr "A balanced fight: a sound plan with recon, flanking and support wins, a frontal attack costs dearly."
 
-#: scripts/core/game.gd:41
+#: scripts/core/game.gd:43
 msgid "ВАЖКА"
 msgstr "HARD"
 
-#: scripts/core/game.gd:41
+#: scripts/core/game.gd:43
 msgid "Досвідчений противник: влучніший, пильніший, стійкіший; більше мінометних мін і FPV; поранені швидше гинуть; бюджет −150."
 msgstr "Experienced enemy: more accurate, more alert, steadier; more mortar rounds and FPV drones; the wounded die sooner; budget −150."
 
-#: scripts/core/game.gd:51
+#: scripts/core/game.gd:54
 msgid "НИЗЬКА"
 msgstr "LOW"
 
-#: scripts/core/game.gd:51
+#: scripts/core/game.gd:54
 msgid "Для слабких ПК та вбудованої графіки: рендер 75% з FSR, без SSAO і світіння, прості тіні, трава лише поблизу."
 msgstr "For weak PCs and integrated graphics: 75% render scale with FSR, no SSAO or glow, simple shadows, grass only nearby."
 
-#: scripts/core/game.gd:54
+#: scripts/core/game.gd:57
 msgid "СЕРЕДНЯ"
 msgstr "MEDIUM"
 
-#: scripts/core/game.gd:54
+#: scripts/core/game.gd:57
 msgid "Баланс: без SSAO, 2 каскади тіней, згладжування FXAA."
 msgstr "Balanced: no SSAO, 2 shadow cascades, FXAA."
 
-#: scripts/core/game.gd:57
+#: scripts/core/game.gd:60
 msgid "ВИСОКА"
 msgstr "HIGH"
 
-#: scripts/core/game.gd:57
+#: scripts/core/game.gd:60
 msgid "Повна якість: SSAO, 4 каскади м'яких тіней, MSAA 2x."
 msgstr "Full quality: SSAO, 4 cascades of soft shadows, MSAA 2x."
 
-#: scripts/core/game.gd:72
+#: scripts/core/game.gd:75
 msgid "ЯСНО"
 msgstr "CLEAR"
 
-#: scripts/core/game.gd:73
+#: scripts/core/game.gd:76
 msgid "Далека видимість, точний вогонь. Противник теж бачить усе поле."
 msgstr "Long sight lines, accurate fire. The enemy sees the whole field too."
 
-#: scripts/core/game.gd:76
+#: scripts/core/game.gd:79
 msgid "ХМАРНО"
 msgstr "OVERCAST"
 
-#: scripts/core/game.gd:77
+#: scripts/core/game.gd:80
 msgid "Тьмяне світло, видимість трохи гірша, дим тримається довше."
 msgstr "Dim light, slightly worse visibility, smoke lingers longer."
 
-#: scripts/core/game.gd:80
+#: scripts/core/game.gd:83
 msgid "ДОЩ"
 msgstr "RAIN"
 
-#: scripts/core/game.gd:81
+#: scripts/core/game.gd:84
 msgid "Видимість і виявлення нижчі, бруд сповільнює піхоту й техніку поза дорогами, дим швидко прибиває, FPV частіше промахуються."
 msgstr "Lower visibility and spotting, mud slows infantry and vehicles off the roads, rain knocks smoke down fast, FPV drones miss more often."
 
-#: scripts/core/game.gd:84
+#: scripts/core/game.gd:87
 msgid "ТУМАН"
 msgstr "FOG"
 
-#: scripts/core/game.gd:85
+#: scripts/core/game.gd:88
 msgid "Видно лише на кілька десятків метрів: можна непомітно підійти впритул, але й противник з'являється раптово. Далекий вогонь і FPV майже марні, дрон бачить погано."
 msgstr "You see only a few dozen metres: you can close in unseen, but the enemy appears suddenly too. Long-range fire and FPV drones are nearly useless, the drone sees poorly."
 
-#: scripts/core/game.gd:88
+#: scripts/core/game.gd:91
 msgid "СИЛЬНИЙ ВІТЕР"
 msgstr "STRONG WIND"
 
-#: scripts/core/game.gd:89
+#: scripts/core/game.gd:92
 msgid "Дрон сильно гойдає, мінометні міни розкидає ширше, дим зносить за лічені секунди, FPV ненадійні."
 msgstr "The drone sways hard, mortar rounds scatter wider, smoke is blown away in seconds, FPV drones are unreliable."
 
-#: scripts/core/game.gd:97
+#: scripts/core/game.gd:100
 msgid "ПІХОТА"
 msgstr "INFANTRY"
 
-#: scripts/core/game.gd:97
+#: scripts/core/game.gd:100
 msgid "БОЙОВА ТЕХНІКА"
 msgstr "COMBAT VEHICLES"
 
-#: scripts/core/game.gd:97
+#: scripts/core/game.gd:100
 msgid "МЕДИЧНА ЕВАКУАЦІЯ"
 msgstr "MEDICAL EVACUATION"
 
-#: scripts/core/game.gd:97
+#: scripts/core/game.gd:100
 msgid "ЗАСОБИ ПІДТРИМКИ"
 msgstr "SUPPORT ASSETS"
 
-#: scripts/core/game.gd:124
+#: scripts/core/game.gd:127
 msgid "ПОЛІГОН"
 msgstr "TRAINING GROUND"
 
-#: scripts/core/game.gd:124
+#: scripts/core/game.gd:127
 msgid "Навчання"
 msgstr "Training"
 
-#: scripts/core/game.gd:125
+#: scripts/core/game.gd:128
 msgid "Покрокове навчання: дрон, накази, підтримка, штурм, евакуація, зачистка окопу."
 msgstr "Step-by-step training: the drone, orders, support, assault, evacuation, trench clearing."
 
-#: scripts/core/game.gd:126
+#: scripts/core/game.gd:129
 msgid "ПОСАДКА"
 msgstr "TREELINE"
 
-#: scripts/core/game.gd:126
+#: scripts/core/game.gd:129
 msgid "Лісосмуга / поле"
 msgstr "Tree line / field"
 
-#: scripts/core/game.gd:127
+#: scripts/core/game.gd:130
 msgid "Опорний пункт противника в лісосмузі: дві лінії окопів, ДЗОТи, мінні загородження, РЕБ."
 msgstr "An enemy strongpoint in a tree line: two lines of trenches, bunkers, minefields, a jammer."
 
-#: scripts/core/game.gd:128
+#: scripts/core/game.gd:131
 msgid "ВИСОТА"
 msgstr "THE HEIGHT"
 
-#: scripts/core/game.gd:128
+#: scripts/core/game.gd:131
 msgid "Відкрите поле"
 msgstr "Open field"
 
-#: scripts/core/game.gd:129
+#: scripts/core/game.gd:132
 msgid "Опорний пункт на голому пагорбі над відкритим полем: передова застава, прихована балка, ПТРК, пристріляне поле."
 msgstr "A strongpoint on a bare hill above an open field: a forward outpost, a hidden gully, ATGMs, a pre-registered field."
 
-#: scripts/core/game.gd:130
+#: scripts/core/game.gd:133
 msgid "ХУТІР"
 msgstr "THE FARMSTEAD"
 
-#: scripts/core/game.gd:130
+#: scripts/core/game.gd:133
 msgid "Сільська забудова"
 msgstr "Rural buildings"
 
-#: scripts/core/game.gd:131
+#: scripts/core/game.gd:134
 msgid "Штурм хутора: подвір'я, паркани, підвали, вузькі вулиці та присадибні ділянки."
 msgstr "Storming a farmstead village: yards, fences, cellars, narrow streets and garden plots."
 
-#: scripts/core/game.gd:132
+#: scripts/core/game.gd:135
 msgid "ЛІСОВИЙ МАСИВ"
 msgstr "THE FOREST"
 
-#: scripts/core/game.gd:132
+#: scripts/core/game.gd:135
 msgid "Ліс"
 msgstr "Forest"
 
-#: scripts/core/game.gd:133
+#: scripts/core/game.gd:136
 msgid "Бій у сосновому лісі: огляд 20–35 м, засідки, траншеї й бліндажі під деревами, просіки для техніки, лісництво на поляні."
 msgstr "Battle in a pine forest: 20–35 m sight lines, ambushes, trenches and dugouts under the trees, firebreaks for the vehicles, a forester's house in a clearing."
 
-#: scripts/core/game.gd:134
+#: scripts/core/game.gd:137
 msgid "КВАРТАЛ"
 msgstr "THE DISTRICT"
 
-#: scripts/core/game.gd:134
+#: scripts/core/game.gd:137
 msgid "Міська забудова"
 msgstr "Urban"
 
-#: scripts/core/game.gd:135
+#: scripts/core/game.gd:138
 msgid "Зачистка міського кварталу: зруйновані багатоповерхівки, під'їзди, двори."
 msgstr "Clearing a city district: ruined apartment blocks, entrances, courtyards."
 
-#: scripts/core/game.gd:142
+#: scripts/core/game.gd:145
 msgid "Прорив першої лінії"
 msgstr "Breaking the first line"
 
-#: scripts/core/game.gd:143
+#: scripts/core/game.gd:146
 msgid "Захопити опорний пункт у лісосмузі — плацдарм для подальшого наступу. Бережіть людей: усі втрати переходять у наступні бої."
 msgstr "Take the strongpoint in the tree line — a foothold for the advance. Look after your men: every loss carries over to the next battles."
 
-#: scripts/core/game.gd:144
+#: scripts/core/game.gd:147
 msgid "Висота за полем"
 msgstr "The height beyond the field"
 
-#: scripts/core/game.gd:145
+#: scripts/core/game.gd:148
 msgid "Противник закріпився на висоті, що проглядає весь наступ. Взяти її, не втративши техніку у відкритому полі."
 msgstr "The enemy has dug in on a height that overlooks the whole advance. Take it without losing vehicles in the open field."
 
-#: scripts/core/game.gd:146
+#: scripts/core/game.gd:149
 msgid "Вихід до хутора"
 msgstr "To the farmstead"
 
-#: scripts/core/game.gd:147
+#: scripts/core/game.gd:150
 msgid "Розвинути успіх і вибити противника з хутора за лісосмугою."
 msgstr "Exploit the success and drive the enemy out of the farmstead beyond the tree line."
 
-#: scripts/core/game.gd:148
+#: scripts/core/game.gd:151
 msgid "Лісовий масив"
 msgstr "The forest"
 
-#: scripts/core/game.gd:149
+#: scripts/core/game.gd:152
 msgid "Очистити лісовий масив на фланзі наступу."
 msgstr "Clear the forest on the flank of the advance."
 
-#: scripts/core/game.gd:150
+#: scripts/core/game.gd:153
 msgid "Околиця міста"
 msgstr "The edge of the city"
 
-#: scripts/core/game.gd:151
+#: scripts/core/game.gd:154
 msgid "Закріпитися в крайньому кварталі міста."
 msgstr "Gain a foothold in the outermost district of the city."
 
-#: scripts/core/game.gd:172
+#: scripts/core/game.gd:175
 msgid "Наказ: рух"
 msgstr "Order: move"
 
-#: scripts/core/game.gd:172
+#: scripts/core/game.gd:175
 msgid "Наказ: штурм"
 msgstr "Order: assault"
 
-#: scripts/core/game.gd:172
+#: scripts/core/game.gd:175
 msgid "Наказ: утримувати"
 msgstr "Order: hold"
 
-#: scripts/core/game.gd:173
+#: scripts/core/game.gd:176
 msgid "Наказ: зачистка"
 msgstr "Order: clear"
 
-#: scripts/core/game.gd:173
+#: scripts/core/game.gd:176
 msgid "Відхід"
 msgstr "Fall back"
 
-#: scripts/core/game.gd:173
+#: scripts/core/game.gd:176
 msgid "Посадка / висадка"
 msgstr "Mount / dismount"
 
-#: scripts/core/game.gd:174
+#: scripts/core/game.gd:177
 msgid "Димова граната"
 msgstr "Smoke grenade"
 
-#: scripts/core/game.gd:174
+#: scripts/core/game.gd:177
 msgid "Евакуація"
 msgstr "Evacuation"
 
-#: scripts/core/game.gd:175
+#: scripts/core/game.gd:178
 msgid "Техніка: подавлення"
 msgstr "Vehicles: suppress"
 
-#: scripts/core/game.gd:175
+#: scripts/core/game.gd:178
 msgid "Техніка: розворот"
 msgstr "Vehicles: turn"
 
-#: scripts/core/game.gd:176
+#: scripts/core/game.gd:179
 msgid "Піхота: за технікою"
 msgstr "Infantry: follow vehicle"
 
-#: scripts/core/game.gd:176
+#: scripts/core/game.gd:179
 msgid "Піхота: перебіжками"
 msgstr "Infantry: bounding"
 
-#: scripts/core/game.gd:177
+#: scripts/core/game.gd:180
 msgid "Міномет"
 msgstr "Mortar"
 
-#: scripts/core/game.gd:178
+#: scripts/core/game.gd:181
 msgid "Наступний підрозділ"
 msgstr "Next unit"
 
-#: scripts/core/game.gd:178
+#: scripts/core/game.gd:181
 msgid "Тактична пауза"
 msgstr "Tactical pause"
 
-#: scripts/core/game.gd:179
+#: scripts/core/game.gd:182
 msgid "Камера: супровід"
 msgstr "Camera: follow"
 
-#: scripts/core/game.gd:179
+#: scripts/core/game.gd:182
 msgid "Камера: загальний огляд"
 msgstr "Camera: overview"
 
-#: scripts/core/game.gd:180
+#: scripts/core/game.gd:183
 msgid "Радіожурнал"
 msgstr "Radio log"
 
-#: scripts/core/game.gd:180
+#: scripts/core/game.gd:183
 msgid "Довідка"
 msgstr "Help"
 
-#: scripts/core/game.gd:180
+#: scripts/core/game.gd:183
 msgid "Налаштування"
 msgstr "Settings"
 
-#: scripts/core/game.gd:433
+#: scripts/core/game.gd:436
 msgid "За планом"
 msgstr "As planned"
 
@@ -3172,8 +3172,8 @@ msgid "ВИХІД"
 msgstr "QUIT"
 
 #: scripts/ui/main_menu.gd:67
-msgid "Прототип • Godot 4.7 • місія: «%s»"
-msgstr "Prototype • Godot 4.7 • mission: «%s»"
+msgid "Демо %s • місія: «%s»"
+msgstr "Demo %s • mission: «%s»"
 
 #: scripts/ui/main_menu.gd:110
 msgid "ВИБІР МІСІЇ — ОКРЕМИЙ БІЙ"
@@ -4726,4 +4726,8 @@ msgstr "Area 560×560 m under snow. In the south — our forest, then fields to 
 #: maps/village.tscn
 msgid "Район 260×260 м. Хутір на пологому підвищенні: два ряди хат уздовж головної вулиці, подвір'я з парканами й сараями, городи. Перед хутором ~80 м відкритого поля з вирвами. Захід: старий сад і городи — прихований підхід. Схід: неглибока балка до крайніх садиб. Дорога з півдня веде просто на перехрестя."
 msgstr "Area 260×260 m. A farmstead on a gentle rise: two rows of houses along the main street, yards with fences and sheds, gardens. ~80 m of open field with craters in front of the farmstead. West: an old orchard and gardens — a hidden approach. East: a shallow gully to the outermost houses. The road from the south leads straight to the crossroads."
+
+#: obsolete
+msgid "Прототип • Godot 4.7 • місія: «%s»"
+msgstr "Prototype • Godot 4.7 • mission: «%s»"
 

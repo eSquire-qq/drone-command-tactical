@@ -64,7 +64,7 @@ func setup(p_start: Callable, p_campaign: Callable = Callable(), p_training: Cal
 	var sp = Control.new()
 	sp.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	col.add_child(sp)
-	col.add_child(UIK.label(Loc.t("Прототип • Godot 4.7 • місія: «%s»") % _mission_title(Game.current_map), 14, UIK.DIM))
+	col.add_child(UIK.label(Loc.t("Демо %s • місія: «%s»") % [ProjectSettings.get_setting("application/config/version", ""), _mission_title(Game.current_map)], 14, UIK.DIM))
 	side_panel = UIK.panel()
 	side_panel.custom_minimum_size = Vector2(520, 0)
 	side_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
