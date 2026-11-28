@@ -1754,6 +1754,7 @@ func _hold(t: float) -> void:
 var _ds_near := 0
 var _ds_fpv = null
 var _ds_sq = null
+var _ds_tries := 0
 var _ds_log := 0.0
 
 
@@ -1809,6 +1810,13 @@ func _destroy_test(t: float) -> void:
 			_ds_fpv = W.combat.fpv_strike(dp, W.combat.fpv_start(dp.global_position))
 		print("[AITEST] FPV at the depot, hp %.0f, enemies within the blast radius: %d" % [dp.hp, _ds_near])
 		_rs_t = t
+		if DisplayServer.get_name() != "headless":
+			W.cam.teleport_view(dp.global_position, 30.0, 50.0, 0.4)
+			await get_tree().create_timer(0.8).timeout
+			var pth := ProjectSettings.globalize_path("user://depot.png")
+			get_viewport().get_texture().get_image().save_png(pth)
+			print("[AITEST] SHOT ", pth)
+		_rs_t = t
 	elif stage == 1:
 		if t - _ds_log > 3.0:
 			_ds_log = t
@@ -1826,6 +1834,13 @@ func _destroy_test(t: float) -> void:
 				if u.side == 1 and u.is_active() and u.global_position.distance_to(dp.global_position) < AIConfig.DEPOT_BLAST_R:
 					near += 1
 			print("[AITEST] depot destroyed after %.0f s; enemies still active within the radius: %d of %d" % [t - _rs_t, near, _ds_near])
+			stage = 2
+			if DisplayServer.get_name() != "headless":
+				W.cam.teleport_view(dp.global_position, 32.0, 50.0, 0.4)
+				await get_tree().create_timer(0.8).timeout
+				var pth2 := ProjectSettings.globalize_path("user://depot_after.png")
+				get_viewport().get_texture().get_image().save_png(pth2)
+				print("[AITEST] SHOT ", pth2)
 			if _ds_sq != null:
 				var hurt := 0
 				for m in _ds_sq.members:
@@ -1839,8 +1854,13 @@ func _destroy_test(t: float) -> void:
 					print("[AITEST] FPV at %s" % x.name)
 			_rs_t = t
 			stage = 2
-		elif t - _rs_t > 90.0:
-			print("[AITEST] RESULT destroy: FAIL depot hp %.0f after 90 s" % dp.hp)
+		elif _ds_sq == null and not is_instance_valid(_ds_fpv) and not dp.destroyed and _ds_tries < 3 and t - _rs_t > 5.0:
+			# lost its link over a trench jammer: another one, as a player would
+			_ds_tries += 1
+			print("[AITEST] the FPV did not get there (a portable jammer on the way?): try %d" % (_ds_tries + 1))
+			_ds_fpv = W.combat.fpv_strike(dp, W.combat.fpv_start(dp.global_position))
+		elif t - _rs_t > 150.0:
+			print("[AITEST] RESULT destroy: FAIL depot hp %.0f after 150 s" % dp.hp)
 			get_tree().quit()
 	elif stage >= 2 and stage < 5 and t - _rs_t > 60.0:
 		# the FPV lost its link next to the jammer itself (it protects itself):

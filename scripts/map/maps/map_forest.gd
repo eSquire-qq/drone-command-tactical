@@ -83,7 +83,7 @@ func setup() -> void:
 	dugouts.append({"pos": Vector2(14, -134), "rot": 0.0, "size": Vector2(3.6, 3.0)})
 	bunkers = [
 		{"pos": Vector2(-92, 10), "face": Vector2(-0.6, 0.8), "kind": "mg"},   # the junction of the west firebreak and the forest road
-		{"pos": Vector2(20, -86), "face": Vector2(0, -1), "kind": "depot"},    # the raid target: ammunition behind the forester's sheds
+		{"pos": Vector2(24, -90), "face": Vector2(0, -1), "kind": "depot"},    # the raid target: ammunition behind the forester's sheds
 	]
 	sandbags = [{"pos": Vector2(-108, 6), "rot": 0.0, "len": 4.0}]
 	camo = []
@@ -178,7 +178,7 @@ func setup() -> void:
 			{"pos": Vector2(0, 23), "label": "ТРАНШЕЯ", "r": 40.0},
 			{"pos": Vector2(100, 44), "label": "КУЛЕМЕТ", "r": 14.0},
 			{"pos": Vector2(-92, 10), "label": "ДЗОТ", "r": 12.0},
-			{"pos": Vector2(20, -86), "label": "СКЛАД БК?", "r": 12.0},
+			{"pos": Vector2(24, -90), "label": "СКЛАД БК?", "r": 12.0},
 			{"pos": Vector2(0, -62), "label": "ЛІСНИЦТВО", "r": 30.0},
 			{"pos": Vector2(6, -134), "label": "РЕЗЕРВ?", "r": 16.0},
 			{"pos": Vector2(30, -165), "label": "РЕБ?", "r": 12.0},

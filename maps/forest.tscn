@@ -938,7 +938,7 @@ transform = Transform3D(-0.79999995, 0, 0.6000001, 0, 1, 0, -0.6000001, 0, -0.79
 script = ExtResource("21_apt7r")
 
 [node name="Склад БК" type="Node3D" parent="Противник/ДЗОТи" unique_id=1739204611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -86)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -90)
 script = ExtResource("21_apt7r")
 kind = "depot"
 
@@ -1401,7 +1401,7 @@ label = "ДЗОТ"
 radius = 12.0
 
 [node name="Позначка СКЛАД" type="Node3D" parent="Розвіддані" unique_id=1870739614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -86)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -90)
 script = ExtResource("28_ck41n")
 label = "СКЛАД БК?"
 radius = 12.0
