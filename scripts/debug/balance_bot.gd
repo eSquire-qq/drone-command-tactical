@@ -65,7 +65,12 @@ func _process(delta: float) -> void:
 		W.cam.teleport_view(Vector3(-20, 0, -30), 110.0, 40.0, 0.0)
 		W.cam.zoom_t = 2.5
 	var t := W.time - t0
-	if plan == "frontal":
+	if W.mission.hold_phase:
+		_mh_t -= delta
+		if _mh_t <= 0.0:
+			_mh_t = 20.0
+			_manage_hold()
+	elif plan == "frontal":
 		_frontal(t)
 	elif W.mission.def.id == "field":
 		_smart_field(t)
@@ -89,6 +94,70 @@ func _process(delta: float) -> void:
 
 ## What a player does on "an enemy recon drone over us": a squad holding in
 ## one place moves 25–35 m aside and spreads into cover.
+## Capture and hold: like a player, the squads dig in inside the position
+## (houses, trenches) instead of chasing the counterattack out of it; the
+## vehicles stand behind it; enemies already inside are thrown out.
+func _manage_hold() -> void:
+	var r: Rect2 = W.mission.def.objective_rect
+	var inside: Array = []
+	for u in W.units:
+		if u.side == 1 and u.is_active() and r.grow(4.0).has_point(Vector2(u.global_position.x, u.global_position.z)):
+			inside.append(u)
+	# an enemy vehicle we can see: FPV it, as a player would
+	for v in W.vehicles:
+		if is_instance_valid(v) and v.side == 1 and v.state != "destroyed" and v.ever_seen and v.revealed > -5.0:
+			_fpv(v)
+			break
+	# our vehicles come up right behind the position (fire support, ammunition)
+	var vk := 0
+	for v in W.mission.friendly_vehicles:
+		if not is_instance_valid(v) or v.state == "destroyed" or v.offmap or v.is_medevac or v.state == "immobile":
+			continue
+		var vp := Vector3(r.get_center().x - 15.0 + 30.0 * (vk % 2), 0, r.end.y + 8.0 + 6.0 * (vk / 2))
+		vk += 1
+		if v.global_position.distance_to(vp) > 25.0 and not v.moving:
+			v.order_move(W.grid.free_point(vp, true))
+	# the houses of the position, those facing the enemy first
+	var houses: Array = []
+	if W.map:
+		for b in W.map.buildings:
+			var bc: Vector3 = b["center"]
+			if b["kind"] != "shed" and not (b["windows"] as Array).is_empty() and r.has_point(Vector2(bc.x, bc.z)):
+				houses.append(b)
+	var er: Vector3 = W.mission.def.enemy_retreat
+	houses.sort_custom(func(a, b): return (a["center"] as Vector3).distance_to(er) < (b["center"] as Vector3).distance_to(er))
+	var k := 0
+	for sq in W.mission.friendly_squads:
+		k += 1
+		if sq.active_count() < 1 or sq.mounted or sq.resup_call != null or not sq.resup_men.is_empty():
+			continue
+		var c: Vector3 = sq.center()
+		if not inside.is_empty() and sq.active_count() >= 3:
+			var best = null
+			var bd := INF
+			for u in inside:
+				var d: float = u.global_position.distance_to(c)
+				if d < bd:
+					bd = d
+					best = u
+			if bd < 60.0 and sq.order != "assault" and sq.order != "clear_bld":
+				sq.issue_order("assault", best.global_position)
+				continue
+		if r.has_point(Vector2(c.x, c.z)) and sq.order in ["hold", "occupy", "defend"]:
+			continue
+		if sq.order in ["assault", "clear_bld", "clear"]:
+			continue
+		var p := Vector3(r.position.x + r.size.x * (0.25 + 0.25 * (k % 3)), 0, r.position.y + r.size.y * 0.4)
+		if k - 1 < houses.size():
+			p = houses[k - 1]["center"]   # a house: «Тримати» on it = occupy it
+		sq.issue_order("hold", W.grid.free_point(p) if Buildings.at(p) == null else p)
+	if not _hold_told:
+		_hold_told = true
+		print("[BALANCE] t=%d hold phase: squads dig in" % int(W.mission.t))
+
+
+var _hold_told := false
+var _mh_t := 0.0
 var _ammo_t := 10.0
 var _ammo_cd := {}
 
@@ -111,8 +180,20 @@ func _ammo_check(delta: float, t: float) -> void:
 			if m.mags_start > 0:
 				miss += m.mags_start - maxi(m.mags_left, 0)
 				full += m.mags_start
-		if full == 0 or float(miss) / full < 0.35:
+		# while holding: only in the lull before the counterattack (then fight)
+		var hold: bool = W.mission.hold_phase
+		if hold and W.mission.counter_sent > 0:
 			continue
+		if full == 0 or float(miss) / full < (0.2 if hold else 0.35):
+			continue
+		if hold:
+			# not away from the position: only a vehicle right behind it
+			var near := false
+			for v in W.vehicles:
+				if is_instance_valid(v) and v.side == 0 and v.state != "destroyed" and v.stock_rounds > 0 and v.global_position.distance_to(sq.center()) < 60.0:
+					near = true
+			if not near:
+				continue
 		_ammo_cd[sq] = t + 120.0
 		if sq.order_resupply():
 			print("[BALANCE] t=%d %s: ammo order (%d of %d magazines used)" % [int(t), sq.short, miss, full])
@@ -439,6 +520,9 @@ func _manage_urban(_t: float) -> void:
 	if _mu_t > 0.0:
 		return
 	_mu_t = 25.0
+	if W.mission.hold_phase:
+		_manage_hold()
+		return
 	for sq in W.mission.friendly_squads:
 		if sq.active_count() < 2 or sq.mounted or not (sq.order in ["hold", "move", "occupy"]):
 			continue
@@ -550,6 +634,9 @@ func _manage(t: float) -> void:
 	if manage_t > 0.0:
 		return
 	manage_t = 30.0
+	if W.mission.hold_phase:
+		_manage_hold()
+		return
 	for sq in W.mission.friendly_squads:
 		if sq.active_count() < 2 or sq.mounted or not (sq.order in ["hold", "move", "occupy"]):
 			continue

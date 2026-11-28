@@ -300,6 +300,14 @@ const COMRADE_R := 9.0
 const COMRADE_STRESS := 8.0
 const DANGER_SPOT_T := 20.0
 
+# ---------------------------------------------------------------- capture and hold (objective "hold")
+const HOLD_TIME := 300.0          # default: hold the position this long after taking it, s
+const HOLD_LOST_T := 30.0         # none of ours in the zone, the enemy there this long: the position is lost
+const COUNTER_WAVES := [          # default counterattack: s after the capture, the men, a vehicle
+	{"after": 45.0, "men": ["leader", "rifleman", "mg", "rifleman", "at", "rifleman"]},
+	{"after": 150.0, "men": ["leader", "rifleman", "rifleman", "mg", "rifleman", "rifleman"], "vehicle": "bmp2"},
+]
+
 # ---------------------------------------------------------------- enemy: reinforcements
 const REINF_AFTER := 360.0         # default wave: s after the fight starts
 const REINF_MEN := ["leader", "rifleman", "rifleman", "mg", "at", "rifleman"]

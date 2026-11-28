@@ -552,7 +552,12 @@ func _update_objective() -> void:
 	var s = Loc.t("[center][color=#%s]%s[/color]  │  ЗАВДАННЯ: %s  │  [color=#%s]%s[/color]  │  КОНТАКТИ: [color=#%s]◆%d ◇%d ?%d[/color]") % [
 		UIK.hex(UIK.ACCENT), phase_txt, m.objectives.hud_text(), tcol, UIK.mmss(tl), UIK.hex(UIK.ENEMY), n[0], n[1], n[2] + n[3]]
 	if m.status_text != "":
-		s += "  │  [color=#%s]%s[/color]" % [UIK.hex(UIK.GOOD), m.status_text]
+		var scol := UIK.GOOD
+		if m.hold_phase and (m.hold_lost_t > 0.0 or m.enemies_in_zone() > 0):
+			scol = UIK.ALERT
+		elif m.hold_phase and m.counter_sent > 0:
+			scol = UIK.WOUND
+		s += "  │  [color=#%s]%s[/color]" % [UIK.hex(scol), m.status_text]
 	s += "[/center]"
 	obj_label.text = s
 

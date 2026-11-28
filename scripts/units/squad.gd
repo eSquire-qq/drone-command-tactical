@@ -162,6 +162,7 @@ var _resup_onb := 0.0
 var resup_men := {}              # man -> seconds on the way
 var resup_done := 0              # men topped up (tests, soak)
 var _resup_told := false
+var _resup_call_t := 0.0
 
 
 func _update_resupply(delta: float) -> void:
@@ -176,10 +177,16 @@ func _update_resupply(delta: float) -> void:
 		return
 	_resup_t = AIConfig.RESUP_CHECK_T
 	if resup_call != null:
+		_resup_call_t += AIConfig.RESUP_CHECK_T
 		if not is_instance_valid(resup_call) or resup_call.state == "destroyed" or (resup_call.stock_rounds <= 0 and resup_call.stock_nades <= 0):
 			resup_call = null
 		elif order != "hold":
 			resup_call = null   # another order came in
+		elif _resup_call_t > 90.0 or (_all_arrived(3.0) and resup_call.global_position.distance_to(center()) > AIConfig.RESUP_R + 20.0):
+			# it could not be done (the vehicle drove off, the enemy is at it): give it up
+			resup_call = null
+			if side == 0:
+				radio("ammo", Loc.t("поповнити набої не вдалося."), "warn")
 	if order != "hold" or leaderless_t > 0.0 or resup_men.size() >= AIConfig.RESUP_RUNNERS:
 		return
 	var need_n: int = 1 if resup_call != null else AIConfig.RESUP_NEED
@@ -323,6 +330,7 @@ func order_resupply() -> bool:
 	issue_order("hold", W.grid.free_point(W.grid.clamp_in(spot, 4.0)))
 	if order == "hold":
 		resup_call = best
+		_resup_call_t = 0.0
 		_resup_t = 0.5
 		radio("ammo", Loc.t("йдемо до %s по набої.") % best.vname, "info")
 	return true

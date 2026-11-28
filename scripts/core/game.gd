@@ -35,15 +35,15 @@ const DIFFICULTY_UK := {
 	"easy": {"name": "ЛЕГКА", "desc": "Противник слабше стріляє й повільніше помічає, менше мін і FPV; у кожній групі противника на бійця менше; поранені довше тримаються; бюджет +250.",
 		"enemy_acc": 0.6, "enemy_detect": 0.75, "enemy_morale": 0.85, "atgm_acc": 0.8, "mortar": 4, "fpv": 2,
 		"thin": true, "bleed": 1.4, "budget": 250, "intel_age": 1.4,
-		"reinf_after": -1.0, "reinf_men": 0, "reinf_veh_size": 9999.0, "recon_sorties": 1},
+		"reinf_after": -1.0, "reinf_men": 0, "reinf_veh_size": 9999.0, "recon_sorties": 1, "counter_k": 0.67, "counter_veh": false},
 	"normal": {"name": "НОРМАЛЬНА", "desc": "Збалансований бій: грамотний план із розвідкою, обходом і підтримкою дає перемогу, атака «в лоб» дорого коштує.",
 		"enemy_acc": 0.72, "enemy_detect": 1.0, "enemy_morale": 1.0, "atgm_acc": 1.0, "mortar": 7, "fpv": 4,
 		"thin": false, "bleed": 1.0, "budget": 0, "intel_age": 1.0,
-		"reinf_after": 480.0, "reinf_men": 4, "reinf_veh_size": 400.0, "recon_sorties": 2},
+		"reinf_after": 480.0, "reinf_men": 4, "reinf_veh_size": 400.0, "recon_sorties": 2, "counter_k": 1.0, "counter_veh": false},
 	"hard": {"name": "ВАЖКА", "desc": "Досвідчений противник: влучніший, пильніший, стійкіший; більше мінометних мін і FPV; поранені швидше гинуть; бюджет −150.",
 		"enemy_acc": 0.95, "enemy_detect": 1.2, "enemy_morale": 1.15, "atgm_acc": 1.08, "mortar": 12, "fpv": 6,
 		"thin": false, "bleed": 0.8, "budget": -150, "intel_age": 0.7,
-		"reinf_after": 300.0, "reinf_men": 6, "reinf_veh_size": 300.0, "recon_sorties": 2},
+		"reinf_after": 300.0, "reinf_men": 6, "reinf_veh_size": 300.0, "recon_sorties": 2, "counter_k": 1.34, "counter_veh": true},
 }
 var DIFFICULTY = DIFFICULTY_UK   # the current language (Loc.localize_all)
 const DIFFICULTY_ORDER := ["easy", "normal", "hard"]

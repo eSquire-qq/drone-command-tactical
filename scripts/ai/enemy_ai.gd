@@ -238,6 +238,7 @@ func _process_body(delta: float) -> void:
 	_check_escapes()
 	_recon_drone()
 	_reinforce()
+	_update_counter(2.0)
 	_fpv()
 	if alert < 2:
 		return
@@ -622,8 +623,98 @@ func _send_wave(w: Dictionary, entry: Vector3) -> void:
 		print("[REINF] t=%d wave: %d men%s from %s" % [int(W.time), sq.members.size(), (" + " + String(w["vehicle"])) if w["vehicle"] != "" else "", entry.snapped(Vector3.ONE)])
 
 
-func _send_vehicle(vt: String, entry: Vector3, obj: Vector3) -> void:
-	if not W.running() or retreat_ordered:
+## Objective "hold": a counterattack wave from the rear straight at the
+## position we took (an assault, not posts) — whatever the rest of the
+## enemy is doing, a withdrawal included.
+func send_counter(w: Dictionary, idx: int) -> void:
+	var obj := Vector3(def.objective_rect.get_center().x, 0, def.objective_rect.get_center().y)
+	# from the rear, where none of ours is close
+	var base: Vector3 = def.enemy_retreat
+	var side := Vector3(1, 0, 0)
+	var entry: Vector3 = W.grid.ground(base)
+	var best_d := -1.0
+	for off in [0.0, -40.0, 40.0, -80.0, 80.0]:
+		var p: Vector3 = W.grid.free_point(W.grid.clamp_in(base + side * off, 6.0))
+		var nd := INF
+		for u in W.units:
+			if u.side == 0 and u.is_active():
+				nd = minf(nd, u.global_position.distance_to(p))
+		if nd >= AIConfig.REINF_UNSEEN_R:
+			entry = p
+			break
+		if nd > best_d:
+			best_d = nd
+			entry = p
+	var roles: Array = w.get("men", AIConfig.REINF_MEN)
+	var n := clampi(int(round(roles.size() * float(Game.diff("counter_k")))), 3, 12)
+	var men: Array = []
+	for k in n:
+		men.append(roles[k % roles.size()])
+	var sq = Squad.new()
+	sq.side = 1
+	sq.team_name = Loc.t("Контратака %d") % (idx + 1)
+	sq.sname = Loc.t("Противник: ") + Loc.t("контратака")
+	sq.short = sq.team_name
+	sq.rally = def.enemy_retreat
+	add_child(sq)
+	W.squads.append(sq)
+	squads.append(sq)
+	var i := 0
+	for role in men:
+		var u = Soldier.new()
+		add_child(u)
+		u.setup(1, role, sq, "")
+		u.global_position = W.grid.free_point(entry + Vector3((i - n / 2) * 2.0, 0, randf_range(-2, 2)))
+		u.max_morale *= float(Game.diff("enemy_morale"))
+		u.morale = u.max_morale
+		sq.members.append(u)
+		W.units.append(u)
+		wave_units.append(u)
+		i += 1
+	start_count += sq.members.size()
+	raise_alert(2)
+	# where they know we are: the position itself
+	for u in W.units:
+		if u.side == 0 and u.is_active() and def.capture_rect.has_point(Vector2(u.global_position.x, u.global_position.z)):
+			sq.report(u, u.global_position)
+	sq.issue_order("assault", W.grid.free_point(obj))
+	counter_squads.append(sq)
+	var vt := String(w.get("vehicle", ""))
+	if vt != "" and bool(Game.diff("counter_veh")):
+		get_tree().create_timer(AIConfig.REINF_VEH_DELAY).timeout.connect(_send_vehicle.bind(vt, entry, obj, true))
+	Events.msg(Loc.t("Розвідка: противник висувається в контратаку!") if idx == 0 else Loc.t("Розвідка: нова хвиля контратаки!"), "alert")
+	if W.blog:
+		W.blog.add("enemy", Loc.t("Контратака противника"), entry)
+	if "--verbose" in OS.get_cmdline_user_args() or "--aitest=hold" in OS.get_cmdline_user_args():
+		print("[HOLD] t=%d counterattack %d: %d men%s from %s" % [int(W.time), idx + 1, n, (" + " + vt) if vt != "" and bool(Game.diff("counter_veh")) else "", entry.snapped(Vector3.ONE)])
+
+
+## Counterattack squads that finished their assault short of the position, or
+## were turned back: go again while they still have men (every 40 s).
+var counter_squads: Array = []
+var _counter_t := 0.0
+
+
+func _update_counter(delta: float) -> void:
+	_counter_t -= delta
+	if _counter_t > 0.0 or counter_squads.is_empty():
+		return
+	_counter_t = 40.0
+	var obj := Vector3(def.objective_rect.get_center().x, 0, def.objective_rect.get_center().y)
+	for sq in counter_squads:
+		if not is_instance_valid(sq) or sq.active_count() < 2 or sq.order == "assault" or sq.order == "escape":
+			continue
+		var c: Vector3 = sq.center()
+		if def.objective_rect.grow(6.0).has_point(Vector2(c.x, c.z)):
+			continue   # they are in: holding it now
+		for u in W.units:
+			if u.side == 0 and u.is_active() and def.capture_rect.has_point(Vector2(u.global_position.x, u.global_position.z)):
+				sq.report(u, u.global_position)
+		sq.issue_order("assault", W.grid.free_point(obj))
+
+
+func _send_vehicle(vt: String, entry: Vector3, obj: Vector3, counter: bool = false) -> void:
+	if not W.running() or (retreat_ordered and not counter):
 		return
 	var v = Vehicle.new()
 	W.mission.add_child(v)

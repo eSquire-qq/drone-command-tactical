@@ -75,63 +75,83 @@ msgstr "Enemy: "
 msgid "ПТРК"
 msgstr "ATGM"
 
-#: scripts/ai/enemy_ai.gd:284
+#: scripts/ai/enemy_ai.gd:285
 msgid "Противник відходить з позиції"
 msgstr "The enemy is pulling back from the position"
 
-#: scripts/ai/enemy_ai.gd:294
+#: scripts/ai/enemy_ai.gd:295
 msgid "противник залишає позиції та відходить!"
 msgstr "the enemy is abandoning its positions and retreating!"
 
-#: scripts/ai/enemy_ai.gd:296
+#: scripts/ai/enemy_ai.gd:297
 msgid "Противник залишає позиції та відходить!"
 msgstr "The enemy is abandoning its positions and retreating!"
 
-#: scripts/ai/enemy_ai.gd:460
+#: scripts/ai/enemy_ai.gd:461
 msgid "Противник перекидає сили на загрозливий напрямок"
 msgstr "The enemy is shifting forces to the threatened direction"
 
-#: scripts/ai/enemy_ai.gd:512
+#: scripts/ai/enemy_ai.gd:513
 msgid "Противник контратакує в окопах!"
 msgstr "The enemy is counterattacking in the trenches!"
 
-#: scripts/ai/enemy_ai.gd:514
+#: scripts/ai/enemy_ai.gd:515
 msgid "Контратака противника в окопах"
 msgstr "Enemy counterattack in the trenches"
 
-#: scripts/ai/enemy_ai.gd:574
+#: scripts/ai/enemy_ai.gd:575
 msgid "Противник підтягує підкріплення!"
 msgstr "The enemy is bringing up reinforcements!"
 
-#: scripts/ai/enemy_ai.gd:576
+#: scripts/ai/enemy_ai.gd:577
 msgid "Противник підтягує підкріплення"
 msgstr "The enemy is bringing up reinforcements"
 
-#: scripts/ai/enemy_ai.gd:584
+#: scripts/ai/enemy_ai.gd:585
 msgid "Підкріплення %d"
 msgstr "Reinforcements %d"
 
-#: scripts/ai/enemy_ai.gd:585
+#: scripts/ai/enemy_ai.gd:586
 msgid "підкріплення"
 msgstr "reinforcements"
 
-#: scripts/ai/enemy_ai.gd:630
+#: scripts/ai/enemy_ai.gd:655
+msgid "Контратака %d"
+msgstr "Counterattack %d"
+
+#: scripts/ai/enemy_ai.gd:656
+msgid "контратака"
+msgstr "counterattack"
+
+#: scripts/ai/enemy_ai.gd:685
+msgid "Розвідка: противник висувається в контратаку!"
+msgstr "Recon: the enemy is moving up to counterattack!"
+
+#: scripts/ai/enemy_ai.gd:685
+msgid "Розвідка: нова хвиля контратаки!"
+msgstr "Recon: another counterattack wave!"
+
+#: scripts/ai/enemy_ai.gd:687
+msgid "Контратака противника"
+msgstr "Enemy counterattack"
+
+#: scripts/ai/enemy_ai.gd:721
 msgid "Ворожа %s"
 msgstr "Enemy %s"
 
-#: scripts/ai/enemy_ai.gd:701
+#: scripts/ai/enemy_ai.gd:792
 msgid "піхоту"
 msgstr "the infantry"
 
-#: scripts/ai/enemy_ai.gd:702
+#: scripts/ai/enemy_ai.gd:793
 msgid "УВАГА! Ворожий FPV-дрон заходить на %s!"
 msgstr "WARNING! Enemy FPV drone inbound on %s!"
 
-#: scripts/ai/enemy_ai.gd:739
+#: scripts/ai/enemy_ai.gd:830
 msgid "РЕР противника запеленгувала канал нашого дрона! Очікуйте вогневе ураження."
 msgstr "Enemy ELINT has located our drone's channel! Expect incoming fire."
 
-#: scripts/ai/enemy_ai.gd:815
+#: scripts/ai/enemy_ai.gd:906
 msgid "Увага! Вхідний мінометний вогонь противника!"
 msgstr "Warning! Incoming enemy mortar fire!"
 
@@ -2052,8 +2072,8 @@ msgid "Опорний пункт у сільській забудові"
 msgstr "A strongpoint in a village"
 
 #: scripts/map/maps/map_village.gd:20
-msgid "Вибити противника з хутора: зачистити садиби південного ряду, захопити центр хутора й перехрестя."
-msgstr "Drive the enemy out of the farmstead: clear the houses of the southern row, take the centre of the farmstead and the crossroads."
+msgid "Вибити противника з хутора: зачистити садиби південного ряду, захопити центр хутора й перехрестя — і втримати хутір 5 хв: противник контратакуватиме резервом із тилу."
+msgstr "Drive the enemy out of the hamlet: clear the farmsteads of the southern row, take the centre of the hamlet and the crossroads — then hold the hamlet for 5 min: the enemy will counterattack with reserves from the rear."
 
 #: scripts/map/maps/map_village.gd:21
 msgid "Район 260×260 м. Хутір на пологому підвищенні: два ряди хат уздовж головної вулиці, подвір'я з парканами й сараями, городи. "
@@ -2112,14 +2132,18 @@ msgid "Підходи: старий сад і городи на заході, н
 msgstr "Approaches: the old orchard and gardens in the west, a shallow gully in the east."
 
 #: scripts/map/maps/map_village.gd:185
+msgid "Резерв противника (до двох груп, можливо з БМП) стоїть за хутором — після втрати позиції чекайте контратаку з півночі. Закріпіться в будинках і окопі, зберіть набої."
+msgstr "The enemy reserve (up to two groups, possibly with a BMP) waits behind the hamlet — once they lose the position, expect a counterattack from the north. Dig in in the houses and the trench, collect ammunition."
+
+#: scripts/map/maps/map_village.gd:186
 msgid "Будинок займати й зачищати: «Тримати» / «Штурм» з ПКМ по будинку. Граната — у вікно чи двері, вхід через двері або пролом."
 msgstr "Take and clear buildings: «Hold» / «Assault» with RMB on a building. A grenade goes through a window or a door, entry through a door or a breach."
 
-#: scripts/map/maps/map_village.gd:190
+#: scripts/map/maps/map_village.gd:191
 msgid "САДИБА"
 msgstr "HOUSE"
 
-#: scripts/map/maps/map_village.gd:193
+#: scripts/map/maps/map_village.gd:194
 msgid "ЦЕГЛЯНА ХАТА"
 msgstr "BRICK HOUSE"
 
@@ -2279,155 +2303,207 @@ msgstr "grenade launcher"
 msgid "піхота"
 msgstr "infantry"
 
-#: scripts/mission/mission_manager.gd:62
+#: scripts/mission/mission_manager.gd:68
 msgid "Початок операції. Підрозділи висуваються на вихідні рубежі."
 msgstr "The operation begins. Units are moving up to their start lines."
 
-#: scripts/mission/mission_manager.gd:115
+#: scripts/mission/mission_manager.gd:121
 msgid "Колона висувається в район «%s»."
 msgstr "The column is moving to the «%s» area."
 
-#: scripts/mission/mission_manager.gd:122
+#: scripts/mission/mission_manager.gd:128
 msgid "Штурмова група %d"
 msgstr "Assault Group %d"
 
-#: scripts/mission/mission_manager.gd:123
+#: scripts/mission/mission_manager.gd:129
 msgid "Ш-%d"
 msgstr "A-%d"
 
-#: scripts/mission/mission_manager.gd:126
+#: scripts/mission/mission_manager.gd:132
 msgid "%d-ше відділення"
 msgstr "Squad %d"
 
-#: scripts/mission/mission_manager.gd:127
+#: scripts/mission/mission_manager.gd:133
 msgid "В-%d"
 msgstr "S-%d"
 
-#: scripts/mission/mission_manager.gd:212
+#: scripts/mission/mission_manager.gd:218
 msgid "%s з десантом (%s) входить у район."
 msgstr "%s with troops (%s) is entering the area."
 
-#: scripts/mission/mission_manager.gd:214
+#: scripts/mission/mission_manager.gd:220
 msgid "%s входить у район."
 msgstr "%s is entering the area."
 
-#: scripts/mission/mission_manager.gd:224
+#: scripts/mission/mission_manager.gd:230
 msgid "%s висувається пішки."
 msgstr "%s is moving up on foot."
 
-#: scripts/mission/mission_manager.gd:255
+#: scripts/mission/mission_manager.gd:261
 msgid "Висадку завершено. Підрозділи готові до виконання завдання."
 msgstr "Deployment complete. Units are ready for the task."
 
-#: scripts/mission/mission_manager.gd:302
+#: scripts/mission/mission_manager.gd:315
 msgid "ЗАКРІПЛЕННЯ НА ПОЗИЦІЇ %d%%"
 msgstr "CONSOLIDATING THE POSITION %d%%"
 
-#: scripts/mission/mission_manager.gd:309
+#: scripts/mission/mission_manager.gd:325
 msgid "БІЙ ЗА ПОЗИЦІЮ: противника в зоні — %d"
 msgstr "FIGHTING FOR THE POSITION: enemies in the zone — %d"
 
-#: scripts/mission/mission_manager.gd:309
+#: scripts/mission/mission_manager.gd:325
 msgid "ЗАЧИЩЕННЯ"
 msgstr "CLEARING"
 
-#: scripts/mission/mission_manager.gd:444
+#: scripts/mission/mission_manager.gd:350
+msgid "Позицію захоплено! Закріплюйтесь: противник готує контратаку. Утримати %d хв."
+msgstr "Position taken! Dig in: the enemy is preparing a counterattack. Hold for %d min."
+
+#: scripts/mission/mission_manager.gd:352
+msgid "Позицію захоплено — утримання"
+msgstr "Position taken — holding"
+
+#: scripts/mission/mission_manager.gd:354
+msgid "Позицію знову взято — утримуйте!"
+msgstr "Position retaken — hold it!"
+
+#: scripts/mission/mission_manager.gd:375
+msgid "Противник повернув позицію! Відбийте її знову."
+msgstr "The enemy has retaken the position! Take it back."
+
+#: scripts/mission/mission_manager.gd:377
+msgid "Противник повернув позицію"
+msgstr "The enemy retook the position"
+
+#: scripts/mission/mission_manager.gd:385
+msgid "УТРИМАННЯ ПРИЗУПИНЕНО: у зоні немає наших бійців · ще %s"
+msgstr "HOLD PAUSED: none of ours in the zone · %s left"
+
+#: scripts/mission/mission_manager.gd:387
+msgid "ПОЗИЦІЮ ВТРАЧАЄМО! Поверніть бійців у зону — %d с"
+msgstr "LOSING THE POSITION! Get men back into the zone — %d s"
+
+#: scripts/mission/mission_manager.gd:389
+msgid "ВИБИЙТЕ ПРОТИВНИКА З ПОЗИЦІЇ: у зоні — %d"
+msgstr "CLEAR THE ENEMY OUT OF THE POSITION: in the zone — %d"
+
+#: scripts/mission/mission_manager.gd:391
+msgid "УТРИМАННЯ %s · очікується контратака"
+msgstr "HOLDING %s · counterattack expected"
+
+#: scripts/mission/mission_manager.gd:393
+msgid "КОНТРАТАКА! Противник у зоні — %d · утримати ще %s"
+msgstr "COUNTERATTACK! Enemy in the zone — %d · hold for %s more"
+
+#: scripts/mission/mission_manager.gd:395
+msgid "УТРИМАННЯ: ще %s"
+msgstr "HOLDING: %s more"
+
+#: scripts/mission/mission_manager.gd:525
 msgid "НЕЗАДОВІЛЬНО"
 msgstr "FAILED"
 
-#: scripts/mission/mission_manager.gd:446
+#: scripts/mission/mission_manager.gd:527
 msgid "ВІДМІННО"
 msgstr "EXCELLENT"
 
-#: scripts/mission/mission_manager.gd:448
+#: scripts/mission/mission_manager.gd:529
 msgid "ДОБРЕ"
 msgstr "GOOD"
 
-#: scripts/mission/mission_manager.gd:450
+#: scripts/mission/mission_manager.gd:531
 msgid "ЗАДОВІЛЬНО"
 msgstr "SATISFACTORY"
 
-#: scripts/mission/mission_manager.gd:488
+#: scripts/mission/mission_manager.gd:569
 msgid "Позицію захоплено"
 msgstr "Position captured"
 
-#: scripts/mission/mission_manager.gd:488
+#: scripts/mission/mission_manager.gd:569
 msgid "Завдання виконано"
 msgstr "Mission accomplished"
 
-#: scripts/mission/mission_manager.gd:488
+#: scripts/mission/mission_manager.gd:569
 msgid "Підрозділи втратили боєздатність"
 msgstr "Units no longer combat-capable"
 
-#: scripts/mission/mission_manager.gd:489
+#: scripts/mission/mission_manager.gd:570
 msgid "Час вичерпано"
 msgstr "Time is up"
 
-#: scripts/mission/mission_manager.gd:489
+#: scripts/mission/mission_manager.gd:570
 msgid "Операцію припинено"
 msgstr "Operation called off"
 
-#: scripts/mission/objectives.gd:20
+#: scripts/mission/objectives.gd:23
 msgid "Захопити та утримати опорний пункт"
 msgstr "Capture and hold the strongpoint"
 
-#: scripts/mission/objectives.gd:21
+#: scripts/mission/objectives.gd:24
+msgid "Захопити опорний пункт і відбити контратаку"
+msgstr "Take the strongpoint and beat off the counterattack"
+
+#: scripts/mission/objectives.gd:25
 msgid "Знищити визначені цілі"
 msgstr "Destroy the designated targets"
 
-#: scripts/mission/objectives.gd:22
+#: scripts/mission/objectives.gd:26
 msgid "Розвідати всі вогневі точки та станції РЕБ"
 msgstr "Find all firing points and jammers"
 
-#: scripts/mission/objectives.gd:23
+#: scripts/mission/objectives.gd:27
 msgid "Пройти навчання командира"
 msgstr "Complete the commander's training"
 
-#: scripts/mission/objectives.gd:24
+#: scripts/mission/objectives.gd:28
 msgid "Знищити станції РЕБ противника"
 msgstr "Destroy the enemy jammers"
 
-#: scripts/mission/objectives.gd:25
+#: scripts/mission/objectives.gd:29
 msgid "Знищити всі ДЗОТи та бліндажі"
 msgstr "Destroy all bunkers and dugouts"
 
-#: scripts/mission/objectives.gd:26
+#: scripts/mission/objectives.gd:30
 msgid "Не втратити бойову техніку"
 msgstr "Lose no combat vehicles"
 
-#: scripts/mission/objectives.gd:27
+#: scripts/mission/objectives.gd:31
 msgid "Евакуювати всіх важкопоранених"
 msgstr "Evacuate all seriously wounded"
 
-#: scripts/mission/objectives.gd:28
+#: scripts/mission/objectives.gd:32
 msgid "Взяти полонених"
 msgstr "Take prisoners"
 
-#: scripts/mission/objectives.gd:29
+#: scripts/mission/objectives.gd:33
 msgid "Обмежити безповоротні втрати"
 msgstr "Limit irrecoverable losses"
 
-#: scripts/mission/objectives.gd:50
+#: scripts/mission/objectives.gd:54
 msgid " (не менше %d)"
 msgstr " (at least %d)"
 
-#: scripts/mission/objectives.gd:52
+#: scripts/mission/objectives.gd:56
 msgid " (не більше %d загиблих)"
 msgstr " (no more than %d killed)"
 
-#: scripts/mission/objectives.gd:64
+#: scripts/mission/objectives.gd:68
 msgid "знищити цілі (%d/%d)"
 msgstr "destroy targets (%d/%d)"
 
-#: scripts/mission/objectives.gd:67
+#: scripts/mission/objectives.gd:71
 msgid "розвідка (%d/%d)"
 msgstr "recon (%d/%d)"
 
-#: scripts/mission/objectives.gd:69
+#: scripts/mission/objectives.gd:73
 msgid "навчання"
 msgstr "training"
 
-#: scripts/mission/objectives.gd:70
+#: scripts/mission/objectives.gd:75
+msgid "захопити й утримати"
+msgstr "take and hold"
+
+#: scripts/mission/objectives.gd:76
 msgid "захопити опорний пункт"
 msgstr "capture the strongpoint"
 
@@ -2907,267 +2983,267 @@ msgstr "BATTLE"
 msgid "[center][color=#%s]%s[/color]  │  ЗАВДАННЯ: %s  │  [color=#%s]%s[/color]  │  КОНТАКТИ: [color=#%s]◆%d ◇%d ?%d[/color]"
 msgstr "[center][color=#%s]%s[/color]  │  TASK: %s  │  [color=#%s]%s[/color]  │  CONTACTS: [color=#%s]◆%d ◇%d ?%d[/color]"
 
-#: scripts/ui/hud.gd:596
+#: scripts/ui/hud.gd:601
 msgid "У КОЛОНІ"
 msgstr "IN COLUMN"
 
-#: scripts/ui/hud.gd:598
+#: scripts/ui/hud.gd:603
 msgid "+%d ПОРАН."
 msgstr "+%d WOUNDED"
 
-#: scripts/ui/hud.gd:607
+#: scripts/ui/hud.gd:612
 msgid "ЗНИЩЕНО"
 msgstr "DESTROYED"
 
-#: scripts/ui/hud.gd:647
+#: scripts/ui/hud.gd:652
 msgid "[color=#%s]Гранати[/color] %s"
 msgstr "[color=#%s]Grenades[/color] %s"
 
-#: scripts/ui/hud.gd:649
+#: scripts/ui/hud.gd:654
 msgid "[color=#%s]ВОГ[/color] %s"
 msgstr "[color=#%s]40mm[/color] %s"
 
-#: scripts/ui/hud.gd:650
+#: scripts/ui/hud.gd:655
 msgid "[color=#%s]РПГ[/color] %d"
 msgstr "[color=#%s]RPG[/color] %d"
 
-#: scripts/ui/hud.gd:651
+#: scripts/ui/hud.gd:656
 msgid "[color=#%s]Дим[/color] %d"
 msgstr "[color=#%s]Smoke[/color] %d"
 
-#: scripts/ui/hud.gd:683
+#: scripts/ui/hud.gd:688
 msgid "▲ під вогнем"
 msgstr "▲ under fire"
 
-#: scripts/ui/hud.gd:683
+#: scripts/ui/hud.gd:688
 msgid "▲▲ притиснутий"
 msgstr "▲▲ pinned"
 
-#: scripts/ui/hud.gd:690
+#: scripts/ui/hud.gd:695
 msgid "[color=#%s]ЗДОР.[/color]"
 msgstr "[color=#%s]FIT[/color]"
 
-#: scripts/ui/hud.gd:692
+#: scripts/ui/hud.gd:697
 msgid "[color=#%s]ПОРАН.[/color]"
 msgstr "[color=#%s]WOUNDED[/color]"
 
-#: scripts/ui/hud.gd:694
+#: scripts/ui/hud.gd:699
 msgid "[color=#%s]НЕДІЄЗД. %s[/color]"
 msgstr "[color=#%s]DOWN %s[/color]"
 
-#: scripts/ui/hud.gd:695
+#: scripts/ui/hud.gd:700
 msgid "[color=#888888]ЗАГИН.[/color]"
 msgstr "[color=#888888]KIA[/color]"
 
-#: scripts/ui/hud.gd:704
+#: scripts/ui/hud.gd:709
 msgid "[b]ПОРАНЕНИЙ[/b]\n%s (%s)\nСтан: %s\n"
 msgstr "[b]WOUNDED[/b]\n%s (%s)\nCondition: %s\n"
 
-#: scripts/ui/hud.gd:705
+#: scripts/ui/hud.gd:710
 msgid "Евакуація: %s\n"
 msgstr "Evacuation: %s\n"
 
-#: scripts/ui/hud.gd:705
+#: scripts/ui/hud.gd:710
 msgid "позначено"
 msgstr "marked"
 
-#: scripts/ui/hud.gd:705
+#: scripts/ui/hud.gd:710
 msgid "не викликано"
 msgstr "not called"
 
-#: scripts/ui/hud.gd:706
+#: scripts/ui/hud.gd:711
 msgid "Медична допомога: %s\n\n"
 msgstr "First aid: %s\n\n"
 
-#: scripts/ui/hud.gd:706
+#: scripts/ui/hud.gd:711
 msgid "надано"
 msgstr "given"
 
-#: scripts/ui/hud.gd:707
+#: scripts/ui/hud.gd:712
 msgid "[color=#%s]Натисніть 7 / ЕВАКУАЦІЯ, щоб викликати машину.[/color]\nДоступно машин: %d"
 msgstr "[color=#%s]Press 7 / EVACUATION to call a vehicle.[/color]\nVehicles available: %d"
 
-#: scripts/ui/hud.gd:711
+#: scripts/ui/hud.gd:716
 msgid "[color=#%s]Нічого не вибрано.[/color]\n\nЛКМ: підрозділ / техніка\nCtrl+ЛКМ, 2×клік: один боєць\nРамка ЛКМ (Alt: бійці)\nПКМ по місцевості: наказ\nПКМ із протягуванням: рубіж\nПКМ по ворогу: позначити ціль\nЛКМ по пораненому, 7: евакуація\nF супровід, H огляд, Space пауза"
 msgstr "[color=#%s]Nothing selected.[/color]\n\nLMB: unit / vehicle\nCtrl+LMB, double-click: one soldier\nLMB box (Alt: soldiers)\nRMB on the ground: order\nRMB drag: a line\nRMB on an enemy: mark the target\nLMB on a wounded man, 7: evacuation\nF follow, H overview, Space pause"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "утримання"
 msgstr "holding"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "посадка"
 msgstr "mounting"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "у машині"
 msgstr "in the vehicle"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "оборона"
 msgstr "defence"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "зачистка окопу"
 msgstr "clearing a trench"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "конвой"
 msgstr "escort"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "у будівлі"
 msgstr "in a building"
 
-#: scripts/ui/hud.gd:715
+#: scripts/ui/hud.gd:720
 msgid "зачистка будівлі"
 msgstr "clearing a building"
 
-#: scripts/ui/hud.gd:717
+#: scripts/ui/hud.gd:722
 msgid "[b]%s[/b]   [color=#%s]наказ: %s[/color]\n"
 msgstr "[b]%s[/b]   [color=#%s]order: %s[/color]\n"
 
-#: scripts/ui/hud.gd:720
+#: scripts/ui/hud.gd:725
 msgid "[color=#%s]Мораль[/color] %s   [color=#%s]Подавлення[/color] %s\n"
 msgstr "[color=#%s]Morale[/color] %s   [color=#%s]Suppression[/color] %s\n"
 
-#: scripts/ui/hud.gd:723
+#: scripts/ui/hud.gd:728
 msgid "У машині: %s\n"
 msgstr "In the vehicle: %s\n"
 
-#: scripts/ui/hud.gd:726
+#: scripts/ui/hud.gd:731
 msgid "[color=#888888]%s %-9s евакуйовано[/color]\n"
 msgstr "[color=#888888]%s %-9s evacuated[/color]\n"
 
-#: scripts/ui/hud.gd:739
+#: scripts/ui/hud.gd:744
 msgid "[color=#%s]⏳ Командир вибув — відділення без командування ще ~%d с[/color]\n"
 msgstr "[color=#%s]⏳ Leader down — the squad has no command for ~%d s more[/color]\n"
 
-#: scripts/ui/hud.gd:741
+#: scripts/ui/hud.gd:746
 msgid "[color=#%s]Командує %s[/color]\n"
 msgstr "[color=#%s]%s in command[/color]\n"
 
-#: scripts/ui/hud.gd:743
+#: scripts/ui/hud.gd:748
 msgid "[color=#%s]Командир вибув — керує старший[/color]\n"
 msgstr "[color=#%s]Leader down — the senior soldier is in command[/color]\n"
 
-#: scripts/ui/hud.gd:745
+#: scripts/ui/hud.gd:750
 msgid "\n+ ще %d підрозділ(и) у вибраному"
 msgstr "\n+ %d more unit(s) selected"
 
-#: scripts/ui/hud.gd:746
+#: scripts/ui/hud.gd:751
 msgid "[color=#%s]Клік по бійцю — лише він\nShift+клік — додати до вибраних[/color]"
 msgstr "[color=#%s]Click a soldier — only him\nShift+click — add to the selection[/color]"
 
-#: scripts/ui/hud.gd:749
+#: scripts/ui/hud.gd:754
 msgid "[b]ВИБРАНО БІЙЦІВ: %d[/b]  [color=#%s](окремо від відділення)[/color]\n"
 msgstr "[b]SOLDIERS SELECTED: %d[/b]  [color=#%s](apart from the squad)[/color]\n"
 
-#: scripts/ui/hud.gd:754
+#: scripts/ui/hud.gd:759
 msgid "з відділенням"
 msgstr "with the squad"
 
-#: scripts/ui/hud.gd:756
+#: scripts/ui/hud.gd:761
 msgid "   стан:%s%s\n"
 msgstr "   state:%s%s\n"
 
-#: scripts/ui/hud.gd:756
+#: scripts/ui/hud.gd:761
 msgid "  [color=#%s]пам'ять: %s[/color]"
 msgstr "  [color=#%s]memory: %s[/color]"
 
-#: scripts/ui/hud.gd:757
+#: scripts/ui/hud.gd:762
 msgid "\n[color=#%s]Наказ усьому відділенню поверне бійців до строю.[/color]"
 msgstr "\n[color=#%s]An order to the whole squad brings the soldiers back into the ranks.[/color]"
 
-#: scripts/ui/hud.gd:759
+#: scripts/ui/hud.gd:764
 msgid "справна"
 msgstr "operational"
 
-#: scripts/ui/hud.gd:759
+#: scripts/ui/hud.gd:764
 msgid "пошкоджена"
 msgstr "damaged"
 
-#: scripts/ui/hud.gd:759
+#: scripts/ui/hud.gd:764
 msgid "знерухомлена"
 msgstr "immobilised"
 
-#: scripts/ui/hud.gd:759
+#: scripts/ui/hud.gd:764
 msgid "знищена"
 msgstr "destroyed"
 
-#: scripts/ui/hud.gd:761
+#: scripts/ui/hud.gd:766
 msgid "Стан: %s   Міцність %s %d%%\n"
 msgstr "Condition: %s   Integrity %s %d%%\n"
 
-#: scripts/ui/hud.gd:762
+#: scripts/ui/hud.gd:767
 msgid "Десант: %d / %d\n"
 msgstr "Troops: %d / %d\n"
 
-#: scripts/ui/hud.gd:764
+#: scripts/ui/hud.gd:769
 msgid "Боєкомплект для піхоти: набої %s, гранати %s\n"
 msgstr "Infantry ammo stock: rounds %s, grenades %s\n"
 
-#: scripts/ui/hud.gd:766
+#: scripts/ui/hud.gd:771
 msgid "Озброєння: %s (%d)\n"
 msgstr "Armament: %s (%d)\n"
 
-#: scripts/ui/hud.gd:768
+#: scripts/ui/hud.gd:773
 msgid "[color=#%s]Веде вогонь по цілі[/color]\n"
 msgstr "[color=#%s]Engaging a target[/color]\n"
 
-#: scripts/ui/hud.gd:770
+#: scripts/ui/hud.gd:775
 msgid "Приписаний підрозділ: %s"
 msgstr "Attached unit: %s"
 
-#: scripts/ui/hud.gd:817
+#: scripts/ui/hud.gd:822
 msgid "ПОСАДКА@десант"
 msgstr "MOUNT"
 
-#: scripts/ui/hud.gd:826
+#: scripts/ui/hud.gd:831
 msgid "ПКМ"
 msgstr "RMB"
 
-#: scripts/ui/hud.gd:828
+#: scripts/ui/hud.gd:833
 msgid "ВИБІР ЦІЛІ: ЛКМ — застосувати, ПКМ / Esc — скасувати"
 msgstr "TARGETING: LMB — apply, RMB / Esc — cancel"
 
-#: scripts/ui/hud.gd:830
+#: scripts/ui/hud.gd:835
 msgid "УТРИМУВАТИ"
 msgstr "HOLD"
 
-#: scripts/ui/hud.gd:830
+#: scripts/ui/hud.gd:835
 msgid "ЗАЧИСТКА ОКОПУ (по точці в окопі) або БУДІВЛІ (по будинку)"
 msgstr "CLEAR A TRENCH (point in a trench) or a BUILDING (on a building)"
 
-#: scripts/ui/hud.gd:831
+#: scripts/ui/hud.gd:836
 msgid "ПОДАВЛЕННЯ (по точці, ~30 с)"
 msgstr "SUPPRESS (on a point, ~30 s)"
 
-#: scripts/ui/hud.gd:832
+#: scripts/ui/hud.gd:837
 msgid "Режим наказу: %s — %s по місцевості%s"
 msgstr "Order mode: %s — %s on the ground%s"
 
-#: scripts/ui/hud.gd:833
+#: scripts/ui/hud.gd:838
 msgid "  (один наказ; Shift — залишити)"
 msgstr "  (one order; Shift — keep it)"
 
-#: scripts/ui/hud.gd:835
+#: scripts/ui/hud.gd:840
 msgid "Виберіть підрозділ: ЛКМ по бійцях або Tab   ·   F1 — керування   ·   ⚙ — налаштування"
 msgstr "Select a unit: LMB on soldiers or Tab   ·   F1 — controls   ·   ⚙ — settings"
 
-#: scripts/ui/hud.gd:918
+#: scripts/ui/hud.gd:923
 msgid "ОПТИЧНИЙ ЗУМ x%.1f — дрон на місці"
 msgstr "OPTICAL ZOOM x%.1f — drone holds position"
 
-#: scripts/ui/hud.gd:929
+#: scripts/ui/hud.gd:934
 msgid "%d м/с"
 msgstr "%d m/s"
 
-#: scripts/ui/hud.gd:932
+#: scripts/ui/hud.gd:937
 msgid "СУПРОВІД"
 msgstr "FOLLOW"
 
-#: scripts/ui/hud.gd:934
+#: scripts/ui/hud.gd:939
 msgid "АВТОПІЛОТ → ТОЧКА"
 msgstr "AUTOPILOT → POINT"
 
@@ -4463,11 +4539,11 @@ msgstr "Got it"
 msgid "ПІДКАЗКА • "
 msgstr "HINT • "
 
-#: scripts/ui/ui_manager.gd:214
+#: scripts/ui/ui_manager.gd:218
 msgid "ПОЧАТИ НАВЧАННЯ  ▸"
 msgstr "START TRAINING  ▸"
 
-#: scripts/ui/ui_manager.gd:279
+#: scripts/ui/ui_manager.gd:283
 msgid "ЗАВАНТАЖЕННЯ МІСЦЕВОСТІ…"
 msgstr "LOADING THE TERRAIN…"
 
@@ -4523,135 +4599,139 @@ msgstr "trench section cleared, digging in."
 msgid "%s: ділянку окопу зачищено"
 msgstr "%s: trench section cleared"
 
-#: scripts/units/squad.gd:204
+#: scripts/units/squad.gd:189
+msgid "поповнити набої не вдалося."
+msgstr "could not refill ammo."
+
+#: scripts/units/squad.gd:211
 msgid "поповнюємо набої з %s."
 msgstr "refilling ammo from %s."
 
-#: scripts/units/squad.gd:209
+#: scripts/units/squad.gd:216
 msgid "набої поповнено."
 msgstr "ammo refilled."
 
-#: scripts/units/squad.gd:299
+#: scripts/units/squad.gd:306
 msgid "поповнюємо набої в машині."
 msgstr "refilling ammo aboard."
 
-#: scripts/units/squad.gd:327
+#: scripts/units/squad.gd:335
 msgid "йдемо до %s по набої."
 msgstr "moving to %s for ammo."
 
-#: scripts/units/squad.gd:378
+#: scripts/units/squad.gd:386
 msgid "%s у відкритому — тягнемо в укриття."
 msgstr "%s is in the open — dragging him to cover."
 
-#: scripts/units/squad.gd:591
+#: scripts/units/squad.gd:599
 msgid "%s в укритті."
 msgstr "%s is in cover."
 
-#: scripts/units/squad.gd:653
+#: scripts/units/squad.gd:661
 msgid "контакт! Переходимо до перебіжок."
 msgstr "contact! Switching to bounds."
 
-#: scripts/units/squad.gd:660
+#: scripts/units/squad.gd:668
 msgid "піхота з кулеметом"
 msgstr "infantry with a machine gun"
 
-#: scripts/units/squad.gd:665
+#: scripts/units/squad.gd:673
 msgid "контакт! %s, %s, %s, %d м. Переходимо до перебіжок."
 msgstr "contact! %s, %s, %s, %d m. Switching to bounds."
 
-#: scripts/units/squad.gd:879
+#: scripts/units/squad.gd:887
 msgid "командира немає — наказ виконаємо, щойно хтось прийме командування."
 msgstr "no leader — we will carry out the order as soon as someone takes command."
 
-#: scripts/units/squad.gd:893
+#: scripts/units/squad.gd:901
 msgid "рухаємось перебіжками: одна група біжить, друга прикриває."
 msgstr "moving in bounds: one group runs, the other covers."
 
-#: scripts/units/squad.gd:981
+#: scripts/units/squad.gd:989
 msgid "рухаємось двома колонами за %s."
 msgstr "moving in two files behind %s."
 
-#: scripts/units/squad.gd:1015
+#: scripts/units/squad.gd:1023
 msgid "ведемо вогонь на подавлення."
 msgstr "laying down suppressive fire."
 
-#: scripts/units/squad.gd:1052
+#: scripts/units/squad.gd:1060
 msgid "займаємо будівлю, %d бійців біля вікон."
 msgstr "occupying the building, %d men at the windows."
 
-#: scripts/units/squad.gd:1111
+#: scripts/units/squad.gd:1119
 msgid "противник з іншого боку — переходимо до інших вікон."
 msgstr "the enemy is on the other side — moving to other windows."
 
-#: scripts/units/squad.gd:1142
+#: scripts/units/squad.gd:1150
 msgid "зачищаємо будівлю, збираємось біля %s."
 msgstr "clearing the building, gathering at the %s."
 
-#: scripts/units/squad.gd:1142
+#: scripts/units/squad.gd:1150
 msgid "пролому"
 msgstr "breach"
 
-#: scripts/units/squad.gd:1142
+#: scripts/units/squad.gd:1150
 msgid "входу"
 msgstr "entrance"
 
-#: scripts/units/squad.gd:1174
+#: scripts/units/squad.gd:1182
 msgid "граната в будівлю!"
 msgstr "grenade into the building!"
 
-#: scripts/units/squad.gd:1194
+#: scripts/units/squad.gd:1202
 msgid "будівлю зачищено."
 msgstr "building cleared."
 
-#: scripts/units/squad.gd:1196
+#: scripts/units/squad.gd:1204
 msgid "%s: будівлю зачищено"
 msgstr "%s: building cleared"
 
-#: scripts/units/squad.gd:1311
+#: scripts/units/squad.gd:1319
 msgid "притиснуті вогнем, перебіжку зупинено"
 msgstr "pinned by fire, bounding stopped"
 
-#: scripts/units/squad.gd:1346
+#: scripts/units/squad.gd:1354
 msgid "втрати понад половину складу — штурм припинено, закріплюємось. Потрібне рішення командира."
 msgstr "losses over half the unit — assault stopped, digging in. Need the commander's decision."
 
-#: scripts/units/squad.gd:1348
+#: scripts/units/squad.gd:1356
 msgid "%s: штурм припинено через втрати"
 msgstr "%s: assault stopped due to losses"
 
-#: scripts/units/squad.gd:1355
+#: scripts/units/squad.gd:1363
 msgid "продовжуємо штурм."
 msgstr "continuing the assault."
 
-#: scripts/units/squad.gd:1368
+#: scripts/units/squad.gd:1376
 msgid "втрати (%d) — зупиняємось, займаємо укриття."
 msgstr "losses (%d) — stopping, taking cover."
 
-#: scripts/units/squad.gd:1396
+#: scripts/units/squad.gd:1404
 msgid "%s: контакт, перебіжки"
 msgstr "%s: contact, bounding"
 
-#: scripts/units/squad.gd:1437
+#: scripts/units/squad.gd:1445
 msgid "противник ще на позиції — продовжуємо."
 msgstr "the enemy is still in the position — carrying on."
 
-#: scripts/units/squad.gd:1448
+#: scripts/units/squad.gd:1456
 msgid "рубіж зайнято."
 msgstr "line taken."
 
-#: scripts/units/squad.gd:1493
+#: scripts/units/squad.gd:1501
 msgid "посадку завершено."
 msgstr "mounted up."
 
-#: scripts/units/squad.gd:1537
+#: scripts/units/squad.gd:1545
 msgid "втрати понад 50%! Боєздатність знижена."
 msgstr "losses over 50%! Combat effectiveness reduced."
 
-#: scripts/units/squad.gd:1545
+#: scripts/units/squad.gd:1553
 msgid "маємо втрати (%d), запитуємо підтримку!"
 msgstr "taking casualties (%d), requesting support!"
 
-#: scripts/units/squad.gd:1547
+#: scripts/units/squad.gd:1555
 msgid "під щільним вогнем, запитуємо підтримку!"
 msgstr "under heavy fire, requesting support!"
 
@@ -4786,6 +4866,10 @@ msgstr "Area 560×560 m under snow. In the south — our forest, then fields to 
 #: maps/village.tscn
 msgid "Район 260×260 м. Хутір на пологому підвищенні: два ряди хат уздовж головної вулиці, подвір'я з парканами й сараями, городи. Перед хутором ~80 м відкритого поля з вирвами. Захід: старий сад і городи — прихований підхід. Схід: неглибока балка до крайніх садиб. Дорога з півдня веде просто на перехрестя."
 msgstr "Area 260×260 m. A farmstead on a gentle rise: two rows of houses along the main street, yards with fences and sheds, gardens. ~80 m of open field with craters in front of the farmstead. West: an old orchard and gardens — a hidden approach. East: a shallow gully to the outermost houses. The road from the south leads straight to the crossroads."
+
+#: obsolete
+msgid "Вибити противника з хутора: зачистити садиби південного ряду, захопити центр хутора й перехрестя."
+msgstr "Drive the enemy out of the farmstead: clear the houses of the southern row, take the centre of the farmstead and the crossroads."
 
 #: obsolete
 msgid "Прототип • Godot 4.7 • місія: «%s»"

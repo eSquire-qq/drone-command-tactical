@@ -22,6 +22,12 @@ var status_text = ""
 var _name_i = 0
 var budget_at_start := 1000.0
 var objectives: Objectives
+# objective "hold": after the capture the position is held against counterattacks
+var hold_phase := false        # taken: holding now
+var hold_t := 0.0              # seconds held (only while it is ours)
+var hold_lost_t := 0.0         # the enemy is in the zone and none of ours: counting to losing it
+var held_once := false
+var counter_sent := 0          # counterattack waves sent
 
 
 func setup(p_def: MapDef) -> void:
@@ -285,7 +291,14 @@ func friendly_combat_strength() -> int:
 
 
 func _check_end() -> void:
-	if objectives.type() != "capture":
+	if hold_phase:
+		_check_hold()
+		if phase == Phase.COMBAT and friendly_combat_strength() == 0:
+			end_mission("wiped")
+		elif t >= def.time_limit:
+			end_mission("timeout")
+		return
+	if objectives.type() != "capture" and objectives.type() != "hold":
 		if phase == Phase.COMBAT and objectives.primary_done():
 			end_mission("completed")
 			return
@@ -301,7 +314,10 @@ func _check_end() -> void:
 		capture += 0.1
 		status_text = Loc.t("ЗАКРІПЛЕННЯ НА ПОЗИЦІЇ %d%%") % int(capture * 100)
 		if capture >= 1.0:
-			end_mission("captured")
+			if objectives.type() == "hold":
+				_begin_hold()
+			else:
+				end_mission("captured")
 			return
 	else:
 		capture = maxf(0.0, capture - 0.05)
@@ -314,6 +330,69 @@ func _check_end() -> void:
 		return
 	if t >= def.time_limit:
 		end_mission("timeout")
+
+
+## Objective "hold": the position is ours, now the counterattack.
+func hold_need() -> float:
+	return float(def.objective.get("hold", AIConfig.HOLD_TIME))
+
+
+func _counter_waves() -> Array:
+	return def.objective.get("waves", AIConfig.COUNTER_WAVES)
+
+
+func _begin_hold() -> void:
+	hold_phase = true
+	capture = 1.0
+	hold_lost_t = 0.0
+	if not held_once:
+		held_once = true
+		Events.msg(Loc.t("Позицію захоплено! Закріплюйтесь: противник готує контратаку. Утримати %d хв.") % int(round(hold_need() / 60.0)), "alert")
+		if W.blog:
+			W.blog.add("order", Loc.t("Позицію захоплено — утримання"), null)
+	else:
+		Events.msg(Loc.t("Позицію знову взято — утримуйте!"), "good")
+
+
+func _check_hold() -> void:
+	var ez := enemies_in_zone()
+	var fz := friendlies_in_zone()
+	var waves := _counter_waves()
+	while counter_sent < waves.size() and hold_t >= float(waves[counter_sent].get("after", 60.0)):
+		if W.enemy_ai:
+			W.enemy_ai.send_counter(waves[counter_sent], counter_sent)
+		counter_sent += 1
+	if fz == 0 and ez > 0:
+		hold_lost_t += 1.0
+	else:
+		hold_lost_t = maxf(0.0, hold_lost_t - 1.0)
+		if fz > 0:
+			hold_t += 1.0   # held only while our men are in it
+	if hold_lost_t >= AIConfig.HOLD_LOST_T:
+		hold_phase = false
+		capture = 0.0
+		hold_lost_t = 0.0
+		Events.msg(Loc.t("Противник повернув позицію! Відбийте її знову."), "alert")
+		if W.blog:
+			W.blog.add("enemy", Loc.t("Противник повернув позицію"), null)
+		return
+	var left := hold_need() - hold_t
+	if left <= 0.0 and ez == 0 and fz >= 1:
+		end_mission("captured")
+		return
+	var clock := "%d:%02d" % [int(maxf(left, 0.0)) / 60, int(maxf(left, 0.0)) % 60]
+	if fz == 0 and hold_lost_t <= 0.0:
+		status_text = Loc.t("УТРИМАННЯ ПРИЗУПИНЕНО: у зоні немає наших бійців · ще %s") % clock
+	elif hold_lost_t > 0.0:
+		status_text = Loc.t("ПОЗИЦІЮ ВТРАЧАЄМО! Поверніть бійців у зону — %d с") % int(AIConfig.HOLD_LOST_T - hold_lost_t)
+	elif left <= 0.0:
+		status_text = Loc.t("ВИБИЙТЕ ПРОТИВНИКА З ПОЗИЦІЇ: у зоні — %d") % ez
+	elif counter_sent == 0:
+		status_text = Loc.t("УТРИМАННЯ %s · очікується контратака") % clock
+	elif ez > 0:
+		status_text = Loc.t("КОНТРАТАКА! Противник у зоні — %d · утримати ще %s") % [ez, clock]
+	else:
+		status_text = Loc.t("УТРИМАННЯ: ще %s") % clock
 
 
 func use_support(kind: String) -> bool:
@@ -365,6 +444,8 @@ func end_mission(reason: String) -> void:
 	r["success"] = reason == "captured" or reason == "completed"
 	r["objective"] = objectives.primary_title()
 	r["objective_type"] = objectives.type()
+	r["held_s"] = hold_t
+	r["counter_waves"] = counter_sent
 	r["time"] = t
 	var kia = 0
 	var wia = 0

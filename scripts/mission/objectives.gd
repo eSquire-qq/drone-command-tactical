@@ -5,6 +5,9 @@ extends RefCounted
 ##   objective = {"type": "destroy", "bunkers": [0, 2], "ew": true}
 ##                                                          — destroy the listed bunkers (and all real РЕБ)
 ##   objective = {"type": "recon"}                          — spot every bunker and РЕБ station with the drone
+##   objective = {"type": "hold", "hold": 300, "waves": [{after, men, vehicle}]}
+##                                                          — take capture_rect, then hold it against
+##                                                            counterattack waves for `hold` seconds
 ##   secondary = [{"type": ..., "title": ...}]             — optional tasks, a small score bonus each:
 ##       "ew"        destroy all real РЕБ stations
 ##       "bunkers"   destroy all bunkers
@@ -18,6 +21,7 @@ extends RefCounted
 const SECONDARY_BONUS := 3.0
 const TITLES_UK := {
 	"capture": "Захопити та утримати опорний пункт",
+	"hold": "Захопити опорний пункт і відбити контратаку",
 	"destroy": "Знищити визначені цілі",
 	"recon": "Розвідати всі вогневі точки та станції РЕБ",
 	"training": "Пройти навчання командира",
@@ -67,6 +71,8 @@ func hud_text() -> String:
 			return Loc.t("розвідка (%d/%d)") % [p.x, p.y]
 		"training":
 			return Loc.t("навчання")
+		"hold":
+			return Loc.t("захопити й утримати")
 	return Loc.t("захопити опорний пункт")
 
 

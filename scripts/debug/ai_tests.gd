@@ -34,6 +34,8 @@ func _team(name: String):
 
 
 func _process(_d: float) -> void:
+	if _hold_end_check():
+		return
 	if not W.running() or W.mission.phase != MissionManager.Phase.COMBAT:
 		return
 	if t0 < 0.0:
@@ -88,6 +90,8 @@ func _process(_d: float) -> void:
 			_drag(t)
 		"resupply":
 			_resup(t)
+		"hold":
+			_hold(t)
 
 
 func _setup() -> void:
@@ -1664,4 +1668,78 @@ func _resup(t: float) -> void:
 			print("[AITEST] phase 3 timeout")
 			_rs_dump(sq)
 			print("[AITEST] RESULT resupply: FAIL phase 3")
+			get_tree().quit()
+
+
+# ------------------------------------------------------------------ capture and hold
+## The garrison is gone and our squads stand in the position: the hold phase
+## starts, the counterattack waves come at the position, the battle ends one
+## way or the other. `--hold-lose`: our men walk out of the position once the
+## hold has begun — the enemy must take it back.
+var _hd_end := false
+var _hd_log_t := 0.0
+var _hd_phase := false
+var _hd_lost := false
+
+
+func _hold_end_check() -> bool:
+	if scenario != "hold" or _hd_end or W.mission.phase != MissionManager.Phase.ENDED:
+		return false
+	_hd_end = true
+	var r: Dictionary = W.mission.result
+	print("[AITEST] END reason=%s success=%s held %.0f s, waves %d, kia %d, wia %d" % [r.get("reason", "?"), r.get("success", false), float(r.get("held_s", 0)), int(r.get("counter_waves", 0)), int(r.get("kia", 0)), int(r.get("wia", 0))])
+	var lose: bool = "--hold-lose" in OS.get_cmdline_user_args()
+	var ok: bool = (_hd_lost and r.get("reason", "") == "timeout") if lose else (r.get("reason", "") == "captured" and int(r.get("counter_waves", 0)) >= 2)
+	print("[AITEST] RESULT hold: %s" % ("ok" if ok else "FAIL"))
+	get_tree().quit()
+	return true
+
+
+func _hold(t: float) -> void:
+	var m = W.mission
+	var lose: bool = "--hold-lose" in OS.get_cmdline_user_args()
+	if stage == 0 and t > 3.0:
+		stage = 1
+		for u in W.units.duplicate():
+			if u.side == 1 and u.health < Soldier.H.DEAD:
+				W.damage.set_health(u, Soldier.H.DEAD, null, "test")
+		var r: Rect2 = m.def.objective_rect
+		var k := 0
+		for sq in m.friendly_squads:
+			var p := Vector3(r.position.x + r.size.x * (0.2 + 0.2 * (k % 4)), 0, r.position.y + r.size.y * (0.35 + 0.3 * (k / 4)))
+			p = W.grid.free_point(p)
+			var act: Array = sq.active_members()
+			for i in act.size():
+				act[i].stop()
+				act[i].global_position = W.grid.free_point(p + Vector3((i % 4) * 2.5 - 4.0, 0, (i / 4) * 2.5))
+			sq.issue_order("hold", p)
+			k += 1
+		print("[AITEST] hold: %d squads in the position, hold %.0f s, waves %d" % [k, m.hold_need(), m._counter_waves().size()])
+	elif stage >= 1:
+		if m.hold_phase and not _hd_phase:
+			_hd_phase = true
+			print("[AITEST] hold phase began at t=%.0f" % t)
+		if lose and _hd_phase and m.counter_sent >= 1 and stage == 1:
+			# the counterattack is on its way: everybody walks back out of the position
+			stage = 2
+			print("[AITEST] t=%.0f the counterattack is coming: our men leave the position" % t)
+			for sq in m.friendly_squads:
+				sq.issue_order("move", W.grid.free_point(Vector3(0, 0, 100)))
+		if _hd_phase and not m.hold_phase and not _hd_lost:
+			_hd_lost = true
+			print("[AITEST] position lost at t=%.0f (held %.0f s)" % [t, m.hold_t])
+			if lose:
+				print("[AITEST] RESULT hold: ok")
+				get_tree().quit()
+				return
+		if t - _hd_log_t > 15.0:
+			_hd_log_t = t
+			var cs := []
+			for sq in W.enemy_ai.counter_squads:
+				var d: float = sq.center().distance_to(Vector3(m.def.objective_rect.get_center().x, 0, m.def.objective_rect.get_center().y))
+				cs.append("%s %d act, %s, %.0f m" % [sq.short, sq.active_count(), sq.order, d])
+			print("[AITEST] type=%s capture=%.2f phase=%d" % [m.objectives.type(), m.capture, m.phase])
+			print("[AITEST] t=%.0f held %.0f, in zone ours %d / theirs %d, status «%s», counter: %s" % [t, m.hold_t, m.friendlies_in_zone(), m.enemies_in_zone(), m.status_text, "; ".join(cs)])
+		if t > 900.0:
+			print("[AITEST] RESULT hold: FAIL no end in 900 s")
 			get_tree().quit()
