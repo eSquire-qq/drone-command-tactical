@@ -3723,79 +3723,79 @@ msgstr ""
 msgid "тактична пауза, швидкість гри"
 msgstr ""
 
-#: scripts/ui/markers.gd:54
+#: scripts/ui/markers.gd:55
 msgid "ОБ'ЄКТ: ОПОРНИЙ ПУНКТ"
 msgstr ""
 
-#: scripts/ui/markers.gd:73
+#: scripts/ui/markers.gd:74
 msgid " [ДЕСАНТ]"
 msgstr ""
 
-#: scripts/ui/markers.gd:77
+#: scripts/ui/markers.gd:78
 msgid "ДОПОМОГА!"
 msgstr ""
 
-#: scripts/ui/markers.gd:101
+#: scripts/ui/markers.gd:102
 msgid "ВИНОСЯТЬ"
 msgstr ""
 
-#: scripts/ui/markers.gd:140
+#: scripts/ui/markers.gd:141
 msgid "ЦІЛЬ"
 msgstr ""
 
-#: scripts/ui/markers.gd:213
+#: scripts/ui/markers.gd:214
 msgid "ТМ"
 msgstr ""
 
-#: scripts/ui/markers.gd:222
+#: scripts/ui/markers.gd:223
 msgid "ПОЛОНЕНИЙ"
 msgstr ""
 
-#: scripts/ui/markers.gd:233
+#: scripts/ui/markers.gd:234
 msgid "РОЗВІДДРОН"
 msgstr ""
 
-#: scripts/ui/markers.gd:243
+#: scripts/ui/markers.gd:244
 msgid "FPV %dс"
 msgstr ""
 
-#: scripts/ui/markers.gd:276
+#: scripts/ui/markers.gd:277
 msgid "FPV — ЛКМ ПО ЦІЛІ"
 msgstr ""
 
-#: scripts/ui/markers.gd:308
+#: scripts/ui/markers.gd:309
 msgid "%d с"
 msgstr ""
 
-#: scripts/ui/markers.gd:308
+#: scripts/ui/markers.gd:309
 msgid "%d хв"
 msgstr ""
 
-#: scripts/ui/markers.gd:319
+#: scripts/ui/markers.gd:320
 msgid "%s тому"
 msgstr ""
 
-#: scripts/ui/markers.gd:328
+#: scripts/ui/markers.gd:329
 msgid "уражено"
 msgstr ""
 
-#: scripts/ui/markers.gd:415
+#: scripts/ui/markers.gd:493
 msgid "ПОДАВЛЕННЯ"
 msgstr ""
 
-#: scripts/ui/markers.gd:418
+#: scripts/ui/markers.gd:496
 msgid " — рубіж"
 msgstr ""
 
-#: scripts/ui/markers.gd:420
+#: scripts/ui/markers.gd:498
 msgid " — зайняти будівлю"
 msgstr ""
 
-#: scripts/ui/markers.gd:422
+#: scripts/ui/markers.gd:500
 msgid "ЗАЧИСТКА БУДІВЛІ"
 msgstr ""
 
-#: scripts/ui/markers.gd:423
+#: scripts/ui/markers.gd:501
 msgid "  (ПКМ)"
 msgstr ""
 
@@ -4316,82 +4316,86 @@ msgid "Показувати, куди піде підрозділ і де ста
 msgstr ""
 
 #: scripts/ui/settings_panel.gd:26
-msgid "Швидкість камери"
-msgstr ""
-
-#: scripts/ui/settings_panel.gd:27
-msgid "Швидкість повороту (Q / E)"
+msgid "Показувати, що бачить вибраний підрозділ (і що бачитиме з точки наказу)"
 msgstr ""
 
 #: scripts/ui/settings_panel.gd:28
+msgid "Швидкість камери"
+msgstr ""
+
+#: scripts/ui/settings_panel.gd:29
+msgid "Швидкість повороту (Q / E)"
+msgstr ""
+
+#: scripts/ui/settings_panel.gd:30
 msgid "Прокрутка камери біля країв екрана"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:31
+#: scripts/ui/settings_panel.gd:33
 msgid "КЛАВІШІ (клацніть і натисніть нову; Esc — скасувати)"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:44
+#: scripts/ui/settings_panel.gd:46
 msgid "Типові клавіші"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:48
+#: scripts/ui/settings_panel.gd:50
 msgid "Камера: WASD / стрілки — політ, Q / E — поворот, PgUp / PgDn — висота, колесо — зум, СКМ — нахил."
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:49
+#: scripts/ui/settings_panel.gd:51
 msgid "ГРАФІКА"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:70
+#: scripts/ui/settings_panel.gd:72
 msgid "Повноекранний режим"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:73
+#: scripts/ui/settings_panel.gd:75
 msgid "Ефект відео з дрона (шум, віньєтка)"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:76
+#: scripts/ui/settings_panel.gd:78
 msgid "Масштаб інтерфейсу"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:79
+#: scripts/ui/settings_panel.gd:81
 msgid "ЗВУК"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:80
+#: scripts/ui/settings_panel.gd:82
 msgid "Загальна гучність"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:81
+#: scripts/ui/settings_panel.gd:83
 msgid "Бойові звуки"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:82
+#: scripts/ui/settings_panel.gd:84
 msgid "Оточення і техніка"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:83
+#: scripts/ui/settings_panel.gd:85
 msgid "Інтерфейс і радіо"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:84
+#: scripts/ui/settings_panel.gd:86
 msgid "ПІДКАЗКИ"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:85
+#: scripts/ui/settings_panel.gd:87
 msgid "Підказки навчання"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:86
+#: scripts/ui/settings_panel.gd:88
 msgid "Показати всі підказки знову"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:119
+#: scripts/ui/settings_panel.gd:121
 msgid "натисніть…"
 msgstr ""
 
-#: scripts/ui/settings_panel.gd:134
+#: scripts/ui/settings_panel.gd:136
 msgid "зайнято камерою"
 msgstr ""
 

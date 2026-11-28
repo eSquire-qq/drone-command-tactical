@@ -171,7 +171,7 @@ var campaign := Campaign.new()
 var campaign_report := {}
 var settings := {"volume": 0.8, "vol_sfx": 1.0, "vol_amb": 0.8, "vol_ui": 0.8, "ui_scale": 1.0, "fullscreen": false,
 	"drone_fx": true, "edge_scroll": true, "hints": true, "hints_seen": [], "difficulty": "normal",
-	"sticky_mode": false, "move_preview": true, "cam_speed": 1.0, "cam_turn": 1.0, "keys": {}}
+	"sticky_mode": false, "move_preview": true, "vision_preview": true, "cam_speed": 1.0, "cam_turn": 1.0, "keys": {}}
 
 ## Rebindable command keys: [action, name, default key]. Camera keys (WASD,
 ## Q/E, PgUp/PgDn) are fixed.

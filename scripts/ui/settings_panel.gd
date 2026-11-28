@@ -23,6 +23,8 @@ func _ready() -> void:
 		func(on): _set_opt("sticky_mode", on)))
 	add_child(_check(Loc.t("Показувати, куди піде підрозділ і де стане кожен боєць"), bool(st.get("move_preview", true)),
 		func(on): _set_opt("move_preview", on)))
+	add_child(_check(Loc.t("Показувати, що бачить вибраний підрозділ (і що бачитиме з точки наказу)"), bool(st.get("vision_preview", true)),
+		func(on): _set_opt("vision_preview", on)))
 	add_child(_slider(Loc.t("Швидкість камери"), 0.4, 2.5, float(st.get("cam_speed", 1.0)), func(v): _set_opt("cam_speed", v)))
 	add_child(_slider(Loc.t("Швидкість повороту (Q / E)"), 0.4, 2.5, float(st.get("cam_turn", 1.0)), func(v): _set_opt("cam_turn", v)))
 	add_child(_check(Loc.t("Прокрутка камери біля країв екрана"), st["edge_scroll"], func(on):

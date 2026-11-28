@@ -38,6 +38,7 @@ func _draw() -> void:
 	var f: Font = UIK.font if UIK.font else get_theme_default_font()
 	var cmd = W.command
 	var blink = fmod(Time.get_ticks_msec() / 1000.0, 1.0) < 0.5
+	_draw_vision()
 	# objective zone outline
 	var r: Rect2 = W.mission.def.objective_rect
 	var corners = [Vector3(r.position.x, 0, r.position.y), Vector3(r.end.x, 0, r.position.y), Vector3(r.end.x, 0, r.end.y), Vector3(r.position.x, 0, r.end.y)]
@@ -360,6 +361,89 @@ func _draw_brackets(p, s: float, c: Color) -> void:
 			var corner = q + Vector2(sx * s, sy * s)
 			draw_line(corner, corner - Vector2(sx * k, 0), c, 2.0)
 			draw_line(corner, corner - Vector2(0, sy * k), c, 2.0)
+
+
+# ------------------------------------------------------------------ vision preview (F1)
+var _vq: Array = []            # ground quads seen
+var _vq_order := false         # from the order point (else from the unit)
+var _vq_key := ""
+var _vq_t := 0
+
+
+## The ground the selected unit sees now, or — while an order is being placed —
+## would see from the order point. Recomputed at most twice a second.
+func _update_vision() -> void:
+	var cmd = W.command
+	var now := Time.get_ticks_msec()
+	if not bool(Game.settings.get("vision_preview", true)) or cmd.selection.size() != 1 or cmd.tool != "" or cmd.dragging:
+		_vq = []
+		_vq_key = ""
+		return
+	var o = cmd.selection[0]
+	var eye = null
+	var order := false
+	if (o is Squad or o is Soldier) and o.side == 0:
+		var sq = o if o is Squad else o.squad
+		if o is Squad and sq.mounted:
+			return
+		if cmd.hover_point != null and cmd.mode in ["move", "hold", "assault", "bound", "clear"] and get_viewport().gui_get_hovered_control() == null:
+			eye = W.grid.ground(cmd.hover_point) + Vector3(0, 1.5, 0)
+			order = true
+		elif o is Squad and o.active_count() > 0:
+			eye = W.grid.ground(o.center()) + Vector3(0, 1.5, 0)
+		elif o is Soldier and o.is_active():
+			eye = o.eye_point()
+	elif o is Vehicle and o.side == 0 and o.state != "destroyed":
+		if cmd.hover_point != null and cmd.mode in ["move", "assault"] and get_viewport().gui_get_hovered_control() == null:
+			eye = W.grid.ground(cmd.hover_point) + Vector3(0, 2.6, 0)
+			order = true
+		else:
+			eye = o.global_position + Vector3(0, 2.6, 0)
+	if eye == null:
+		_vq = []
+		_vq_key = ""
+		return
+	var key := "%s|%s" % [order, (eye as Vector3).snapped(Vector3.ONE * 2.0)]
+	if key == _vq_key or now - _vq_t < 500:
+		return
+	_vq_key = key
+	_vq_t = now
+	_vq_order = order
+	var t0 := Time.get_ticks_usec()
+	_vq = VisionPreview.quads(eye, VisionPreview.compute(eye))
+	if Prof.on:
+		Prof.add("vision", t0)
+
+
+func _draw_vision() -> void:
+	_update_vision()
+	if _vq.is_empty():
+		return
+	var col := Color(UIK.GOOD, 0.13) if _vq_order else Color(UIK.FRIEND, 0.09)
+	var c = get_viewport().get_camera_3d()
+	if c == null:
+		return
+	var sz := get_viewport_rect().size
+	var cols := PackedColorArray([col])
+	for q in _vq:
+		var pts := PackedVector2Array()
+		var ok := true
+		var inside := false
+		for p in q:
+			if c.is_position_behind(p):
+				ok = false
+				break
+			var sp := c.unproject_position(p + Vector3(0, 0.15, 0))
+			if sp.x > -50 and sp.y > -50 and sp.x < sz.x + 50 and sp.y < sz.y + 50:
+				inside = true
+			pts.append(sp)
+		if not ok or not inside:
+			continue
+		# a wedge seen edge-on collapses to a line: skip it (triangulation fails)
+		var area := absf((pts[2] - pts[0]).cross(pts[3] - pts[1])) * 0.5
+		if area < 1.0:
+			continue
+		draw_primitive(pts, cols, PackedVector2Array())
 
 
 # ------------------------------------------------------------------ order preview

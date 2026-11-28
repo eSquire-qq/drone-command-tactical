@@ -94,6 +94,8 @@ func _process(_d: float) -> void:
 			_hold(t)
 		"destroy":
 			_destroy_test(t)
+		"vision":
+			_vision(t)
 
 
 func _setup() -> void:
@@ -1873,4 +1875,56 @@ func _destroy_test(t: float) -> void:
 		stage += 1
 	elif stage == 5 and t - _rs_t > 60.0:
 		print("[AITEST] RESULT destroy: FAIL targets still up")
+		get_tree().quit()
+
+
+# ------------------------------------------------------------------ vision preview (F1)
+## Cost of the viewshed and pictures: what the selected squad sees, then what
+## it would see from an order point.
+func _vision(t: float) -> void:
+	var sq = W.mission.friendly_squads[0]
+	if W.ew:
+		W.ew.immune = true   # pictures, not EW
+	if stage == 0 and t > 3.0:
+		stage = 1
+		var c: Vector3 = sq.center()
+		var t0 := Time.get_ticks_usec()
+		var rays := VisionPreview.compute(W.grid.ground(c) + Vector3(0, 1.5, 0))
+		var t1 := Time.get_ticks_usec()
+		var q := VisionPreview.quads(W.grid.ground(c) + Vector3(0, 1.5, 0), rays)
+		var t2 := Time.get_ticks_usec()
+		var runs := 0
+		for r in rays:
+			runs += (r as Array).size()
+		print("[AITEST] VISION from %s: compute %.1f ms, quads %.1f ms, %d runs, %d quads" % [c.snapped(Vector3.ONE), (t1 - t0) / 1000.0, (t2 - t1) / 1000.0, runs, q.size()])
+		W.command.select_object(sq)
+		W.command.mode = "move"
+		W.command.hover_point = null
+		W.cam.teleport_view(c + Vector3(0, 0, -40), 150.0, 55.0, 0.0)
+		_rs_t = t
+	elif stage == 1 and t - _rs_t > 1.5:
+		stage = 2
+		if DisplayServer.get_name() != "headless":
+			var pth := ProjectSettings.globalize_path("user://vision_unit.png")
+			get_viewport().get_texture().get_image().save_png(pth)
+			print("[AITEST] SHOT ", pth)
+		# an order point ahead, on higher ground if there is some
+		var c: Vector3 = sq.center()
+		var best := c + Vector3(0, 0, -60)
+		var bh := -INF
+		for k in 12:
+			var p: Vector3 = W.grid.ground(c + Vector3(-60 + k * 10, 0, -70))
+			if p.y > bh:
+				bh = p.y
+				best = p
+		W.command.hover_point = best
+		print("[AITEST] VISION order point %s" % best.snapped(Vector3.ONE))
+		_rs_t = t
+	elif stage == 2 and t - _rs_t > 1.5:
+		stage = 3
+		if DisplayServer.get_name() != "headless":
+			var pth := ProjectSettings.globalize_path("user://vision_order.png")
+			get_viewport().get_texture().get_image().save_png(pth)
+			print("[AITEST] SHOT ", pth)
+		print("[AITEST] RESULT vision: ok")
 		get_tree().quit()
