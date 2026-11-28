@@ -134,7 +134,10 @@ func _show_missions() -> void:
 		var extra := ""
 		if ok:
 			var d: MapDef = Game.map_def(id)
-			extra = Loc.t("\nЧас: %d хв • Бюджет: %d од. (залежить від складності)") % [int(d.time_limit / 60.0), Game.BUDGET]
+			if d.fixed_loadout.is_empty():
+				extra = Loc.t("\nЧас: %d хв • Бюджет: %d од. (залежить від складності)") % [int(d.time_limit / 60.0), Game.BUDGET]
+			else:
+				extra = Loc.t("\nЧас: %d хв • Сили визначено завданням") % int(d.time_limit / 60.0)
 		info.text = "[color=#%s]%s%s[/color]" % [UIK.hex(UIK.TEXT if ok else UIK.DIM), m["desc"], extra]
 		side_box.add_child(info)
 		i += 1

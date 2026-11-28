@@ -48,7 +48,7 @@ func _draw() -> void:
 			pts.clear()
 			break
 		pts.append(sp)
-	if pts.size() == 4:
+	if pts.size() == 4 and W.mission.objectives.type() in ["capture", "hold"]:
 		for i in 4:
 			draw_dashed_line(pts[i], pts[(i + 1) % 4], Color(UIK.ACCENT, 0.35), 1.5, 10.0)
 		draw_string(f, pts[0] + Vector2(4, -6), Loc.t("ОБ'ЄКТ: ОПОРНИЙ ПУНКТ"), HORIZONTAL_ALIGNMENT_LEFT, -1, 12, Color(UIK.ACCENT, 0.7))

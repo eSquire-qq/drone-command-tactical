@@ -5,6 +5,9 @@ extends RefCounted
 ##   objective = {"type": "destroy", "bunkers": [0, 2], "ew": true}
 ##                                                          — destroy the listed bunkers (and all real РЕБ)
 ##   objective = {"type": "recon"}                          — spot every bunker and РЕБ station with the drone
+##       "teams": true  — the targets are the enemy teams (a team is found when the
+##                        drone confirms one of its men) and the real РЕБ stations
+##       "keep_drone": true — losing the drone with no spare fails the mission
 ##   objective = {"type": "hold", "hold": 300, "waves": [{after, men, vehicle}]}
 ##                                                          — take capture_rect, then hold it against
 ##                                                            counterattack waves for `hold` seconds
@@ -109,6 +112,13 @@ func _destroyed_targets() -> int:
 
 
 func _recon_progress() -> Vector2i:
+	if def.objective.get("teams", false):
+		var tl := recon_targets()
+		var f := 0
+		for x in tl:
+			if x["found"]:
+				f += 1
+		return Vector2i(f, tl.size())
 	var seen := 0
 	var total := 0
 	for b in W.bunkers:
@@ -122,6 +132,27 @@ func _recon_progress() -> Vector2i:
 				if st.ever_seen:
 					seen += 1
 	return Vector2i(seen, total)
+
+
+## Recon by teams: [{name, found, pos}] — every enemy team of the map (not
+## reinforcements) and every real РЕБ station.
+func recon_targets() -> Array:
+	var out: Array = []
+	if W.enemy_ai:
+		for sq in W.enemy_ai.squads:
+			if sq.members.is_empty() or sq.team_name.begins_with(Loc.t("Підкріплення")) or sq.team_name.begins_with(Loc.t("Контратака")):
+				continue
+			var found := false
+			for m in sq.members:
+				if m.ever_seen:
+					found = true
+					break
+			out.append({"name": Loc.t(sq.team_name), "found": found, "pos": sq.members[0].global_position})
+	if W.ew:
+		for st in W.ew.stations:
+			if not st.decoy:
+				out.append({"name": Loc.t("Станція РЕБ"), "found": st.ever_seen, "pos": st.global_position})
+	return out
 
 
 ## Evaluates the optional tasks for the report: [{title, done}].

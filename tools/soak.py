@@ -23,7 +23,7 @@ import time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # the Godot 4.7 editor binary: set GODOT in the environment, or edit this default
 GODOT = os.environ.get('GODOT', r'E:\Steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64.exe')
-MAPS = ['training', 'treeline', 'field', 'village', 'forest', 'urban']
+MAPS = ['training', 'recon', 'treeline', 'field', 'village', 'forest', 'urban']
 TIMEOUT = 900     # s of wall time per run
 
 

@@ -46,6 +46,8 @@ func begin() -> void:
 				if a2.begins_with("--difficulty="):
 					Game.settings["difficulty"] = a2.substr(13)
 			Game.loadout = {"recon_drone": 1, "rifle_squad": 2, "assault_group": 1, "bmp2": 1, "m113": 1, "medevac": 1, "mortar": 2, "fpv": 3, "smoke": 2}
+			if not def.fixed_loadout.is_empty():
+				Game.loadout = def.fixed_loadout.duplicate()   # the mission sets the force
 			var cine := "--cinematic" in args
 			if cine:
 				# video: a few seconds of the briefing first, no tutorial cards
@@ -215,7 +217,8 @@ func show_briefing() -> void:
 	elif def.has_meta("intel0"):
 		def.intel = (def.get_meta("intel0") as Dictionary).duplicate(true)
 	if not def.fixed_loadout.is_empty():
-		screen = Screens.briefing(photo, photo_info, def, _start_fixed, _back_from_briefing, Loc.t("ПОЧАТИ НАВЧАННЯ  ▸"))
+		screen = Screens.briefing(photo, photo_info, def, _start_fixed, _back_from_briefing,
+			Loc.t("ПОЧАТИ НАВЧАННЯ  ▸") if def.objective.get("type", "") == "training" else Loc.t("РОЗПОЧАТИ МІСІЮ  ▸"))
 	else:
 		screen = Screens.briefing(photo, photo_info, def, show_planning, _back_from_briefing)
 	root.add_child(screen)

@@ -28,6 +28,7 @@ var hold_t := 0.0              # seconds held (only while it is ours)
 var hold_lost_t := 0.0         # the enemy is in the zone and none of ours: counting to losing it
 var held_once := false
 var counter_sent := 0          # counterattack waves sent
+var _recon_told := {}          # recon by teams: names already reported found
 
 
 func setup(p_def: MapDef) -> void:
@@ -299,6 +300,11 @@ func _check_end() -> void:
 			end_mission("timeout")
 		return
 	if objectives.type() != "capture" and objectives.type() != "hold":
+		if objectives.type() == "recon" and def.objective.get("teams", false):
+			_recon_news()
+		if phase == Phase.COMBAT and def.objective.get("keep_drone", false) and W.ew and W.ew.drone_down and W.ew.spares <= 0 and W.ew.relaunch_t < 0.0:
+			end_mission("drone_lost")
+			return
 		if phase == Phase.COMBAT and objectives.primary_done():
 			end_mission("completed")
 			return
@@ -330,6 +336,21 @@ func _check_end() -> void:
 		return
 	if t >= def.time_limit:
 		end_mission("timeout")
+
+
+## Recon by teams: a message for every newly confirmed position.
+func _recon_news() -> void:
+	var tl: Array = objectives.recon_targets()
+	var n := 0
+	for x in tl:
+		if x["found"]:
+			n += 1
+	for x in tl:
+		if x["found"] and not _recon_told.has(x["name"]):
+			_recon_told[x["name"]] = true
+			Events.msg(Loc.t("Розвідка: позицію підтверджено — %s (%d/%d)") % [x["name"], n, tl.size()], "good")
+			if W.blog:
+				W.blog.add("contact", Loc.t("Підтверджено: %s") % x["name"], x["pos"])
 
 
 ## Objective "hold": the position is ours, now the counterattack.
@@ -567,7 +588,7 @@ func end_mission(reason: String) -> void:
 	r["grenades_used"] = nades
 	if W.blog:
 		var why := {"captured": Loc.t("Позицію захоплено"), "completed": Loc.t("Завдання виконано"), "wiped": Loc.t("Підрозділи втратили боєздатність"),
-			"timeout": Loc.t("Час вичерпано"), "abort": Loc.t("Операцію припинено")}
+			"timeout": Loc.t("Час вичерпано"), "abort": Loc.t("Операцію припинено"), "drone_lost": Loc.t("Дрон втрачено")}
 		W.blog.add("end", String(why.get(reason, reason)), null)
 		r["analysis"] = W.blog.analyze(r)
 	r["weather"] = "%s %s" % [Game.wx("icon"), Game.wx("name")]

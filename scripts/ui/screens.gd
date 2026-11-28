@@ -120,7 +120,10 @@ static func briefing(photo: Texture2D, photo_info: Dictionary, def: MapDef, on_n
 	var wd: Dictionary = Game.WEATHER[Game.weather]
 	s += Loc.t("[color=#%s][b]ПОГОДА[/b][/color]\n%s %s — %s\n\n") % [a, wd["icon"], wd["name"], wd["desc"]]
 	if not def.fixed_loadout.is_empty():
-		s += Loc.t("[color=#%s][b]УМОВИ[/b][/color]\nБез обмеження часу. Кожен крок пояснює підказка вгорі екрана; будь-який крок можна пропустити.\n\n") % a
+		if def.objective.get("type", "") == "training":
+			s += Loc.t("[color=#%s][b]УМОВИ[/b][/color]\nБез обмеження часу. Кожен крок пояснює підказка вгорі екрана; будь-який крок можна пропустити.\n\n") % a
+		else:
+			s += Loc.t("[color=#%s][b]УМОВИ[/b][/color]\nЧас на виконання: %d хв. Сили визначено завданням.\n\n") % [a, int(def.time_limit / 60.0)]
 		var names: Array = []
 		for k in def.fixed_loadout.keys():
 			if Game.CATALOG.has(k):
@@ -522,7 +525,8 @@ static func results(r: Dictionary, on_retry: Callable, on_replan: Callable, on_m
 	head.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	inner.add_child(head)
 	var reasons = {"captured": Loc.t("Позицію противника захоплено та утримано."), "completed": Loc.t("Основне завдання виконано."), "wiped": Loc.t("Підрозділи втратили боєздатність."),
-		"timeout": Loc.t("Час на виконання завдання вичерпано."), "abort": Loc.t("Операцію припинено за рішенням командира.")}
+		"timeout": Loc.t("Час на виконання завдання вичерпано."), "abort": Loc.t("Операцію припинено за рішенням командира."),
+		"drone_lost": Loc.t("Дрон втрачено — розвідку не завершено.")}
 	var rs = UIK.label(reasons.get(r["reason"], ""), 15, UIK.DIM)
 	rs.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	inner.add_child(rs)

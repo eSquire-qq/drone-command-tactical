@@ -70,6 +70,8 @@ func _process(delta: float) -> void:
 		if _mh_t <= 0.0:
 			_mh_t = 20.0
 			_manage_hold()
+	elif W.mission.def.id == "recon":
+		_smart_recon(delta, t)
 	elif plan == "frontal":
 		_frontal(t)
 	elif W.mission.def.id == "field":
@@ -158,6 +160,42 @@ func _manage_hold() -> void:
 
 var _hold_told := false
 var _mh_t := 0.0
+## «СІРА ЗОНА» as a player would fly it: the infantry stays on our line, the
+## drone visits the areas from the briefing at a stand-off with the zoom on,
+## and backs off (further, higher) whenever the link goes bad.
+var _rc_i := -1
+var _rc_t := 0.0
+var _rc_d := 0.0
+const RECON_ROUTE := [
+	[Vector2(-62, -12), 95.0], [Vector2(-20, -48), 120.0], [Vector2(-54, -87), 135.0],
+	[Vector2(4, -96), 150.0], [Vector2(62, -84), 135.0], [Vector2(46, -6), 95.0],
+]
+
+
+func _smart_recon(delta: float, _t: float) -> void:
+	if W.ew == null or W.ew.drone_down:
+		return
+	_rc_t -= delta
+	W.cam.zoom_t = 3.0
+	if _rc_i < 0 or _rc_t <= 0.0:
+		_rc_i = (_rc_i + 1) % RECON_ROUTE.size()
+		_rc_t = 30.0
+		_rc_d = float(RECON_ROUTE[_rc_i][1]) if plan != "frontal" else 60.0   # "frontal": low and close, as a careless player
+		_rc_fly()
+		print("[BALANCE] t=%d recon leg %d → %s, stand-off %.0f" % [int(W.mission.t), _rc_i, RECON_ROUTE[_rc_i][0], _rc_d])
+		return
+	# a bad link: further and higher, at once
+	if plan != "frontal" and W.ew.link < 0.5 and _rc_d < 220.0:
+		_rc_d += 25.0
+		_rc_fly()
+
+
+func _rc_fly() -> void:
+	var p: Vector2 = RECON_ROUTE[_rc_i][0]
+	W.cam.pitch_t = deg_to_rad(50.0)
+	W.cam.fly_to(Vector3(p.x, 0, p.y), _rc_d)
+
+
 var _ammo_t := 10.0
 var _ammo_cd := {}
 

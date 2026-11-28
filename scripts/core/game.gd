@@ -111,6 +111,7 @@ const MAPS := {
 	"village": "res://maps/village.tscn",
 	"urban": "res://maps/urban.tscn",
 	"forest": "res://maps/forest.tscn",
+	"recon": "res://maps/recon.tscn",
 }
 const MAPS_SCRIPT := {
 	"treeline": "res://scripts/map/maps/map_treeline.gd",
@@ -119,6 +120,7 @@ const MAPS_SCRIPT := {
 	"village": "res://scripts/map/maps/map_village.gd",
 	"urban": "res://scripts/map/maps/map_urban.gd",
 	"forest": "res://scripts/map/maps/map_forest.gd",
+	"recon": "res://scripts/map/maps/map_recon.gd",
 }
 
 ## All missions, playable or not yet built. A mission is playable when its
@@ -134,11 +136,13 @@ const MISSIONS_UK := {
 		"desc": "Штурм хутора: подвір'я, паркани, підвали, вузькі вулиці та присадибні ділянки."},
 	"forest": {"title": "ЛІСОВИЙ МАСИВ", "terrain": "Ліс",
 		"desc": "Бій у сосновому лісі: огляд 20–35 м, засідки, траншеї й бліндажі під деревами, просіки для техніки, лісництво на поляні."},
+	"recon": {"title": "СІРА ЗОНА", "terrain": "Розвідка дроном",
+		"desc": "Коротка місія без штурму: знайти дроном пост, кулемет, окоп, мінометників, бліндаж і РЕБ противника. Дрон один — РЕБ і РЕР не прощають помилок."},
 	"urban": {"title": "КВАРТАЛ", "terrain": "Міська забудова",
 		"desc": "Зачистка міського кварталу: зруйновані багатоповерхівки, під'їзди, двори."},
 }
 var MISSIONS = MISSIONS_UK   # the current language (Loc.localize_all)
-const MISSION_ORDER := ["treeline", "field", "village", "forest", "urban"]
+const MISSION_ORDER := ["recon", "treeline", "field", "village", "forest", "urban"]
 
 ## Campaign "Operation Dawn": the same unit fights these steps in order.
 const CAMPAIGN_STEPS_UK := [

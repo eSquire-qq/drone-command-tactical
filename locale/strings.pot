@@ -1179,203 +1179,215 @@ msgstr ""
 msgid "ЗАСОБИ ПІДТРИМКИ"
 msgstr ""
 
-#: scripts/core/game.gd:127
+#: scripts/core/game.gd:129
 msgid "ПОЛІГОН"
 msgstr ""
 
-#: scripts/core/game.gd:127
+#: scripts/core/game.gd:129
 msgid "Навчання"
 msgstr ""
 
-#: scripts/core/game.gd:128
+#: scripts/core/game.gd:130
 msgid "Покрокове навчання: дрон, накази, підтримка, штурм, евакуація, зачистка окопу."
 msgstr ""
 
-#: scripts/core/game.gd:129
+#: scripts/core/game.gd:131
 msgid "ПОСАДКА"
 msgstr ""
 
-#: scripts/core/game.gd:129
+#: scripts/core/game.gd:131
 msgid "Лісосмуга / поле"
 msgstr ""
 
-#: scripts/core/game.gd:130
+#: scripts/core/game.gd:132
 msgid "Опорний пункт противника в лісосмузі: дві лінії окопів, ДЗОТи, мінні загородження, РЕБ."
 msgstr ""
 
-#: scripts/core/game.gd:131
+#: scripts/core/game.gd:133
 msgid "ВИСОТА"
 msgstr ""
 
-#: scripts/core/game.gd:131
+#: scripts/core/game.gd:133
 msgid "Відкрите поле"
 msgstr ""
 
-#: scripts/core/game.gd:132
+#: scripts/core/game.gd:134
 msgid "Опорний пункт на голому пагорбі над відкритим полем: передова застава, прихована балка, ПТРК, пристріляне поле."
 msgstr ""
 
-#: scripts/core/game.gd:133
+#: scripts/core/game.gd:135
 msgid "ХУТІР"
 msgstr ""
 
-#: scripts/core/game.gd:133
+#: scripts/core/game.gd:135
 msgid "Сільська забудова"
 msgstr ""
 
-#: scripts/core/game.gd:134
+#: scripts/core/game.gd:136
 msgid "Штурм хутора: подвір'я, паркани, підвали, вузькі вулиці та присадибні ділянки."
 msgstr ""
 
-#: scripts/core/game.gd:135
+#: scripts/core/game.gd:137
 msgid "ЛІСОВИЙ МАСИВ"
 msgstr ""
 
-#: scripts/core/game.gd:135
+#: scripts/core/game.gd:137
 msgid "Ліс"
 msgstr ""
 
-#: scripts/core/game.gd:136
+#: scripts/core/game.gd:138
 msgid "Бій у сосновому лісі: огляд 20–35 м, засідки, траншеї й бліндажі під деревами, просіки для техніки, лісництво на поляні."
 msgstr ""
 
-#: scripts/core/game.gd:137
+#: scripts/core/game.gd:139
+msgid "СІРА ЗОНА"
+msgstr ""
+
+#: scripts/core/game.gd:139
+msgid "Розвідка дроном"
+msgstr ""
+
+#: scripts/core/game.gd:140
+msgid "Коротка місія без штурму: знайти дроном пост, кулемет, окоп, мінометників, бліндаж і РЕБ противника. Дрон один — РЕБ і РЕР не прощають помилок."
+msgstr ""
+
+#: scripts/core/game.gd:141
 msgid "КВАРТАЛ"
 msgstr ""
 
-#: scripts/core/game.gd:137
+#: scripts/core/game.gd:141
 msgid "Міська забудова"
 msgstr ""
 
-#: scripts/core/game.gd:138
+#: scripts/core/game.gd:142
 msgid "Зачистка міського кварталу: зруйновані багатоповерхівки, під'їзди, двори."
 msgstr ""
 
-#: scripts/core/game.gd:145
+#: scripts/core/game.gd:149
 msgid "Прорив першої лінії"
 msgstr ""
 
-#: scripts/core/game.gd:146
+#: scripts/core/game.gd:150
 msgid "Захопити опорний пункт у лісосмузі — плацдарм для подальшого наступу. Бережіть людей: усі втрати переходять у наступні бої."
 msgstr ""
 
-#: scripts/core/game.gd:147
+#: scripts/core/game.gd:151
 msgid "Висота за полем"
 msgstr ""
 
-#: scripts/core/game.gd:148
+#: scripts/core/game.gd:152
 msgid "Противник закріпився на висоті, що проглядає весь наступ. Взяти її, не втративши техніку у відкритому полі."
 msgstr ""
 
-#: scripts/core/game.gd:149
+#: scripts/core/game.gd:153
 msgid "Вихід до хутора"
 msgstr ""
 
-#: scripts/core/game.gd:150
+#: scripts/core/game.gd:154
 msgid "Розвинути успіх і вибити противника з хутора за лісосмугою."
 msgstr ""
 
-#: scripts/core/game.gd:151
+#: scripts/core/game.gd:155
 msgid "Лісовий масив"
 msgstr ""
 
-#: scripts/core/game.gd:152
+#: scripts/core/game.gd:156
 msgid "Очистити лісовий масив на фланзі наступу."
 msgstr ""
 
-#: scripts/core/game.gd:153
+#: scripts/core/game.gd:157
 msgid "Околиця міста"
 msgstr ""
 
-#: scripts/core/game.gd:154
+#: scripts/core/game.gd:158
 msgid "Закріпитися в крайньому кварталі міста."
 msgstr ""
 
-#: scripts/core/game.gd:175
+#: scripts/core/game.gd:179
 msgid "Наказ: рух"
 msgstr ""
 
-#: scripts/core/game.gd:175
+#: scripts/core/game.gd:179
 msgid "Наказ: штурм"
 msgstr ""
 
-#: scripts/core/game.gd:175
+#: scripts/core/game.gd:179
 msgid "Наказ: утримувати"
 msgstr ""
 
-#: scripts/core/game.gd:176
+#: scripts/core/game.gd:180
 msgid "Наказ: зачистка"
 msgstr ""
 
-#: scripts/core/game.gd:176
+#: scripts/core/game.gd:180
 msgid "Відхід"
 msgstr ""
 
-#: scripts/core/game.gd:176
+#: scripts/core/game.gd:180
 msgid "Посадка / висадка"
 msgstr ""
 
-#: scripts/core/game.gd:177
+#: scripts/core/game.gd:181
 msgid "Димова граната"
 msgstr ""
 
-#: scripts/core/game.gd:177
+#: scripts/core/game.gd:181
 msgid "Евакуація"
 msgstr ""
 
-#: scripts/core/game.gd:178
+#: scripts/core/game.gd:182
 msgid "Поповнити набої"
 msgstr ""
 
-#: scripts/core/game.gd:179
+#: scripts/core/game.gd:183
 msgid "Техніка: подавлення"
 msgstr ""
 
-#: scripts/core/game.gd:179
+#: scripts/core/game.gd:183
 msgid "Техніка: розворот"
 msgstr ""
 
-#: scripts/core/game.gd:180
+#: scripts/core/game.gd:184
 msgid "Піхота: за технікою"
 msgstr ""
 
-#: scripts/core/game.gd:180
+#: scripts/core/game.gd:184
 msgid "Піхота: перебіжками"
 msgstr ""
 
-#: scripts/core/game.gd:181
+#: scripts/core/game.gd:185
 msgid "Міномет"
 msgstr ""
 
-#: scripts/core/game.gd:182
+#: scripts/core/game.gd:186
 msgid "Наступний підрозділ"
 msgstr ""
 
-#: scripts/core/game.gd:182
+#: scripts/core/game.gd:186
 msgid "Тактична пауза"
 msgstr ""
 
-#: scripts/core/game.gd:183
+#: scripts/core/game.gd:187
 msgid "Камера: супровід"
 msgstr ""
 
-#: scripts/core/game.gd:183
+#: scripts/core/game.gd:187
 msgid "Камера: загальний огляд"
 msgstr ""
 
-#: scripts/core/game.gd:184
+#: scripts/core/game.gd:188
 msgid "Радіожурнал"
 msgstr ""
 
-#: scripts/core/game.gd:184
+#: scripts/core/game.gd:188
 msgid "Довідка"
 msgstr ""
 
-#: scripts/core/game.gd:184
+#: scripts/core/game.gd:188
 msgid "Налаштування"
 msgstr ""
 
-#: scripts/core/game.gd:437
+#: scripts/core/game.gd:441
 msgid "За планом"
 msgstr ""
 
@@ -1771,6 +1783,98 @@ msgstr ""
 msgid "РЕЗЕРВ?"
 msgstr ""
 
+#: scripts/map/maps/map_recon.gd:15
+msgid "Розвідка переднього краю противника"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:16
+msgid "Поле / лісосмуги"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:17
+msgid "Розвідати дроном усі позиції противника перед нашим рубежем: пост, кулемет, окоп, мінометників, бліндаж і станцію РЕБ. Дрон один — не втратьте його в зоні РЕБ."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:18
+msgid "Район 240×240 м. Наш рубіж — південна лісосмуга. Перед нею поле з гаєм і зруйнованою фермою, далі ворожий окоп під північною лісосмугою, у глибині — балка й бліндаж."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:113
+msgid "Спостережний пост"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:115
+msgid "Кулемет на фермі"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:117
+msgid "Окоп"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:120
+msgid "Мінометники"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:122
+msgid "Бліндаж"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:126
+msgid "знімок зроблено 14 год тому"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:127
+msgid "12–16 осіб"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:129
+msgid "Завдання — лише розвідка: знайти й підтвердити дроном усі позиції. Піхота лишається на нашому рубежі."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:130
+msgid "Ймовірний спостережний пост у гаю посеред поля."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:131
+msgid "На зруйнованій фермі на сході — ймовірне кулеметне гніздо."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:132
+msgid "Окоп під північною лісосмугою, перед ним дріт і міни."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:133
+msgid "У глибині — бліндаж, балка на сході (можливі мінометники)."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:134
+msgid "Станція РЕБ десь у глибині; кожна група має переносний РЕБ — дрон, що підлітає низько, втрачає зв'язок і може впасти."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:135
+msgid "Запасного дрона немає. РЕР пеленгує дрон, що довго висить у зоні РЕБ, — противник відповідає мінометом по нашій лісосмузі."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:136
+msgid "Підтверджує ціль лише чиста картинка: тримайтеся на відстані, набирайте висоту, використовуйте зум."
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:139
+msgid "ПОСТ?"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:140
+msgid "ФЕРМА"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:141
+msgid "ОКОП"
+msgstr ""
+
+#: scripts/map/maps/map_recon.gd:142
+msgid "БАЛКА"
+msgstr ""
+
 #: scripts/map/maps/map_training.gd:11
 msgid "Навчання командира"
 msgstr ""
@@ -1789,10 +1893,6 @@ msgstr ""
 
 #: scripts/map/maps/map_training.gd:78
 msgid "Пост"
-msgstr ""
-
-#: scripts/map/maps/map_training.gd:80
-msgid "Окоп"
 msgstr ""
 
 #: scripts/map/maps/map_training.gd:84
@@ -1817,10 +1917,6 @@ msgstr ""
 
 #: scripts/map/maps/map_training.gd:92
 msgid "ПОСТ"
-msgstr ""
-
-#: scripts/map/maps/map_training.gd:93
-msgid "ОКОП"
 msgstr ""
 
 #: scripts/map/maps/map_training.gd:94
@@ -2303,208 +2399,232 @@ msgstr ""
 msgid "піхота"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:68
+#: scripts/mission/mission_manager.gd:69
 msgid "Початок операції. Підрозділи висуваються на вихідні рубежі."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:121
+#: scripts/mission/mission_manager.gd:122
 msgid "Колона висувається в район «%s»."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:128
+#: scripts/mission/mission_manager.gd:129
 msgid "Штурмова група %d"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:129
+#: scripts/mission/mission_manager.gd:130
 msgid "Ш-%d"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:132
+#: scripts/mission/mission_manager.gd:133
 msgid "%d-ше відділення"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:133
+#: scripts/mission/mission_manager.gd:134
 msgid "В-%d"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:218
+#: scripts/mission/mission_manager.gd:219
 msgid "%s з десантом (%s) входить у район."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:220
+#: scripts/mission/mission_manager.gd:221
 msgid "%s входить у район."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:230
+#: scripts/mission/mission_manager.gd:231
 msgid "%s висувається пішки."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:261
+#: scripts/mission/mission_manager.gd:262
 msgid "Висадку завершено. Підрозділи готові до виконання завдання."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:315
+#: scripts/mission/mission_manager.gd:321
 msgid "ЗАКРІПЛЕННЯ НА ПОЗИЦІЇ %d%%"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:325
+#: scripts/mission/mission_manager.gd:331
 msgid "БІЙ ЗА ПОЗИЦІЮ: противника в зоні — %d"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:325
+#: scripts/mission/mission_manager.gd:331
 msgid "ЗАЧИЩЕННЯ"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:350
+#: scripts/mission/mission_manager.gd:351
+msgid "Розвідка: позицію підтверджено — %s (%d/%d)"
+msgstr ""
+
+#: scripts/mission/mission_manager.gd:353
+msgid "Підтверджено: %s"
+msgstr ""
+
+#: scripts/mission/mission_manager.gd:371
 msgid "Позицію захоплено! Закріплюйтесь: противник готує контратаку. Утримати %d хв."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:352
+#: scripts/mission/mission_manager.gd:373
 msgid "Позицію захоплено — утримання"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:354
+#: scripts/mission/mission_manager.gd:375
 msgid "Позицію знову взято — утримуйте!"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:375
+#: scripts/mission/mission_manager.gd:396
 msgid "Противник повернув позицію! Відбийте її знову."
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:377
+#: scripts/mission/mission_manager.gd:398
 msgid "Противник повернув позицію"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:385
+#: scripts/mission/mission_manager.gd:406
 msgid "УТРИМАННЯ ПРИЗУПИНЕНО: у зоні немає наших бійців · ще %s"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:387
+#: scripts/mission/mission_manager.gd:408
 msgid "ПОЗИЦІЮ ВТРАЧАЄМО! Поверніть бійців у зону — %d с"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:389
+#: scripts/mission/mission_manager.gd:410
 msgid "ВИБИЙТЕ ПРОТИВНИКА З ПОЗИЦІЇ: у зоні — %d"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:391
+#: scripts/mission/mission_manager.gd:412
 msgid "УТРИМАННЯ %s · очікується контратака"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:393
+#: scripts/mission/mission_manager.gd:414
 msgid "КОНТРАТАКА! Противник у зоні — %d · утримати ще %s"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:395
+#: scripts/mission/mission_manager.gd:416
 msgid "УТРИМАННЯ: ще %s"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:525
+#: scripts/mission/mission_manager.gd:546
 msgid "НЕЗАДОВІЛЬНО"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:527
+#: scripts/mission/mission_manager.gd:548
 msgid "ВІДМІННО"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:529
+#: scripts/mission/mission_manager.gd:550
 msgid "ДОБРЕ"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:531
+#: scripts/mission/mission_manager.gd:552
 msgid "ЗАДОВІЛЬНО"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:569
+#: scripts/mission/mission_manager.gd:590
 msgid "Позицію захоплено"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:569
+#: scripts/mission/mission_manager.gd:590
 msgid "Завдання виконано"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:569
+#: scripts/mission/mission_manager.gd:590
 msgid "Підрозділи втратили боєздатність"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:570
+#: scripts/mission/mission_manager.gd:591
 msgid "Час вичерпано"
 msgstr ""
 
-#: scripts/mission/mission_manager.gd:570
+#: scripts/mission/mission_manager.gd:591
 msgid "Операцію припинено"
 msgstr ""
 
-#: scripts/mission/objectives.gd:23
-msgid "Захопити та утримати опорний пункт"
-msgstr ""
-
-#: scripts/mission/objectives.gd:24
-msgid "Захопити опорний пункт і відбити контратаку"
-msgstr ""
-
-#: scripts/mission/objectives.gd:25
-msgid "Знищити визначені цілі"
+#: scripts/mission/mission_manager.gd:591
+msgid "Дрон втрачено"
 msgstr ""
 
 #: scripts/mission/objectives.gd:26
-msgid "Розвідати всі вогневі точки та станції РЕБ"
+msgid "Захопити та утримати опорний пункт"
 msgstr ""
 
 #: scripts/mission/objectives.gd:27
-msgid "Пройти навчання командира"
+msgid "Захопити опорний пункт і відбити контратаку"
 msgstr ""
 
 #: scripts/mission/objectives.gd:28
-msgid "Знищити станції РЕБ противника"
+msgid "Знищити визначені цілі"
 msgstr ""
 
 #: scripts/mission/objectives.gd:29
-msgid "Знищити всі ДЗОТи та бліндажі"
+msgid "Розвідати всі вогневі точки та станції РЕБ"
 msgstr ""
 
 #: scripts/mission/objectives.gd:30
-msgid "Не втратити бойову техніку"
+msgid "Пройти навчання командира"
 msgstr ""
 
 #: scripts/mission/objectives.gd:31
-msgid "Евакуювати всіх важкопоранених"
+msgid "Знищити станції РЕБ противника"
 msgstr ""
 
 #: scripts/mission/objectives.gd:32
-msgid "Взяти полонених"
+msgid "Знищити всі ДЗОТи та бліндажі"
 msgstr ""
 
 #: scripts/mission/objectives.gd:33
+msgid "Не втратити бойову техніку"
+msgstr ""
+
+#: scripts/mission/objectives.gd:34
+msgid "Евакуювати всіх важкопоранених"
+msgstr ""
+
+#: scripts/mission/objectives.gd:35
+msgid "Взяти полонених"
+msgstr ""
+
+#: scripts/mission/objectives.gd:36
 msgid "Обмежити безповоротні втрати"
 msgstr ""
 
-#: scripts/mission/objectives.gd:54
+#: scripts/mission/objectives.gd:57
 msgid " (не менше %d)"
 msgstr ""
 
-#: scripts/mission/objectives.gd:56
+#: scripts/mission/objectives.gd:59
 msgid " (не більше %d загиблих)"
 msgstr ""
 
-#: scripts/mission/objectives.gd:68
+#: scripts/mission/objectives.gd:71
 msgid "знищити цілі (%d/%d)"
 msgstr ""
 
-#: scripts/mission/objectives.gd:71
+#: scripts/mission/objectives.gd:74
 msgid "розвідка (%d/%d)"
 msgstr ""
 
-#: scripts/mission/objectives.gd:73
+#: scripts/mission/objectives.gd:76
 msgid "навчання"
 msgstr ""
 
-#: scripts/mission/objectives.gd:75
+#: scripts/mission/objectives.gd:78
 msgid "захопити й утримати"
 msgstr ""
 
-#: scripts/mission/objectives.gd:76
+#: scripts/mission/objectives.gd:79
 msgid "захопити опорний пункт"
+msgstr ""
+
+#: scripts/mission/objectives.gd:143
+msgid "Підкріплення"
+msgstr ""
+
+#: scripts/mission/objectives.gd:143
+msgid "Контратака"
+msgstr ""
+
+#: scripts/mission/objectives.gd:154
+msgid "Станція РЕБ"
 msgstr ""
 
 #: scripts/mission/prisoners.gd:52
@@ -3295,287 +3415,291 @@ msgstr ""
 msgid "   [У РОЗРОБЦІ]"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:137
+#: scripts/ui/main_menu.gd:138
 msgid "\nЧас: %d хв • Бюджет: %d од. (залежить від складності)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:143
+#: scripts/ui/main_menu.gd:140
+msgid "\nЧас: %d хв • Сили визначено завданням"
+msgstr ""
+
+#: scripts/ui/main_menu.gd:146
 msgid "РОЗПОЧАТИ МІСІЮ  ▸"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:160
+#: scripts/ui/main_menu.gd:163
 msgid "ПОГОДА"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:167
+#: scripts/ui/main_menu.gd:170
 msgid "ВИПАДКОВА"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:195
+#: scripts/ui/main_menu.gd:198
 msgid "Погода визначається випадково. Зараз на карті: %s %s."
 msgstr ""
 
-#: scripts/ui/main_menu.gd:201
+#: scripts/ui/main_menu.gd:204
 msgid "СКЛАДНІСТЬ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:240
+#: scripts/ui/main_menu.gd:243
 msgid "КАМПАНІЯ: "
 msgstr ""
 
-#: scripts/ui/main_menu.gd:246
+#: scripts/ui/main_menu.gd:249
 msgid "Послідовні бойові завдання одного підрозділу.\n\n• Особовий склад переходить з бою в бій: імена, досвід, звання.\n• Загиблі вибувають назавжди; евакуйовані поранені пропускають наступний бій; полишені на полі бою — зниклі безвісти.\n• Знищена техніка зникає з автопарку.\n• Результат бою дає очки постачання: засоби підтримки та поповнення новобранцями.\n• Досвід: ветерани влучніші, витриваліші й рідше гинуть від поранень, менше піддаються придушенню, швидше перезаряджаються й рухаються, краще зачищають окопи (швидше працюють на поворотах, частіше кидають гранату за ріг)."
 msgstr ""
 
-#: scripts/ui/main_menu.gd:249
+#: scripts/ui/main_menu.gd:252
 msgid "ПОЧАТИ НОВУ КАМПАНІЮ  ▸"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:261
+#: scripts/ui/main_menu.gd:264
 msgid "  [у розробці]"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:262
+#: scripts/ui/main_menu.gd:265
 msgid "[color=#%s]%s Крок %d. %s — «%s»%s[/color]\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:263
+#: scripts/ui/main_menu.gd:266
 msgid "\nСкладність: [color=#%s]%s[/color] (незмінна до кінця кампанії)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:266
+#: scripts/ui/main_menu.gd:269
 msgid "\nПісля останнього бою: розвіддані [color=#%s]%s[/color], противник [color=#%s]%s[/color]"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:273
+#: scripts/ui/main_menu.gd:276
 msgid "\n[color=#%s]У ремонті (пропустять бій): %s[/color]"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:274
+#: scripts/ui/main_menu.gd:277
 msgid "\nПостачання: [color=#%s]%d од.[/color]   Автопарк: БМП-2 ×%d, БМП-1 ×%d, M113 ×%d, евак. ×%d\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:277
+#: scripts/ui/main_menu.gd:280
 msgid "[color=#%s]Вакантних місць: %d — перед боєм поповнимо новобранцями по %d од.[/color]\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:282
+#: scripts/ui/main_menu.gd:285
 msgid "  [color=#%s]згуртованість %d%%[/color]"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:283
+#: scripts/ui/main_menu.gd:286
 msgid "\n[b]%s[/b]  [color=#%s]боєздатні %d/%d[/color]%s\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:293
+#: scripts/ui/main_menu.gd:296
 msgid " (лікування)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:296
+#: scripts/ui/main_menu.gd:299
 msgid " (загинув)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:299
+#: scripts/ui/main_menu.gd:302
 msgid " (зник безвісти)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:306
+#: scripts/ui/main_menu.gd:309
 msgid "\n[color=#%s]Журнал боїв:[/color]\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:308
+#: scripts/ui/main_menu.gd:311
 msgid "• %s — %s, оцінка %d, загиблі %d, полонені %d\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:308
+#: scripts/ui/main_menu.gd:311
 msgid "невдача"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:314
+#: scripts/ui/main_menu.gd:317
 msgid "НАСТУПНА МІСІЯ  ▸"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:314
+#: scripts/ui/main_menu.gd:317
 msgid "КАМПАНІЮ ПРОВАЛЕНО"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:314
+#: scripts/ui/main_menu.gd:317
 msgid "НАСТУПНА МІСІЯ У РОЗРОБЦІ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:319
+#: scripts/ui/main_menu.gd:322
 msgid "СКИНУТИ КАМПАНІЮ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:327
+#: scripts/ui/main_menu.gd:330
 msgid "ПІДТВЕРДИТИ СКИДАННЯ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:345
+#: scripts/ui/main_menu.gd:348
 msgid "НАВЧАННЯ КОМАНДИРА"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:350
+#: scripts/ui/main_menu.gd:353
 msgid "Полігон: одне відділення, слабкий противник, без мінометів, FPV і РЕБ противника, без ліміту часу.\n\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:351
+#: scripts/ui/main_menu.gd:354
 msgid "[color=#%s]Ви навчитеся:[/color]\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:352
+#: scripts/ui/main_menu.gd:355
 msgid "  • керувати дроном: політ, поворот, оптичний зум\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:353
+#: scripts/ui/main_menu.gd:356
 msgid "  • вибирати підрозділ і віддавати накази на рух\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:354
+#: scripts/ui/main_menu.gd:357
 msgid "  • ставити гру на тактичну паузу\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:355
+#: scripts/ui/main_menu.gd:358
 msgid "  • шукати противника дроном і позначати цілі\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:356
+#: scripts/ui/main_menu.gd:359
 msgid "  • викликати міномет і штурмувати позицію\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:357
+#: scripts/ui/main_menu.gd:360
 msgid "  • евакуювати пораненого\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:358
+#: scripts/ui/main_menu.gd:361
 msgid "  • зачищати окоп\n\n"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:359
+#: scripts/ui/main_menu.gd:362
 msgid "Кожен крок пояснює підказка вгорі екрана, кнопки, які треба натиснути, підсвічуються. "
 msgstr ""
 
-#: scripts/ui/main_menu.gd:360
+#: scripts/ui/main_menu.gd:363
 msgid "Займає 10–15 хвилин."
 msgstr ""
 
-#: scripts/ui/main_menu.gd:363
+#: scripts/ui/main_menu.gd:366
 msgid "✓ Навчання вже пройдено — можна повторити будь-коли."
 msgstr ""
 
-#: scripts/ui/main_menu.gd:364
+#: scripts/ui/main_menu.gd:367
 msgid "ПОЧАТИ НАВЧАННЯ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:379
+#: scripts/ui/main_menu.gd:382
 msgid "ЛКМ по підрозділу"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:379
+#: scripts/ui/main_menu.gd:382
 msgid "вибрати відділення / техніку (ЛКМ по порожньому — зняти вибір)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:380
+#: scripts/ui/main_menu.gd:383
 msgid "Ctrl+ЛКМ, подвійний клік"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:380
+#: scripts/ui/main_menu.gd:383
 msgid "вибрати одного бійця"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:381
+#: scripts/ui/main_menu.gd:384
 msgid "Shift+ЛКМ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:381
+#: scripts/ui/main_menu.gd:384
 msgid "додати до вибору"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:382
+#: scripts/ui/main_menu.gd:385
 msgid "Рамка ЛКМ (Alt — бійці)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:382
+#: scripts/ui/main_menu.gd:385
 msgid "вибір кількох підрозділів / бійців"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:383
+#: scripts/ui/main_menu.gd:386
 msgid "ПКМ по місцевості"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:383
+#: scripts/ui/main_menu.gd:386
 msgid "наказ у поточному режимі (один наказ; Shift — залишити режим)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:384
+#: scripts/ui/main_menu.gd:387
 msgid "ПКМ із протягуванням"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:384
+#: scripts/ui/main_menu.gd:387
 msgid "розгортання на рубежі з напрямком"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:385
+#: scripts/ui/main_menu.gd:388
 msgid "ПКМ по противнику"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:385
+#: scripts/ui/main_menu.gd:388
 msgid "позначити ціль, техніка б'є по ній"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:386
+#: scripts/ui/main_menu.gd:389
 msgid "рух / штурм / утримувати / зачистка (окопу або будівлі)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:387
+#: scripts/ui/main_menu.gd:390
 msgid "піхота: перебіжками / подавлення / за технікою"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:388
+#: scripts/ui/main_menu.gd:391
 msgid "техніка: лобом → бортом → кормою до противника → вільно"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:389
+#: scripts/ui/main_menu.gd:392
 msgid "відхід, висадка/посадка, дим, евакуація"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:390
+#: scripts/ui/main_menu.gd:393
 msgid "Z / X / C, далі ЛКМ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:390
+#: scripts/ui/main_menu.gd:393
 msgid "міномет / FPV-дрон / димова завіса"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:391
+#: scripts/ui/main_menu.gd:394
 msgid "налаштування в бою (клавіші, камера)"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:392
+#: scripts/ui/main_menu.gd:395
 msgid "політ дрона (з інерцією), поворот, висота"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:393
+#: scripts/ui/main_menu.gd:396
 msgid "Колесо миші"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:393
+#: scripts/ui/main_menu.gd:396
 msgid "оптичний зум x1–x10 — дрон НЕ рухається"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:394
+#: scripts/ui/main_menu.gd:397
 msgid "Shift+колесо, СКМ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:394
+#: scripts/ui/main_menu.gd:397
 msgid "висота дрона; поворот і нахил камери"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:395
+#: scripts/ui/main_menu.gd:398
 msgid "супровід / загальний огляд / наступний підрозділ"
 msgstr ""
 
-#: scripts/ui/main_menu.gd:396
+#: scripts/ui/main_menu.gd:399
 msgid "тактична пауза, швидкість гри"
 msgstr ""
 
@@ -3739,407 +3863,415 @@ msgstr ""
 msgid "[color=#%s][b]ПОГОДА[/b][/color]\n%s %s — %s\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:123
+#: scripts/ui/screens.gd:124
 msgid "[color=#%s][b]УМОВИ[/b][/color]\nБез обмеження часу. Кожен крок пояснює підказка вгорі екрана; будь-який крок можна пропустити.\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:128
+#: scripts/ui/screens.gd:126
+msgid "[color=#%s][b]УМОВИ[/b][/color]\nЧас на виконання: %d хв. Сили визначено завданням.\n\n"
+msgstr ""
+
+#: scripts/ui/screens.gd:131
 msgid "[color=#%s][b]ВАШІ СИЛИ[/b][/color]\n%s"
 msgstr ""
 
-#: scripts/ui/screens.gd:130
+#: scripts/ui/screens.gd:133
 msgid "[color=#%s][b]УМОВИ[/b][/color]\nЧас на виконання: %d хв. %s: %d од.\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:130
+#: scripts/ui/screens.gd:133
 msgid "Постачання кампанії"
 msgstr ""
 
-#: scripts/ui/screens.gd:130
+#: scripts/ui/screens.gd:133
 msgid "Бюджет ресурсів"
 msgstr ""
 
-#: scripts/ui/screens.gd:132
+#: scripts/ui/screens.gd:135
 msgid "[color=#%s]Складна операція: +%d од. %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:133
+#: scripts/ui/screens.gd:136
 msgid "на сили й підтримку"
 msgstr ""
 
-#: scripts/ui/screens.gd:133
+#: scripts/ui/screens.gd:136
 msgid "постачання на цю операцію"
 msgstr ""
 
-#: scripts/ui/screens.gd:134
+#: scripts/ui/screens.gd:137
 msgid "Захоплення: очистити зону цілі від противника та закріпитися (≥2 бійці в зоні об'єкта).\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:135
+#: scripts/ui/screens.gd:138
 msgid "[color=#%s][b]ДОСТУПНІ СИЛИ[/b][/color]\nПіхота, БМП-1/БМП-2/M113, евакуаційна M113, міномет, FPV-дрони, димові снаряди."
 msgstr ""
 
-#: scripts/ui/screens.gd:141
+#: scripts/ui/screens.gd:144
 msgid "◂ ГОЛОВНЕ МЕНЮ"
 msgstr ""
 
-#: scripts/ui/screens.gd:163
+#: scripts/ui/screens.gd:166
 msgid "▣ Район висадки: %s%s   (клацніть синю точку%s на знімку, щоб змінити)"
 msgstr ""
 
-#: scripts/ui/screens.gd:164
+#: scripts/ui/screens.gd:167
 msgid " або будь-яке місце в синій рамці"
 msgstr ""
 
-#: scripts/ui/screens.gd:247
+#: scripts/ui/screens.gd:250
 msgid "Обрана точка"
 msgstr ""
 
-#: scripts/ui/screens.gd:307
+#: scripts/ui/screens.gd:310
 msgid "%d м"
 msgstr ""
 
-#: scripts/ui/screens.gd:308
+#: scripts/ui/screens.gd:311
 msgid "Пн"
 msgstr ""
 
-#: scripts/ui/screens.gd:310
+#: scripts/ui/screens.gd:313
 msgid "IMG-0417  ЗНІМОК ДРОНА  "
 msgstr ""
 
-#: scripts/ui/screens.gd:331
+#: scripts/ui/screens.gd:334
 msgid "ПЛАНУВАННЯ — СКЛАД ЗВЕДЕНОГО ЗАГОНУ"
 msgstr ""
 
-#: scripts/ui/screens.gd:331
+#: scripts/ui/screens.gd:334
 msgid "МІСІЯ «%s»"
 msgstr ""
 
-#: scripts/ui/screens.gd:341
+#: scripts/ui/screens.gd:344
 msgid "РОЗВІДКА"
 msgstr ""
 
-#: scripts/ui/screens.gd:348
+#: scripts/ui/screens.gd:351
 msgid "Противник: [color=#%s]%s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:374
+#: scripts/ui/screens.gd:377
 msgid "ПІДСУМОК"
 msgstr ""
 
-#: scripts/ui/screens.gd:379
+#: scripts/ui/screens.gd:382
 msgid "◂ БРИФІНГ"
 msgstr ""
 
-#: scripts/ui/screens.gd:380
+#: scripts/ui/screens.gd:383
 msgid "ПОЧАТИ ВИСАДКУ  ▸"
 msgstr ""
 
-#: scripts/ui/screens.gd:392
+#: scripts/ui/screens.gd:395
 msgid "%d од."
 msgstr ""
 
-#: scripts/ui/screens.gd:394
+#: scripts/ui/screens.gd:397
 msgid "у підрозділі: %d"
 msgstr ""
 
-#: scripts/ui/screens.gd:430
+#: scripts/ui/screens.gd:433
 msgid "%s      %d од.\nЗалучено:    [color=#%s]%d од.[/color]\nЗалишок:     [color=#%s]%d од.[/color]\n%s\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:431
+#: scripts/ui/screens.gd:434
 msgid "Постачання:"
 msgstr ""
 
-#: scripts/ui/screens.gd:431
+#: scripts/ui/screens.gd:434
 msgid "Бюджет:"
 msgstr ""
 
-#: scripts/ui/screens.gd:433
+#: scripts/ui/screens.gd:436
 msgid "[color=#%s]Складна операція: %s +%d од.%s[/color]\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:433
+#: scripts/ui/screens.gd:436
 msgid "постачання"
 msgstr ""
 
-#: scripts/ui/screens.gd:433
+#: scripts/ui/screens.gd:436
 msgid "бюджет"
 msgstr ""
 
-#: scripts/ui/screens.gd:435
+#: scripts/ui/screens.gd:438
 msgid ", більше підрозділів і засобів"
 msgstr ""
 
-#: scripts/ui/screens.gd:437
+#: scripts/ui/screens.gd:440
 msgid "[color=#%s]Кампанія: свої підрозділи й техніка не коштують очок, але обмежені тим, що вціліло. Постачання витрачається на засоби підтримки.[/color]\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:438
+#: scripts/ui/screens.gd:441
 msgid "Особовий склад: %d (%d підрозділ.)\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:439
+#: scripts/ui/screens.gd:442
 msgid "Бойова техніка: %d, місць для десанту: %d\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:440
+#: scripts/ui/screens.gd:443
 msgid "Евакуаційних машин: %d\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:441
+#: scripts/ui/screens.gd:444
 msgid "Підтримка: міномет ×%d, FPV ×%d, дим ×%d\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:445
+#: scripts/ui/screens.gd:448
 msgid "[color=#%s]✖ Потрібен хоча б один піхотний підрозділ.[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:448
+#: scripts/ui/screens.gd:451
 msgid "[color=#%s]✖ Перевищено бюджет.[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:451
+#: scripts/ui/screens.gd:454
 msgid "[color=#%s]▲ Частина піхоти висуватиметься пішки.[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:453
+#: scripts/ui/screens.gd:456
 msgid "[color=#%s]▲ Без евакуаційної машини поранених не вивезти.[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:455
+#: scripts/ui/screens.gd:458
 msgid "[color=#%s]▲ Мало засобів проти укріплень (ДЗОТ).[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:478
+#: scripts/ui/screens.gd:481
 msgid "Розвіддані: [color=#%s]%s (%d%%)[/color] — %s\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:479
+#: scripts/ui/screens.gd:482
 msgid "Противник: [color=#%s]%s (×%.2f)[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:488
+#: scripts/ui/screens.gd:491
 msgid "[color=#%s]Подій не зафіксовано.[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:497
+#: scripts/ui/screens.gd:500
 msgid "[color=#%s][b]АНАЛІЗ РІШЕНЬ[/b] — з урахуванням того, що командир знав на момент рішення[/color]\n\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:510
+#: scripts/ui/screens.gd:513
 msgid "ПІДСУМКИ ОПЕРАЦІЇ — «%s»"
 msgstr ""
 
-#: scripts/ui/screens.gd:510
+#: scripts/ui/screens.gd:513
 msgid "СКЛАДНІСТЬ: %s  •  %s  •  ЧАС ОПЕРАЦІЇ %s"
 msgstr ""
 
-#: scripts/ui/screens.gd:521
+#: scripts/ui/screens.gd:524
 msgid "ЗАВДАННЯ ВИКОНАНО"
 msgstr ""
 
-#: scripts/ui/screens.gd:521
+#: scripts/ui/screens.gd:524
 msgid "ЗАВДАННЯ НЕ ВИКОНАНО"
 msgstr ""
 
-#: scripts/ui/screens.gd:524
+#: scripts/ui/screens.gd:527
 msgid "Позицію противника захоплено та утримано."
 msgstr ""
 
-#: scripts/ui/screens.gd:524
+#: scripts/ui/screens.gd:527
 msgid "Основне завдання виконано."
 msgstr ""
 
-#: scripts/ui/screens.gd:524
+#: scripts/ui/screens.gd:527
 msgid "Підрозділи втратили боєздатність."
 msgstr ""
 
-#: scripts/ui/screens.gd:525
+#: scripts/ui/screens.gd:528
 msgid "Час на виконання завдання вичерпано."
 msgstr ""
 
-#: scripts/ui/screens.gd:525
+#: scripts/ui/screens.gd:528
 msgid "Операцію припинено за рішенням командира."
 msgstr ""
 
-#: scripts/ui/screens.gd:534
-msgid "[color=#%s]ВИКОНАНО[/color]"
-msgstr ""
-
-#: scripts/ui/screens.gd:534
-msgid "[color=#%s]НЕ ВИКОНАНО[/color]"
-msgstr ""
-
-#: scripts/ui/screens.gd:536
-msgid "Додатково: "
-msgstr ""
-
-#: scripts/ui/screens.gd:536
-msgid "[color=#%s]ТАК (+%d)[/color]"
-msgstr ""
-
-#: scripts/ui/screens.gd:536
-msgid "[color=#%s]ні[/color]"
-msgstr ""
-
-#: scripts/ui/screens.gd:537
-msgid "Особовий склад (залучено)"
+#: scripts/ui/screens.gd:529
+msgid "Дрон втрачено — розвідку не завершено."
 msgstr ""
 
 #: scripts/ui/screens.gd:538
-msgid "Загиблі"
+msgid "[color=#%s]ВИКОНАНО[/color]"
 msgstr ""
 
-#: scripts/ui/screens.gd:539
-msgid "Поранені (усього)"
+#: scripts/ui/screens.gd:538
+msgid "[color=#%s]НЕ ВИКОНАНО[/color]"
 msgstr ""
 
 #: scripts/ui/screens.gd:540
-msgid "Евакуйовано"
+msgid "Додатково: "
+msgstr ""
+
+#: scripts/ui/screens.gd:540
+msgid "[color=#%s]ТАК (+%d)[/color]"
+msgstr ""
+
+#: scripts/ui/screens.gd:540
+msgid "[color=#%s]ні[/color]"
 msgstr ""
 
 #: scripts/ui/screens.gd:541
-msgid "Поранені, не евакуйовані"
+msgid "Особовий склад (залучено)"
 msgstr ""
 
 #: scripts/ui/screens.gd:542
-msgid "Втрати техніки"
-msgstr ""
-
-#: scripts/ui/screens.gd:542
-msgid "%d з %d %s"
+msgid "Загиблі"
 msgstr ""
 
 #: scripts/ui/screens.gd:543
-msgid "Противник: знищено / уражено / відійшло"
-msgstr ""
-
-#: scripts/ui/screens.gd:543
-msgid "%d / %d / %d  (з %d)"
+msgid "Поранені (усього)"
 msgstr ""
 
 #: scripts/ui/screens.gd:544
-msgid "Взято в полон"
+msgid "Евакуйовано"
 msgstr ""
 
 #: scripts/ui/screens.gd:545
-msgid "Підриви на мінах"
+msgid "Поранені, не евакуйовані"
 msgstr ""
 
 #: scripts/ui/screens.gd:546
-msgid "Втрачено розвід. дронів (РЕБ)"
+msgid "Втрати техніки"
+msgstr ""
+
+#: scripts/ui/screens.gd:546
+msgid "%d з %d %s"
+msgstr ""
+
+#: scripts/ui/screens.gd:547
+msgid "Противник: знищено / уражено / відійшло"
+msgstr ""
+
+#: scripts/ui/screens.gd:547
+msgid "%d / %d / %d  (з %d)"
 msgstr ""
 
 #: scripts/ui/screens.gd:548
-msgid "Використано засобів"
-msgstr ""
-
-#: scripts/ui/screens.gd:548
-msgid "міномет ×%d, FPV ×%d, дим ×%d"
+msgid "Взято в полон"
 msgstr ""
 
 #: scripts/ui/screens.gd:549
-msgid "Бійців впадали в паніку"
+msgid "Підриви на мінах"
 msgstr ""
 
 #: scripts/ui/screens.gd:550
+msgid "Втрачено розвід. дронів (РЕБ)"
+msgstr ""
+
+#: scripts/ui/screens.gd:552
+msgid "Використано засобів"
+msgstr ""
+
+#: scripts/ui/screens.gd:552
+msgid "міномет ×%d, FPV ×%d, дим ×%d"
+msgstr ""
+
+#: scripts/ui/screens.gd:553
+msgid "Бійців впадали в паніку"
+msgstr ""
+
+#: scripts/ui/screens.gd:554
 msgid "Витрачено набоїв / гранат"
 msgstr ""
 
-#: scripts/ui/screens.gd:551
+#: scripts/ui/screens.gd:555
 msgid "Ресурси: залучено / використано"
 msgstr ""
 
-#: scripts/ui/screens.gd:551
+#: scripts/ui/screens.gd:555
 msgid "%d / %d од."
 msgstr ""
 
-#: scripts/ui/screens.gd:577
+#: scripts/ui/screens.gd:581
 msgid "━ маршрути відділень   ◇ відомі позиції противника   ? непідтверджені   ✕ загиблі   + поранені   ○ евакуація   □ втрата дрона"
 msgstr ""
 
-#: scripts/ui/screens.gd:604
+#: scripts/ui/screens.gd:608
 msgid "ХРОНОЛОГІЯ"
 msgstr ""
 
-#: scripts/ui/screens.gd:604
+#: scripts/ui/screens.gd:608
 msgid "КАРТА"
 msgstr ""
 
-#: scripts/ui/screens.gd:604
+#: scripts/ui/screens.gd:608
 msgid "АНАЛІЗ"
 msgstr ""
 
-#: scripts/ui/screens.gd:621
+#: scripts/ui/screens.gd:625
 msgid "ЗАГАЛЬНА ОЦІНКА: %d / 100 — %s"
 msgstr ""
 
-#: scripts/ui/screens.gd:627
+#: scripts/ui/screens.gd:631
 msgid "[color=#%s][b]НАСЛІДКИ ДЛЯ КАМПАНІЇ[/b][/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:628
+#: scripts/ui/screens.gd:632
 msgid "Постачання: +%d од. (усього %d)\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:630
+#: scripts/ui/screens.gd:634
 msgid "[color=#%s]Загинули (вибувають назавжди): %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:632
+#: scripts/ui/screens.gd:636
 msgid "[color=#%s]Зникли безвісти (залишились на полі бою): %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:634
+#: scripts/ui/screens.gd:638
 msgid "[color=#%s]На лікуванні, пропустять наступний бій: %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:636
+#: scripts/ui/screens.gd:640
 msgid "[color=#%s]Підвищення: %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:638
+#: scripts/ui/screens.gd:642
 msgid "[color=#%s]Втрачено техніку з автопарку: %d од.[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:640
+#: scripts/ui/screens.gd:644
 msgid "[color=#%s]У ремонті, пропустить наступний бій: %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:642
+#: scripts/ui/screens.gd:646
 msgid "[color=#%s]Повернулась з ремонту: %s[/color]\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:646
+#: scripts/ui/screens.gd:650
 msgid "[color=#%s]Що бій залишив у бійцях:[/color] %s\n"
 msgstr ""
 
-#: scripts/ui/screens.gd:648
+#: scripts/ui/screens.gd:652
 msgid "ЩО ЦЕЙ БІЙ ЗАЛИШИВ НА НАСТУПНИЙ"
 msgstr ""
 
-#: scripts/ui/screens.gd:649
+#: scripts/ui/screens.gd:653
 msgid "Наступний крок кампанії відкрито."
 msgstr ""
 
-#: scripts/ui/screens.gd:649
+#: scripts/ui/screens.gd:653
 msgid "Позицію не взято — крок кампанії доведеться повторити."
 msgstr ""
 
-#: scripts/ui/screens.gd:656
+#: scripts/ui/screens.gd:660
 msgid "ДО КАМПАНІЇ"
 msgstr ""
 
-#: scripts/ui/screens.gd:658
+#: scripts/ui/screens.gd:662
 msgid "ПОВТОРИТИ МІСІЮ"
 msgstr ""
 
-#: scripts/ui/screens.gd:659
+#: scripts/ui/screens.gd:663
 msgid "ЗМІНИТИ СКЛАД СИЛ"
 msgstr ""
 
-#: scripts/ui/screens.gd:660
+#: scripts/ui/screens.gd:664
 msgid "ГОЛОВНЕ МЕНЮ"
 msgstr ""
 
@@ -4539,11 +4671,11 @@ msgstr ""
 msgid "ПІДКАЗКА • "
 msgstr ""
 
-#: scripts/ui/ui_manager.gd:218
+#: scripts/ui/ui_manager.gd:221
 msgid "ПОЧАТИ НАВЧАННЯ  ▸"
 msgstr ""
 
-#: scripts/ui/ui_manager.gd:283
+#: scripts/ui/ui_manager.gd:286
 msgid "ЗАВАНТАЖЕННЯ МІСЦЕВОСТІ…"
 msgstr ""
 
