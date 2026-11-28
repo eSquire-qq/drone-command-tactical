@@ -105,6 +105,7 @@ func _process_body(delta: float) -> void:
 		_update_drag(delta)
 		if Prof.on:
 			Prof.add("squad.drag", td)
+		_update_demo(delta)
 		td = Time.get_ticks_usec() if Prof.on else 0
 		_update_resupply(delta)
 		if Prof.on:
@@ -151,6 +152,75 @@ func _process_body(delta: float) -> void:
 
 
 # ------------------------------------------------------------------ queries
+# ------------------------------------------------------------------ demolition
+## A man of ours next to an enemy ammunition depot or EW station with no
+## enemy around it plants a charge; it goes off after a fuse while the squad
+## walks away.
+var _demo_t := 0.0
+var demo_charge = null           # the depot with our charge on it
+
+
+func _update_demo(delta: float) -> void:
+	_demo_t -= delta
+	if _demo_t > 0.0 or demo_charge != null:
+		return
+	_demo_t = 2.0
+	var targets: Array = []
+	for b in W.bunkers:
+		if b.side == 1 and b.kind == "depot" and not b.destroyed:
+			targets.append(b)
+	if W.ew:
+		for st in W.ew.stations:
+			if not st.destroyed:
+				targets.append(st)
+	for b in targets:
+		var bp: Vector3 = b.global_position
+		var m = null
+		for u in active_members():
+			if u.action == "" and u.dragging == null and u.resup_v == null and u.global_position.distance_to(bp) < AIConfig.DEMO_REACH:
+				m = u
+				break
+		if m == null:
+			continue
+		var clear := true
+		for e in W.units:
+			if e.side == 1 and e.is_active() and e.global_position.distance_to(bp) < AIConfig.DEMO_CLEAR:
+				clear = false
+				break
+		if not clear:
+			continue
+		m.start_action("demo", AIConfig.DEMO_PLANT_T, b)
+		b.ever_seen = true
+		radio("order", (Loc.t("%s закладає заряд на склад боєприпасів.") if b is Bunker else Loc.t("%s закладає заряд на станцію РЕБ.")) % m.display_name(), "info")
+		return
+
+
+## Called by the man when the charge is on: everybody of ours near it walks
+## off, the charge goes off after the fuse.
+func demo_planted(m, b) -> void:
+	if b == null or not is_instance_valid(b) or b.destroyed:
+		return
+	demo_charge = b
+	radio("order", Loc.t("заряд закладено — відходимо! Вибух через %d с.") % int(AIConfig.DEMO_FUSE), "warn")
+	var bp: Vector3 = b.global_position
+	var r: float = AIConfig.DEPOT_BLAST_R if b is Bunker else 4.0
+	for u in W.units:
+		if u.side == 0 and u.is_active() and u.global_position.distance_to(bp) < r + 12.0:
+			var away: Vector3 = u.global_position - bp
+			away.y = 0.0
+			if away.length() < 0.5:
+				away = Vector3(0, 0, 1)
+			u.move_to(W.grid.free_point(bp + away.normalized() * (r + 14.0)), true)
+	get_tree().create_timer(AIConfig.DEMO_FUSE).timeout.connect(func() -> void:
+		if is_instance_valid(b) and not b.destroyed and W.running():
+			if b is Bunker:
+				b.take_damage(9999.0, m if is_instance_valid(m) else null)
+			else:
+				b.take_damage(9999.0, m if is_instance_valid(m) else null, "direct", 0.0)
+				W.fx.explosion(b.global_position + Vector3(0, 0.6, 0), 4.0)
+		demo_charge = null)
+
+
 # ------------------------------------------------------------------ resupply
 ## A squad holding near one of our vehicles sends the men short of magazines
 ## to its rear door, two at a time; aboard, the men top up from the stock as

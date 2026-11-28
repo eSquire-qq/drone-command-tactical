@@ -174,6 +174,44 @@ static func bunker(kind: String, rng: RandomNumberGenerator) -> Node3D:
 	return root
 
 
+## Ammunition depot in the field: stacks of green crates and shell boxes
+## under a camouflage net on poles, a low earth bank around it.
+static func depot(rng: RandomNumberGenerator) -> Node3D:
+	var root := Node3D.new()
+	var m_box := MF.mat(Color(0.27, 0.31, 0.18))
+	var m_box2 := MF.mat(Color(0.33, 0.33, 0.2))
+	var m_shell := MF.mat(Color(0.42, 0.36, 0.22))
+	var m_earth := MF.mat(EARTH)
+	var m_pole := MF.mat(LOG)
+	var m_net := MF.mat(Color(0.28, 0.31, 0.17))
+	# crate stacks
+	for sx in [-1.6, 0.0, 1.6]:
+		for sz in [-0.9, 0.7]:
+			var n := rng.randi_range(1, 3)
+			for k in n:
+				var long := rng.randf() < 0.5
+				var bx := MF.box(1.2 if long else 0.8, 0.42, 0.55 if long else 0.8)
+				MF.part(root, bx, m_box if (k + int(sx)) % 2 == 0 else m_box2,
+					Vector3(sx + rng.randf_range(-0.15, 0.15), 0.21 + k * 0.43, sz + rng.randf_range(-0.12, 0.12)), Vector3(0, rng.randf_range(-0.12, 0.12), 0))
+	# loose shell boxes
+	for i in 4:
+		MF.part(root, MF.box(0.7, 0.28, 0.35), m_shell, Vector3(rng.randf_range(-2.4, 2.4), 0.14, rng.randf_range(1.6, 2.1)), Vector3(0, rng.randf() * TAU, 0))
+	# low earth bank on three sides
+	MF.part(root, MF.box(6.0, 0.6, 0.8), m_earth, Vector3(0, 0.3, -2.0))
+	MF.part(root, MF.box(0.8, 0.6, 4.2), m_earth, Vector3(-3.0, 0.3, 0))
+	MF.part(root, MF.box(0.8, 0.6, 4.2), m_earth, Vector3(3.0, 0.3, 0))
+	# camouflage net on four poles
+	for px in [-2.7, 2.7]:
+		for pz in [-1.7, 1.7]:
+			MF.part(root, MF.cyl(0.06, 0.06, 2.2, 5), m_pole, Vector3(px, 1.1, pz))
+	MF.part(root, MF.box(6.2, 0.05, 4.4), m_net, Vector3(0, 2.2, 0), Vector3(0.03, 0, -0.02), Vector3.ONE, false)
+	for i in 9:
+		MF.part(root, MF.sphere(0.5, 0.6, 6, 3, false, 0.08, i), m_net,
+			Vector3(rng.randf_range(-2.8, 2.8), 2.25, rng.randf_range(-1.9, 1.9)), Vector3(0, rng.randf() * TAU, 0),
+			Vector3(rng.randf_range(0.8, 1.6), 0.25, rng.randf_range(0.8, 1.5)), false)
+	return root
+
+
 static func sandbags(length: float, rng: RandomNumberGenerator) -> Node3D:
 	var root := Node3D.new()
 	var bag := MF.box(0.62, 0.24, 0.34)

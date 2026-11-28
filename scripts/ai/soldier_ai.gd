@@ -271,7 +271,7 @@ func _behave(dt: float) -> void:
 			s.stop()
 		return
 	if s.action != "":
-		state = {"aid": Loc.t("допомога"), "grenade": Loc.t("граната"), "rocket": Loc.t("ПТ-постріл"), "atgm": Loc.t("пуск ПТУР"), "gl": Loc.t("граната"), "smoke": Loc.t("дим"), "resupply": Loc.t("бере набої")}.get(s.action, Loc.t("дія"))
+		state = {"aid": Loc.t("допомога"), "grenade": Loc.t("граната"), "rocket": Loc.t("ПТ-постріл"), "atgm": Loc.t("пуск ПТУР"), "gl": Loc.t("граната"), "smoke": Loc.t("дим"), "resupply": Loc.t("бере набої"), "demo": Loc.t("закладає заряд")}.get(s.action, Loc.t("дія"))
 		return
 	if _try_aid():
 		state = Loc.t("допомога")

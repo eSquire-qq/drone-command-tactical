@@ -20,10 +20,10 @@ var title = "ДЗОТ"
 func setup(p_kind: String, p_face: Vector3, rng: RandomNumberGenerator) -> void:
 	kind = p_kind
 	face = p_face.normalized()
-	title = Loc.t("ДЗОТ") if kind == "mg" else Loc.t("БЛІНДАЖ")
-	hp = 260.0 if kind == "mg" else 320.0
+	title = {"mg": Loc.t("ДЗОТ"), "dugout": Loc.t("БЛІНДАЖ"), "depot": Loc.t("СКЛАД БК")}.get(kind, Loc.t("ДЗОТ"))
+	hp = {"mg": 260.0, "dugout": 320.0, "depot": AIConfig.DEPOT_HP}.get(kind, 260.0)
 	max_hp = hp
-	model = Props.bunker(kind, rng)
+	model = Props.depot(rng) if kind == "depot" else Props.bunker(kind, rng)
 	add_child(model)
 	rotation.y = MF.yaw_facing(face)
 
@@ -108,8 +108,30 @@ func _destroy(source) -> void:
 	occupants.clear()
 	if side == 1:
 		Events.msg(Loc.t("%s знищено!") % title, "good")
+	if kind == "depot":
+		_cook_off(source)
 	var c = W.grid.cidx(global_position.x, global_position.z)
 	W.grid.cover[c] = 0.5
+
+
+## The ammunition goes up: a big blast at once, then rounds cooking off for
+## a few seconds — dangerous to anybody standing close.
+func _cook_off(source) -> void:
+	if W.blog:
+		W.blog.add("field", Loc.t("Склад БК вибухнув"), global_position)
+	var p := global_position + Vector3(0, 0.6, 0)
+	get_tree().create_timer(0.3).timeout.connect(func() -> void:
+		if W.running():
+			W.combat.explosion(p, AIConfig.DEPOT_BLAST_R, AIConfig.DEPOT_BLAST, source)
+			W.fx.explosion(p + Vector3(0, 1.0, 0), 9.0)
+			if W.cam:
+				W.cam.shake(p, 1.6))
+	for k in 6:
+		get_tree().create_timer(1.2 + k * randf_range(0.6, 1.3)).timeout.connect(func() -> void:
+			if W.running():
+				var q := p + Vector3(randf_range(-5, 5), 0, randf_range(-5, 5))
+				W.combat.explosion(q, 3.0, 40.0, source)
+				W.sfx.play("explosion", q, 2.0))
 
 
 func release_occupant(u) -> void:

@@ -202,7 +202,8 @@ func apply_result(r: Dictionary, outcomes: Dictionary, vehicles_lost: Array) -> 
 			s["recover"] = int(s["recover"]) - 1
 			if int(s["recover"]) <= 0:
 				s["status"] = "ready"
-	var held: bool = r.get("captured", false)
+	# the field is ours after a won battle (a raid or a recon too): the men down are found
+	var held: bool = r.get("captured", false) or r.get("success", false)
 	for id in outcomes.keys():
 		if not soldiers.has(id):
 			continue

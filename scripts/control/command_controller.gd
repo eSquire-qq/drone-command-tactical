@@ -835,8 +835,7 @@ func _apply_tool(mp: Vector2) -> void:
 			if tgt == null:
 				return
 			if W.mission.use_support("fpv"):
-				var half: float = W.mission.def.size * 0.5
-				var start: Vector3 = Vector3(randf_range(-30, 30), 25, half + 45)
+				var start: Vector3 = W.combat.fpv_start(tgt if tgt is Vector3 else tgt.global_position)
 				W.combat.fpv_strike(tgt, start)
 				if W.blog:
 					W.blog.add("support", Loc.t("FPV-удар"), tgt if tgt is Vector3 else tgt.global_position)

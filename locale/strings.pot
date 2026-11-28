@@ -232,6 +232,10 @@ msgid "бере набої"
 msgstr ""
 
 #: scripts/ai/soldier_ai.gd:274
+msgid "закладає заряд"
+msgstr ""
+
+#: scripts/ai/soldier_ai.gd:274
 msgid "дія"
 msgstr ""
 
@@ -359,11 +363,11 @@ msgstr ""
 msgid "Противник веде мінометний вогонь"
 msgstr ""
 
-#: scripts/combat/combat_system.gd:434
+#: scripts/combat/combat_system.gd:461
 msgid "FPV-дрон у повітрі, підліт ~%d с"
 msgstr ""
 
-#: scripts/combat/combat_system.gd:456
+#: scripts/combat/combat_system.gd:483
 msgid "УВАГА! Пуск ПТУР по %s!"
 msgstr ""
 
@@ -555,19 +559,19 @@ msgstr ""
 msgid "Димова завіса"
 msgstr ""
 
-#: scripts/control/command_controller.gd:842
+#: scripts/control/command_controller.gd:841
 msgid "FPV-удар"
 msgstr ""
 
-#: scripts/control/command_controller.gd:852
+#: scripts/control/command_controller.gd:851
 msgid "ПАУЗА — можна віддавати накази"
 msgstr ""
 
-#: scripts/control/command_controller.gd:852
+#: scripts/control/command_controller.gd:851
 msgid "Продовження"
 msgstr ""
 
-#: scripts/control/command_controller.gd:857
+#: scripts/control/command_controller.gd:856
 msgid "Швидкість x%d"
 msgstr ""
 
@@ -631,171 +635,171 @@ msgstr ""
 msgid "Ш-1"
 msgstr ""
 
-#: scripts/core/campaign.gd:286
+#: scripts/core/campaign.gd:287
 msgid "командир %s"
 msgstr ""
 
-#: scripts/core/campaign.gd:292
+#: scripts/core/campaign.gd:293
 msgid "%s втратило: %s — згуртованість %d%%"
 msgstr ""
 
-#: scripts/core/campaign.gd:306
+#: scripts/core/campaign.gd:307
 msgid "розвідано %d%% сил противника"
 msgstr ""
 
-#: scripts/core/campaign.gd:309
+#: scripts/core/campaign.gd:310
 msgid "полонені дали свідчення (%d)"
 msgstr ""
 
-#: scripts/core/campaign.gd:312
+#: scripts/core/campaign.gd:313
 msgid "швидкий наступ — противник не встиг перегрупуватись"
 msgstr ""
 
-#: scripts/core/campaign.gd:316
+#: scripts/core/campaign.gd:317
 msgid "втрачено дрон — менше знімків"
 msgstr ""
 
-#: scripts/core/campaign.gd:319
+#: scripts/core/campaign.gd:320
 msgid "противник бачив наступ і змінив позиції"
 msgstr ""
 
-#: scripts/core/campaign.gd:325
+#: scripts/core/campaign.gd:326
 msgid "%d бійців противника відійшли живими й підсилили наступну позицію"
 msgstr ""
 
-#: scripts/core/campaign.gd:328
+#: scripts/core/campaign.gd:329
 msgid "полонені — мінус люди й дух противника"
 msgstr ""
 
-#: scripts/core/campaign.gd:332
+#: scripts/core/campaign.gd:333
 msgid "гарнізон розгромлено (%d%%) — противнику бракує людей"
 msgstr ""
 
-#: scripts/core/campaign.gd:335
+#: scripts/core/campaign.gd:336
 msgid "після невдалого штурму противник підтягнув резерви"
 msgstr ""
 
-#: scripts/core/campaign.gd:338
+#: scripts/core/campaign.gd:339
 msgid "бій затягнувся — противник встиг підготуватися"
 msgstr ""
 
-#: scripts/core/campaign.gd:345
+#: scripts/core/campaign.gd:346
 msgid "свіжі й точні"
 msgstr ""
 
-#: scripts/core/campaign.gd:347
+#: scripts/core/campaign.gd:348
 msgid "достатні"
 msgstr ""
 
-#: scripts/core/campaign.gd:349
+#: scripts/core/campaign.gd:350
 msgid "застарілі"
 msgstr ""
 
-#: scripts/core/campaign.gd:350
+#: scripts/core/campaign.gd:351
 msgid "уривчасті"
 msgstr ""
 
-#: scripts/core/campaign.gd:355
+#: scripts/core/campaign.gd:356
 msgid "посилений"
 msgstr ""
 
-#: scripts/core/campaign.gd:357
+#: scripts/core/campaign.gd:358
 msgid "трохи посилений"
 msgstr ""
 
-#: scripts/core/campaign.gd:359
+#: scripts/core/campaign.gd:360
 msgid "ослаблений"
 msgstr ""
 
-#: scripts/core/campaign.gd:361
+#: scripts/core/campaign.gd:362
 msgid "трохи ослаблений"
 msgstr ""
 
-#: scripts/core/campaign.gd:362
+#: scripts/core/campaign.gd:363
 msgid "як очікувалось"
 msgstr ""
 
-#: scripts/core/campaign.gd:379
+#: scripts/core/campaign.gd:380
 msgid "знімок зроблено %d год тому"
 msgstr ""
 
-#: scripts/core/campaign.gd:386
+#: scripts/core/campaign.gd:387
 msgid "%d–%d осіб"
 msgstr ""
 
-#: scripts/core/campaign.gd:400
+#: scripts/core/campaign.gd:401
 msgid "Після попереднього бою противник %s: очікуйте більше людей, мін і FPV."
 msgstr ""
 
-#: scripts/core/campaign.gd:402
+#: scripts/core/campaign.gd:403
 msgid "Після попереднього бою противник %s: людей і засобів у нього менше."
 msgstr ""
 
-#: scripts/core/campaign.gd:404
+#: scripts/core/campaign.gd:405
 msgid "Відомі з попереднього бою укріплення позначено на карті."
 msgstr ""
 
-#: scripts/core/campaign.gd:406
+#: scripts/core/campaign.gd:407
 msgid "Свіжої розвідки немає — позиції противника можуть бути інакшими."
 msgstr ""
 
-#: scripts/core/campaign.gd:418
+#: scripts/core/campaign.gd:419
 msgid "поранення"
 msgstr ""
 
-#: scripts/core/campaign.gd:421
+#: scripts/core/campaign.gd:422
 msgid "тривалий обстріл"
 msgstr ""
 
-#: scripts/core/campaign.gd:426
+#: scripts/core/campaign.gd:427
 msgid "загартований"
 msgstr ""
 
-#: scripts/core/campaign.gd:430
+#: scripts/core/campaign.gd:431
 msgid "втрата товариша"
 msgstr ""
 
-#: scripts/core/campaign.gd:430
+#: scripts/core/campaign.gd:431
 msgid "втрата товаришів"
 msgstr ""
 
-#: scripts/core/campaign.gd:436
+#: scripts/core/campaign.gd:437
 msgid "успіх"
 msgstr ""
 
-#: scripts/core/campaign.gd:446
+#: scripts/core/campaign.gd:447
 msgid "%s: %s (напруга %d)"
 msgstr ""
 
-#: scripts/core/campaign.gd:460
+#: scripts/core/campaign.gd:461
 msgid "виснажений"
 msgstr ""
 
-#: scripts/core/campaign.gd:464
+#: scripts/core/campaign.gd:465
 msgid "втомлений"
 msgstr ""
 
-#: scripts/core/campaign.gd:465
+#: scripts/core/campaign.gd:466
 msgid "у формі"
 msgstr ""
 
-#: scripts/core/campaign.gd:519
+#: scripts/core/campaign.gd:520
 msgid "не JSON-об'єкт"
 msgstr ""
 
-#: scripts/core/campaign.gd:521
+#: scripts/core/campaign.gd:522
 msgid "збереження з новішої версії гри"
 msgstr ""
 
-#: scripts/core/campaign.gd:524
+#: scripts/core/campaign.gd:525
 msgid "поле %s має неправильний тип"
 msgstr ""
 
-#: scripts/core/campaign.gd:528
+#: scripts/core/campaign.gd:529
 msgid "пошкоджений підрозділ"
 msgstr ""
 
-#: scripts/core/campaign.gd:531
+#: scripts/core/campaign.gd:532
 msgid "немає бійця %s"
 msgstr ""
 
@@ -1236,7 +1240,7 @@ msgid "Ліс"
 msgstr ""
 
 #: scripts/core/game.gd:138
-msgid "Бій у сосновому лісі: огляд 20–35 м, засідки, траншеї й бліндажі під деревами, просіки для техніки, лісництво на поляні."
+msgid "Рейд у сосновий ліс: знищити склад боєприпасів біля лісництва й станцію РЕБ. Огляд 20–35 м, засідки, траншеї під деревами, просіки для техніки."
 msgstr ""
 
 #: scripts/core/game.gd:139
@@ -1292,7 +1296,7 @@ msgid "Лісовий масив"
 msgstr ""
 
 #: scripts/core/game.gd:156
-msgid "Очистити лісовий масив на фланзі наступу."
+msgid "Рейд у лісовий масив на фланзі наступу: знищити склад боєприпасів і станцію РЕБ противника."
 msgstr ""
 
 #: scripts/core/game.gd:157
@@ -1491,12 +1495,20 @@ msgstr ""
 msgid "БЛІНДАЖ"
 msgstr ""
 
+#: scripts/map/bunker.gd:23
+msgid "СКЛАД БК"
+msgstr ""
+
 #: scripts/map/bunker.gd:79
 msgid "%s пошкоджено"
 msgstr ""
 
 #: scripts/map/bunker.gd:110
 msgid "%s знищено!"
+msgstr ""
+
+#: scripts/map/bunker.gd:121
+msgid "Склад БК вибухнув"
 msgstr ""
 
 #: scripts/map/map_manager.gd:786
@@ -1656,7 +1668,7 @@ msgid "Сосновий ліс, просіки, поляна"
 msgstr ""
 
 #: scripts/map/maps/map_forest.gd:23
-msgid "Пройти лісовий масив, збити передові позиції противника під деревами й захопити поляну з лісництвом."
+msgid "Рейд у лісовий масив: знищити склад боєприпасів противника на поляні з лісництвом і його станцію РЕБ у глибині. Захоплювати поляну не обов'язково."
 msgstr ""
 
 #: scripts/map/maps/map_forest.gd:24
@@ -1671,115 +1683,123 @@ msgstr ""
 msgid "На півночі — поляна з лісництвом, сараями й бліндажами."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:112
+#: scripts/map/maps/map_forest.gd:113
 msgid "стежкою на північ — прямо на секрет і траншею під деревами"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:113
+#: scripts/map/maps/map_forest.gd:114
 msgid "Західна просіка"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:113
+#: scripts/map/maps/map_forest.gd:114
 msgid "просікою до вирубки й ДЗОТа на перехресті; на просіці ПТ-міни"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:114
+#: scripts/map/maps/map_forest.gd:115
 msgid "Східна просіка"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:114
+#: scripts/map/maps/map_forest.gd:115
 msgid "просікою повз згорілу БМП; далі засіка й кулемет у траншеї"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:131
+#: scripts/map/maps/map_forest.gd:132
 msgid "Секрет"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:134
+#: scripts/map/maps/map_forest.gd:135
 msgid "Траншея-Захід"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:137
+#: scripts/map/maps/map_forest.gd:138
 msgid "Траншея-Схід"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:140
+#: scripts/map/maps/map_forest.gd:141
 msgid "Кулемет на просіці"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:143
+#: scripts/map/maps/map_forest.gd:144
 msgid "ДЗОТ на перехресті"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:146
+#: scripts/map/maps/map_forest.gd:147
 msgid "Лісництво"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:149
+#: scripts/map/maps/map_forest.gd:150
 msgid "Окоп на поляні"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:152
+#: scripts/map/maps/map_forest.gd:153
 msgid "Сараї"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:155
+#: scripts/map/maps/map_forest.gd:156
 msgid "Бліндаж на поляні"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:163
+#: scripts/map/maps/map_forest.gd:164
 msgid "знімок зроблено 5 год тому"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:164
+#: scripts/map/maps/map_forest.gd:165
 msgid "24–28 осіб"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:166
+#: scripts/map/maps/map_forest.gd:167
 msgid "Суцільний сосновий ліс: під деревами огляд 20–35 м, з дрона позиції під кронами видно погано. Техніка — лише дорогами й просіками."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:167
+#: scripts/map/maps/map_forest.gd:168
 msgid "Перед траншеєю, ймовірно, секрет (2 особи) біля стежки."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:168
+#: scripts/map/maps/map_forest.gd:169
 msgid "Траншея під деревами поперек масиву, перед нею дріт і протипіхотні міни, на кінці бліндаж."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:169
+#: scripts/map/maps/map_forest.gd:170
 msgid "Західна просіка: ПТ-міни, на перехресті з лісовою дорогою — ДЗОТ із кулеметом. Поруч вирубка — відкрита й, імовірно, пристріляна."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:170
+#: scripts/map/maps/map_forest.gd:171
 msgid "Східна просіка закрита засікою; за нею кулеметна траншея поперек просіки."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:171
-msgid "Ціль — поляна з лісництвом: будинок (вогонь із вікон, можливо ПТРК), сараї з кулеметом, окоп на краю поляни, бліндаж. Резерв у бліндажах на півночі."
+#: scripts/map/maps/map_forest.gd:172
+msgid "Поляна з лісництвом: будинок (вогонь із вікон, можливо ПТРК), сараї з кулеметом, окоп на краю поляни, бліндаж. Резерв у бліндажах на півночі."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:172
+#: scripts/map/maps/map_forest.gd:173
+msgid "Ціль рейду — склад боєприпасів за сараями лісництва (ящики під сіткою) і станція РЕБ на півночі. Склад горить від ПТРК, FPV, РПГ чи близьких мін; після вибуху там небезпечно. РЕБ — лише прямим влучанням (FPV, ПТРК)."
+msgstr ""
+
+#: scripts/map/maps/map_forest.gd:174
 msgid "Район висадки обирається на знімку: центр або одна з просік."
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:175
+#: scripts/map/maps/map_forest.gd:177
 msgid "СЕКРЕТ?"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:176
+#: scripts/map/maps/map_forest.gd:178
 msgid "ТРАНШЕЯ"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:177
+#: scripts/map/maps/map_forest.gd:179
 msgid "КУЛЕМЕТ"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:179
+#: scripts/map/maps/map_forest.gd:181
+msgid "СКЛАД БК?"
+msgstr ""
+
+#: scripts/map/maps/map_forest.gd:182
 msgid "ЛІСНИЦТВО"
 msgstr ""
 
-#: scripts/map/maps/map_forest.gd:180
+#: scripts/map/maps/map_forest.gd:183
 msgid "РЕЗЕРВ?"
 msgstr ""
 
@@ -4711,7 +4731,7 @@ msgstr ""
 msgid "рухається"
 msgstr ""
 
-#: scripts/units/soldier.gd:934
+#: scripts/units/soldier.gd:936
 msgid "надано першу допомогу (%s)"
 msgstr ""
 
@@ -4719,151 +4739,163 @@ msgstr ""
 msgid "%s прийняв командування."
 msgstr ""
 
-#: scripts/units/squad.gd:136
+#: scripts/units/squad.gd:137
 msgid "противник далі по траншеї — продовжуємо зачистку."
 msgstr ""
 
-#: scripts/units/squad.gd:144
+#: scripts/units/squad.gd:145
 msgid "ділянку окопу зачищено, закріплюємось."
 msgstr ""
 
-#: scripts/units/squad.gd:146
+#: scripts/units/squad.gd:147
 msgid "%s: ділянку окопу зачищено"
 msgstr ""
 
-#: scripts/units/squad.gd:189
+#: scripts/units/squad.gd:194
+msgid "%s закладає заряд на склад боєприпасів."
+msgstr ""
+
+#: scripts/units/squad.gd:194
+msgid "%s закладає заряд на станцію РЕБ."
+msgstr ""
+
+#: scripts/units/squad.gd:204
+msgid "заряд закладено — відходимо! Вибух через %d с."
+msgstr ""
+
+#: scripts/units/squad.gd:259
 msgid "поповнити набої не вдалося."
 msgstr ""
 
-#: scripts/units/squad.gd:211
+#: scripts/units/squad.gd:281
 msgid "поповнюємо набої з %s."
 msgstr ""
 
-#: scripts/units/squad.gd:216
+#: scripts/units/squad.gd:286
 msgid "набої поповнено."
 msgstr ""
 
-#: scripts/units/squad.gd:306
+#: scripts/units/squad.gd:376
 msgid "поповнюємо набої в машині."
 msgstr ""
 
-#: scripts/units/squad.gd:335
+#: scripts/units/squad.gd:405
 msgid "йдемо до %s по набої."
 msgstr ""
 
-#: scripts/units/squad.gd:386
+#: scripts/units/squad.gd:456
 msgid "%s у відкритому — тягнемо в укриття."
 msgstr ""
 
-#: scripts/units/squad.gd:599
+#: scripts/units/squad.gd:669
 msgid "%s в укритті."
 msgstr ""
 
-#: scripts/units/squad.gd:661
+#: scripts/units/squad.gd:731
 msgid "контакт! Переходимо до перебіжок."
 msgstr ""
 
-#: scripts/units/squad.gd:668
+#: scripts/units/squad.gd:738
 msgid "піхота з кулеметом"
 msgstr ""
 
-#: scripts/units/squad.gd:673
+#: scripts/units/squad.gd:743
 msgid "контакт! %s, %s, %s, %d м. Переходимо до перебіжок."
 msgstr ""
 
-#: scripts/units/squad.gd:887
+#: scripts/units/squad.gd:957
 msgid "командира немає — наказ виконаємо, щойно хтось прийме командування."
 msgstr ""
 
-#: scripts/units/squad.gd:901
+#: scripts/units/squad.gd:971
 msgid "рухаємось перебіжками: одна група біжить, друга прикриває."
 msgstr ""
 
-#: scripts/units/squad.gd:989
+#: scripts/units/squad.gd:1059
 msgid "рухаємось двома колонами за %s."
 msgstr ""
 
-#: scripts/units/squad.gd:1023
+#: scripts/units/squad.gd:1093
 msgid "ведемо вогонь на подавлення."
 msgstr ""
 
-#: scripts/units/squad.gd:1060
+#: scripts/units/squad.gd:1130
 msgid "займаємо будівлю, %d бійців біля вікон."
 msgstr ""
 
-#: scripts/units/squad.gd:1119
+#: scripts/units/squad.gd:1189
 msgid "противник з іншого боку — переходимо до інших вікон."
 msgstr ""
 
-#: scripts/units/squad.gd:1150
+#: scripts/units/squad.gd:1220
 msgid "зачищаємо будівлю, збираємось біля %s."
 msgstr ""
 
-#: scripts/units/squad.gd:1150
+#: scripts/units/squad.gd:1220
 msgid "пролому"
 msgstr ""
 
-#: scripts/units/squad.gd:1150
+#: scripts/units/squad.gd:1220
 msgid "входу"
 msgstr ""
 
-#: scripts/units/squad.gd:1182
+#: scripts/units/squad.gd:1252
 msgid "граната в будівлю!"
 msgstr ""
 
-#: scripts/units/squad.gd:1202
+#: scripts/units/squad.gd:1272
 msgid "будівлю зачищено."
 msgstr ""
 
-#: scripts/units/squad.gd:1204
+#: scripts/units/squad.gd:1274
 msgid "%s: будівлю зачищено"
 msgstr ""
 
-#: scripts/units/squad.gd:1319
+#: scripts/units/squad.gd:1389
 msgid "притиснуті вогнем, перебіжку зупинено"
 msgstr ""
 
-#: scripts/units/squad.gd:1354
+#: scripts/units/squad.gd:1424
 msgid "втрати понад половину складу — штурм припинено, закріплюємось. Потрібне рішення командира."
 msgstr ""
 
-#: scripts/units/squad.gd:1356
+#: scripts/units/squad.gd:1426
 msgid "%s: штурм припинено через втрати"
 msgstr ""
 
-#: scripts/units/squad.gd:1363
+#: scripts/units/squad.gd:1433
 msgid "продовжуємо штурм."
 msgstr ""
 
-#: scripts/units/squad.gd:1376
+#: scripts/units/squad.gd:1446
 msgid "втрати (%d) — зупиняємось, займаємо укриття."
 msgstr ""
 
-#: scripts/units/squad.gd:1404
+#: scripts/units/squad.gd:1474
 msgid "%s: контакт, перебіжки"
 msgstr ""
 
-#: scripts/units/squad.gd:1445
+#: scripts/units/squad.gd:1515
 msgid "противник ще на позиції — продовжуємо."
 msgstr ""
 
-#: scripts/units/squad.gd:1456
+#: scripts/units/squad.gd:1526
 msgid "рубіж зайнято."
 msgstr ""
 
-#: scripts/units/squad.gd:1501
+#: scripts/units/squad.gd:1571
 msgid "посадку завершено."
 msgstr ""
 
-#: scripts/units/squad.gd:1545
+#: scripts/units/squad.gd:1615
 msgid "втрати понад 50%! Боєздатність знижена."
 msgstr ""
 
-#: scripts/units/squad.gd:1553
+#: scripts/units/squad.gd:1623
 msgid "маємо втрати (%d), запитуємо підтримку!"
 msgstr ""
 
-#: scripts/units/squad.gd:1555
+#: scripts/units/squad.gd:1625
 msgid "під щільним вогнем, запитуємо підтримку!"
 msgstr ""
 

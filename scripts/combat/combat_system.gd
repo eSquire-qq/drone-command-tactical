@@ -426,6 +426,33 @@ func _smoke_hit(pt: Vector3) -> void:
 	deploy_smoke(pt, 10.0, 45.0)
 
 
+## Where our FPV takes off for a strike at p: the operator routes it around
+## the enemy positions we know of — of five points along our map edge, the one
+## whose straight line to the target passes fewest known enemies (and is short).
+func fpv_start(p: Vector3) -> Vector3:
+	var half: float = W.mission.def.size * 0.5
+	var best := Vector3(0, 25, half + 45)
+	var best_s := INF
+	for k in 5:
+		var x := -half * 0.7 + half * 0.35 * k
+		var s0 := Vector3(x, 25, half + 45)
+		var a := Vector2(s0.x, s0.z)
+		var b := Vector2(p.x, p.z)
+		var score := a.distance_to(b) * 0.01
+		for u in W.units:
+			if u.side != 1 or not u.is_active() or not u.ever_seen:
+				continue
+			var q := Vector2(u.global_position.x, u.global_position.z)
+			if q.distance_to(b) < 25.0:
+				continue   # the ones at the target itself are there on any route
+			if Geometry2D.get_closest_point_to_segment(q, a, b).distance_to(q) < 50.0:
+				score += 1.0
+		if score < best_s:
+			best_s = score
+			best = s0
+	return best
+
+
 func fpv_strike(target, start: Vector3, side: int = 0) -> FpvDrone:
 	var d = FpvDrone.new()
 	add_child(d)

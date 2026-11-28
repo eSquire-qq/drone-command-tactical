@@ -300,6 +300,15 @@ const COMRADE_R := 9.0
 const COMRADE_STRESS := 8.0
 const DANGER_SPOT_T := 20.0
 
+# ---------------------------------------------------------------- ammunition depot (objective "destroy")
+const DEPOT_HP := 170.0           # crates: an ATGM, an FPV, a couple of RPG rounds or close mortar hits
+const DEPOT_BLAST := 160.0        # the depot goes up: power and radius of the blast
+const DEPOT_BLAST_R := 11.0
+const DEMO_REACH := 7.0           # our man this close to the depot can plant a charge
+const DEMO_CLEAR := 25.0          # ... when no active enemy is this close to it
+const DEMO_PLANT_T := 6.0         # planting, s
+const DEMO_FUSE := 20.0           # the charge goes off after this long; our men walk away
+
 # ---------------------------------------------------------------- capture and hold (objective "hold")
 const HOLD_TIME := 300.0          # default: hold the position this long after taking it, s
 const HOLD_LOST_T := 30.0         # none of ours in the zone, the enemy there this long: the position is lost

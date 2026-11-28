@@ -34,7 +34,7 @@ func _team(name: String):
 
 
 func _process(_d: float) -> void:
-	if _hold_end_check():
+	if _hold_end_check() or _destroy_end_check():
 		return
 	if not W.running() or W.mission.phase != MissionManager.Phase.COMBAT:
 		return
@@ -92,6 +92,8 @@ func _process(_d: float) -> void:
 			_resup(t)
 		"hold":
 			_hold(t)
+		"destroy":
+			_destroy_test(t)
 
 
 func _setup() -> void:
@@ -1743,3 +1745,112 @@ func _hold(t: float) -> void:
 		if t > 900.0:
 			print("[AITEST] RESULT hold: FAIL no end in 900 s")
 			get_tree().quit()
+
+
+# ------------------------------------------------------------------ destroy (raid)
+## The map's own destroy task: an FPV at the ammunition depot (it must go up
+## and hurt whoever stands next to it), then at the EW station; the mission
+## must end as completed.
+var _ds_near := 0
+var _ds_fpv = null
+var _ds_sq = null
+var _ds_log := 0.0
+
+
+func _destroy_end_check() -> bool:
+	if scenario != "destroy" or _hd_end or W.mission.phase != MissionManager.Phase.ENDED:
+		return false
+	_hd_end = true
+	var r: Dictionary = W.mission.result
+	print("[AITEST] END reason=%s success=%s" % [r.get("reason", "?"), r.get("success", false)])
+	print("[AITEST] RESULT destroy: %s" % ("ok" if r.get("reason", "") == "completed" else "FAIL"))
+	get_tree().quit()
+	return true
+
+
+func _destroy_test(t: float) -> void:
+	var tg: Array = W.mission.objectives._targets()
+	if stage == 0 and t > 3.0:
+		stage = 1
+		print("[AITEST] weather %s (fpv miss %.2f) -> clear for the test" % [Game.weather, float(Game.wx("fpv_miss"))])
+		Game.weather = "clear"
+		print("[AITEST] destroy: %d targets: %s" % [tg.size(), ", ".join(tg.map(func(x): return "%s %s" % [x.name, (x.global_position as Vector3).snapped(Vector3.ONE)]))])
+		var dp = null
+		for x in tg:
+			if x is Bunker and x.kind == "depot":
+				dp = x
+		if dp == null:
+			print("[AITEST] RESULT destroy: FAIL no depot")
+			get_tree().quit()
+			return
+		for u in W.units:
+			if u.side == 1 and u.is_active():
+				u.ever_seen = true   # the recon is done: the FPV operator routes around them
+				u.noncombat = true   # the mechanics here, not the air defence
+				if u.global_position.distance_to(dp.global_position) < AIConfig.DEPOT_BLAST_R:
+					_ds_near += 1
+		dp.ever_seen = true
+		if "--destroy-demo" in OS.get_cmdline_user_args():
+			# the guards around it are gone, a squad comes up to it
+			for u in W.units:
+				if u.side == 1 and u.is_active() and u.global_position.distance_to(dp.global_position) < 45.0:
+					W.damage.set_health(u, Soldier.H.DEAD, null, "test")
+			var sq = W.mission.friendly_squads[0]
+			var spot: Vector3 = W.grid.free_point(dp.global_position + Vector3(0, 0, 9))
+			sq.issue_order("hold", spot)
+			for i in sq.active_members().size():
+				var m = sq.active_members()[i]
+				m.stop()
+				m.global_position = W.grid.free_point(spot + Vector3((i % 4) * 2.0 - 3.0, 0, (i / 4) * 2.0))
+			sq.issue_order("hold", W.grid.free_point(dp.global_position + Vector3(0, 0, 4)))
+			_ds_sq = sq
+			print("[AITEST] demolition: %s next to the depot" % sq.short)
+		else:
+			_ds_fpv = W.combat.fpv_strike(dp, W.combat.fpv_start(dp.global_position))
+		print("[AITEST] FPV at the depot, hp %.0f, enemies within the blast radius: %d" % [dp.hp, _ds_near])
+		_rs_t = t
+	elif stage == 1:
+		if t - _ds_log > 3.0:
+			_ds_log = t
+			if is_instance_valid(_ds_fpv):
+				print("[AITEST]   fpv at %s done=%s, %.0f m to go" % [(_ds_fpv.global_position as Vector3).snapped(Vector3.ONE), _ds_fpv.done, _ds_fpv.global_position.distance_to(_ds_fpv.target_pos)])
+			else:
+				print("[AITEST]   fpv gone")
+		var dp = null
+		for x in tg:
+			if x is Bunker and x.kind == "depot":
+				dp = x
+		if dp.destroyed and t - _rs_t > 12.0:
+			var near := 0
+			for u in W.units:
+				if u.side == 1 and u.is_active() and u.global_position.distance_to(dp.global_position) < AIConfig.DEPOT_BLAST_R:
+					near += 1
+			print("[AITEST] depot destroyed after %.0f s; enemies still active within the radius: %d of %d" % [t - _rs_t, near, _ds_near])
+			if _ds_sq != null:
+				var hurt := 0
+				for m in _ds_sq.members:
+					if m.health != Soldier.H.HEALTHY:
+						hurt += 1
+				print("[AITEST] demolition: squad hurt %d, charges done=%s" % [hurt, _ds_sq.demo_charge == null])
+			for x in tg:
+				if not x is Bunker:
+					x.ever_seen = true
+					W.combat.fpv_strike(x, W.combat.fpv_start(x.global_position))
+					print("[AITEST] FPV at %s" % x.name)
+			_rs_t = t
+			stage = 2
+		elif t - _rs_t > 90.0:
+			print("[AITEST] RESULT destroy: FAIL depot hp %.0f after 90 s" % dp.hp)
+			get_tree().quit()
+	elif stage >= 2 and stage < 5 and t - _rs_t > 60.0:
+		# the FPV lost its link next to the jammer itself (it protects itself):
+		# another one, as a player would
+		for x in tg:
+			if not x.destroyed:
+				print("[AITEST] %s still up after 60 s (hp %.0f): another FPV" % [x.name, x.hp])
+				W.combat.fpv_strike(x, W.combat.fpv_start(x.global_position))
+		_rs_t = t
+		stage += 1
+	elif stage == 5 and t - _rs_t > 60.0:
+		print("[AITEST] RESULT destroy: FAIL targets still up")
+		get_tree().quit()

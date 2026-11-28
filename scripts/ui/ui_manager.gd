@@ -67,7 +67,7 @@ func begin() -> void:
 		if a.begins_with("--aitest="):
 			# controlled AI scenario: normal enemy, no scripted training
 			def.diff_override = {}
-			if a == "--aitest=hold":
+			if a == "--aitest=hold" or a == "--aitest=destroy":
 				# the map's own task (capture and hold) with a full company
 				Game.loadout = {"bmp2": 1, "m113": 1, "rifle_squad": 2, "assault_group": 1, "medevac": 1, "mortar": 2, "fpv": 3, "smoke": 2}
 			else:

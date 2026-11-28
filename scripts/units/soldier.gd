@@ -764,7 +764,7 @@ func _update_posture() -> void:
 		elif ai.want_posture == P.CROUCH and posture == P.STAND:
 			posture = P.CROUCH
 		return
-	if action == "aid" or action == "resupply":
+	if action == "aid" or action == "resupply" or action == "demo":
 		posture = P.CROUCH
 		return
 	if flinch_t > 0.0:
@@ -902,6 +902,8 @@ func _update_action(delta: float) -> void:
 			_finish_aid()
 		elif action == "resupply" and squad != null:
 			squad.resupply_taken(self)
+		elif action == "demo" and squad != null:
+			squad.demo_planted(self, action_payload)
 		action = ""
 		action_payload = null
 

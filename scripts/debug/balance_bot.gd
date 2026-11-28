@@ -86,6 +86,8 @@ func _process(delta: float) -> void:
 		_smart(t)
 	_dodge_recon(delta)
 	_ammo_check(delta, t)
+	if W.mission.objectives.type() == "destroy":
+		_raid(delta, t)
 	evac_t -= delta
 	if evac_t <= 0.0:
 		evac_t = 4.0
@@ -194,6 +196,66 @@ func _rc_fly() -> void:
 	var p: Vector2 = RECON_ROUTE[_rc_i][0]
 	W.cam.pitch_t = deg_to_rad(50.0)
 	W.cam.fly_to(Vector3(p.x, 0, p.y), _rc_d)
+
+
+## A destroy task, as a player would do it: the drone goes to look at the
+## briefed target areas; a target once seen gets an FPV, the depot also
+## mortar fire; the squads' AT gunners go for revealed targets on their own.
+var _rd_t := 20.0
+var _rd_look := 0
+var _rd_fpv_t := 0.0
+var _rd_mort_t := 0.0
+var _rd_go := -999.0
+
+
+func _raid(delta: float, t: float) -> void:
+	_rd_t -= delta
+	_rd_fpv_t -= delta
+	_rd_mort_t -= delta
+	if _rd_t > 0.0 or t < 120.0:
+		return
+	_rd_t = 10.0
+	var tg: Array = W.mission.objectives._targets()
+	var unseen: Array = []
+	for x in tg:
+		if x.destroyed:
+			continue
+		if not x.ever_seen:
+			unseen.append(x)
+			continue
+		# FPV for the EW station (only a direct hit takes it), mortar for the depot
+		if x is EwStation and _rd_fpv_t <= 0.0 and W.mission.use_support("fpv"):
+			_rd_fpv_t = 25.0
+			W.combat.fpv_strike(x, W.combat.fpv_start(x.global_position))
+			print("[BALANCE] t=%d raid: FPV at %s" % [int(t), x.name])
+		elif x is Bunker and _rd_mort_t <= 0.0 and W.mission.use_support("mortar"):
+			_rd_mort_t = 45.0
+			W.combat.mortar_strike(x.global_position, 4, 11.0, 0)
+			print("[BALANCE] t=%d raid: mortar at %s" % [int(t), x.name])
+	# the depot still stands later on: the strongest squad goes for it (it
+	# plants a charge once there and the enemy is gone from around it)
+	for x in tg:
+		if not x.destroyed and t > 420.0 and t - _rd_go > 60.0:
+			_rd_go = t
+			var best = null
+			for sq in W.mission.friendly_squads:
+				if sq.mounted or sq.active_count() < 2 or sq.demo_charge != null:
+					continue
+				if best == null or sq.active_count() > best.active_count():
+					best = sq
+			if best != null:
+				best.issue_order("assault", W.grid.free_point(x.global_position + Vector3(0, 0, 4)))
+				print("[BALANCE] t=%d raid: %s goes for %s" % [int(t), best.short, "the depot" if x is Bunker else "the EW station"])
+	# the drone looks at the briefed area of the first target not seen yet
+	if int(t) % 60 < 10 and "--verbose" in OS.get_cmdline_user_args():
+		print("[BALANCE] t=%d raid: targets %s, unseen %d, cam %s alt %.0f link %.2f down=%s" % [int(t), tg.map(func(x): return "%s%s" % ["D" if x.destroyed else "-", "S" if x.ever_seen else "-"]), unseen.size(),
+			W.cam.cam.global_position.snapped(Vector3.ONE), W.cam.altitude(), W.ew.link if W.ew else 1.0, W.ew.drone_down if W.ew else false])
+	if not unseen.is_empty() and W.ew and not W.ew.drone_down:
+		_rd_look += 1
+		if _rd_look % 3 == 1:
+			var p: Vector3 = unseen[0].global_position + Vector3(randf_range(-12, 12), 0, randf_range(-12, 12))
+			W.cam.zoom_t = 2.5
+			W.cam.fly_to(p, 120.0)
 
 
 var _ammo_t := 10.0
@@ -726,7 +788,7 @@ func _fpv(target) -> void:
 		return
 	if W.mission.use_support("fpv"):
 		target.ever_seen = true
-		W.combat.fpv_strike(target, Vector3(randf_range(-30, 30), 25, W.mission.def.size * 0.5 + 45))
+		W.combat.fpv_strike(target, W.combat.fpv_start(target.global_position))
 
 
 func _mortar(p: Vector3) -> void:
