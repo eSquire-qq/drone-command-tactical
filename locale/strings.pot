@@ -171,131 +171,135 @@ msgstr ""
 msgid "ліміт відділення"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:38
+#: scripts/ai/soldier_ai.gd:35
+msgid "тягне пораненого"
+msgstr ""
+
+#: scripts/ai/soldier_ai.gd:44
 msgid "укриття"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:235
+#: scripts/ai/soldier_ai.gd:243
 msgid "%s відходить у паніці"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "допомога"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "граната"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "ПТ-постріл"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "пуск ПТУР"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "дим"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:260
+#: scripts/ai/soldier_ai.gd:268
 msgid "дія"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:279
+#: scripts/ai/soldier_ai.gd:287
 msgid "конвоює полоненого"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:284
+#: scripts/ai/soldier_ai.gd:292
 msgid "зачистка"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:284
+#: scripts/ai/soldier_ai.gd:292
 msgid "граната за ріг"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:284
+#: scripts/ai/soldier_ai.gd:292
 msgid "прострілює кут"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:292
+#: scripts/ai/soldier_ai.gd:300
 msgid "рух"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:292
+#: scripts/ai/soldier_ai.gd:300
 msgid "відхід"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:307
+#: scripts/ai/soldier_ai.gd:315
 msgid "штурм"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:317
+#: scripts/ai/soldier_ai.gd:325
 msgid "прикриття"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:324
+#: scripts/ai/soldier_ai.gd:332
 msgid "висування"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:335
+#: scripts/ai/soldier_ai.gd:343
 msgid "бій біля вікна"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:335
+#: scripts/ai/soldier_ai.gd:343
 msgid "біля вікна"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:339
+#: scripts/ai/soldier_ai.gd:347
 msgid "бій"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:339
+#: scripts/ai/soldier_ai.gd:347
 msgid "спостереження"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:352
+#: scripts/ai/soldier_ai.gd:360
 msgid "до укриття"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:359
+#: scripts/ai/soldier_ai.gd:367
 msgid "притиснутий в окопі"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:359
+#: scripts/ai/soldier_ai.gd:367
 msgid "пригнувся в окопі"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:359
+#: scripts/ai/soldier_ai.gd:367
 msgid "в окопі"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:365
+#: scripts/ai/soldier_ai.gd:373
 msgid "в укритті"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:368
+#: scripts/ai/soldier_ai.gd:376
 msgid "лежить"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:370
+#: scripts/ai/soldier_ai.gd:378
 msgid "очікування"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:396
+#: scripts/ai/soldier_ai.gd:404
 msgid "кидок в укриття"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:407
+#: scripts/ai/soldier_ai.gd:415
 msgid "чергування"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:443
+#: scripts/ai/soldier_ai.gd:451
 msgid "граната наосліп"
 msgstr ""
 
-#: scripts/ai/soldier_ai.gd:480
+#: scripts/ai/soldier_ai.gd:488
 msgid "відхід по траншеї"
 msgstr ""
 
@@ -2047,59 +2051,59 @@ msgstr ""
 msgid "Дорога з півдня веде просто на перехрестя."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:154
+#: scripts/map/maps/map_village.gd:156
 msgid "Садиба-Захід"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:157
+#: scripts/map/maps/map_village.gd:159
 msgid "Садиба-Центр"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:160
+#: scripts/map/maps/map_village.gd:162
 msgid "Садиба-Схід"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:163
+#: scripts/map/maps/map_village.gd:165
 msgid "Цегляна хата"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:175
+#: scripts/map/maps/map_village.gd:177
 msgid "20–26 осіб"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:177
+#: scripts/map/maps/map_village.gd:179
 msgid "Противник обладнав крайні садиби південного ряду: стрільба з вікон, проломи в стінах можливі."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:178
+#: scripts/map/maps/map_village.gd:180
 msgid "На південному краї — короткий окоп через дорогу й кулеметний ДЗОТ на західному фланзі; перед ними дріт."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:179
+#: scripts/map/maps/map_village.gd:181
 msgid "Дорога в хутір ймовірно замінована протитанковими мінами; поле перед хутором пристріляне мінометом."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:180
+#: scripts/map/maps/map_village.gd:182
 msgid "Цегляна хата на північному ряду проглядає всю вулицю й перехрестя."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:181
+#: scripts/map/maps/map_village.gd:183
 msgid "Розрахунок ПТРК у дворі східної садиби — техніку в полі буде уражено."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:182
+#: scripts/map/maps/map_village.gd:184
 msgid "Підходи: старий сад і городи на заході, неглибока балка на сході."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:183
+#: scripts/map/maps/map_village.gd:185
 msgid "Будинок займати й зачищати: «Тримати» / «Штурм» з ПКМ по будинку. Граната — у вікно чи двері, вхід через двері або пролом."
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:188
+#: scripts/map/maps/map_village.gd:190
 msgid "САДИБА"
 msgstr ""
 
-#: scripts/map/maps/map_village.gd:191
+#: scripts/map/maps/map_village.gd:193
 msgid "ЦЕГЛЯНА ХАТА"
 msgstr ""
 
@@ -4439,39 +4443,39 @@ msgstr ""
 msgid "ЗАВАНТАЖЕННЯ МІСЦЕВОСТІ…"
 msgstr ""
 
-#: scripts/units/soldier.gd:808
+#: scripts/units/soldier.gd:822
 msgid "%s: немає набоїв!"
 msgstr ""
 
-#: scripts/units/soldier.gd:838
+#: scripts/units/soldier.gd:852
 msgid "немає набоїв"
 msgstr ""
 
-#: scripts/units/soldier.gd:840
+#: scripts/units/soldier.gd:854
 msgid "перезаряджає"
 msgstr ""
 
-#: scripts/units/soldier.gd:847
+#: scripts/units/soldier.gd:861
 msgid "береже набої"
 msgstr ""
 
-#: scripts/units/soldier.gd:849
+#: scripts/units/soldier.gd:863
 msgid "немає видимості"
 msgstr ""
 
-#: scripts/units/soldier.gd:850
+#: scripts/units/soldier.gd:864
 msgid "ціль не виявлена"
 msgstr ""
 
-#: scripts/units/soldier.gd:852
+#: scripts/units/soldier.gd:866
 msgid "далеко"
 msgstr ""
 
-#: scripts/units/soldier.gd:854
+#: scripts/units/soldier.gd:868
 msgid "рухається"
 msgstr ""
 
-#: scripts/units/soldier.gd:914
+#: scripts/units/soldier.gd:928
 msgid "надано першу допомогу (%s)"
 msgstr ""
 
@@ -4479,123 +4483,131 @@ msgstr ""
 msgid "%s прийняв командування."
 msgstr ""
 
-#: scripts/units/squad.gd:127
+#: scripts/units/squad.gd:129
 msgid "противник далі по траншеї — продовжуємо зачистку."
 msgstr ""
 
-#: scripts/units/squad.gd:135
+#: scripts/units/squad.gd:137
 msgid "ділянку окопу зачищено, закріплюємось."
 msgstr ""
 
-#: scripts/units/squad.gd:137
+#: scripts/units/squad.gd:139
 msgid "%s: ділянку окопу зачищено"
 msgstr ""
 
-#: scripts/units/squad.gd:203
+#: scripts/units/squad.gd:193
+msgid "%s у відкритому — тягнемо в укриття."
+msgstr ""
+
+#: scripts/units/squad.gd:402
+msgid "%s в укритті."
+msgstr ""
+
+#: scripts/units/squad.gd:464
 msgid "контакт! Переходимо до перебіжок."
 msgstr ""
 
-#: scripts/units/squad.gd:210
+#: scripts/units/squad.gd:471
 msgid "піхота з кулеметом"
 msgstr ""
 
-#: scripts/units/squad.gd:215
+#: scripts/units/squad.gd:476
 msgid "контакт! %s, %s, %s, %d м. Переходимо до перебіжок."
 msgstr ""
 
-#: scripts/units/squad.gd:429
+#: scripts/units/squad.gd:690
 msgid "командира немає — наказ виконаємо, щойно хтось прийме командування."
 msgstr ""
 
-#: scripts/units/squad.gd:438
+#: scripts/units/squad.gd:699
 msgid "рухаємось перебіжками: одна група біжить, друга прикриває."
 msgstr ""
 
-#: scripts/units/squad.gd:526
+#: scripts/units/squad.gd:787
 msgid "рухаємось двома колонами за %s."
 msgstr ""
 
-#: scripts/units/squad.gd:560
+#: scripts/units/squad.gd:821
 msgid "ведемо вогонь на подавлення."
 msgstr ""
 
-#: scripts/units/squad.gd:597
+#: scripts/units/squad.gd:858
 msgid "займаємо будівлю, %d бійців біля вікон."
 msgstr ""
 
-#: scripts/units/squad.gd:647
+#: scripts/units/squad.gd:917
 msgid "противник з іншого боку — переходимо до інших вікон."
 msgstr ""
 
-#: scripts/units/squad.gd:678
+#: scripts/units/squad.gd:948
 msgid "зачищаємо будівлю, збираємось біля %s."
 msgstr ""
 
-#: scripts/units/squad.gd:678
+#: scripts/units/squad.gd:948
 msgid "пролому"
 msgstr ""
 
-#: scripts/units/squad.gd:678
+#: scripts/units/squad.gd:948
 msgid "входу"
 msgstr ""
 
-#: scripts/units/squad.gd:710
+#: scripts/units/squad.gd:980
 msgid "граната в будівлю!"
 msgstr ""
 
-#: scripts/units/squad.gd:730
+#: scripts/units/squad.gd:1000
 msgid "будівлю зачищено."
 msgstr ""
 
-#: scripts/units/squad.gd:732
+#: scripts/units/squad.gd:1002
 msgid "%s: будівлю зачищено"
 msgstr ""
 
-#: scripts/units/squad.gd:847
+#: scripts/units/squad.gd:1117
 msgid "притиснуті вогнем, перебіжку зупинено"
 msgstr ""
 
-#: scripts/units/squad.gd:882
+#: scripts/units/squad.gd:1152
 msgid "втрати понад половину складу — штурм припинено, закріплюємось. Потрібне рішення командира."
 msgstr ""
 
-#: scripts/units/squad.gd:884
+#: scripts/units/squad.gd:1154
 msgid "%s: штурм припинено через втрати"
 msgstr ""
 
-#: scripts/units/squad.gd:891
+#: scripts/units/squad.gd:1161
 msgid "продовжуємо штурм."
 msgstr ""
 
-#: scripts/units/squad.gd:904
+#: scripts/units/squad.gd:1174
 msgid "втрати (%d) — зупиняємось, займаємо укриття."
 msgstr ""
 
-#: scripts/units/squad.gd:932
+#: scripts/units/squad.gd:1202
 msgid "%s: контакт, перебіжки"
 msgstr ""
 
-#: scripts/units/squad.gd:973
+#: scripts/units/squad.gd:1243
 msgid "противник ще на позиції — продовжуємо."
 msgstr ""
 
-#: scripts/units/squad.gd:984
+#: scripts/units/squad.gd:1254
 msgid "рубіж зайнято."
 msgstr ""
 
-#: scripts/units/squad.gd:1029
+#: scripts/units/squad.gd:1299
 msgid "посадку завершено."
 msgstr ""
 
-#: scripts/units/squad.gd:1073
+#: scripts/units/squad.gd:1343
 msgid "втрати понад 50%! Боєздатність знижена."
 msgstr ""
 
-#: scripts/units/squad.gd:1081
+#: scripts/units/squad.gd:1351
 msgid "маємо втрати (%d), запитуємо підтримку!"
 msgstr ""
 
-#: scripts/units/squad.gd:1083
+#: scripts/units/squad.gd:1353
 msgid "під щільним вогнем, запитуємо підтримку!"
 msgstr ""
 

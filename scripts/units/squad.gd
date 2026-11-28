@@ -100,6 +100,11 @@ func _process_body(delta: float) -> void:
 		return
 	help_cd -= delta
 	_expire_knowledge()
+	if side == 0:
+		var td := Time.get_ticks_usec() if Prof.on else 0
+		_update_drag(delta)
+		if Prof.on:
+			Prof.add("squad.drag", td)
 	_update_solo_mount()
 	if leaderless_t > 0.0:
 		leaderless_t -= delta
@@ -142,6 +147,270 @@ func _process_body(delta: float) -> void:
 
 
 # ------------------------------------------------------------------ queries
+# ------------------------------------------------------------------ casualty drag
+## A man down in the open, seen from where the enemy is, is dragged by two of
+## his comrades to the nearest cover; first aid and the evacuation take him
+## from there. One drag per squad at a time, nobody goes out under heavy fire
+## or next to the enemy.
+var drag: Dictionary = {}       # {c, men, to, t, grabbed}
+var _drag_t := 0.0
+var drag_done := 0               # casualties dragged to cover (tests, soak)
+
+
+func _update_drag(delta: float) -> void:
+	if not drag.is_empty():
+		_drag_step(delta)
+		return
+	_drag_t -= delta
+	if _drag_t > 0.0:
+		return
+	_drag_t = AIConfig.DRAG_CHECK_T
+	if order in ["mount", "mounted", "escort"] or leaderless_t > 0.0:
+		return
+	var act := active_members()
+	if act.size() < 3:
+		return   # somebody has to keep fighting
+	for c in members:
+		if c.health != Soldier.H.INCAP or c.carried or c.on_board or c.evacuated or c.vehicle != null:
+			continue
+		if c.aid_by != null and is_instance_valid(c.aid_by) and c.aid_by.action == "aid":
+			continue   # already being bandaged where he lies
+		if c.drag_n >= 2:
+			continue   # dragged twice already: bandage him where he is
+		var to = drag_cover_for(c)
+		if to == null:
+			continue
+		var men := _drag_helpers(c, act)
+		if men.size() < 2:
+			continue
+		for m in men:
+			if m.aid_target != null and is_instance_valid(m.aid_target):
+				m.aid_target.aid_by = null
+			m.aid_target = null
+			if m.post != null:
+				m.leave_post()
+			m.dragging = c
+			m.follow_ahead = null   # out of the file
+			m.move_to(W.grid.free_point(c.global_position + Vector3(randf_range(-0.7, 0.7), 0, randf_range(-0.7, 0.7))), true)
+		drag = {"c": c, "men": men, "to": to, "t": 0.0, "grabbed": false}
+		c.drag_n += 1
+		radio("evac", Loc.t("%s у відкритому — тягнемо в укриття.") % c.display_name(), "warn")
+		return
+
+
+## The same, remembered for a couple of seconds (first aid asks it often).
+var _dc_cache := {}
+
+
+func drag_cover_for(c):
+	var e = _dc_cache.get(c)
+	if e != null and W.time - float(e[0]) < AIConfig.DRAG_CHECK_T:
+		return e[1]
+	var to = _drag_cover(c)
+	_dc_cache[c] = [W.time, to]
+	return to
+
+
+## Will this squad drag him now (so first aid waits until he is in cover)?
+func will_drag(c) -> bool:
+	if c.drag_n >= 2 or not drag.is_empty() or order in ["mount", "mounted", "escort"] or leaderless_t > 0.0:
+		return false
+	var act := active_members()
+	if act.size() < 3 or drag_cover_for(c) == null:
+		return false
+	return _drag_helpers(c, act).size() >= 2
+
+
+## Where to drag him, or null when he is fine where he lies (in a trench, a
+## building, already hidden from the enemy) or when it is too hot to go there.
+func _drag_cover(c):
+	var p: Vector3 = c.global_position
+	if W.grid.in_channel(p, 1.2) or Buildings.at(p) != null or c.bunker != null:
+		return null
+	var thr: Array = []
+	for t in threat_points(p, AIConfig.DRAG_THREATS):
+		var d: float = (t as Vector3).distance_to(p)
+		if d < AIConfig.DRAG_CLOSE:
+			return null   # too hot: nobody goes out there
+		if d < AIConfig.DRAG_THREAT:
+			thr.append(t)
+	if thr.is_empty():
+		return null
+	# the enemy who sees him best decides where the cover is
+	var v_here := 0.0
+	var worst: Vector3 = thr[0]
+	for t in thr:
+		var v := _seen_from(t, p)
+		if v > v_here:
+			v_here = v
+			worst = t
+	if v_here < AIConfig.DRAG_EXPOSED:
+		return null
+	return _drag_spot(p, thr, worst, v_here)
+
+
+## The nearest spot (one nav cell apart) that hides him from the enemy who
+## sees him best, then checked against all of them and for a short way there.
+func _drag_spot(p: Vector3, thr: Array, worst: Vector3, v_here: float):
+	var g = W.grid
+	var r := AIConfig.DRAG_COVER_R
+	var n := int(r / g.CS)
+	var cands: Array = []
+	for dz in range(-n, n + 1):
+		for dx in range(-n, n + 1):
+			var q := Vector3(p.x + dx * g.CS, 0, p.z + dz * g.CS)
+			var d := Vector2(q.x - p.x, q.z - p.z).length()
+			if d < 2.0 or d > r or g.inf_solid[g.cidx(q.x, q.z)] != 0:
+				continue
+			var trench: bool = g.in_channel(q, 1.2)
+			var v := _seen_from(worst, q)
+			if v > v_here - AIConfig.DRAG_MIN_GAIN and not trench:
+				continue
+			cands.append([v + d / r * 0.4 - (0.3 if trench else 0.0), q, trench])
+	cands.sort_custom(func(a, b): return a[0] < b[0])
+	for k in mini(10, cands.size()):
+		var q: Vector3 = cands[k][1]
+		var v_to := 0.0
+		for t in thr:
+			v_to = maxf(v_to, _seen_from(t, q))
+		if v_here - v_to < AIConfig.DRAG_MIN_GAIN and not cands[k][2]:
+			continue
+		# cover round the corner of a house is no use: a long drag in the open
+		var path: PackedVector3Array = g.find_path_inf(p, q, false)
+		var plen := 0.0
+		var prev := p
+		for w in path:
+			plen += prev.distance_to(w)
+			prev = w
+		if path.is_empty() or plen > r * AIConfig.DRAG_PATH_K:
+			continue
+		return g.ground(q)
+	return null
+
+
+## Is he out of sight of the enemies near him now?
+func _hidden(p: Vector3) -> bool:
+	for t in threat_points(p, AIConfig.DRAG_THREATS):
+		if (t as Vector3).distance_to(p) < AIConfig.DRAG_THREAT and _seen_from(t, p) >= AIConfig.DRAG_EXPOSED * 0.5:
+			return false
+	return true
+
+
+## How well a man lying at `p` is seen from an enemy at `t`.
+func _seen_from(t: Vector3, p: Vector3) -> float:
+	return W.grid.visibility(t + Vector3(0, 1.5, 0), W.grid.ground(p) + Vector3(0, AIConfig.COVER_BODY_H, 0))
+
+
+## The two nearest men who can do it: not the leader, not pinned, not busy.
+func _drag_helpers(c, act: Array) -> Array:
+	var cands: Array = []
+	var ld = leader()
+	for m in act:
+		if m == ld or m.health != Soldier.H.HEALTHY or m.supp_level >= 2 or m.broken:
+			continue
+		if m.bunker != null or m.action != "" or m.dragging != null or m.solo != "":
+			continue
+		var d: float = m.global_position.distance_to(c.global_position)
+		if d < AIConfig.DRAG_REACH:
+			cands.append([d, m])
+	cands.sort_custom(func(a, b): return a[0] < b[0])
+	var out: Array = []
+	for k in mini(2, cands.size()):
+		out.append(cands[k][1])
+	return out
+
+
+func _drag_step(delta: float) -> void:
+	var c = drag["c"]
+	drag["t"] += delta
+	var men: Array = []
+	for m in drag["men"]:
+		if is_instance_valid(m) and m.is_active() and m.supp_level < 3 and m.dragging == c:
+			men.append(m)
+	var lost: bool = not is_instance_valid(c) or c.health != Soldier.H.INCAP or c.on_board or c.evacuated
+	if lost or men.size() < 2 or float(drag["t"]) > AIConfig.DRAG_MAX_T or order in ["mount", "mounted"]:
+		_drag_end(false)
+		return
+	var to: Vector3 = drag["to"]
+	drag["rt"] = float(drag.get("rt", 0.0)) - delta
+	var reroute: bool = drag["rt"] <= 0.0   # re-routes at most once a second
+	if reroute:
+		drag["rt"] = 1.0
+	if not drag["grabbed"]:
+		var near := 0
+		for m in men:
+			var dc: float = m.global_position.distance_to(c.global_position)
+			# as close as the ground lets him (a casualty by a tree or a wall)
+			if dc < 2.2 or (dc < 3.2 and not m.moving):
+				near += 1
+			elif reroute and not _heading_to(m, c.global_position, 2.5):
+				m.move_to(W.grid.free_point(c.global_position), true)
+		if near >= 2:
+			drag["grabbed"] = true
+			c.carried = true
+			drag["gt"] = 0.0
+			for m in men:
+				m.move_to(to, false)
+		return
+	var mid := Vector3.ZERO
+	for m in men:
+		mid += m.global_position
+	mid /= men.size()
+	# dragged along the ground behind them
+	c.global_position = W.grid.ground(mid) + Vector3(0, 0.15, 0)
+	c.yaw = men[0].yaw
+	c.rotation.y = c.yaw
+	drag["gt"] = float(drag.get("gt", 0.0)) + delta
+	var left := Vector2(mid.x - to.x, mid.z - to.z).length()
+	var walking := false
+	for m in men:
+		walking = walking or m.moving
+	# there, or as close as the ground lets them get, or already out of sight
+	drag["ht"] = float(drag.get("ht", 0.0)) - delta
+	var hidden := false
+	if drag["ht"] <= 0.0:
+		drag["ht"] = 0.5
+		hidden = _hidden(c.global_position)
+	if left < 1.6 or (left < 3.0 and not walking and float(drag["gt"]) > 2.0) or hidden:
+		_drag_end(true)
+		return
+	for m in men:
+		if reroute and not _heading_to(m, to, 2.5):
+			m.move_to(to, false)   # a new order for the squad does not tear them away
+
+
+## Is he walking to `p` (or already there)?
+func _heading_to(m, p: Vector3, tol: float) -> bool:
+	if not m.moving or m.path.is_empty():
+		return m.global_position.distance_to(p) < tol
+	return (m.path[m.path.size() - 1] as Vector3).distance_to(p) < tol
+
+
+func _drag_end(ok: bool) -> void:
+	var c = drag["c"]
+	if is_instance_valid(c):
+		c.carried = false
+		if c.health == Soldier.H.INCAP:
+			var to: Vector3 = drag["to"]
+			# laid down right in the covered spot (cover behind a low wall is narrow)
+			if ok and c.global_position.distance_to(to) < 3.5:
+				c.global_position = to
+			else:
+				c.global_position = W.grid.ground(c.global_position)
+	for m in drag["men"]:
+		if is_instance_valid(m) and m.dragging == c:
+			m.dragging = null
+			# back to his place in the squad's order (the clearing file waits for him)
+			if m.is_active() and m.slot != Vector3.ZERO:
+				m.move_to(m.slot, true)
+			else:
+				m.stop()
+	if ok and is_instance_valid(c):
+		drag_done += 1
+		radio("evac", Loc.t("%s в укритті.") % c.display_name(), "good")
+	drag = {}
+
+
 func active_members() -> Array:
 	var out: Array = []
 	for m in members:

@@ -263,6 +263,18 @@ const WIN_SWITCH := 0.8          # a free post must be this much better to move 
 const WIN_SWITCH_MAX := 2        # men moved per review
 const WIN_DIST_COST := 0.03      # per metre a man has to walk to a new window
 
+# ---------------------------------------------------------------- dragging a casualty to cover
+const DRAG_CHECK_T := 2.0        # how often a squad looks at its casualties
+const DRAG_THREAT := 160.0       # a known enemy this close makes an open spot dangerous
+const DRAG_THREATS := 10         # this many nearest known enemies are looked at
+const DRAG_EXPOSED := 0.35       # the casualty is seen at least this well from the threat
+const DRAG_COVER_R := 14.0       # how far they drag him at most
+const DRAG_REACH := 30.0         # helpers come from this far
+const DRAG_CLOSE := 25.0         # an enemy this close to him: nobody goes out there
+const DRAG_MAX_T := 50.0         # giving up (cannot get there, the way is blocked)
+const DRAG_MIN_GAIN := 0.3       # the cover must hide him clearly better than here
+const DRAG_PATH_K := 1.6         # the way there may be this much longer than the radius
+
 # ---------------------------------------------------------------- living reactions
 ## The first threat after a quiet spell (shots at him, a first contact of the
 ## squad) is answered after a short, individual delay: men do not all react

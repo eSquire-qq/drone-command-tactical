@@ -31,6 +31,12 @@ func think(dt: float) -> void:
 	idle_t -= dt
 	if not s.moving and s.post == null:
 		_take_window()
+	if s.dragging != null:
+		state = Loc.t("тягне пораненого")
+		s.fire_ok = false
+		s.target = null
+		want_posture = Soldier.P.CROUCH
+		return   # the squad drives the drag (Squad._update_drag)
 	if s.noncombat or s.evac_walk:
 		s.fire_ok = false
 		return   # crew medics / walking wounded are driven by EvacuationSystem
@@ -552,6 +558,8 @@ func _try_aid() -> bool:
 		var tp = sq.nearest_threat(best.global_position)
 		if tp != null and (tp as Vector3).distance_to(best.global_position) < 30.0:
 			return false
+	if sq.side == 0 and (not sq.drag.is_empty() and sq.drag["c"] == best or sq.will_drag(best)):
+		return false   # first out of the enemy's sight, then the bandage (Squad drag)
 	best.aid_by = s
 	s.aid_target = best
 	s.aid_since = W.time

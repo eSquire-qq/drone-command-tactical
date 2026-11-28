@@ -186,6 +186,8 @@ var evac_marked = false
 var evac_walk = false
 var evacuated = false
 var carried = false
+var dragging = null          # the casualty this man is dragging to cover (Squad)
+var drag_n := 0               # how many times he was dragged (lying)
 var on_board = false
 var broken = false
 var was_wounded = false
@@ -562,7 +564,7 @@ func _update_move(delta: float) -> void:
 		cur_speed = move_toward(cur_speed, 0.0, delta * 10.0)
 		return
 	if follow_ahead != null:
-		if not is_instance_valid(follow_ahead) or not follow_ahead.is_active() or follow_ahead.solo != "" or follow_ahead.squad != squad:
+		if not is_instance_valid(follow_ahead) or not follow_ahead.is_active() or follow_ahead.solo != "" or follow_ahead.dragging != null or follow_ahead.squad != squad:
 			follow_ahead = null   # gone, or left the file (escorting a prisoner, a task of his own)
 		elif global_position.distance_to(follow_ahead.global_position) < AIConfig.CLEAR_SPACING - 0.1:
 			# keep the column interval whatever the man ahead is doing: when he

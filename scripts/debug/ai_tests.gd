@@ -76,6 +76,8 @@ func _process(_d: float) -> void:
 			_reinf(t)
 		"windows":
 			_windows(t)
+		"drag":
+			_drag(t)
 
 
 func _setup() -> void:
@@ -1377,4 +1379,143 @@ func _windows(t: float) -> void:
 				print("[AITEST]   %s %s post=%s pending=%s moving=%s ai=%s supp=%d slot_d=%.1f in_bld=%s" % [m.rdata["short"], m.health, m.post != null, m.post_pending != null, m.moving, m.ai.state, m.supp_level,
 					m.global_position.distance_to(m.slot), Buildings.at(m.global_position) != null])
 			print("[AITEST] RESULT windows: done")
+			get_tree().quit()
+
+
+## `--aitest=drag` (field): a man goes down in the open, in view of the known
+## trench garrison (held silent so fire does not muddle the test); two of his
+## comrades drag him to cover, then first aid as usual.
+var _dg_v = null
+var _dg_eye := Vector3.ZERO
+var _dg_vis0 := 0.0
+var _dg_t := 0.0
+var _dg_p := Vector3.ZERO
+var _dg_start := -1.0
+var _dg_foe = null
+
+
+func _dg_vis(p: Vector3) -> float:
+	return W.grid.visibility(_dg_eye, W.grid.ground(p) + Vector3(0, AIConfig.COVER_BODY_H, 0))
+
+
+## Is there cover near `p` from `e`, and a short way to it?
+func _dg_cover_ok(p: Vector3, e: Vector3) -> bool:
+	for u in W.units:
+		if u.side == 1 and u.is_active() and u.global_position.distance_to(p) < AIConfig.DRAG_CLOSE + 15.0:
+			return false
+	var sq = W.mission.friendly_squads[0]
+	return sq._drag_spot(p, [e], e, _dg_vis(p)) != null
+
+
+func _drag(t: float) -> void:
+	var sq = W.mission.friendly_squads[0]
+	if stage == 0 and t > 3.0:
+		stage = 1
+		for u in W.units:
+			if u.side == 1:
+				u.noncombat = true
+			elif u.squad != sq:
+				u.noncombat = true   # nobody else shoots the test garrison away
+		for m in sq.members:
+			m.mag = 0
+			m.mags_left = 0   # and the test squad does not shoot them away either
+			m.grenades = 0
+		for v in W.mission.friendly_vehicles:
+			v.stop()
+			v.offmap = true
+			v.visible = false
+		# enemy squads nearest to where we come from first
+		var foes: Array = []
+		for es in W.enemy_ai.squads:
+			if not es.members.is_empty() and es.members[0].global_position.z < 60.0:
+				foes.append(es)
+		foes.sort_custom(func(a, b): return a.members[0].global_position.z > b.members[0].global_position.z)
+		var spot = null
+		var e := Vector3.ZERO
+		for fsq in foes.slice(0, 6):
+			e = fsq.members[0].global_position
+			_dg_eye = e + Vector3(0, 1.5, 0)
+			# an open spot 60+ m from them, seen well, with cover a short drag away
+			for z in range(25, 120, 4):
+				for x in range(-60, 61, 5):
+					var p: Vector3 = W.grid.ground(Vector3(e.x + x, 0, e.z + z))
+					if p.distance_to(e) <= 60.0 or _dg_vis(p) <= 0.7 or W.grid.in_channel(p, 1.2) or Buildings.at(p) != null:
+						continue
+					if W.grid.find_path_inf(p, p + Vector3(3, 0, 0), false).size() > 0 and _dg_cover_ok(p, e):
+						spot = p
+						break
+				if spot != null:
+					break
+			if spot != null:
+				_dg_foe = fsq
+				break
+		if spot != null:
+			for m in _dg_foe.members:
+				m.marked = true
+				sq.report(m, m.global_position)
+		if spot == null:
+			print("[AITEST] RESULT drag: FAIL no open spot")
+			get_tree().quit()
+			return
+		sq.issue_order("hold", spot + Vector3(0, 0, 6))
+		var act: Array = sq.active_members()
+		for i in act.size():
+			act[i].stop()
+			act[i].global_position = W.grid.free_point(spot + Vector3(-6 + (i % 4) * 3, 0, 6 + (i / 4) * 3))
+		_dg_v = act[act.size() - 1]
+		_dg_v.global_position = spot
+		W.damage.set_health(_dg_v, Soldier.H.INCAP, null, "test")
+		_dg_vis0 = _dg_vis(spot)
+		_dg_p = spot
+		_dg_t = t
+		print("[AITEST] DRAG casualty at %s, %.0f m from the trench, seen %.2f" % [spot.snapped(Vector3.ONE), spot.distance_to(e), _dg_vis0])
+		return
+	if stage >= 1 and _dg_foe != null:
+		for m in _dg_foe.members:
+			if m.is_active():
+				sq.report(m, m.global_position)   # the contact goes on
+	if stage == 1 and "--verbose" in OS.get_cmdline_user_args() and int(t * 2.0) != int((t - get_process_delta_time()) * 2.0):
+		var tl: Array = []
+		for tp in sq.threat_points(_dg_v.global_position, AIConfig.DRAG_THREATS):
+			tl.append("%.0f/%.2f%s" % [(tp as Vector3).distance_to(_dg_v.global_position), sq._seen_from(tp, _dg_v.global_position), "*" if _dg_foe.members.any(func(m): return m.global_position.distance_to(tp) < 1.0) else ""])
+		print("[AITEST] DRAG trace t=%.1f pos %s carried %s aided %s drag %s cover %s helpers %d thr %s" % [t - _dg_t, _dg_v.global_position.snapped(Vector3.ONE), _dg_v.carried, _dg_v.aided, not sq.drag.is_empty(), sq._drag_cover(_dg_v), sq._drag_helpers(_dg_v, sq.active_members()).size(), tl])
+	if stage == 1:
+		if not sq.drag.is_empty() and _dg_start < 0.0:
+			_dg_start = t - _dg_t
+		if sq.drag_done > 0:
+			stage = 2
+			var p: Vector3 = _dg_v.global_position
+			var helpers := 0
+			for m in sq.active_members():
+				if m.global_position.distance_to(p) < 4.0:
+					helpers += 1
+			print("[AITEST] DRAG started after %.0f s" % _dg_start)
+			print("[AITEST] DRAG done in %.0f s: moved %.1f m, seen %.2f -> %.2f, %d men next to him, carried=%s" % [t - _dg_t,
+				p.distance_to(_dg_p), _dg_vis0, _dg_vis(p), helpers, _dg_v.carried])
+			_dg_t = t
+		elif t - _dg_t > 70.0:
+			var p: Vector3 = _dg_v.global_position
+			var thr = sq.nearest_threat(p)
+			var cov: Vector3 = W.grid.find_cover(p, AIConfig.DRAG_COVER_R, thr, sq.occupied(null), false) if thr != null else p
+			print("[AITEST] DRAG debug: threat %s d=%.0f, cover %s (%.1f m, seen %.2f), helpers %d, act %d, order %s, leaderless %.1f" % [thr,
+				(thr as Vector3).distance_to(p) if thr != null else -1.0, cov.snapped(Vector3.ONE), cov.distance_to(p), _dg_vis(cov),
+				sq._drag_helpers(_dg_v, sq.active_members()).size(), sq.active_members().size(), sq.order, sq.leaderless_t])
+			var tl: Array = []
+			for tp in sq.threat_points(p, AIConfig.DRAG_THREATS):
+				tl.append("%.0f m seen %.2f" % [(tp as Vector3).distance_to(p), sq._seen_from(tp, p)])
+			print("[AITEST] DRAG debug: test foes %s" % [_dg_foe.members.map(func(m): return "%s h%d surr %s known %s alive %s pos %s veh %s" % [m.role, m.health, m.surrendered, sq.known.has(m), W.is_alive_target(m), m.global_position.snapped(Vector3.ONE), m.vehicle])])
+			print("[AITEST] DRAG debug: threats %s, _drag_cover %s, aided %s, aid_by %s" % [tl, sq._drag_cover(_dg_v), _dg_v.aided, _dg_v.aid_by])
+			for m in sq.active_members():
+				print("[AITEST]   %s d=%.1f supp=%d health=%d action=%s solo=%s" % [m.rdata["short"], m.global_position.distance_to(p), m.supp_level, m.health, m.action, m.solo])
+			print("[AITEST] RESULT drag: FAIL not dragged (drag=%s)" % [sq.drag])
+			get_tree().quit()
+		return
+	if stage == 2:
+		if _dg_v.aided or t - _dg_t > 40.0:
+			var busy := 0
+			for m in sq.members:
+				if m.dragging != null:
+					busy += 1
+			print("[AITEST] DRAG first aid after the drag: %s; men still marked dragging: %d" % [_dg_v.aided, busy])
+			print("[AITEST] RESULT drag: %s" % ("ok" if _dg_v.aided and busy == 0 else "FAIL"))
 			get_tree().quit()

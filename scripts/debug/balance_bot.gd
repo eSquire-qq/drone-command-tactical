@@ -24,6 +24,8 @@ func _ready() -> void:
 	Engine.time_scale = 6.0
 	Events.mission_ended.connect(_on_end)
 	Events.unit_state_changed.connect(_on_state)
+	if "--profile" in OS.get_cmdline_user_args():
+		Prof.on = true
 
 
 var edowns := {}
@@ -585,6 +587,9 @@ func _on_end(r: Dictionary) -> void:
 		r.get("prisoners", 0), r.get("mines", 0), r.get("drones_lost", 0), r["score"]])
 	print("[BALANCE] downed_by=", downs, " where(zone@minute)=", where)
 	print("[BALANCE] enemy_downed_by=", edowns)
+	if Prof.on:
+		print("[BALANCE] prof:
+" + Prof.report(maxi(Engine.get_process_frames(), 1)))
 	if r["reason"] == "timeout":
 		# who was still fighting when the clock ran out (a battle that never ends)
 		for sq in W.mission.friendly_squads:
