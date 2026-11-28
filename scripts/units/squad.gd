@@ -105,6 +105,10 @@ func _process_body(delta: float) -> void:
 		_update_drag(delta)
 		if Prof.on:
 			Prof.add("squad.drag", td)
+		td = Time.get_ticks_usec() if Prof.on else 0
+		_update_resupply(delta)
+		if Prof.on:
+			Prof.add("squad.resup", td)
 	_update_solo_mount()
 	if leaderless_t > 0.0:
 		leaderless_t -= delta
@@ -147,6 +151,183 @@ func _process_body(delta: float) -> void:
 
 
 # ------------------------------------------------------------------ queries
+# ------------------------------------------------------------------ resupply
+## A squad holding near one of our vehicles sends the men short of magazines
+## to its rear door, two at a time; aboard, the men top up from the stock as
+## the vehicle drives. The "ammo" button walks the squad to the nearest
+## vehicle with a stock and tops up everybody.
+var resup_call = null            # the vehicle the "ammo" order walks us to
+var _resup_t := 0.0
+var _resup_onb := 0.0
+var resup_men := {}              # man -> seconds on the way
+var resup_done := 0              # men topped up (tests, soak)
+var _resup_told := false
+
+
+func _update_resupply(delta: float) -> void:
+	for m in resup_men.keys():
+		resup_men[m] = float(resup_men[m]) + delta
+		_resup_step(m)
+	if mounted:
+		_resup_aboard(delta)
+		return
+	_resup_t -= delta
+	if _resup_t > 0.0:
+		return
+	_resup_t = AIConfig.RESUP_CHECK_T
+	if resup_call != null:
+		if not is_instance_valid(resup_call) or resup_call.state == "destroyed" or (resup_call.stock_rounds <= 0 and resup_call.stock_nades <= 0):
+			resup_call = null
+		elif order != "hold":
+			resup_call = null   # another order came in
+	if order != "hold" or leaderless_t > 0.0 or resup_men.size() >= AIConfig.RESUP_RUNNERS:
+		return
+	var need_n: int = 1 if resup_call != null else AIConfig.RESUP_NEED
+	var any_short := false
+	for m in active_members():
+		if resup_men.size() >= AIConfig.RESUP_RUNNERS:
+			break
+		if resup_men.has(m) or not _resup_short(m, need_n):
+			continue
+		any_short = true
+		if m.supp_level >= 2 or m.broken or m.action != "" or m.dragging != null or m.solo != "" or m.bunker != null or m.post != null:
+			continue
+		var v = _resup_vehicle(m.global_position, AIConfig.RESUP_R)
+		if v == null:
+			continue
+		m.resup_v = v
+		m.aid_target = null
+		m.move_to(W.grid.free_point(v.rear_point()), true)
+		resup_men[m] = 0.0
+		if not _resup_told:
+			_resup_told = true
+			radio("ammo", Loc.t("поповнюємо набої з %s.") % v.vname, "info")
+	if not any_short and resup_men.is_empty():
+		_resup_told = false
+		if resup_call != null:
+			resup_call = null
+			radio("ammo", Loc.t("набої поповнено."), "good")
+
+
+## Short of ammunition: missing this many magazines or more, or grenades.
+func _resup_short(m, need_n: int) -> bool:
+	if m.mags_left >= 0 and m.mags_start > 0 and m.mags_start - m.mags_left >= need_n:
+		return true
+	return m.nades_start - m.grenades >= need_n + 1 or (need_n == 1 and m.grenades < m.nades_start)
+
+
+## The nearest of our vehicles that can hand out ammunition within r of p,
+## not next to the enemy.
+func _resup_vehicle(p: Vector3, r: float):
+	var best = null
+	var bd := r
+	for v in W.vehicles:
+		if not is_instance_valid(v) or v.side != side or not v.can_resupply():
+			continue
+		var d: float = v.global_position.distance_to(p)
+		if d > bd:
+			continue
+		var thr = nearest_threat(v.global_position)
+		if thr != null and (thr as Vector3).distance_to(v.global_position) < AIConfig.RESUP_SAFE:
+			continue
+		best = v
+		bd = d
+	return best
+
+
+func _resup_step(m) -> void:
+	var v = m.resup_v
+	var bad: bool = not is_instance_valid(m) or not m.is_active() or v == null or not is_instance_valid(v)
+	if bad or v.state == "destroyed" or v.offmap or float(resup_men[m]) > AIConfig.RESUP_MAX_T or m.supp_level >= 3 or order != "hold":
+		_resup_end(m)
+		return
+	if m.action == "resupply":
+		return
+	var rp: Vector3 = v.rear_point()
+	if Vector2(m.global_position.x - rp.x, m.global_position.z - rp.z).length() < 2.8 and not v.moving:
+		m.start_action("resupply", AIConfig.RESUP_TAKE_T)
+		return
+	if not m.moving:
+		m.move_to(W.grid.free_point(rp), true)
+
+
+## Called by the man when he is done at the rear door.
+func resupply_taken(m) -> void:
+	var v = m.resup_v
+	if v != null and is_instance_valid(v) and v.state != "destroyed":
+		if v.resupply(m):
+			resup_done += 1
+	_resup_end(m)
+
+
+func _resup_end(m) -> void:
+	resup_men.erase(m)
+	if not is_instance_valid(m):
+		return
+	m.resup_v = null
+	if m.is_active() and m.action == "":
+		if m.slot != Vector3.ZERO:
+			m.move_to(m.slot, true)
+		else:
+			m.stop()
+
+
+func _resup_aboard(delta: float) -> void:
+	if vehicle == null or not is_instance_valid(vehicle) or vehicle.state == "destroyed":
+		return
+	_resup_onb -= delta
+	if _resup_onb > 0.0:
+		return
+	_resup_onb = AIConfig.RESUP_ONBOARD_T
+	var any := false
+	for m in members:
+		if m.vehicle != vehicle or m.health >= Soldier.H.INCAP:
+			continue
+		var per: int = int(m.weapon.get("mag", 0))
+		if m.mags_left >= 0 and m.mags_left < m.mags_start and per > 0 and vehicle.stock_rounds >= per:
+			m.mags_left += 1
+			vehicle.stock_rounds -= per
+			m.resupplied_rounds += per
+			m._ammo_told = false
+			any = true
+		if m.grenades < m.nades_start and vehicle.stock_nades > 0:
+			m.grenades += 1
+			vehicle.stock_nades -= 1
+			any = true
+	if any and not _resup_told:
+		_resup_told = true
+		radio("ammo", Loc.t("поповнюємо набої в машині."), "info")
+	elif not any:
+		_resup_told = false
+
+
+## The "ammo" order: to the nearest vehicle with a stock; false when none.
+func order_resupply() -> bool:
+	if mounted:
+		return vehicle != null and is_instance_valid(vehicle) and (vehicle.stock_rounds > 0 or vehicle.stock_nades > 0)
+	var c := center()
+	var best = null
+	var bd: float = AIConfig.RESUP_CALL_R
+	for v in W.vehicles:
+		if not is_instance_valid(v) or v.side != side or v.state == "destroyed" or v.offmap:
+			continue
+		if v.stock_rounds <= 0 and v.stock_nades <= 0:
+			continue
+		var d: float = v.global_position.distance_to(c)
+		if d < bd:
+			best = v
+			bd = d
+	if best == null:
+		return false
+	var spot: Vector3 = best.rear_point() - best.forward() * 5.0
+	issue_order("hold", W.grid.free_point(W.grid.clamp_in(spot, 4.0)))
+	if order == "hold":
+		resup_call = best
+		_resup_t = 0.5
+		radio("ammo", Loc.t("йдемо до %s по набої.") % best.vname, "info")
+	return true
+
+
 # ------------------------------------------------------------------ casualty drag
 ## A man down in the open, seen from where the enemy is, is dragged by two of
 ## his comrades to the nearest cover; first aid and the evacuation take him
@@ -698,6 +879,11 @@ func issue_order(type: String, pos: Vector3, line_end = null) -> void:
 			radio("order", Loc.t("командира немає — наказ виконаємо, щойно хтось прийме командування."), "warn")
 		return
 	clear_ext = 0
+	for rm in resup_men.keys():
+		if is_instance_valid(rm):
+			rm.resup_v = null
+	resup_men = {}
+	resup_call = null
 	if type in ["move", "hold", "retreat", "occupy", "mount"]:
 		_reassault_n = 0
 	force_bound = type == "bound"

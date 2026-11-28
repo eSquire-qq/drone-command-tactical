@@ -41,6 +41,10 @@ var burn_node: Node3D
 var order_label = "очікування"
 var last_hit_t = -99.0
 var smoke_charges = 1
+var stock_rounds := 0          # small-arms rounds carried for the infantry (resupply)
+var stock_nades := 0           # hand grenades carried for the infantry
+var stock_rounds0 := 0
+var stock_nades0 := 0
 var face_mode := ""           # "" free / front / side / rear: aspect held to the enemy when stopped
 var assault_mode := false     # vehicle assault: slow, fires on the move, no pull-back
 var sup_point = null          # suppression order: fire at this point until sup_until
@@ -69,6 +73,11 @@ func setup(p_type: String, p_side: int, p_name: String) -> void:
 	max_hp = float(data["hp"])
 	hp = max_hp
 	is_medevac = vtype == "medevac"
+	var stk: Array = data.get("stock", [0, 0])
+	stock_rounds = int(stk[0])
+	stock_nades = int(stk[1])
+	stock_rounds0 = stock_rounds
+	stock_nades0 = stock_nades
 	model = VehicleModel.new()
 	add_child(model)
 	model.build(vtype, side)
@@ -83,6 +92,34 @@ func setup(p_type: String, p_side: int, p_name: String) -> void:
 	ring.visible = false
 	add_child(ring)
 	engine = W.sfx.make_loop("engine", self, -6.0)
+
+
+## Can hand out ammunition now: alive, on the map, standing, something left.
+func can_resupply() -> bool:
+	return state != "destroyed" and not offmap and not moving and (stock_rounds > 0 or stock_nades > 0)
+
+
+## Gives the man what he is missing, as far as the stock goes; true when he
+## got anything.
+func resupply(m) -> bool:
+	var got := false
+	var per: int = int(m.weapon.get("mag", 0))
+	if m.mags_left >= 0 and m.mags_start > 0 and per > 0:
+		var want: int = m.mags_start - m.mags_left
+		var can: int = mini(want, stock_rounds / per)
+		if can > 0:
+			m.mags_left += can
+			stock_rounds -= can * per
+			m.resupplied_rounds += can * per
+			got = true
+	var nd: int = mini(m.nades_start - m.grenades, stock_nades)
+	if nd > 0:
+		m.grenades += nd
+		stock_nades -= nd
+		got = true
+	if got:
+		m._ammo_told = false
+	return got
 
 
 func capacity() -> int:

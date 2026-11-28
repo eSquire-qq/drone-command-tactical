@@ -287,6 +287,8 @@ func _key(k: int, _shift: bool) -> void:
 			cmd_smoke()
 		"evac":
 			cmd_evac()
+		"resupply":
+			cmd_resupply()
 		"mortar":
 			set_tool("mortar")
 		"fpv":
@@ -771,6 +773,26 @@ func cmd_evac() -> void:
 	for u in targets:
 		W.evac.request(u)
 	W.sfx.ui("radio")
+
+
+## Selected squads walk to the nearest of our vehicles with a stock and top
+## up their magazines and grenades (aboard: from their own vehicle).
+func cmd_resupply() -> void:
+	var any := false
+	var none := false
+	for o in selection:
+		var sq = o if o is Squad else (o.squad if o is Vehicle else null)
+		if sq == null or not (sq is Squad) or sq.side != 0:
+			continue
+		if sq.order_resupply():
+			any = true
+		else:
+			none = true
+	if none and not any:
+		Events.msg(Loc.t("Немає нашої машини з боєкомплектом поблизу"), "warn")
+		return
+	if any:
+		W.sfx.ui("radio")
 
 
 func set_tool(t: String) -> void:

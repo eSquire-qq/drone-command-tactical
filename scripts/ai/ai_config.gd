@@ -263,6 +263,17 @@ const WIN_SWITCH := 0.8          # a free post must be this much better to move 
 const WIN_SWITCH_MAX := 2        # men moved per review
 const WIN_DIST_COST := 0.03      # per metre a man has to walk to a new window
 
+# ---------------------------------------------------------------- resupply from a vehicle
+const RESUP_CHECK_T := 2.0       # how often a holding squad looks at its ammunition
+const RESUP_R := 30.0            # a vehicle this close to the man: he walks over for magazines
+const RESUP_CALL_R := 250.0      # the "ammo" button: the nearest vehicle with a stock this far
+const RESUP_SAFE := 45.0         # a known enemy this close to the vehicle: nobody goes there
+const RESUP_NEED := 2            # magazines missing before he goes on his own (the button: 1)
+const RESUP_TAKE_T := 3.0        # seconds at the vehicle's rear door taking magazines
+const RESUP_MAX_T := 40.0        # the walk takes longer than this: back to his place
+const RESUP_RUNNERS := 3         # men at the vehicle at the same time
+const RESUP_ONBOARD_T := 3.0     # aboard: one magazine per man per this many seconds
+
 # ---------------------------------------------------------------- dragging a casualty to cover
 const DRAG_CHECK_T := 2.0        # how often a squad looks at its casualties
 const DRAG_THREAT := 160.0       # a known enemy this close makes an open spot dangerous

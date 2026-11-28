@@ -31,6 +31,12 @@ func think(dt: float) -> void:
 	idle_t -= dt
 	if not s.moving and s.post == null:
 		_take_window()
+	if s.resup_v != null and s.action == "":
+		state = Loc.t("по набої")
+		s.fire_ok = false
+		s.target = null
+		want_posture = Soldier.P.CROUCH
+		return   # the squad drives the walk (Squad._update_resupply)
 	if s.dragging != null:
 		state = Loc.t("тягне пораненого")
 		s.fire_ok = false
@@ -265,7 +271,7 @@ func _behave(dt: float) -> void:
 			s.stop()
 		return
 	if s.action != "":
-		state = {"aid": Loc.t("допомога"), "grenade": Loc.t("граната"), "rocket": Loc.t("ПТ-постріл"), "atgm": Loc.t("пуск ПТУР"), "gl": Loc.t("граната"), "smoke": Loc.t("дим")}.get(s.action, Loc.t("дія"))
+		state = {"aid": Loc.t("допомога"), "grenade": Loc.t("граната"), "rocket": Loc.t("ПТ-постріл"), "atgm": Loc.t("пуск ПТУР"), "gl": Loc.t("граната"), "smoke": Loc.t("дим"), "resupply": Loc.t("бере набої")}.get(s.action, Loc.t("дія"))
 		return
 	if _try_aid():
 		state = Loc.t("допомога")

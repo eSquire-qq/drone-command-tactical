@@ -263,7 +263,8 @@ func _build_commands() -> void:
 			["retreat", "retreat", Loc.t("ВІДХІД"), W.command.cmd_retreat, Loc.t("Відійти до району збору")],
 			["mount", "mount", Loc.t("ВИСАДКА@кнопка"), W.command.cmd_mount_toggle, Loc.t("Висадка / посадка десанту")],
 			["smoke", "smoke", Loc.t("ДИМ"), W.command.cmd_smoke, Loc.t("Відділення ставить димову завісу ручними гранатами")],
-			["evac", "evac", Loc.t("ЕВАКУАЦІЯ@кнопка"), W.command.cmd_evac, Loc.t("Викликати евакуацію поранених вибраного підрозділу")]]:
+			["evac", "evac", Loc.t("ЕВАКУАЦІЯ@кнопка"), W.command.cmd_evac, Loc.t("Викликати евакуацію поранених вибраного підрозділу")],
+			["resupply", "resupply", Loc.t("НАБОЇ"), W.command.cmd_resupply, Loc.t("Відділення йде до найближчої нашої БМП / M113 і поповнює магазини й гранати з її запасу. На «Тримати» біля машини поповнюються самі")]]:
 		var bt := HudWidgets.CmdButton.new(_kname(c[1]), c[2], c[4])
 		bt.pressed.connect(c[3])
 		gi[1].add_child(bt)
@@ -759,6 +760,8 @@ func _update_selection() -> void:
 			s = "[b]%s[/b]   [color=#%s]%s[/color]\n" % [o.vname, UIK.hex(UIK.ACCENT), o.order_label]
 			s += Loc.t("Стан: %s   Міцність %s %d%%\n") % [st[o.state], HudWidgets.rbar(o.hp / o.max_hp, 10, UIK.GOOD if o.hp / o.max_hp > 0.5 else UIK.ALERT), int(o.hp / o.max_hp * 100)]
 			s += Loc.t("Десант: %d / %d\n") % [o.passengers.size(), o.capacity()]
+			if o.stock_rounds0 > 0:
+				s += Loc.t("Боєкомплект для піхоти: набої %s, гранати %s\n") % [_stock(o.stock_rounds, o.stock_rounds0), _stock(o.stock_nades, o.stock_nades0)]
 			for wd in o.weapons:
 				s += Loc.t("Озброєння: %s (%d)\n") % [wd["w"]["name"], wd["mag"]]
 			if o.target != null and W.is_alive_target(o.target):
@@ -817,6 +820,7 @@ func _update_support() -> void:
 		mb.queue_redraw()
 	cmd_buttons["smoke"].disabled = not has_sq
 	cmd_buttons["evac"].disabled = not has_sq and cmd.sel_wounded.is_empty()
+	cmd_buttons["resupply"].disabled = not has_sq
 	for k in mode_buttons.keys():
 		mode_buttons[k].disabled = cmd.selection.is_empty()
 	var order_btn := Loc.t("ПКМ")

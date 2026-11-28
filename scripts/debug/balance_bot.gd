@@ -78,6 +78,7 @@ func _process(delta: float) -> void:
 	else:
 		_smart(t)
 	_dodge_recon(delta)
+	_ammo_check(delta, t)
 	evac_t -= delta
 	if evac_t <= 0.0:
 		evac_t = 4.0
@@ -88,6 +89,35 @@ func _process(delta: float) -> void:
 
 ## What a player does on "an enemy recon drone over us": a squad holding in
 ## one place moves 25–35 m aside and spreads into cover.
+var _ammo_t := 10.0
+var _ammo_cd := {}
+
+
+## Like a player: a holding squad that has used up half its magazines is
+## sent to the nearest vehicle for ammunition (the "ammo" button).
+func _ammo_check(delta: float, t: float) -> void:
+	_ammo_t -= delta
+	if _ammo_t > 0.0:
+		return
+	_ammo_t = 10.0
+	for sq in W.mission.friendly_squads:
+		if sq.mounted or sq.order != "hold" or sq.leaderless_t > 0.0 or sq.resup_call != null:
+			continue
+		if t < float(_ammo_cd.get(sq, -1.0)) or sq.active_count() < 3:
+			continue
+		var miss := 0
+		var full := 0
+		for m in sq.active_members():
+			if m.mags_start > 0:
+				miss += m.mags_start - maxi(m.mags_left, 0)
+				full += m.mags_start
+		if full == 0 or float(miss) / full < 0.35:
+			continue
+		_ammo_cd[sq] = t + 120.0
+		if sq.order_resupply():
+			print("[BALANCE] t=%d %s: ammo order (%d of %d magazines used)" % [int(t), sq.short, miss, full])
+
+
 var _dodge_t := 0.0
 
 
@@ -412,6 +442,8 @@ func _manage_urban(_t: float) -> void:
 	for sq in W.mission.friendly_squads:
 		if sq.active_count() < 2 or sq.mounted or not (sq.order in ["hold", "move", "occupy"]):
 			continue
+		if sq.resup_call != null or not sq.resup_men.is_empty():
+			continue   # walking to the vehicle for ammunition
 		var c: Vector3 = sq.center()
 		var best = null
 		var bd := INF
@@ -521,6 +553,8 @@ func _manage(t: float) -> void:
 	for sq in W.mission.friendly_squads:
 		if sq.active_count() < 2 or sq.mounted or not (sq.order in ["hold", "move", "occupy"]):
 			continue
+		if sq.resup_call != null or not sq.resup_men.is_empty():
+			continue   # walking to the vehicle for ammunition
 		var c: Vector3 = sq.center()
 		var best = null
 		var bd := INF

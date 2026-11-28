@@ -326,13 +326,20 @@ func _finish(reason: String) -> void:
 		"mem_mb_start": snappedf(_mem0, 0.1), "mem_mb_end": snappedf(Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576.0, 0.1),
 		"mem_mb_max": snappedf(_mem_max, 0.1), "nodes_start": _nodes0, "nodes_end": int(Performance.get_monitor(Performance.OBJECT_NODE_COUNT)),
 		"nodes_max": _nodes_max, "units_start": _units0, "units_max": _units_max, "events": kinds, "nav_fail": _nav_fail,
-		"stuck_units": _stuck_list(), "rounds": _rounds(), "enemy": W.enemy_ai.stats if W.enemy_ai else {}, "drags": _drags(), "crowded_pct": snappedf(100.0 * _crowd[0] / maxf(_crowd[1], 1), 0.1),
+		"stuck_units": _stuck_list(), "rounds": _rounds(), "enemy": W.enemy_ai.stats if W.enemy_ai else {}, "drags": _drags(), "resupplied": _resupplied(), "crowded_pct": snappedf(100.0 * _crowd[0] / maxf(_crowd[1], 1), 0.1),
 		"headless": DisplayServer.get_name() == "headless",
 	}
 	print("[SOAK] ", JSON.stringify(sum))
 
 
 ## Casualties our squads dragged to cover (D2).
+func _resupplied() -> int:
+	var n := 0
+	for sq in W.mission.friendly_squads:
+		n += int(sq.resup_done)
+	return n
+
+
 func _drags() -> int:
 	var n := 0
 	for sq in W.mission.friendly_squads:

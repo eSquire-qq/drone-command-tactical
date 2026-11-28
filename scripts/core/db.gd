@@ -23,9 +23,9 @@ const WEAPONS_UK := {
 static var WEAPONS = WEAPONS_UK   # the current language (Loc.localize_all)
 
 const VEHICLES_UK := {
-	"bmp1": {"name": "БМП-1", "hp": 320.0, "armor": 0.6, "speed": 7.0, "cap": 8, "weapons": ["gun73", "veh_mg"], "mobility": "tracked"},
-	"bmp2": {"name": "БМП-2", "hp": 340.0, "armor": 0.6, "speed": 7.0, "cap": 7, "weapons": ["cannon30", "veh_mg"], "mobility": "tracked"},
-	"m113": {"name": "M113", "hp": 260.0, "armor": 0.45, "speed": 7.5, "cap": 10, "weapons": ["hmg"], "mobility": "light"},
+	"bmp1": {"name": "БМП-1", "hp": 320.0, "armor": 0.6, "speed": 7.0, "cap": 8, "weapons": ["gun73", "veh_mg"], "mobility": "tracked", "stock": [3000, 24]},
+	"bmp2": {"name": "БМП-2", "hp": 340.0, "armor": 0.6, "speed": 7.0, "cap": 7, "weapons": ["cannon30", "veh_mg"], "mobility": "tracked", "stock": [3000, 24]},
+	"m113": {"name": "M113", "hp": 260.0, "armor": 0.45, "speed": 7.5, "cap": 10, "weapons": ["hmg"], "mobility": "light", "stock": [4000, 30]},
 	"medevac": {"name": "Евак. M113", "hp": 240.0, "armor": 0.45, "speed": 8.0, "cap": 4, "weapons": [], "mobility": "light"},
 }
 static var VEHICLES = VEHICLES_UK   # the current language (Loc.localize_all)

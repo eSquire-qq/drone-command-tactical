@@ -175,6 +175,7 @@ const KEY_ACTIONS_UK := [
 	["move", "Наказ: рух", KEY_1], ["assault", "Наказ: штурм", KEY_2], ["hold", "Наказ: утримувати", KEY_3],
 	["clear", "Наказ: зачистка", KEY_8], ["retreat", "Відхід", KEY_4], ["mount", "Посадка / висадка", KEY_5],
 	["smoke", "Димова граната", KEY_6], ["evac", "Евакуація", KEY_7],
+	["resupply", "Поповнити набої", KEY_9],
 	["suppress", "Техніка: подавлення", KEY_G], ["face", "Техніка: розворот", KEY_V],
 	["follow_veh", "Піхота: за технікою", KEY_B], ["bound", "Піхота: перебіжками", KEY_N],
 	["mortar", "Міномет", KEY_Z], ["fpv", "FPV-дрон", KEY_X], ["smoke_barrage", "Димова завіса", KEY_C],

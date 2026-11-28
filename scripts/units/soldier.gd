@@ -47,6 +47,9 @@ var gl_start := 0
 var posture = P.STAND
 var weapon: Dictionary = {}
 var mags_left := -1           # spare magazines; -1 = not counted (vehicle crews, special weapons)
+var mags_start := -1          # spare magazines at the start (what a resupply tops him up to)
+var resup_v = null            # the vehicle he is walking to for magazines (Squad drives it)
+var resupplied_rounds := 0    # rounds taken from vehicles (tests, soak)
 var _ammo_told := false
 var mag = 0
 var grenades = 0
@@ -215,6 +218,7 @@ func setup(p_side: int, p_role: String, p_squad, p_name: String) -> void:
 	mags_left = int(weapon.get("mags", -1))
 	if mags_left > 0 and p_side == 1:
 		mags_left = int(round(mags_left * AIConfig.AMMO_DEFENDER_K))
+	mags_start = mags_left
 	noncombat = weapon.is_empty()
 	mag = int(weapon.get("mag", 0))
 	grenades = int(rdata["grenades"])
@@ -760,7 +764,7 @@ func _update_posture() -> void:
 		elif ai.want_posture == P.CROUCH and posture == P.STAND:
 			posture = P.CROUCH
 		return
-	if action == "aid":
+	if action == "aid" or action == "resupply":
 		posture = P.CROUCH
 		return
 	if flinch_t > 0.0:
@@ -896,6 +900,8 @@ func _update_action(delta: float) -> void:
 	if action_t >= action_dur:
 		if action == "aid":
 			_finish_aid()
+		elif action == "resupply" and squad != null:
+			squad.resupply_taken(self)
 		action = ""
 		action_payload = null
 

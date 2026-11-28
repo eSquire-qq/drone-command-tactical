@@ -78,6 +78,8 @@ func _process(_d: float) -> void:
 			_windows(t)
 		"drag":
 			_drag(t)
+		"resupply":
+			_resup(t)
 
 
 func _setup() -> void:
@@ -1518,4 +1520,140 @@ func _drag(t: float) -> void:
 					busy += 1
 			print("[AITEST] DRAG first aid after the drag: %s; men still marked dragging: %d" % [_dg_v.aided, busy])
 			print("[AITEST] RESULT drag: %s" % ("ok" if _dg_v.aided and busy == 0 else "FAIL"))
+			get_tree().quit()
+
+
+# ------------------------------------------------------------------ resupply
+## A squad short of magazines holding next to its BMP tops up on its own
+## (phase 1), the "ammo" order walks it from 100 m to the vehicle (phase 2),
+## aboard the men top up from the stock (phase 3).
+var _rs_v = null
+var _rs_t := 0.0
+var _rs_stock := 0
+
+
+func _rs_drain(sq, left: int) -> void:
+	for m in sq.members:
+		if m.mags_start > 0:
+			m.mags_left = mini(left, m.mags_start)
+		m.grenades = 0
+
+
+func _rs_full(sq) -> bool:
+	for m in sq.members:
+		if m.health >= Soldier.H.INCAP or m.evacuated:
+			continue
+		if m.mags_start > 0 and m.mags_left < m.mags_start:
+			return false
+		if m.grenades < m.nades_start:
+			return false
+	return true
+
+
+func _rs_dump(sq) -> void:
+	for m in sq.members:
+		print("[AITEST]   %s mags %d/%d nades %d/%d resup_v=%s act=%s moving=%s state=%s d=%.1f" % [m.uname, m.mags_left, m.mags_start, m.grenades, m.nades_start,
+			m.resup_v != null, m.action, m.moving, m.ai.state, m.global_position.distance_to(_rs_v.rear_point())])
+	print("[AITEST]   order=%s mounted=%s stock %d / %d nades %d" % [sq.order, sq.mounted, _rs_v.stock_rounds, _rs_v.stock_rounds0, _rs_v.stock_nades])
+
+
+func _resup(t: float) -> void:
+	var sq = W.mission.friendly_squads[0]
+	if stage == 0 and t > 3.0:
+		for u in W.units:
+			if u.side == 1:
+				u.noncombat = true
+		for v in W.mission.friendly_vehicles:
+			if v.stock_rounds0 > 0 and v.state != "destroyed":
+				_rs_v = v
+				break
+		if _rs_v == null or sq.mounted:
+			print("[AITEST] RESULT resupply: FAIL setup (vehicle=%s mounted=%s)" % [_rs_v != null, sq.mounted])
+			get_tree().quit()
+			return
+		_rs_v.stop()
+		sq.vehicle = _rs_v
+		var spot: Vector3 = W.grid.free_point(_rs_v.rear_point() - _rs_v.forward() * 14.0)
+		sq.issue_order("hold", spot)
+		var act: Array = sq.active_members()
+		for i in act.size():
+			act[i].stop()
+			act[i].global_position = W.grid.free_point(spot + Vector3(-5 + (i % 4) * 3, 0, (i / 4) * 3))
+		sq.issue_order("hold", spot)
+		_rs_drain(sq, 1)
+		_rs_stock = _rs_v.stock_rounds
+		_rs_t = t
+		stage = 1
+		print("[AITEST] resupply: %s, %d men, stock %d rounds / %d grenades" % [_rs_v.vname, act.size(), _rs_v.stock_rounds, _rs_v.stock_nades])
+	elif stage == 1:
+		if _rs_full(sq) and sq.resup_men.is_empty():
+			print("[AITEST] phase 1 (hold next to the vehicle): topped up in %.1f s, %d rounds taken, %d men" % [t - _rs_t, _rs_stock - _rs_v.stock_rounds, sq.resup_done])
+			# phase 2: 100 m away, the "ammo" order
+			var far = null
+			for k in range(0, 16):
+				var a: float = TAU * k / 16.0
+				var p: Vector3 = W.grid.free_point(W.grid.clamp_in(_rs_v.global_position + Vector3(cos(a), 0, sin(a)) * 100.0, 6.0))
+				if p.distance_to(_rs_v.global_position) > 80.0 and W.grid.find_path_inf(p, _rs_v.rear_point(), false).size() > 0:
+					far = p
+					break
+			if far == null:
+				print("[AITEST] RESULT resupply: FAIL no spot 100 m away")
+				get_tree().quit()
+				return
+			sq.issue_order("hold", far)
+			var act: Array = sq.active_members()
+			for i in act.size():
+				act[i].stop()
+				act[i].global_position = W.grid.free_point(far + Vector3(-5 + (i % 4) * 3, 0, (i / 4) * 3))
+			sq.issue_order("hold", far)
+			_rs_drain(sq, 3)
+			_rs_v.stock_rounds = _rs_v.stock_rounds0
+			_rs_v.stock_nades = _rs_v.stock_nades0
+			_rs_stock = _rs_v.stock_rounds
+			_rs_t = t
+			stage = 2
+		elif t - _rs_t > 70.0:
+			print("[AITEST] phase 1 timeout")
+			_rs_dump(sq)
+			print("[AITEST] RESULT resupply: FAIL phase 1")
+			get_tree().quit()
+	elif stage == 2 and t - _rs_t > 4.0:
+		var auto_n: int = sq.resup_men.size()
+		W.command.selection = [sq]
+		W.command.cmd_resupply()
+		print("[AITEST] phase 2: the \"ammo\" order from %.0f m (runners before the order: %d), call=%s" % [sq.center().distance_to(_rs_v.global_position), auto_n, sq.resup_call != null])
+		stage = 3
+	elif stage == 3:
+		if _rs_full(sq) and sq.resup_men.is_empty():
+			print("[AITEST] phase 2 (the \"ammo\" order): topped up in %.1f s, %d rounds taken, call cleared=%s" % [t - _rs_t, _rs_stock - _rs_v.stock_rounds, sq.resup_call == null])
+			_rs_drain(sq, 2)
+			_rs_v.stock_rounds = _rs_v.stock_rounds0
+			_rs_v.stock_nades = _rs_v.stock_nades0
+			_rs_stock = _rs_v.stock_rounds
+			for m in sq.active_members():
+				_rs_v.board(m)
+			sq.mounted = true
+			sq.order = "mounted"
+			_rs_t = t
+			stage = 4
+		elif t - _rs_t > 120.0:
+			print("[AITEST] phase 2 timeout")
+			_rs_dump(sq)
+			print("[AITEST] RESULT resupply: FAIL phase 2")
+			get_tree().quit()
+	elif stage == 4:
+		var aboard_full := true
+		var aboard := 0
+		for m in _rs_v.passengers:
+			aboard += 1
+			if m.mags_left < m.mags_start or m.grenades < m.nades_start:
+				aboard_full = false
+		if aboard > 0 and aboard_full:
+			print("[AITEST] phase 3 (aboard): %d men topped up in %.1f s, %d rounds taken, stock left %d" % [aboard, t - _rs_t, _rs_stock - _rs_v.stock_rounds, _rs_v.stock_rounds])
+			print("[AITEST] RESULT resupply: ok")
+			get_tree().quit()
+		elif t - _rs_t > 90.0:
+			print("[AITEST] phase 3 timeout")
+			_rs_dump(sq)
+			print("[AITEST] RESULT resupply: FAIL phase 3")
 			get_tree().quit()
