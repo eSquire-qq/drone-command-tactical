@@ -23,6 +23,9 @@ func _ready() -> void:
 	Engine.time_scale = 2.0
 
 
+const TRAINING_ONLY := ["trench_fire", "blast", "grenades", "assault", "building", "controls", "field", "fire", "intel"]
+
+
 func _team(name: String):
 	for sq in W.enemy_ai.squads:
 		if sq.team_name == name:
@@ -35,6 +38,11 @@ func _process(_d: float) -> void:
 		return
 	if t0 < 0.0:
 		t0 = W.time
+		# these scenarios use the teams of the training ground (Пост, Окоп)
+		if scenario in TRAINING_ONLY and _team("Пост") == null:
+			print("[AITEST] RESULT %s: FAIL this scenario runs on the training ground: --map=training (now «%s»)" % [scenario, W.mission.def.id])
+			get_tree().quit()
+			return
 		_setup()
 	var t := W.time - t0
 	match scenario:
