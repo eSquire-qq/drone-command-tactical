@@ -128,7 +128,9 @@ func setup() -> void:
 
 	player_entry = Vector3(4, 0, 128)
 	foot_spawn = Vector3(10, 0, 125)
-	dismount_points = [Vector3(-30, 0, 108), Vector3(0, 0, 110), Vector3(30, 0, 108), Vector3(-70, 0, 108), Vector3(70, 0, 108)]
+	# on the field road behind the tree line: vehicles cannot get into the trees,
+	# and a carrier pushed out to the front edge is the ATGM's first target
+	dismount_points = [Vector3(-30, 0, 123), Vector3(0, 0, 123), Vector3(30, 0, 123), Vector3(-70, 0, 123), Vector3(70, 0, 123)]
 	medevac_entry = Vector3(0, 0, 128)
 	rally_point = Vector3(0, 0, 118)
 	enemy_retreat = Vector3(4, 0, -126)

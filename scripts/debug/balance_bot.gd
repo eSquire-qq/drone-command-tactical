@@ -286,42 +286,73 @@ func _smart_urban(t: float) -> void:
 ## house), then house by house.
 func _smart_village(t: float) -> void:
 	var sqs: Array = W.mission.friendly_squads
-	if _once("orchard", 0.0, t):
+	# nothing moves until everybody is out of the vehicles in the tree line:
+	# a carrier sent forward with the troops inside is the ATGM's first kill
+	if _v_t0 < 0.0:
+		for sq in sqs:
+			if sq.order == "mounted" and t < 60.0:
+				return
+		_v_t0 = t
+	var tv := t - _v_t0
+	if _once("west", 0.0, tv):
+		# west inside the tree line, then down the western windbreak
 		for i in sqs.size():
-			sqs[i].issue_order("move", Vector3(-104 + i * 5, 0, 18 - i * 4))
-		var k := 0
-		for v in W.mission.friendly_vehicles:
-			v.order_move(Vector3(-30 + k * 26, 0, 94))
-			v.set_face("front")
-			k += 1
-	if _once("fpv_bunker", 90.0, t) and W.bunkers.size() > 0:
+			sqs[i].issue_order("move", Vector3(-121 + i * 2, 0, 104 - i * 2))
+		# the vehicles wait on the road behind the trees
+	if _once("windbreak", 35.0, tv):
+		for i in sqs.size():
+			sqs[i].issue_order("move", Vector3(-123 + (i % 2) * 3, 0, 52 - i * 7))
+	if _once("orchard", 75.0, tv):
+		for i in sqs.size():
+			sqs[i].issue_order("move", Vector3(-106 + i * 5, 0, 16 - i * 4))
+	if _once("fpv_atgm", 40.0, tv):
+		# the briefing names the ATGM in the eastern yard: the first FPV is for it
+		for u in W.units:
+			if u.side == 1 and u.is_active() and u.role == "atgm":
+				_fpv(u)
+				break
+	if _once("fpv_bunker", 95.0, tv) and W.bunkers.size() > 0:
 		_fpv(W.bunkers[0])
-	if _once("mortar1", 95.0, t):
+	if _once("mortar1", 100.0, tv):
 		_mortar(Vector3(-8, 0, 4))
-	if _once("veh_sup", 110.0, t):
+	if _once("veh_edge", 105.0, tv):
+		var atgm_alive := false
+		for u in W.units:
+			if u.side == 1 and u.is_active() and u.role == "atgm":
+				atgm_alive = true
+		if not atgm_alive:
+			var k := 0
+			for v in W.mission.friendly_vehicles:
+				v.order_move(Vector3(-40 + k * 22, 0, 98))
+				v.set_face("front")
+				k += 1
+	if _once("veh_sup", 120.0, tv):
 		for v in W.mission.friendly_vehicles:
 			v.order_suppress(Vector3(-38, 0, -10))
-	if _once("smoke1", 125.0, t):
+	if _once("smoke1", 125.0, tv):
 		_smoke(Vector3(-66, 0, 2))
-	if _once("flank", 135.0, t):
+	if _once("flank", 135.0, tv):
 		for i in sqs.size():
 			if i == 0:
 				sqs[i].issue_order("clear", Vector3(-24, 0, 6))      # the trench from its western end
 			else:
 				sqs[i].issue_order("clear", Vector3(-38, 0, -10))    # the western house
-	if _once("fpv2", 200.0, t):
+	if _once("fpv2", 200.0, tv):
 		for u in W.units:
 			if u.side == 1 and u.is_active() and u.role in ["atgm", "mg"]:
 				_fpv(u)
 				break
-	if _once("centre", 300.0, t):
+	if _once("centre", 300.0, tv):
 		var n := 0
 		for sq in sqs:
 			if sq.active_count() >= 3 and n < 2:
 				sq.issue_order("clear", Vector3(-13, 0, -11))
 				n += 1
-	if t > 380.0:
+	if tv > 380.0:
 		_manage_urban(t)
+
+
+var _v_t0 := -1.0
 
 
 ## «Лісовий масив», deployment "Центр": up the footpath, the listening post,
@@ -554,6 +585,15 @@ func _on_end(r: Dictionary) -> void:
 		r.get("prisoners", 0), r.get("mines", 0), r.get("drones_lost", 0), r["score"]])
 	print("[BALANCE] downed_by=", downs, " where(zone@minute)=", where)
 	print("[BALANCE] enemy_downed_by=", edowns)
+	if r["reason"] == "timeout":
+		# who was still fighting when the clock ran out (a battle that never ends)
+		for sq in W.mission.friendly_squads:
+			for m in sq.members:
+				if m.health < Soldier.H.INCAP and not m.evacuated:
+					print("[BALANCE] alive %s %s pos=%s order=%s state=%s solo=%s" % [sq.short, m.rdata["short"], m.global_position.snapped(Vector3.ONE), sq.order, m.state_text() if m.has_method("state_text") else "", m.solo])
+		for u in W.units:
+			if u.side == 1 and u.is_active():
+				print("[BALANCE] enemy %s pos=%s" % [u.role, u.global_position.snapped(Vector3.ONE)])
 	for sq in W.mission.friendly_squads:
 		var st: Array = []
 		for m in sq.members:

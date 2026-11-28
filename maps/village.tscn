@@ -1554,27 +1554,27 @@ script = ExtResource("24_o7xun")
 kind = "photo_center"
 
 [node name="Висадка" type="Node3D" parent="Маркери" unique_id=839256499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 123)
 script = ExtResource("24_o7xun")
 kind = "dismount"
 
 [node name="Висадка2" type="Node3D" parent="Маркери" unique_id=116465346]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 110)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 123)
 script = ExtResource("24_o7xun")
 kind = "dismount"
 
 [node name="Висадка3" type="Node3D" parent="Маркери" unique_id=2020268434]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 123)
 script = ExtResource("24_o7xun")
 kind = "dismount"
 
 [node name="Висадка4" type="Node3D" parent="Маркери" unique_id=1678254643]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 123)
 script = ExtResource("24_o7xun")
 kind = "dismount"
 
 [node name="Висадка5" type="Node3D" parent="Маркери" unique_id=958249729]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 123)
 script = ExtResource("24_o7xun")
 kind = "dismount"
 
