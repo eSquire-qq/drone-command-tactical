@@ -113,6 +113,8 @@ func _process_body(delta: float) -> void:
 		_update_mount()
 	elif order == "clear_bld":
 		_update_clear_bld(delta)
+	elif order == "occupy":
+		_update_occupy(delta)
 	elif order == "follow_veh":
 		_update_follow(delta)
 	elif order == "clear":
@@ -292,6 +294,39 @@ func nearest_threat(pos: Vector3):
 			bd = d
 			best = p
 	return best
+
+
+## Up to `n` known enemy positions nearest to `p` (seen lately by this squad;
+## for our side also the enemies the drone / other troops have revealed).
+func threat_points(p: Vector3, n: int) -> Array:
+	var pts: Array = []
+	for e in known.keys():
+		if W.is_alive_target(e) and W.time - float(known[e]["t"]) < 30.0:
+			pts.append(known[e]["pos"])
+	if side == 0:
+		for u in W.units:
+			if u.side == 1 and u.is_active() and (u.revealed > 0.0 or u.marked) and not known.has(u):
+				pts.append(u.global_position)
+	pts.sort_custom(func(a, b): return (a as Vector3).distance_to(p) < (b as Vector3).distance_to(p))
+	return pts.slice(0, n)
+
+
+## Where to look from a building when no enemy is known yet: on, the way we
+## were going (our side), or towards where we come from (theirs).
+func _look_dir_point(b: Dictionary) -> Vector3:
+	var c: Vector3 = b["center"]
+	var thr := threat_points(c, AIConfig.WIN_THREATS)
+	if not thr.is_empty():
+		var s := Vector3.ZERO
+		for t in thr:
+			s += t
+		return s / thr.size()
+	if side == 0 and W.mission:
+		var r: Rect2 = W.mission.def.objective_rect
+		if r.has_area():
+			return Vector3(r.get_center().x, 0, r.get_center().y)
+	var away: Vector3 = c - center()
+	return c + (away.normalized() if away.length() > 1.0 else Vector3(0, 0, -1)) * 50.0
 
 
 func occupied(except) -> Array:
@@ -533,28 +568,94 @@ func _occupy(b: Dictionary) -> void:
 	order_pos = b["center"]
 	bld = b
 	var act := active_members()
-	var toward = nearest_threat(b["center"])
-	var posts := Buildings.posts_facing(b, toward)
+	for m in act:
+		if m.post != null:
+			m.leave_post()   # a fresh choice for everybody
+	var thr := threat_points(b["center"], AIConfig.WIN_THREATS)
+	var posts := Buildings.pick_posts(b, act.size(), thr, _look_dir_point(b))
 	var inner: Array = b["interior"]
-	var d: Dictionary = Buildings.entry(b, center())
-	for i in act.size():
-		var m = act[i]
-		m.solo = ""
-		m.follow_ahead = null
-		m.can_advance = true
-		if i < posts.size():
-			m.post_pending = posts[i]
-			m.slot = posts[i].get("in", posts[i]["post"])
-		else:
-			m.post_pending = null
-			m.slot = inner[i % inner.size()]
+	# the nearest free man to each post, the best posts first
+	var free: Array = act.duplicate()
+	for w in posts:
+		var best = null
+		var bd := INF
+		for m in free:
+			var d: float = m.global_position.distance_to(w.get("in", w["post"]))
+			if d < bd:
+				bd = d
+				best = m
+		free.erase(best)
+		_send_to_post(best, w)
+	var i := 0
+	for m in free:
+		m.post_pending = null
+		m.slot = inner[i % inner.size()]
+		i += 1
 		m.move_to(m.slot, true)
+	_win_review_t = AIConfig.WIN_REVIEW_T
 	if side == 0:
 		radio("order", Loc.t("займаємо будівлю, %d бійців біля вікон.") % mini(act.size(), posts.size()), "info")
 
 
 ## Clear a building: stack at the nearest door / breach, a grenade inside,
 ## then in; when nobody of the enemy is left inside — cleared, take it.
+func _send_to_post(m, w: Dictionary) -> void:
+	m.solo = ""
+	m.follow_ahead = null
+	m.can_advance = true
+	if m.post != null:
+		m.leave_post()
+	m.post_pending = w
+	m.slot = w.get("in", w["post"])
+	m.move_to(m.slot, true)
+
+
+## While holding a building: when the enemy shows up on another side, the men
+## at windows that no longer help move to better free ones (a couple at a time).
+var _win_review_t := 0.0
+
+
+func _update_occupy(delta: float) -> void:
+	_win_review_t -= delta
+	if _win_review_t > 0.0 or bld == null:
+		return
+	_win_review_t = AIConfig.WIN_REVIEW_T
+	var thr := threat_points(bld["center"], AIConfig.WIN_THREATS)
+	if thr.is_empty():
+		return
+	var toward := _look_dir_point(bld)
+	var cands: Array = []
+	for w in Buildings.free_posts(bld):
+		cands.append([Buildings.post_score(w, thr, toward), w])
+	if cands.is_empty():
+		return
+	cands.sort_custom(func(a, b): return a[0] > b[0])
+	var worst: Array = []
+	for m in active_members():
+		if m.post != null and m.supp_level < 3:
+			worst.append([Buildings.post_score(m.post, thr, toward), m])
+	worst.sort_custom(func(a, b): return a[0] < b[0])
+	var moved := 0
+	for k in mini(worst.size(), AIConfig.WIN_SWITCH_MAX):
+		var m = worst[k][1]
+		# the best free post for him, counting the walk there
+		var bi := -1
+		var bs := -INF
+		for i in cands.size():
+			var w: Dictionary = cands[i][1]
+			var s: float = float(cands[i][0]) - m.global_position.distance_to(w["post"]) * AIConfig.WIN_DIST_COST
+			if s > bs:
+				bs = s
+				bi = i
+		if bi < 0 or bs - float(worst[k][0]) < AIConfig.WIN_SWITCH:
+			continue
+		_send_to_post(m, cands[bi][1])
+		cands.remove_at(bi)
+		moved += 1
+	if moved > 0 and side == 0:
+		radio("order", Loc.t("противник з іншого боку — переходимо до інших вікон."), "info")
+
+
 func _clear_building(b: Dictionary) -> void:
 	order = "clear_bld"
 	order_pos = b["center"]
@@ -680,7 +781,7 @@ func _start_assault() -> void:
 	# at their posts, and the bound never starts)
 	for m in active_members():
 		if m.post != null:
-			Buildings.release(m)
+			m.leave_post()
 		m.post_pending = null
 	assault_start_n = active_count()
 	assault_pause_t = 0.0

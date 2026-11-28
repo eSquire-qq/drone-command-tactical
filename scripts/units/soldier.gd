@@ -361,7 +361,7 @@ func move_to(p: Vector3, p_run: bool = true) -> void:
 			stop()
 			return   # sent somewhere in the same building: he keeps his window
 		if Vector2(p.x - post["post"].x, p.z - post["post"].z).length() > 0.8:
-			Buildings.release(self)
+			leave_post()
 	if bunker != null and not bunker_deep:
 		bunker.release_occupant(self)
 	elif bunker != null and bunker_deep:
@@ -370,6 +370,18 @@ func move_to(p: Vector3, p_run: bool = true) -> void:
 	path_i = 0
 	moving = path.size() > 0
 	run = p_run
+
+
+## Off the window, back into the room. The post stands in the wall's nav
+## cell, so a route from there could start from the free cell OUTSIDE the
+## wall and lead the man round the building; he steps back inside first.
+func leave_post() -> void:
+	if post == null:
+		return
+	var w: Dictionary = post
+	Buildings.release(self)
+	if w.has("in"):
+		global_position = W.grid.ground(w["in"])
 
 
 func stop() -> void:

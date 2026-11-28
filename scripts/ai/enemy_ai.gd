@@ -367,7 +367,7 @@ func _withdraw(m) -> void:
 	if m.bunker != null:
 		m.bunker.release_occupant(m)
 	if m.post != null:
-		Buildings.release(m)
+		m.leave_post()
 	m.slot = W.grid.ground(def.enemy_retreat + Vector3(randf_range(-8, 8), 0, 0))
 	m.move_to(m.slot, true)
 
@@ -447,7 +447,7 @@ func _redistribute() -> void:
 			continue   # the team's key weapons stay where they are
 		var sp: Vector2 = spots[sent.size() % spots.size()]
 		if m.post != null:
-			Buildings.release(m)
+			m.leave_post()
 		m.slot = W.grid.free_point(Vector3(sp.x + randf_range(-1.5, 1.5), 0, sp.y + randf_range(-1.5, 1.5)))
 		m.move_to(m.slot, true)
 		sent.append(m)

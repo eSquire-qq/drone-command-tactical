@@ -251,6 +251,18 @@ static func level_of(supp: float) -> int:
 			l += 1
 	return l
 
+# ---------------------------------------------------------------- windows of an occupied building
+const WIN_SEE_W := 1.2           # a known enemy can be seen from the window
+const WIN_FACE_W := 1.0          # the window faces where the enemies are
+const WIN_FLOOR_W := 0.05        # per floor: higher sees further
+const WIN_SPACING := 3.5         # men do not crowd neighbouring windows of one floor
+const WIN_SPACING_PEN := 0.6
+const WIN_THREATS := 6           # this many nearest known enemies are taken into account
+const WIN_REVIEW_T := 8.0        # how often the posts are reviewed while holding
+const WIN_SWITCH := 0.8          # a free post must be this much better to move a man there
+const WIN_SWITCH_MAX := 2        # men moved per review
+const WIN_DIST_COST := 0.03      # per metre a man has to walk to a new window
+
 # ---------------------------------------------------------------- living reactions
 ## The first threat after a quiet spell (shots at him, a first contact of the
 ## squad) is answered after a short, individual delay: men do not all react

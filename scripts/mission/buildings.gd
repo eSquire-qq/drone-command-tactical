@@ -43,16 +43,48 @@ static func free_posts(b: Dictionary) -> Array:
 	return out
 
 
-## Window posts ordered by how well they face `toward` (null = any order).
-static func posts_facing(b: Dictionary, toward) -> Array:
-	var list := free_posts(b)
-	if toward is Vector3:
-		var c: Vector3 = b["center"]
-		var dir := (toward as Vector3) - c
-		dir.y = 0.0
-		dir = dir.normalized()
-		list.sort_custom(func(a, z): return (a["dir"] as Vector3).dot(dir) > (z["dir"] as Vector3).dot(dir))
-	return list
+## How useful a window post is against the known enemies: does it face them,
+## can they be seen from it, how high it is. `threats` are positions.
+static func post_score(w: Dictionary, threats: Array, toward: Vector3) -> float:
+	var p: Vector3 = w["post"]
+	var dir := toward - p
+	dir.y = 0.0
+	var s := 0.0
+	if dir.length() > 0.5:
+		s += (w["dir"] as Vector3).dot(dir.normalized()) * AIConfig.WIN_FACE_W
+	if not threats.is_empty():
+		var eye := p + Vector3(0, AIConfig.BLD_EYE, 0)
+		var seen := 0
+		for t in threats:
+			if W.grid.visibility(eye, (t as Vector3) + Vector3(0, 1.2, 0)) >= 0.2:
+				seen += 1
+		s += float(seen) / threats.size() * AIConfig.WIN_SEE_W
+	s += int(w.get("floor", 0)) * AIConfig.WIN_FLOOR_W
+	return s
+
+
+## The best posts for `n` men: the most useful first, but not all at the
+## neighbouring windows of one floor.
+static func pick_posts(b: Dictionary, n: int, threats: Array, toward: Vector3) -> Array:
+	var cands: Array = []
+	for w in free_posts(b):
+		cands.append([post_score(w, threats, toward), w])
+	var out: Array = []
+	while out.size() < n and not cands.is_empty():
+		var bi := -1
+		var bs := -INF
+		for i in cands.size():
+			var s: float = cands[i][0]
+			var w: Dictionary = cands[i][1]
+			for o in out:
+				if int(o.get("floor", 0)) == int(w.get("floor", 0)) and (o["post"] as Vector3).distance_to(w["post"]) < AIConfig.WIN_SPACING:
+					s -= AIConfig.WIN_SPACING_PEN
+			if s > bs:
+				bs = s
+				bi = i
+		out.append(cands[bi][1])
+		cands.remove_at(bi)
+	return out
 
 
 ## Enemy garrison placed on a slot inside a building: take the nearest free

@@ -57,7 +57,9 @@ func _take_window() -> void:
 		var pp: Vector3 = s.post_pending["post"]
 		# horizontal distance: the post may be on an upper floor
 		var d: float = Vector2(s.global_position.x - pp.x, s.global_position.z - pp.z).length()
-		if d < 1.5 or (d < 3.8 and Buildings.at(s.global_position) != null and Buildings.at(s.global_position)["id"] == s.post_pending["b"]):
+		# right by the window (the cell next to a wall may count as outside the
+		# footprint), or anywhere close inside the same building
+		if d < 2.8 or (d < 3.8 and Buildings.at(s.global_position) != null and Buildings.at(s.global_position)["id"] == s.post_pending["b"]):
 			Buildings.claim(s, s.post_pending)
 			if s.post == null:
 				s.post_pending = null   # someone else took it

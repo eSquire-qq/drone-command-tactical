@@ -677,7 +677,10 @@ func _preview_one(o, p: Vector3, line_end) -> Dictionary:
 		return d
 	var b = Buildings.at(p)
 	if b != null:
-		for w in Buildings.free_posts(b).slice(0, list.size()):
+		# the preview runs every frame: facing only, the line-of-sight check is
+		# left to the order itself
+		var sq = list[0].squad
+		for w in Buildings.pick_posts(b, list.size(), [], sq._look_dir_point(b) if sq else b["center"]):
 			d["slots"].append(w["post"])
 		return d
 	var dir := p - from

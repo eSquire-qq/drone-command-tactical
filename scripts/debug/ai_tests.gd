@@ -74,6 +74,8 @@ func _process(_d: float) -> void:
 			_recon(t)
 		"reinf":
 			_reinf(t)
+		"windows":
+			_windows(t)
 
 
 func _setup() -> void:
@@ -1261,3 +1263,118 @@ func _reinf(t: float) -> void:
 		print("[AITEST] REINF messages: %s" % [_rf_msgs.filter(func(m): return m.contains(Loc.t("підкріплення")) or m.contains(Loc.t("техніку")))])
 		print("[AITEST] RESULT reinf: done")
 		get_tree().quit()
+
+
+## `--map=urban --aitest=windows`: our squad takes a front-row block with the
+## enemy known in the towers to the north; how many men end up at windows
+## that face the enemy AND see him. Then enemies show up on the south side:
+## do the men move to other windows?
+var _wn_b = null
+var _wn_t := 0.0
+
+
+func _useful(sq, thr: Array) -> Array:
+	var at := 0
+	var good := 0
+	for m in sq.active_members():
+		if m.post == null:
+			continue
+		at += 1
+		var eye: Vector3 = m.post["post"] + Vector3(0, AIConfig.BLD_EYE, 0)
+		var c := Vector3.ZERO
+		var sees := false
+		for p in thr:
+			c += p
+			if W.grid.visibility(eye, (p as Vector3) + Vector3(0, 1.2, 0)) >= 0.2:
+				sees = true
+		c /= maxf(thr.size(), 1)
+		var dir: Vector3 = c - m.post["post"]
+		dir.y = 0.0
+		if sees and (m.post["dir"] as Vector3).dot(dir.normalized()) > 0.3:
+			good += 1
+	return [at, good]
+
+
+func _windows(t: float) -> void:
+	var sq = W.mission.friendly_squads[0]
+	if stage == 0 and t > 3.0:
+		stage = 1
+		_wn_b = Buildings.at(W.grid.ground(Vector3(52, 0, 42)))
+		var i := 0
+		for m in sq.active_members():
+			m.stop()
+			m.global_position = W.grid.free_point(Vector3(46 + i * 2.0, 0, 56))
+			i += 1
+		for e in W.enemy_ai.squads:
+			for u in e.active_members():
+				if u.global_position.z < 0.0 and u.global_position.z > -60.0:
+					sq.report(u, u.global_position)
+		sq.issue_order("hold", _wn_b["center"])
+		_wn_t = t
+	elif stage == 1 and t - _wn_t <= 35.0:
+		for e in W.enemy_ai.squads:   # the towers stay in sight
+			for u in e.active_members():
+				if u.global_position.z < 0.0 and u.global_position.z > -60.0:
+					sq.report(u, u.global_position)
+	elif stage == 1:
+		stage = 2
+		var thr: Array = sq.known.values().map(func(k): return k["pos"])
+		var r := _useful(sq, thr)
+		print("[AITEST] WINDOWS north threat: %d men at windows, %d of them face and see the enemy (of %d posts in the block)" % [r[0], r[1], _wn_b["windows"].size()])
+		for m in sq.members:
+			if m.post == null:
+				print("[AITEST]   not at a window: %s pending=%s moving=%s ai=%s slot_d=%.1f in_bld=%s post_d=%.1f" % [m.rdata["short"], m.post_pending != null, m.moving, m.ai.state,
+					m.global_position.distance_to(m.slot), Buildings.at(m.global_position) != null,
+					Vector2(m.global_position.x - m.post_pending["post"].x, m.global_position.z - m.post_pending["post"].z).length() if m.post_pending != null else -1.0])
+		# can one walk across the block inside? north post "in" -> south post "in"
+		var nw = null
+		var sw = null
+		for w in _wn_b["windows"]:
+			if int(w["floor"]) == 0 and (w["dir"] as Vector3).z < -0.5 and nw == null:
+				nw = w
+			if int(w["floor"]) == 0 and (w["dir"] as Vector3).z > 0.5 and sw == null:
+				sw = w
+		if nw and sw:
+			var path: PackedVector3Array = W.grid.find_path_inf(nw["in"], sw["in"], false)
+			var outside := 0
+			for q in path:
+				if Buildings.at(q) == null:
+					outside += 1
+			print("[AITEST]   across the block: %s -> %s, %d points, %d of them outside; in-cells solid %d / %d; doors %d" % [nw["in"].snapped(Vector3.ONE), sw["in"].snapped(Vector3.ONE), path.size(), outside,
+				W.grid.inf_solid[W.grid.cidx(nw["in"].x, nw["in"].z)], W.grid.inf_solid[W.grid.cidx(sw["in"].x, sw["in"].z)], _wn_b["doors"].size()])
+			var line := ""
+			var z0: float = nw["in"].z
+			var x0: float = nw["in"].x
+			for dz in range(-2, 16):
+				var c: Vector2i = W.grid.cell_of(x0, z0 + dz * 1.0)
+				line += str(W.grid.inf_solid[W.grid.ci(c)])
+			print("[AITEST]   solid cells north->south through the block at x=%.0f: %s" % [x0, line])
+		# the enemy turns up south of the block
+		sq.known.clear()
+		var k := 0
+		for e in W.enemy_ai.squads:
+			for u in e.active_members():
+				if k < 4:
+					u.stop()
+					u.global_position = W.grid.free_point(Vector3(30 + k * 12, 0, 100))
+					u.set_meta("moved", true)
+					sq.report(u, u.global_position)
+					k += 1
+		for u in W.units:
+			if u.side == 1 and not u.has_meta("moved"):
+				u.revealed = -99.0
+		_wn_t = t
+	elif stage == 2:
+		for u in W.units:
+			if u.side == 1 and u.has_meta("moved"):
+				sq.report(u, u.global_position)   # keep them in sight
+		if t - _wn_t > 25.0:
+			var thr: Array = sq.known.values().map(func(k): return k["pos"])
+			var r := _useful(sq, thr)
+			print("[AITEST] WINDOWS south threat after 25 s: %d men at windows, %d face and see the new enemy" % [r[0], r[1]])
+			print("[AITEST]   squad order %s" % sq.order)
+			for m in sq.members:
+				print("[AITEST]   %s %s post=%s pending=%s moving=%s ai=%s supp=%d slot_d=%.1f in_bld=%s" % [m.rdata["short"], m.health, m.post != null, m.post_pending != null, m.moving, m.ai.state, m.supp_level,
+					m.global_position.distance_to(m.slot), Buildings.at(m.global_position) != null])
+			print("[AITEST] RESULT windows: done")
+			get_tree().quit()
